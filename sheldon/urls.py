@@ -20,6 +20,6 @@ from django.urls import path
 from textbook import views as textbook_views
 
 urlpatterns = [
-    path('', textbook_views.my_textbook, name='textbook'),  # path('textbook/', textbook_views.my_textbook, name='textbook'),
+    path('textbook/', textbook_views.my_textbook, name='textbook'),
     path('admin/', admin.site.urls),
 ]
