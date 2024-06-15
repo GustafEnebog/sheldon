@@ -151,7 +151,8 @@ Happy coding!
 
 
 
-
+Relying on Djangos Primary keys
+Info on autoslug used below: https://django-autoslug.readthedocs.io/en/latest/
 
 # SHELDON
 
