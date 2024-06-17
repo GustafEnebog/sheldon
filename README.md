@@ -515,10 +515,12 @@ In general, the code could easily be repurposed to create similar sites with a d
 - Database:
     - PostgreSQL
 - [Visual Studio Code](https://code.visualstudio.com/) - as the code editor.
-- [Git](https://git-scm.com/) - for version control, using the Gitpod IDE.
+- [Git](https://git-scm.com/) - for version control (using the Gitpod IDE).
+- [GitPod](https://www.gitpod.io/) - IDE for creating code.
 - [GitHub](https://github.com/) - for storing the project.
-- [ElephantSQL](https://www.elephantsql.com/) - PostgreSQL as a service.
+- [PostgreSQL from Code Institute](https://dbs.ci-dbs.net/) - PostgreSQL as a service.
 - [Heroku](https://www.heroku.com/) - to deploy the application.
+- [Summernote](https://summernote.org/) - to provide a simple WYSIWYG bootstrap-based editor for the Django admin page.
 - [Cloudinary](https://cloudinary.com/) - to host the static files.
 - [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) - to test responsiveness, edit CSS code, debug JavaScript and generate Lighthouse reports.
 - [Google Fonts](https://fonts.google.com/) - to import the site font, ‘Oswald’.
