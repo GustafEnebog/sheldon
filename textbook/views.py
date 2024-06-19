@@ -9,10 +9,10 @@ from .models import Syllabus
 # DELETE do not need it anymore: def my_textbook(request):
 # DELETE do not need it anymore:     return HttpResponse("Hello, Textbook!")
 
-class UnitContent(generic.ListView):
+class Unit(generic.ListView):
     # model = Unit # Earlier: Textbook but it should be a model
     queryset = Unit.objects.filter(status_unit=1)  # queryset = Unit.objects.all()
-    template_name = "unit.html"
+    template_name = "textbook/unit.html"
 
 class Syllabus(generic.ListView):
     # model = Unit # Earlier: Textbook but it should be a model
