@@ -9,12 +9,19 @@
 </head>
 
 <body>
-    <h1>Textbook unit</h1>
-    {% for unit in object_list %} <!--{{ post.author }} -->
+    {% extends 'textbook/base.html' %}
+    {% block syllabus %}
+    <h1>Syllabus</h1>
     <h2>{{unit.title}}</h2>
     <p>{{unit.excerpt}}</p>
     <p>Author: {{unit.author}}</p>
-    {% endfor %}
+    {% endblock %}
+
+    <!--{% for unit in object_list %}                    {{ post.author }}
+    <h2>{{unit.title}}</h2>
+    <p>{{unit.excerpt}}</p>
+    <p>Author: {{unit.author}}</p>
+    {% endfor %}-->
 </body>
 
 </html>

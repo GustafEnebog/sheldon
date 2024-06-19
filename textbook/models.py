@@ -24,7 +24,7 @@ class Module(models.Model):
     module_slug = models.SlugField(max_length=200, unique=True)
     author = models.CharField(max_length=200)
     created_on = models.DateTimeField(auto_now_add=True)
-    status_syllabus = models.IntegerField(choices=STATUS, default=0)
+    status_module = models.IntegerField(choices=STATUS, default=0)
 
 
 class Unit(models.Model):
@@ -36,7 +36,7 @@ class Unit(models.Model):
     author = models.CharField(max_length=200)
     created_on = models.DateTimeField(auto_now_add=True)
     content = models.TextField(max_length=200)
-    status_syllabus = models.IntegerField(choices=STATUS, default=0)
+    status_unit = models.IntegerField(choices=STATUS, default=0)
 
 
 class UserProgress (models.Model):  # CamelCase!?

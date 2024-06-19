@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Views Part 1</title>
+</head>
+
+<body>
+    {% extends 'textbook/base.html' %}
+    {% block unit %}
+        <h1>Unit List</h1>
+        <h2>{{unit.title}}</h2>
+        <p>{{unit.excerpt}}</p>
+        <p>Author: {{unit.author}}</p>
+    {% endblock %}
+
+    <h1>Posts list</h1>
+    {% for post in object_list %}
+    <h2>{{post.title}}</h2>
+    <p>{{post.excerpt}}</p>
+    <p>Author: {{post.author}}</p>
+    {% endfor %}
+
+
+    <!--{% for unit in object_list %}                    {{ post.author }}
+    <h2>{{unit.title}}</h2>
+    <p>{{unit.excerpt}}</p>
+    <p>Author: {{unit.author}}</p>
+    {% endfor %}-->
+</body>
+
+</html>
+
+{% extends 'textbook/base.html' %}
+{% block unit %}
+<h1>Unit List</h1>
+{% endblock %}
