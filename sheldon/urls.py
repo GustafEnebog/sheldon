@@ -21,5 +21,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path("", include("textbook.urls"), name="textbook-urls"),  #DELETE change this: path('textbook/', textbook_views.my_textbook, name='textbook'),   
+    path('summernote/', include('django_summernote.urls')),
     path('admin/', admin.site.urls),
 ]

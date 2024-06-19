@@ -17,4 +17,4 @@ class UnitContent(generic.ListView):
 class Syllabus(generic.ListView):
     # model = Unit # Earlier: Textbook but it should be a model
     queryset = Syllabus.objects.filter(status_syllabus=1) 
-    template_name = "syllabus.html"
+    template_name = "textbook/syllabus.html" #"syllabus.html"
