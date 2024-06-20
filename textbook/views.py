@@ -13,6 +13,7 @@ class Unit(generic.ListView):
     # model = Unit # Earlier: Textbook but it should be a model
     queryset = Unit.objects.filter(status_unit=1)  # queryset = Unit.objects.all()
     template_name = "textbook/unit.html"
+    # paginate_by = 6
 
 class Syllabus(generic.ListView):
     # model = Unit # Earlier: Textbook but it should be a model
