@@ -39,7 +39,7 @@
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}"/>
     <!--Custom CSS, Placed AFTER bootstrap imported stylesheet in order to take precidence over it when we want to customise (override bootstrap)-->
     <!-- DELETE (not working now but did work in PP4): <link rel="stylesheet" href="{% static 'css/style.css' %}">-->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}>">  <!-- DELETE href="textbook/static/css/style.css"-->
+    <link rel="stylesheet" href="{% static 'style/css/style.css' %}>"/> <!-- DELETE href="textbook/static/css/style.css"-->
     <!--Google font Chevron Left, Chevron Right, Chevron Up and Chevron Down-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -121,17 +121,20 @@
             </div>
         </header>
         <!-- ----------END of Actual Header---------- -->
-    <div>
-        {% block syllabus %}
-        {% endblock %}
-    </div>
-    <p>Unit below</p>
-    <div>
-        {% block unit %}
-        {% endblock %}
-    </div>
-    <p>Unit above</p>
-        
+        <p>Syllabus top</p>
+        <div>
+            {% block syllabus %}
+            Syllabus in base at least
+            {% endblock syllabus%}
+        </div>
+        <p>Syllabus bottom</p>
+        <p>Unit top</p>
+        <div>
+            {% block unit %}
+            Unit in base at least
+            {% endblock unit%}
+        </div>
+        <p>Unit bottom</p>
         <!-- ----------Footer---------- -->
         <footer class="footer">
             <!--col-1 to col-12-->

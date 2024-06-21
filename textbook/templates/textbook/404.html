@@ -1,47 +1,9 @@
-{% load static %}
 
-{% url 'account_login' as login_url %}
-{% url 'account_signup' as signup_url %}
-{% url 'account_logout' as logout_url %}
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sheldon App</title>
-
-    <!-- Adding Favicon https://stackoverflow.com/questions/21938028/how-to-get-a-favicon-to-show-up-in-my-django-app-->
-    <link rel="shortcut icon" href="{% static 'favicon/android-chrome-192x192.png' %}" />
-    <link rel="shortcut icon" href="{% static 'favicon/android-chrome-512x512.png' %}" />
-    <link rel="shortcut icon" href="{% static 'favicon/apple-touch-icon.png' %}" />
-    <link rel="shortcut icon" href="{% static 'favicon/favicon-16x16.png' %}" />
-    <link rel="shortcut icon" href="{% static 'favicon/favicon-32x32.png' %}" />
-    <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-    <style>
-        h1 {
-            color: white;
-        }
-
-        body {
-            background-color: black;
-        }
-    </style>
-</head>
-
-<body>
+{% block 404 %}
     <!-- https://learndjango.com/tutorials/customizing-django-404-and-500-error-pages -->
     <h2>404 Page not found</h2>
     <h1>Bazinga!!</h1>
     <img src="textbook/static/images/sheldon-you-shouldent-be-here-404.jpg" align="center"
         alt="Sitcom character Sheldon Cooper">
-</body>
 
-</html>
+{% endblock %}
