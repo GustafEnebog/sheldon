@@ -16,6 +16,10 @@ class Syllabus(models.Model):
     deadline_official = models.DateTimeField(auto_now_add=True)
     status_syllabus = models.IntegerField(choices=STATUS, default=0)
 
+    #class Meta:
+    #        ordering = ["-created_on"]
+
+
 
 class Module(models.Model):
     # module_id = models.IntegerField(unique=True)  #PK
@@ -26,6 +30,11 @@ class Module(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status_module = models.IntegerField(choices=STATUS, default=0)
 
+    #class Meta:
+    #    ordering = ["-created_on"]
+
+    def __str__(self):
+        return f"{self.module_title} | written by {self.author}"
 
 class Unit(models.Model):
     # unit_id = models.IntegerField(unique=True)  #PK
@@ -37,6 +46,12 @@ class Unit(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     content = models.TextField(max_length=200)
     status_unit = models.IntegerField(choices=STATUS, default=0)
+
+    #class Meta:
+    #    ordering = ["-created_on"]
+
+    def __str__(self):
+        return f"{self.unit_title} | written by {self.author}"
 
 
 class UserProgress (models.Model):  # CamelCase!?
