@@ -6,4 +6,27 @@
 
 {% block unit %}
 <h1>Unit</h1>
+
+
+{% if page_obj.has_previous %}
+<li>
+    <a href="?page={{ page_obj.previous_page_number }}"
+      class="page-link">&laquo; PREV</a>
+</li>
+{% endif %}
+
+
+
+<h2>{{unit.title}}</h2>
+<p>{{unit.excerpt}}</p>
+<p>Author1: {{unit.author}}</p>
+<p>Author2: {{unit.module_id }}</p>
+<p>Author3: {{unit.unit_slug}}</p>
+<p>Author4: {{unit.category}}</p>
+<p>Author5: {{unit.unit_title}}</p>
+<p>Author6: {{unit.created_on}}</p>
+<p>Author7: {{unit.status_unit }}</p>
+<p>Author8: {{unit.created_on}}</p>
+
+<p class="card-text">{{ post.excerpt }}</p>
 {% endblock %}
