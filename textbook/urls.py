@@ -6,5 +6,5 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.Syllabus.as_view(), name='Syllabus'), # Syllabus is a view
-    path('', views.Unit.as_view(), name='Unit'), # UnitContent is a view
+    path('', views.Unit.as_view(), name='UnitContent'), # UnitContent is a view
 ]

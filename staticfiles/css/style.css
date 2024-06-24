@@ -1,0 +1,180 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Asterisk wildcard selector to override default styles added by the browser and possibly bootstrap*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Generic project styles */
+    /* color: 3a3a3a;  */
+    font-family: "Raleway", sans-serif;
+    /* color: #445361; */
+    /* text-align: center; */
+}
+
+/* Class for styling Google Material Symbols (Variable Icon Font). For tutorial 7min 48sec in: https://www.youtube.com/watch?v=VzlbeFGxU9U */
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+
+header {
+    background-color: rgb(0, 157, 255);
+    /* padding: 0 1rem; */
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+}
+
+h1 {
+    font-family: "IBM Plex Sans", "Montserrat", "Arial", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #252525;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#logo-footer {
+    font-size: 5%;
+}
+
+#login {
+    font-size: 110%;
+    letter-spacing: 4px;
+    list-style-type: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Main content */
+main {
+    background-color: rgb(76, 0, 255);
+    /* Make main element take up any surplus space to push footer down */
+    width: 100%;
+    flex: 1 0 auto;
+    margin-top: 59px;
+}
+
+.row {
+    /* Make main element take up any surplus space to push footer down */
+    flex: 1 0 auto;
+}
+
+footer {
+    width: 100%;
+    background-color: rgb(255, 0, 191);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.flex-child {
+    /*flex: 1;*/
+    border: 2px solid yellow;
+    flex-basis: auto;
+    justify-content: center;
+}
+
+.flex-child:first-child {
+    justify-content: center;
+}
+
+.flex-child > p {
+    display: flex;
+    justify-content: center;  /* Could also use text-align: center; to the flex-child */
+    margin-bottom: 0;
+}
+
+/*.flex-child:first-child {
+    margin-right: 20px;
+    flex-basis: auto;
+} */
+
+/*span {
+    min-width: 0;
+  }*/
+
+.button-module {
+    background-color: #d3d3d3;
+    color: black;
+    border: 1px solid black;
+    padding: 3px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* font-weight: bold; */
+    margin: 0px 0px;
+    cursor: pointer;
+    border-radius: 0px;
+    float: none;
+}
+
+.button:hover {
+    background-color: white;
+    transition-duration: 0.4s;
+}
+
+.button-unit {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    padding: 3px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* font-weight: bold; */
+    margin: 0px 0px;
+    cursor: pointer;
+    border-radius: 20px;
+    float: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Did not help to center the unit underneath its module */
+}
+
+/* opacity: 1 button button-theory button button-equation button button-test */
+
+/* Google fonts: "IBM Plex Sans". Use value: 400*/
+/* https://fonts.google.com/specimen/IBM+Plex+Sans */
+.ibm-plex-sans-regular {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Google fonts: "IBM Plex Sans". Use value 500*/
+/* https://fonts.google.com/specimen/Raleway */
+
+/* <uniquifier>: Use a unique and descriptive class name */
+/* <weight>: Use a value from 100 to 900 */
+.raleway-<uniquifier> {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
