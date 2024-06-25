@@ -1,32 +1,31 @@
 {% extends 'textbook/base.html' %}
 
+<!--Syllabus-->
 {% block syllabus %}
 <h1>Syllabus</h1>
-{% endblock %}
+{% endblock syllabus%}
 
-{% block unit %}
+<!--Unitcontent-->
+{% block unitcontent %}
 <h1>Unit</h1>
 
-
-{% if page_obj.has_previous %}
-<li>
-    <a href="?page={{ page_obj.previous_page_number }}"
-      class="page-link">&laquo; PREV</a>
-</li>
-{% endif %}
-
-
-
-<h2>{{unit.title}}</h2>
+{% for unit in unit_list %}  <!--model name (Unit) and the view type (ListView) gives name-->
+<h2>{{unitcontent.title}}</h2>
 <p>{{unit.excerpt}}</p>
-<p>Author1: {{unit.author}}</p>
-<p>Author2: {{unit.module_id }}</p>
-<p>Author3: {{unit.unit_slug}}</p>
-<p>Author4: {{unit.category}}</p>
-<p>Author5: {{unit.unit_title}}</p>
-<p>Author6: {{unit.created_on}}</p>
-<p>Author7: {{unit.status_unit }}</p>
-<p>Author8: {{unit.created_on}}</p>
+<p>Author1: {{unitcontent.author}}</p>
+<p>Author2: {{unitcontent.module_id }}</p>
+<p>Author3: {{unitcontent.unit_slug}}</p>
+<p>Author4: {{unitcontent.category}}</p>
+<p>Author5: {{unitcontent.unit_title}}</p>
+<p>Author6: {{unitcontent.created_on}}</p>
+<p>Author7: {{unitcontent.status_unit }}</p>
+<p>Author8: {{unitcontent.created_on}}</p>
+{% endfor %}
 
-<p class="card-text">{{ post.excerpt }}</p>
+{% endblock unitcontent %}
+
+
+<!--Footer-->
+{% block copyright %}
+    Copyright 2024 Gustaf Enebog (index code)
 {% endblock %}

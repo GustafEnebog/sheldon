@@ -15,6 +15,7 @@ class Unit(generic.ListView):
     template_name = "textbook/index.html"
     paginate_by = 1
 
+
 class Syllabus(generic.ListView):
     # model = Unit # Earlier: Textbook but it should be a model
     queryset = Syllabus.objects.filter(status_syllabus=1) 
