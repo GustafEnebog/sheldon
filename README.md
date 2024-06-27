@@ -388,7 +388,7 @@ Places can be favourited/unfavourited by clicking on the heart icon.
 ### Two level deep expansion/collapse text
 #### Expansion text
 Psycological positive aspect of wanting to click to reveal whats underneath
-#### Collapse text
+#### Expand/Collapse text (accordian)
 ### Situational Awarenes
 These checkboxes rewards the user with a satisfactory sense of progress and control when he can click away "...one more unit", kind of reading "just one more page" in a good book!  
 ### Clip Board

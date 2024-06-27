@@ -123,36 +123,13 @@
     <!--col-1 to col-12-->
     <div class=" container-fluid text-center">
         <div class="row">
-            <div class="col-2 ps-0">
-                <div style="background-color:orange">
-                    1
-                </div>
-            </div>
-            <div class="col-1">
-                <div style="background-color:LightCoral">
-                    2
-                </div>
-            </div>
-            <div class="col-1">
-                <div style="background-color:DarkSalmon">
-                    3
-                </div>
-            </div>
-            <div class="col-6">
-                <div style="background-color:Crimson">
+            <div class="col-12 ps-0">
+                <div style="background-color:Fuchsia">
                     <div>
-                        4
+                        {% block syllabus %}
+                        Syllabus in base at least
+                        {% endblock syllabus %}
                     </div>
-                </div>
-            </div>
-            <div class="col-1">
-                <div style="background-color:red">
-                    5
-                </div>
-            </div>
-            <div class="col-1">
-                <div style="background-color:darkred">
-                    6
                 </div>
             </div>
         </div>
@@ -193,20 +170,11 @@
             </div>
             <div class="col-6">
                 <div style="background-color:DarkGray">
-                    <p>Syllabus top</p>
-                    <div>
-                        {% block syllabus %}
-                        Syllabus in base at least
-                        {% endblock syllabus %}
-                    </div>
-                    <p>Syllabus bottom</p>
-                    <p>Unit top</p>
                     <div>
                         {% block unitcontent %}
                         Unit in base at least
                         {% endblock unitcontent %}
                     </div>
-                    <p>Unit bottom</p>
                     <!-- Google font Add Circle -->
                     <span class="material-symbols-outlined">
                         add_circle
@@ -266,7 +234,7 @@
                 <div class="col-1">
                     <div style="background-color:NavajoWhite">
                         <footer class="footer mt-auto py-3 dark-bg">
-                            <p class="m-0 text-center text-white">Made by Code Instituters</p>
+                            <p class="m-0 text-center text-white">Made by Gustaf Enebog</p>
                             <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
                                 <i class="fab fa-twitter-square ms-3"></i>
                                 <i class="fab fa-instagram-square ms-3"></i>
