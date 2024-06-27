@@ -13,26 +13,13 @@ class Unit(generic.ListView):
     # model = Unit # Earlier: Textbook but it should be a model
     queryset = Unit.objects.filter(status_unit=1)  # queryset = Unit.objects.all()
     template_name = "textbook/index.html"
-    paginate_by = 1
+    #paginate_by = 3
     context_object_name = "unit_list"
     
 
-
 class Syllabus(generic.ListView):
     # model = Unit # Earlier: Textbook but it should be a model
-    queryset = Syllabus.objects.filter(status_syllabus=1) 
+    queryset = Syllabus.objects.filter(status_syllabus=1)  # queryset = Unit.objects.all()
     template_name = "textbook/index.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['unit'] = context.pop('unit_list', [])
-        return context
-
-def about_view(request, *args, **kwargs):
-    my_context = {
-        "my_text": "This is about us",
-        "my_number": 123,
-        "my_list": [123, 4242, 12313]
-        
-    }
-    return render(request, "about.html", my_context)
+    # paginate_by = 3
+    context_object_name = "unit_list"
