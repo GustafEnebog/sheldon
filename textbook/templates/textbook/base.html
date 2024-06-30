@@ -52,14 +52,15 @@
     <!-- ----------Header---------- -->
     <!-- <header> -->
     <!--col-1 to col-12-->
-    <div class=" container-fluid text-center">
+    <div class="container-fluid text-center">
         <div class="row">
             <div class="col-sm-4 ps-0">  <!-- class="col-2 ps-0"  -->
                 <div style="background-color: lavender">
                     <!--<p  class="mb-0">Header</p>-->
-                    <a href="index.html">
+                    <!-- <a href="index.html">
                         <h1 id="logo">SHELDON</h1>
-                    </a>
+                    </a>-->
+                    <h1 id="logo">SHELDON</h1>
                 </div>
             </div>
             <div class="col-sm-6">  <!-- class="col-6 ps-0"  -->
@@ -128,13 +129,13 @@
         <div class="row">
             <div class="col-sm-3 ps-0">
                 <div style="background-color: Gainsboro">
-                    <p>Been here</p>
+                    <p >Been here</p>  <!-- hidden -->
                     <input type="checkbox" id="unit-state-1" name="unit-state-1" value="Understood">
                     <label for="unit-state-1">Read</label><br>
                     <input type="checkbox" id="unit-state-2" name="unit-state-2" value="Understood">
                     <label for="unit-state-2">Understood</label><br>
-                    <p>Bookmark</p>
-                    <p>Clipboard</p>
+                    <button class="situ-aware-button">Bookmark</button><br>
+                    <button class="situ-aware-button">Clipboard</button>
                 </div>
             </div>
             <div class="col-1 col-sm-1 ps-0">
@@ -180,16 +181,20 @@
             <div class="col-sm-1 ps-0">
                 <div style="background-color:DimGray">
                     <!-- Google font thumb_up -->
-                    <span class="material-symbols-outlined">
+                    <div class="material-symbols-outlined">
                         thumb_up
-                    </span>
+                    </div>
+                    <br>
                     <!-- END OF: Google font thumb_up-->
                     <!-- Google font thumb_down -->
-                    <span class="material-symbols-outlined">
+                    <div class="material-symbols-outlined">
                         thumb_down
-                    </span>
+                    </div>
+                    <br>
                     <!-- END OF: Google font thumb_down-->
-                    <a href="" id="Print">Print</a>
+                     <div>
+                        <a href="" id="Print">Print</a>
+                     </div>
                 </div>
             </div>
         </div>
@@ -207,7 +212,7 @@
                         <!--<p  class="mb-0">Header</p>-->
                         <a href="">
                             <!--<p  Add URL to Sheldon official website</p>-->
-                            <h1 id="logo logo-footer">SHELDON</h1>
+                            <h3 id="logo logo-footer">SHELDON</h3>
                         </a>
                         <footer class="footer mt-auto py-3 dark-bg">
                             <p class="m-0 text-center text-white">Made by Gustaf Enebog</p>
