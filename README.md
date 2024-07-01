@@ -192,7 +192,7 @@ A Kanban board in Github projects was used for the Agile development process - s
 
 The name for the app was chosen to be "SHELDON", an homage to my favorit character Brainiac student/professor Sheldon Cooper and his group of academic friends in the popular sitcom "Big Bang Theory".
 
-The app naming-ideation started with logic yet generic and ultimatly boring names that did not feel right until a shift in thinking led to the name "Einstein". This name also being not good yet still lead me to think about other people with a similar quality. The name "Sheldon" is similar to "Eistein" yet since it is not mainstream it does not become generic and preditivtive. For people not familiar with the TV-character it simply becomes a name.
+The app naming-ideation started with logic yet too generic and thus ultimatly boring names that did not stuck to the memory. Thinking in terms of less generic and more personal theme accociated names led to the name "Einstein". This name however feelt to predictable yet it lead to think about alternative people with a similar quality. The name "Sheldon" is similar to "Eistein" yet less mainstream and less used making it more unique. For people not familiar with the TV-character it simply becomes a name.
 
 | Name          | Short/Easy to say | Descriptive/associative | Non-generic | Memorable | Emotional/Personal | Emotional/Personal | 
 |:------------- | :---- | :----: | :----: | :----: | :----: | :----: |
@@ -331,7 +331,7 @@ Furthermore, Medium 500 has been used instead of the Regular 400 since recent re
 
 ## Features
 
-![ERD Sheldon](assets/images/erd-diagram.jpg)
+![ERD Sheldon](static/images/ERD.jpg)
 
 This feature is good for all students but especially important for students with a neurodivergent diagnosis such as Asperger syndrome where the structure need to be extremely clear and distinct.  
 ![home-page-screenshot.png](assets/images/sheldon-interface.jpg)

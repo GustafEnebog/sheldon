@@ -6,10 +6,11 @@
 
 {% for unit in unit_list %}  <!--model name (Unit) and the view type (ListView) gives name-->
 <div class="btn-group">
-    <button type="button" onclick="alert('Hello world!')">{{unit.unit_title}}</button>
+    <a href="{% url 'unit_detail' unit.unit_slug %}">
+        <button type="button" onclick="{{unit.unit_title}}">{{unit.unit_title}}</button>
+    </a>
 </div>
 {% endfor unit%}
-
 
 {% endblock syllabus %}
 
@@ -17,8 +18,11 @@
 {% block unitcontent %}
 <h1>Unit</h1>
 
+
+
 {% for unit in unit_list %}  <!--model name (Unit) and the view type (ListView) gives name-->
-<h2>{{unit.title}}</h2>
+<a href="{% url 'unit_detail' unit.unit_slug %}">unit content link test</a>  <!-- class="unit-link" -->
+<h2>{{unit.unit_title}}</h2>
 <p>{{unit.excerpt}}</p>
 <p>Author: {{unit.author}}</p>
 <p>module_id: {{unit.module_id }}</p>

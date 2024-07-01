@@ -54,6 +54,11 @@ footer a {
     color: inherit;
 }
 
+#logo {
+    text-align: left;
+    padding-left: 20px;
+}
+
 #logo-footer {
     font-size: 5%;
 }
@@ -117,47 +122,50 @@ footer {
     min-width: 0;
   }*/
 
-.button-module {
-    background-color: #d3d3d3;
-    color: black;
-    border: 1px solid black;
-    padding: 3px 7px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    /* font-weight: bold; */
-    margin: 0px 0px;
-    cursor: pointer;
-    border-radius: 0px;
-    float: none;
-}
-
-.button:hover {
-    background-color: white;
-    transition-duration: 0.4s;
-}
-
-.button-unit {
-    background-color: black;
-    color: white;
-    border: 1px solid black;
-    padding: 3px 7px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    /* font-weight: bold; */
-    margin: 0px 0px;
-    cursor: pointer;
-    border-radius: 20px;
-    float: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  /* Did not help to center the unit underneath its module */
-}
 
 /* opacity: 1 button button-theory button button-equation button button-test */
+
+/* Code snippet "button group" from 3W Schools https://www.w3schools.com/howto/howto_css_button_group.asp */
+.btn-group button {
+    background-color: white; /* Green background */
+    border: 1px solid black; /* Green border */
+    color: black; /* White text */
+    padding: 12px 24px; /* Some padding */
+    margin: 2px 4px;
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: #80d3ff;
+  }
+/* END OF: Code snippet "button group" */
+
+
+/* Code snippet "button situ-aware" from 3W Schools https://www.w3schools.com/howto/howto_css_button_group.asp */
+.situ-aware-button {
+    background:none; 
+    border:none;     
+}
+
+.situ-aware-button:hover{
+    /* background-color: #80d3ff; */
+    font-weight: bold;
+}
+/* END OF: Code snippet "button sitaware" */
+  
 
 /* Google fonts: "IBM Plex Sans". Use value: 400*/
 /* https://fonts.google.com/specimen/IBM+Plex+Sans */

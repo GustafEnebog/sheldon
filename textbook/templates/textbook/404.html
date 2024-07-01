@@ -1,9 +1,28 @@
+{% extends 'base.html' %}
 
-{% block 404 %}
-    <!-- https://learndjango.com/tutorials/customizing-django-404-and-500-error-pages -->
-    <h2>404 Page not found</h2>
-    <h1>Bazinga!!</h1>
-    <img src="textbook/static/images/sheldon-you-shouldent-be-here-404.jpg" align="center"
-        alt="Sitcom character Sheldon Cooper">
+{% block content %}
+<style>
+    h1 {
+        color: white;
+    }
 
+    body {
+        background-color: black;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <h1>Bazinga!!</h1>
+            <h1>Error 404: Not Found</h1>
+            <img src="static/images/sheldon-bazinga-404.jpg" align="center"
+                alt="Sitcom character Sheldon Cooper">
+            <div>
+                <a href="{% url 'home' %}" class="btn btn-signup btn-lg">
+                    Go to Home Page
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
