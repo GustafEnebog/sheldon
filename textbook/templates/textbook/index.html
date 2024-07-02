@@ -1,45 +1,20 @@
 {% extends 'textbook/base.html' %}
 
+
 <!--Syllabus-->
 {% block syllabus %}
 <!-- <h1>Syllabus</h1> -->
-
 {% for unit in unit_list %}  <!--model name (Unit) and the view type (ListView) gives name-->
 <div class="btn-group">
-    <a href="{% url 'unit_detail' unit.unit_slug %}">
-        <button type="button" onclick="{{unit.unit_title}}">{{unit.unit_title}}</button>
-    </a>
+    <button type="button" onclick="{{unit.unit_title}}">{{unit.unit_title}}</button>
 </div>
 {% endfor unit%}
-
 {% endblock syllabus %}
-
-<!--Unitcontent-->
-{% block unitcontent %}
-<h1>Unit</h1>
-
-
-
-{% for unit in unit_list %}  <!--model name (Unit) and the view type (ListView) gives name-->
-<a href="{% url 'unit_detail' unit.unit_slug %}">unit content link test</a>  <!-- class="unit-link" -->
-<h2>{{unit.unit_title}}</h2>
-<p>{{unit.excerpt}}</p>
-<p>Author: {{unit.author}}</p>
-<p>module_id: {{unit.module_id }}</p>
-<p>unit_slug: {{unit.unit_slug}}</p>
-<p>category: {{unit.category}}</p>
-<p>unit_title: {{unit.unit_title}}</p>
-<p>content: {{unit.content}}</p>
-<p>created_on: {{unit.created_on}}</p>
-<p>status_unit: {{unit.status_unit }}</p>
-<p>created_on: {{unit.created_on}}</p>
-{% endfor %}
-
-
-{% endblock unitcontent %}
+<!--END OF Syllabus-->
 
 
 <!--Footer-->
-{% block copyright %}
+{% block footer %}
     Copyright 2024 Gustaf Enebog (index code)
 {% endblock %}
+<!-- END OF Footer-->

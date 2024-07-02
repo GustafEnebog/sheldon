@@ -15,38 +15,9 @@ class Unit(generic.ListView):
     template_name = "textbook/index.html"
     #paginate_by = 3
     context_object_name = "unit_list"
-    
-
-class Syllabus(generic.ListView):
-    # model = Unit # Earlier: Textbook but it should be a model
-    queryset = Syllabus.objects.filter(status_syllabus=1)  # queryset = Unit.objects.all()
-    template_name = "textbook/index.html"
-    # paginate_by = 3
-    context_object_name = "unit_list"
 
 
-def unit_detail(request, slug):
-    """
-    Display an individual :model:`textbook.Unit`.
 
-    **Context**
-
-    ``unit``
-        An instance of :model:`textbook.Unit`.
-
-    **Template:**
-
-    :template:`textbook/unit_detail.html`
-    """
-
-    queryset = Unit.objects.filter(status=1)
-    unit = get_object_or_404(queryset, slug=unit_slug)
-
-    return render(
-        request,
-        "textbook/unit_detail.html",
-        {"unit": unit_slug}, # unit_slug> or slug> ?
-    )
 
 
 def handler404(request, exception):
