@@ -115,7 +115,11 @@
                 <div style="background-color:Fuchsia">
                     <div>
                         {% block syllabus %}
-                        Syllabus in base at least
+                        <div class="btn-group">
+                            <a href="{% url 'UnitContent'%}">
+                                <button type="button" onclick="{{unit.unit_title}}">Back to Syllabus</button>
+                            </a>
+                        </div>
                         {% endblock syllabus %}
                     </div>
                 </div>

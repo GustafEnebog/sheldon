@@ -437,7 +437,7 @@ x
   - equations
   - qoutes
   - links
-  - eguations
+  - equations
   - x
   - x
   - x
@@ -897,6 +897,7 @@ The following devices and browsers were used for manual & responsive UI testing.
 
 | Bug | Fix |
 | --- | --- |
+| ‘name conflict’ error bug: The detailed View (unfortunatly named "Unit" which was the same as the name of a model) would throw a "Not found" | Changing the name of the view (to: UnitListView) so that it would no longer be the same as the model name (keeping the name for the model: Unit) |
 | ‘Add a Place’ error bug: if a user tried to add a duplicate place they would receive an error in the form and an error modal. | Using the CSS shown below to hide any form validation messages, and just have the main modal message. |
 | ‘Google icons loading time’ error bug: The loading time for the seven Google font Material Symbol (Variable Icon font) is ca 3 min (loading time increase linearly with number of icons on the page so is ca 30 min for one single icon). | Fill in Fix here. |
 
