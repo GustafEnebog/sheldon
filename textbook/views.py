@@ -9,7 +9,7 @@ from .models import Syllabus
 # DELETE do not need it anymore: def my_textbook(request):
 # DELETE do not need it anymore:     return HttpResponse("Hello, Textbook!")
 
-class Unit(generic.ListView):
+class UnitListView(generic.ListView):
     # model = Unit # Earlier: Textbook but it should be a model
     queryset = Unit.objects.filter(status_unit=1)  # queryset = Unit.objects.all()
     template_name = "textbook/index.html"
@@ -17,7 +17,21 @@ class Unit(generic.ListView):
     context_object_name = "unit_list"
 
 
-
+def unit_detail(request, unit_slug):
+    """
+    Display an individual :model:`blog.Post`.
+    **Context**
+    ``post``
+        An instance of :model:`blog.Post`.
+    **Template:**
+    :template:`blog/post_detail.html`
+    """
+    # unit = Unit.objects.get(slug=unit_slug)
+    # queryset = Post.objects.filter(status=1)
+    # unit = Unit.objects.get(slug=unit_slug)
+    unit = get_object_or_404(Unit, unit_slug=unit_slug)  # unit instead of queryset
+    print("this is Unit in detail view = ",unit)
+    return render(request, "textbook/singel-unit-display.html", {"unit": unit},)
 
 
 def handler404(request, exception):

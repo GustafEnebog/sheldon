@@ -1,0 +1,12 @@
+{% extends 'textbook/base.html' %}
+
+
+<!--Unit-->
+{% block unit %}
+<h1>Unit</h1>
+<p>unit_title: {{unit.unit_title}}</p>
+<p>Author: {{unit.author}}</p>
+<p>content: {{unit.content}}</p>
+<a href="{% url 'UnitContent'%}">Back </a>
+{% endblock unit %}
+<!--END OF Unit-->

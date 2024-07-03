@@ -41,7 +41,7 @@
     <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}" />
     <!--Custom CSS, Placed AFTER bootstrap imported stylesheet in order to take precidence over it when we want to customise (override bootstrap)-->
     <!-- DELETE (not working now but did work in PP4): <link rel="stylesheet" href="{% static 'css/style.css' %}">-->
-    <link rel="stylesheet" href="{% static 'style/css/style.css' %}>" />
+    
     <!-- DELETE href="textbook/static/css/style.css"-->
     <!--Google font Chevron Left, Chevron Right, Chevron Up and Chevron Down-->
     <link rel="stylesheet"
@@ -65,7 +65,9 @@
             </div>
             <div class="col-sm-6">  <!-- class="col-6 ps-0"  -->
                 <div style="background-color:mediumpurple">
-                    <img src="static/images/usc-logo.png" align="left" alt="University of Southern California logo"
+                    <!-- <img src="static/images/usc-logo.png" align="left" alt="University of Southern California logo"
+                        style="width:100%;max-width:250px"> -->
+                        <img src="{% static  'images/usc-logo.png'%}" align="left" alt="University of Southern California logo"
                         style="width:100%;max-width:250px">
                 </div>
             </div>
@@ -130,7 +132,10 @@
             <div class="col-sm-3 ps-0">
                 <div style="background-color: Gainsboro">
                     <p >Been here</p>  <!-- hidden -->
-                    <input type="checkbox" id="unit-state-1" name="unit-state-1" value="Understood">
+
+                    <input type="checkbox" id="unit-state-1" name="unit-state-1" value="Understood" onclick="displayDate()">
+                    <p id="demo"></p>
+
                     <label for="unit-state-1">Read</label><br>
                     <input type="checkbox" id="unit-state-2" name="unit-state-2" value="Understood">
                     <label for="unit-state-2">Understood</label><br>
@@ -153,6 +158,9 @@
                 <div style="background-color:DarkGray">
                     <div>
                         <p>This is where the unit should go!</p>
+                        {% block unit %}
+                        Unit in base at least
+                        {% endblock unit %}
                     </div>
                     <!-- Google font Add Circle -->
                     <span class="material-symbols-outlined">
@@ -238,8 +246,8 @@
 
 
     <!--Javascript file-->
-    <script src="sheldon/static/js/script.js"></script>     <!--DELETE one of these later!!!-->
-    <link rel="scriptfile" href="{% static 'js/script.js' %}>" />
+    <!-- <link rel="scriptfile" href="{% static 'js/script.js' %}>" /> -->
+    <script src="{% static 'js/script.js' %}"></script>
 
 </body>
 </html>

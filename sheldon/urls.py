@@ -20,8 +20,8 @@ from django.urls import path, include
 #DELETE: we do no longer need this: from textbook import views as textbook_views
 
 urlpatterns = [
-    path("", include("textbook.urls"), name="textbook-urls"),  #DELETE change this: path('textbook/', textbook_views.my_textbook, name='textbook'),   
+    path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
     path('summernote/', include('django_summernote.urls')),
-    path('admin/', admin.site.urls),
+    path("", include("textbook.urls"), name="textbook-urls"),  #DELETE change this: path('textbook/', textbook_views.my_textbook, name='textbook'),   
 ]

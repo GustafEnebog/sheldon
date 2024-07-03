@@ -5,5 +5,6 @@ from django.urls import path
 
 
 urlpatterns = [
-    path('', views.Unit.as_view(), name='UnitContent'), # UnitContent is a view
+    path('', views.UnitListView.as_view(), name='UnitContent'), # UnitContent is a view
+    path('<slug:unit_slug>/', views.unit_detail, name="unit_detail"),
 ]
