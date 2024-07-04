@@ -59,6 +59,8 @@ class UnitAdmin(SummernoteModelAdmin):
     #status_unit = models.IntegerField(choices=STATUS, default=0)
 
 
+
+
 #@admin.register(UserProgress)
 #class UserProgressAdmin(SummernoteModelAdmin):
 

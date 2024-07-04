@@ -3,11 +3,11 @@
 {% block content %}
 <style>
     h1 {
-        color: white;
+        color: black;
     }
 
     body {
-        background-color: black;
+        background-color: white;
     }
 </style>
 <div class="container">
@@ -15,10 +15,10 @@
         <div class="col-md-8 mt-3 offset-md-2">
             <h1>Bazinga!!</h1>
             <h1>Error 404: Not Found</h1>
-            <img src="static/images/sheldon-bazinga-404.jpg" align="center"
+            <img src="{% static ‘images/sheldon-bazinga-404.jpg’ %}" align="center"
                 alt="Sitcom character Sheldon Cooper">
             <div>
-                <a href="{% url 'home' %}" class="btn btn-signup btn-lg">
+                <a href="{% url 'UnitContent' %}" class="btn btn-signup btn-lg">
                     Go to Home Page
                 </a>
             </div>
