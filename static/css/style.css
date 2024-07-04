@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+/* used to denote code using back-tics <`> in mark down. So this CSS rule is for the README.md */
+code {
+    color: #ff8400;
+  }
+
 /* General styles */
 body {
     min-height: 100vh;

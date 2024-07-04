@@ -1,149 +1,3 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome Gustaf Enebog,
-
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 28, 2024**
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**May 28 2024:** Fix Mongo and Links installs
-
-**April 26 2024:** Update node version to 16
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # UX Design
@@ -159,19 +13,19 @@ Add that I as a user has added the users!?
 Relying on Djangos Primary keys
 Info on autoslug used below: https://django-autoslug.readthedocs.io/en/latest/
 
-# SHELDON
+![Sheldon logo](static/images/Sheldon-logo.png)
 
 ![amiresponsive-screenshot.png](documentation/amiresponsive-screenshot.png)
 
 View the live site [here](https://magical-places-london-7d2df0d61638.herokuapp.com/).
 
-## Introduction
+# INTRODUCTION
 
 **Sheldon** is a Learning Managment System (LMS) app for Educational Institutions/Course Provider to place their content and students to access and learn from this content.
 
 Special attention has been given to the UX of the app given special care to give the student a good overview and easy navigation of the course content to make the student not feeling lost in all the course content!
 
-### Project Goals
+## Project Goals
 
 > There seeds to the ideas for Sheldon are two:
 
@@ -183,17 +37,17 @@ Special attention has been given to the UX of the app given special care to give
 
 How do I develope a LMS that provide improves on these features to the user?
 
-## Agile Development
+# AGILE DEVELOPMENT
 
-### User Stories
+## User Stories
 
 A Kanban board in Github projects was used for the Agile development process - see the board [here](https://github.com/users/timgoalen/projects/3).
 
 ‘Epics’ were broken down into ‘User Stories’, which were further broken down into ‘Tasks’.
 
-## User Experience (UX) Design
+# USER EXPERIENCE (UX)
 
-### Naming
+## Naming
 
 The name for the app was chosen to be "SHELDON", an homage to my favorit character Brainiac student/professor Sheldon Cooper and his group of academic friends in the popular sitcom "Big Bang Theory".
 
@@ -210,13 +64,13 @@ The app naming-ideation started with logic yet too generic and thus ultimatly bo
 
 A second, unintentional, quality of the name Sheldon is that it associates to Shell (in the meaning of a software shell) which the SHELDON app realy is, a shell for the course content.
 
-### Weakspots in Code Institute LMS
+## Weakspots in Code Institute LMS
 
 Cannot open a module in a new tab once you are at a module.
 Lack of timestamps and content description (so that I also can search the videos)
 Difficult to binge watch (you need to "close fullscreen", "scroll to next-button (or lesson)", "click start" and finally "click fullscreen! that is foour steps between each video)
 
-### Layout and Wireframes
+## Layout and Wireframes
 
 Low-fidelity wireframes were used to test the design before building the site.
 
@@ -252,21 +106,21 @@ Add a Place page:
 
 ![add-place-page-wireframe.png](documentation/add-place-page-wireframe.png)
 
-### Navigation
+## Navigation
 
 ![navigation-diagram.png](documentation/navigation-diagram.png)
 
-### Data Schema
+## Data Schema
 
 ![data-schema.png](documentation/data-schema.png)
 
 note: a separate 'Favourite' model was created for the purpose of being able to sort the users Favourites chronologically.
 
-### Google Maps JavaScript Flow Diagrams
+## Google Maps JavaScript Flow Diagrams
 
 One of the biggest challenges faced while building this site is the implementation of the Google Places photos. 
 
-The first approach was to save to the database a URL obtained with the `getURL()` method.
+The first approach was to save to the database a URL obtained `with` the `getURL()` method.
 That problem in this approach is that these URLs would expire after a few days,  giving a 403 error message when trying to display the photo. 
 
 Google `photo_reference` data is no longer supplied with the JavaScript API, and there are new Google terms and conditions that don’t allow a `photo_reference` to be cached, and instruct the developer get a new link every time, using a `PlaceDetails` request.  
@@ -284,7 +138,7 @@ The Places objects are sent to the HTML template as a JSON array of objects. Jav
 
 ![home-page-google-api-schema.png](documentation/home-page-google-api-schema.png)
 
-### Colour Scheme
+## Colour Scheme
 The color scheme is very neutral where colors serve as much in the role of color coding as accent colors.
 
 ![Color Schem all](images-for-readme/color-theme-all.jpg)
@@ -314,7 +168,7 @@ The unit categories are distinguisehed by using shape instead of color for the s
 
 Contrast accessibility was checked for with [Eightshapes Contrast Grid](https://contrast-grid.eightshapes.com/) and some of the originally chosen colours were darkened to improve their contrast ratio.
 
-### Typography and app logo
+## Typography and app logo
 
 The Raleway typeface (medium 500) is used for the whole app.  
 
@@ -334,9 +188,10 @@ Furthermore, Medium 500 has been used instead of the Regular 400 since recent re
 
 
 
-## Features
+# FEATURES
 
-![ERD Sheldon](static/images/ERD.jpg)
+The database models are implemented according to the below Entity Relationship Diagram (ERD) With the exception for that I use the  module_id (instead of the module_slug as planned in the ERD) as a foreign key in the implementation.
+![ERD Sheldon](static/images/database-erd.png)
 
 This feature is good for all students but especially important for students with a neurodivergent diagnosis such as Asperger syndrome where the structure need to be extremely clear and distinct.  
 ![home-page-screenshot.png](assets/images/sheldon-interface.jpg)
@@ -352,12 +207,12 @@ THEME: STUDENT AID FEATURES > EPIC: FEEDBACK
 THEME: RELEASE > EPIC: TESTING
 THEME: RELEASE > EPIC: DEPLOYMENT
 
-### Name/logo of Educational Institution (Header)
+## Name/logo of Educational Institution (Header)
 x
 
-#### Login/Logout (Header)
+### Login/Logout (Header)
 X
-### Curriculum with Modules and Units (Header)
+## Curriculum with Modules and Units (Header)
 X
 ![add-place-screencapture.gif](documentation/add-place-screencapture.gif)
 
@@ -368,10 +223,10 @@ notes:
     - If the user had the ability to delete places that were already commented on, other users would lose their comments and lose access to the place if it was in their favourites list.
 - A fallback image was added for places that don’t have a corresponding Google image.
 
-### Pace Control (Header)
+## Pace Control (Header)
 X
 
-### Unit (Main)
+## Unit (Main)
 
 ![list-page-screenshot.png](documentation/list-page-screenshot.png)
 
@@ -390,20 +245,20 @@ Places can be favourited/unfavourited by clicking on the heart icon.
 •	Etc.
 
 
-### Two level deep expansion/collapse text
-#### Expansion text
+## Two level deep expansion/collapse text
+### Expansion text
 Psycological positive aspect of wanting to click to reveal whats underneath
-#### Expand/Collapse text (accordian)
-### Situational Awarenes
+### Expand/Collapse text (accordian)
+## Situational Awarenes
 These checkboxes rewards the user with a satisfactory sense of progress and control when he can click away "...one more unit", kind of reading "just one more page" in a good book!  
-### Clip Board
-#### Add note
-#### Edit note
-#### Delete note
-### Feedback
+## Clip Board
+### Add note
+### Edit note
+### Delete note
+## Feedback
 
 
-### Footer
+## Footer
 
 The detail page is where the user can:
 
@@ -413,29 +268,29 @@ The detail page is where the user can:
 - view the number of comments
 
 
-### Authentication
+## Authentication
 
-#### Sign Up
-
-x
-
-#### Log In
+### Sign Up
 
 x
 
-#### Log Out
+### Log In
 
 x
 
-### 404 Page
+### Log Out
 
 x
 
-### 500 Page
+## 404 Page
 
 x
 
-## Features to Implement in the Future (Out of scoop features)
+## 500 Page
+
+x
+
+# FEATURES TO IMPLEMENT IN THE FUTURE (Out of scoop features)
 - Types of unit content
   - Video
   - image
@@ -485,7 +340,7 @@ In general, the code could easily be repurposed to create similar sites with a d
 
 
 
-## Design prinicples Used
+# DESIGN PRINCIPLES USED
 
 - x:
     - Python
@@ -508,7 +363,7 @@ In general, the code could easily be repurposed to create similar sites with a d
 - [Agile](https://agilemanifesto.org/) - as process.
 - 
 
-## Technologies Used
+# TECHNOLOGIES USED
 
 - Languages:
     - Python
@@ -548,12 +403,12 @@ In general, the code could easily be repurposed to create similar sites with a d
 - [W3C Markup Validator](https://validator.w3.org/) - to test the HTML code.
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator) - to test the CSS code.
 
-### APIs Used
+## APIs Used
 
 - [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview) - to run the home page map.
 - [Google Places API](https://developers.google.com/maps/documentation/places/web-service/overview) - to get details and photos from place searches.
 
-### Python Packages Used
+## Python Packages Used
 
 - [django-allauth](https://docs.allauth.org/en/latest/index.html) - for user authentication.
 - [gunicorn](https://gunicorn.org/) - as the HTTP server that allows Django to run on Heroku.
@@ -561,9 +416,9 @@ In general, the code could easily be repurposed to create similar sites with a d
 - [dj_database_url](https://pypi.org/project/dj-database-url/) - to allow the use of the `DATABASE_URL` environment variable inside Django.
 - [Coverage.py](http://Coverage.py) - to measure test coverage of the Python code.
 
-## Testing
+# TESTING
 
-### Automated Testing
+## Automated Testing
 
 **Python Unit Tests**
 
@@ -671,14 +526,14 @@ A single ‘redundant link’ error was left in the place-detail.html: if is a u
 
 Early testing with the WAVE tool flagged up insufficient contrast in some of the colours, which were then changed to meet the guidelines.
 
-### User Stories Testing
+## User Stories Testing
 
 All user stories were tested to confirm that they meet their Acceptance Criteria. The following have all PASSED.
 
 (View the EPICS, User Stories, Acceptance Criteria and Tasks on the GitHub [Kanban Board](https://github.com/users/GustafEnebog/projects/1/views/1?layout=board).
 
 
-#### THEME: Administration > EPIC: User Account
+### THEME: Administration > EPIC: User Account
 
 - As a **user** I can **sign up and log in** to the site to **View Modules/Units with pace control, check "Situational Awareness"-boxes, add notes on "Clipboard" and give "feedback"**.  
 
@@ -688,7 +543,7 @@ All user stories were tested to confirm that they meet their Acceptance Criteria
 **AC3** Then a user can sign in with Social Network -<span style="color:yellowgreen;"> **PASS**</span>  
 
 
-#### THEME: Administration > EPIC: Admin
+### THEME: Administration > EPIC: Admin
 
 - As an **admin** I can **create, read, update and delete (CRUD) Modules/Units**, to **create the content for a course**.  
 
@@ -716,7 +571,7 @@ All user stories were tested to confirm that they meet their Acceptance Criteria
 **AC5** Given a logged in user, they can "populate" the selected modules with selected number of units for a course -<span style="color:yellowgreen;"> **PASS!**</span>  
 
 
-#### THEME: Students and Features > EPIC: Syllabus and Navigation
+### THEME: Students and Features > EPIC: Syllabus and Navigation
 
 - As a **user** I can **view and navigate all Modules and Units in a Syllabus** to easily be able to **see where I currently am at in the Curriculum/course content.**
 
@@ -733,7 +588,7 @@ All user stories were tested to confirm that they meet their Acceptance Criteria
 **AC1**  I can search for Module and Unit *titles* -<span style="color:yellowgreen;"> **PASS**</span>  
 **AC2**  I can search for Module and Unit *contents* -<span style="color:yellowgreen;"> **PASS**</span>  
 
-#### THEME: Students and Features > EPIC: Pace Control
+### THEME: Students and Features > EPIC: Pace Control
 
 - As a **user** I can **set my own deadline and view my pace according to this and the number of "Understood" and "Read" units (See: Situational Awareness), one "Read" count as half of one "understood"** so that **I can see if I am on pace, ahead or behind and by how much based on both the official and user selected deadline.**  
 
@@ -752,7 +607,7 @@ All user stories were tested to confirm that they meet their Acceptance Criteria
 **AC3** View average time on unit before "Understood" checkbox is checked -<span style="color:yellowgreen;"> **PASS**</span>  
 **AC4** View average student time on unit before "Understood" checkbox is checked -<span style="color:yellowgreen;"> **PASS**</span>  
 
-#### THEME: Students and Features > EPIC: Expansion/Collapse text
+### THEME: Students and Features > EPIC: Expansion/Collapse text
 
 - As a **user** I can **click on a plus sign to expand collapsed text (two levels deep)** So that **I can access more in-depth text after having understood the fundamental text first** to the site to.  
 
@@ -768,7 +623,7 @@ All user stories were tested to confirm that they meet their Acceptance Criteria
 **AC3** Users can log out with a Log Out Page -<span style="color:yellowgreen;"> **PASS**</span>  
 
 
-#### THEME: Students and Features > EPIC: Situational Awareness
+### THEME: Students and Features > EPIC: Situational Awareness
 
 - As a **user** I can **view an automaticaly updated "been here"-marks and a last visited-mark in the syllabus and on the unit I am currently visiting**, to easily **see what units I have visited earlier at some point in time**.
 
@@ -794,7 +649,7 @@ All user stories were tested to confirm that they meet their Acceptance Criteria
 **AC2** 'User can view a "bookmark"-mark on units in Syllabus. -<span style="color:yellowgreen;"> **PASS**</span>  
 
 
-#### THEME: Students and Features > EPIC: Clip Board
+### THEME: Students and Features > EPIC: Clip Board
 
 - As a **user** I can **write, edit or delete text on a clipboard**, to **take notes relating to the individual units**.
 
@@ -810,7 +665,7 @@ All user stories were tested to confirm that they meet their Acceptance Criteria
 **AC3** Marked text can be deleted from the unit and clipboard simultaniously by marking the marked text again and clicking delete. -<span style="color:yellowgreen;"> **PASS**</span>  
 
 
-#### THEME: Students and Features > EPIC: Feedback
+### THEME: Students and Features > EPIC: Feedback
 
 - As a **user** I can **give user feedback on each unit by clicking a thumbs up or down icon as well as leave a comment in a text field**, to easily **allow a quality improving feedback loop to the content creators**.
 
@@ -818,7 +673,7 @@ All user stories were tested to confirm that they meet their Acceptance Criteria
 **AC2** The count of thumbs up or down icon can be vied by the admin on the admin page -<span style="color:yellowgreen;"> **PASS**</span>  
 
 
-#### THEME: Release > EPIC: Testing and Error Handling
+### THEME: Release > EPIC: Testing and Error Handling
 
 - Add and update the about text: As a Site Admin, I can create or update the about page content so that it is available on the site.
 
@@ -834,7 +689,7 @@ All user stories were tested to confirm that they meet their Acceptance Criteria
 **AC2**  A 500 page is created and "connected" -<span style="color:yellowgreen;"> **PASS**</span>  
 
 
-#### THEME: Release > EPIC: Deployment
+### THEME: Release > EPIC: Deployment
 
 - As a **developer** I can **deploy to a hosting service**, so that **the site is available to the public**.
 
@@ -846,7 +701,7 @@ All user stories were tested to confirm that they meet their Acceptance Criteria
 
 
 
-### Manual Testing
+## Manual Testing
 
 
 
@@ -896,9 +751,9 @@ The following devices and browsers were used for manual & responsive UI testing.
 - Dell Chromebook 3120
     - Chrome (v103)
 
-## Bugs
+# BUGS
 
-### Fixed Bugs
+## Fixed Bugs
 
 | Bug | Fix |
 | --- | --- |
@@ -913,16 +768,16 @@ The following devices and browsers were used for manual & responsive UI testing.
 }
 ```
 
-### Unfixed Bugs
+## Unfixed Bugs
 
 | Bug |
 | --- |
 | ‘Add a Place’ page: even though the input fields are hidden from user, they could potentially open developer tools and manually modify the form entries, leading to incorrect data. being submitted. |
 | The comments are displayed at the moment without showing any paragraph breaks that can be seen inside the Django admin panel. |
 
-## Deployment
+# DEPLOYMENT
 
-### Forking the GitHub Repository
+## Forking the GitHub Repository
 
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
 
@@ -930,7 +785,7 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 2. At the top right of the Repository, just below the GitHub navbar, click on the "Fork" Button.
 3. You should now have a copy of the original repository in your GitHub account.
 
-### Making a Local Clone
+## Making a Local Clone
 
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/timgoalen/command-line-coffee)
 2. Above the list of files, click "Code".
@@ -964,7 +819,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-r
     - Type `git push`
     - In Heroku, after pushing to Github - if 'automatic deploys' aren't enabled, manually deploy by clicking 'Deploy Branch' in the Manual Deploy section.
 
-### Set up the Google Maps API
+## Set up the Google Maps API
 
 Follow the steps outlined in the Google [documentation](https://developers.google.com/maps/get-started), to:
 
@@ -973,12 +828,12 @@ Follow the steps outlined in the Google [documentation](https://developers.googl
 - Get a Google Maps API key
 - Enable the Maps API and Places API
 
-### Cloudinary
+## Cloudinary
 
 1. Create a [Cloudinary](http://cloudinary.com) account, to host the static files.
 2. Copy your ‘API Environment variable’**.**
 
-### ElephantSQL
+## ElephantSQL
 
 1. Create an [ElephantSQL](https://www.elephantsql.com/) account.
 2. Create a new instance.
@@ -992,7 +847,7 @@ You will also need to add the database to your Django [settings.py](http://seeti
 
 `}`
 
-### Deploy to Heroku
+## Deploy to Heroku
 
 1. Create a [Heroku](https://www.heroku.com/) account.
 2. In the dashboard, click on ‘Create new app’ from the ‘New’ dropdown menu in the top right.
@@ -1009,15 +864,15 @@ You will also need to add the database to your Django [settings.py](http://seeti
 9. In the 'App Connected to GitHub' section, search for the GitHub repository name, select it then click 'connect'.
 10. Finally, either click ‘Enable Automatic Deploys’, or ‘Deploy Branch’ in the ‘Manual deploy’ section.
 
-## Credits
+# References
 
-### Content
+## Content/Credit
 
 The original idea for this site was inspired by a [mumsnet thread](https://www.mumsnet.com/talk/_chat/4775974-most-magical-places-in-london-feeling-so-depressed-to-be-back-help-me-find-some-joy-and-wonder?page=1) asking for recommendations of things to do in London. Some of the demo comments were rephrased from this thread.
 
 All photos come from the Google Places API.
 
-### Code
+## Code
 
 The following docs and tutorials were consulted.
 
@@ -1060,6 +915,6 @@ Getting data from a Django model into javascript:
 - WittCode - [Google Maps JavaScript tutorial](https://www.youtube.com/watch?v=tmdtH1hwlDo)
 - Stack Overflow - [close info window when user clicks anywhere on the map](https://stackoverflow.com/questions/10022873/closing-info-windows-in-google-maps-by-clicking-the-map)
 
-### Acknowledgements
+## Acknowledgements
 
 - My mentor Brian Macharia for his invaluable guidance.
