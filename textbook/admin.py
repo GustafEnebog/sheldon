@@ -61,27 +61,7 @@ class UnitAdmin(SummernoteModelAdmin):
 
 
 
-#@admin.register(UserProgress)
-#class UserProgressAdmin(SummernoteModelAdmin):
 
-    #list_display = ('title', 'slug', 'status')
-    #search_fields = ['title']
-    #list_filter = ('status',)
-    #prepopulated_fields = {'slug': ('title',)}
-    #summernote_fields = ('content',)
-
-    #unit_id = models.ForeignKey(Unit, on_delete=models.CASCADE, related_name="unit_user_progress")  # FK
-    #deadline_set = models.DateTimeField(auto_now_add=True)
-    #pace_set = models.DateTimeField(auto_now_add=True)
-    #pace_you = models.DateTimeField(auto_now_add=True)
-    #last_visited = models.DateTimeField(auto_now_add=True)
-    #been_here = models.BooleanField(max_length=200)
-    #read = models.BooleanField(max_length=200)
-    #understood = models.BooleanField(max_length=200)
-    #bookmark = models.BooleanField(max_length=200)
-    #user_notes = models.CharField(max_length=200)
-    #highlights = models.CharField(max_length=200)
-    #unit_feedback = models.CharField(max_length=200)
 
 
 

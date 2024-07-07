@@ -1,12 +1,4 @@
 
-
-# UX Design
-# Features
-# Technologies
-# Manual Testing Write up
-# Deploymnet
-# References
-
 Add that I as a user has added the users!?
 
 
@@ -19,15 +11,19 @@ Info on autoslug used below: https://django-autoslug.readthedocs.io/en/latest/
 
 View the live site [here](https://magical-places-london-7d2df0d61638.herokuapp.com/).
 
-# INTRODUCTION
+<span style="color:orange;font-weight:700;font-size:22px">
+INTRODUCTION
+</span>
 
 **Sheldon** is a Learning Managment System (LMS) app for Educational Institutions/Course Provider to place their content and students to access and learn from this content.
 
 Special attention has been given to the UX of the app given special care to give the student a good overview and easy navigation of the course content to make the student not feeling lost in all the course content!
 
-## Project Goals
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Project Goals
+</span>
 
-> There seeds to the ideas for Sheldon are two:
+There seeds to the ideas for Sheldon are two:
 
 1. As a University student and later lecturer at University in Math and Aeronautical Engineering I was disatisfied with the current alternatives and envisioned a tool that implementing my two ideas:
   a. Topical modules should be created in different categories, theory, examples, equations, exercies etc. Once modules has been filled with content, creating a new course is as easy as stringing modules together like pearls on a string (in a certain order) in a certain order. The modules are reusable so that Creating a new similar course or modifying the current course is to simply restringing some the modules and perhaps creating a few new ones. 
@@ -37,21 +33,29 @@ Special attention has been given to the UX of the app given special care to give
 
 How do I develope a LMS that provide improves on these features to the user?
 
-# AGILE DEVELOPMENT
+<span style="color:orange;font-weight:700;font-size:22px">
+AGILE DEVELOPMENT
+</span>
 
-## User Stories
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+User Stories
+</span>
 
 A Kanban board in Github projects was used for the Agile development process - see the board [here](https://github.com/users/timgoalen/projects/3).
 
 ‘Epics’ were broken down into ‘User Stories’, which were further broken down into ‘Tasks’.
 
-# USER EXPERIENCE (UX)
+<span style="color:orange;font-weight:700;font-size:22px">
+USER EXPERIENCE (UX)
+</span>
 
-## Naming
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Naming
+</span>
 
-The name for the app was chosen to be "SHELDON", an homage to my favorit character Brainiac student/professor Sheldon Cooper and his group of academic friends in the popular sitcom "Big Bang Theory".
+The name for the app was chosen to be "SHELDON", an homage to my favorit character, Brainiac and phD student Sheldon Cooper and his group of academic friends in the popular sitcom "Big Bang Theory".
 
-The app naming-ideation started with logic yet too generic and thus ultimatly boring names that did not stuck to the memory. Thinking in terms of less generic and more personal theme accociated names led to the name "Einstein". This name however feelt to predictable yet it lead to think about alternative people with a similar quality. The name "Sheldon" is similar to "Eistein" yet less mainstream and less used making it more unique. For people not familiar with the TV-character it simply becomes a name.
+The app naming-ideation started with logic yet too generic and thus ultimatly boring names that did not stuck in memory. Thinking in terms of less generic and more personal theme accociated names led to the name "Einstein". This name however feelt to predictable and common yet it lead to think about alternative people with a similar quality. The name "Sheldon" is similar to "Eistein" yet less mainstream and less used making it more unique. For people not familiar with the TV-character it simply becomes a name.
 
 | Name          | Short/Easy to say | Descriptive/associative | Non-generic | Memorable | Emotional/Personal | Emotional/Personal | 
 |:------------- | :---- | :----: | :----: | :----: | :----: | :----: |
@@ -64,13 +68,17 @@ The app naming-ideation started with logic yet too generic and thus ultimatly bo
 
 A second, unintentional, quality of the name Sheldon is that it associates to Shell (in the meaning of a software shell) which the SHELDON app realy is, a shell for the course content.
 
-## Weakspots in Code Institute LMS
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Weakspots in Code Institute LMS
+</span>
 
 Cannot open a module in a new tab once you are at a module.
 Lack of timestamps and content description (so that I also can search the videos)
 Difficult to binge watch (you need to "close fullscreen", "scroll to next-button (or lesson)", "click start" and finally "click fullscreen! that is foour steps between each video)
 
-## Layout and Wireframes
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Layout and Wireframes
+</span>
 
 Low-fidelity wireframes were used to test the design before building the site.
 
@@ -106,17 +114,23 @@ Add a Place page:
 
 ![add-place-page-wireframe.png](documentation/add-place-page-wireframe.png)
 
-## Navigation
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Navigation
+</span>
 
 ![navigation-diagram.png](documentation/navigation-diagram.png)
 
-## Data Schema
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Data Schema
+</span>
 
 ![data-schema.png](documentation/data-schema.png)
 
 note: a separate 'Favourite' model was created for the purpose of being able to sort the users Favourites chronologically.
 
-## Google Maps JavaScript Flow Diagrams
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Google Maps JavaScript Flow Diagrams
+</span>
 
 One of the biggest challenges faced while building this site is the implementation of the Google Places photos. 
 
@@ -138,10 +152,14 @@ The Places objects are sent to the HTML template as a JSON array of objects. Jav
 
 ![home-page-google-api-schema.png](documentation/home-page-google-api-schema.png)
 
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Project Goals
+</span>
 ## Colour Scheme
+
 The color scheme is very neutral where colors serve as much in the role of color coding as accent colors.
 
-![Color Schem all](images-for-readme/color-theme-all.jpg)
+![Color Schem all](images-for-readme/color-theme-all.jpg width="200" height="auto")
 
 The black & white (almost black, a very dark grey #212121 and normal white #ffffff) colour scheme of the app is to give a neutral base that does not compete with or clash with, the content (including images and film) or the color coding. The color coding was also limited and somewhat subdued in saturation as to not be overbearing to the all-important course content. 
 Font color has been choosen to be this very dark grey mentioned above. This is actually the color that the font is presented with on the Google Fonts website (observed using a color picker). This color decreases contrast, but only by a little, and has been discovered to be less straining on the eyes.
@@ -168,7 +186,9 @@ The unit categories are distinguisehed by using shape instead of color for the s
 
 Contrast accessibility was checked for with [Eightshapes Contrast Grid](https://contrast-grid.eightshapes.com/) and some of the originally chosen colours were darkened to improve their contrast ratio.
 
-## Typography and app logo
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Typography and app logo
+</span>
 
 The Raleway typeface (medium 500) is used for the whole app.  
 
@@ -182,13 +202,14 @@ The app logo is the name, SHELDON, in capital with the IBM Plex Sans typeface (m
 
 ![Sheldon logo font](images-for-readme/fonts-ibm-plex-sans.jpg)
 
-The conservative choise of limiting the number of fonts to only one is explained by that the app logo in the form of its name "SHELDON" also uses a typeface, and that the Eduational Institution filling Sheldon with their content also would have their logo on the page, most likely in the form of text with a typeface. This would potentially bring the total nr. of typefaces to three, hitting the limit to the "No more than 3 font rule".
+The conservative choise of limiting the number of fonts to only one is explained by that the app logo in the form of its name "SHELDON" also uses a typeface, and that the Eduational Institution filling Sheldon with their content also would have their logo on the page, most likely in the form of text with a typeface. This would potentially bring the total nr. of typefaces to three, hitting the limit to the "No more than 3 font"-rule.
 
 Furthermore, Medium 500 has been used instead of the Regular 400 since recent research has shown that this slightly heavier is the most legible thickness. 
 
 
-
-# FEATURES
+<span style="color:orange;font-weight:700;font-size:22px">
+FEATURES
+</span>
 
 The database models are implemented according to the below Entity Relationship Diagram (ERD) With the exception for that I use the  module_id (instead of the module_slug as planned in the ERD) as a foreign key in the implementation.
 ![ERD Sheldon](static/images/database-erd.png)
@@ -207,12 +228,19 @@ THEME: STUDENT AID FEATURES > EPIC: FEEDBACK
 THEME: RELEASE > EPIC: TESTING
 THEME: RELEASE > EPIC: DEPLOYMENT
 
-## Name/logo of Educational Institution (Header)
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Name/logo of Educational Institution (Header)
+</span>
+
 x
 
 ### Login/Logout (Header)
 X
-## Curriculum with Modules and Units (Header)
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Curriculum with Modules and Units (Header)
+</span>
+
 X
 ![add-place-screencapture.gif](documentation/add-place-screencapture.gif)
 
@@ -245,20 +273,35 @@ Places can be favourited/unfavourited by clicking on the heart icon.
 •	Etc.
 
 
-## Two level deep expansion/collapse text
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Two level deep expansion/collapse text
+</span>
+
 ### Expansion text
 Psycological positive aspect of wanting to click to reveal whats underneath
 ### Expand/Collapse text (accordian)
-## Situational Awarenes
-These checkboxes rewards the user with a satisfactory sense of progress and control when he can click away "...one more unit", kind of reading "just one more page" in a good book!  
-## Clip Board
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Situational Awarenes
+</span>
+
+These checkboxes rewards the user with a satisfactory sense of progress and control when he can click away "...one more unit", kind of reading "just one more page" in a good book!
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Clip Board
+</span>
+
 ### Add note
 ### Edit note
 ### Delete note
-## Feedback
 
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Feedback
+</span>
 
-## Footer
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Footer
+</span>
 
 The detail page is where the user can:
 
@@ -267,8 +310,9 @@ The detail page is where the user can:
 - view the place address
 - view the number of comments
 
-
-## Authentication
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Authentication
+</span>
 
 ### Sign Up
 
@@ -286,11 +330,15 @@ x
 
 x
 
-## 500 Page
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+500 Page
+</span>
 
 x
 
-# FEATURES TO IMPLEMENT IN THE FUTURE (Out of scoop features)
+<span style="color:orange;font-weight:700;font-size:22px">
+FEATURES TO IMPLEMENT IN THE FUTURE (Out of scoop features)
+</span>
 - Types of unit content
   - Video
   - image
@@ -338,9 +386,12 @@ x
 
 In general, the code could easily be repurposed to create similar sites with a different focus in the places being shared (e.g. cycling-cafes/kids activities/rock-climbing centres etc.).
 
-
-
-# DESIGN PRINCIPLES USED
+<span style="color:orange;font-weight:700;font-size:22px">
+TECHNOLOGIES AND DESIGN PRINCIPLES
+</span>
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Design principles used
+</span>
 
 - x:
     - Python
@@ -362,8 +413,9 @@ In general, the code could easily be repurposed to create similar sites with a d
     - CSS3
 - [Agile](https://agilemanifesto.org/) - as process.
 - 
-
+<span style="color:#1591ea;font-weight:700;font-size:20px">
 # TECHNOLOGIES USED
+</span>
 
 - Languages:
     - Python
@@ -403,12 +455,16 @@ In general, the code could easily be repurposed to create similar sites with a d
 - [W3C Markup Validator](https://validator.w3.org/) - to test the HTML code.
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator) - to test the CSS code.
 
-## APIs Used
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+APIs Used
+</span>
 
 - [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview) - to run the home page map.
 - [Google Places API](https://developers.google.com/maps/documentation/places/web-service/overview) - to get details and photos from place searches.
 
-## Python Packages Used
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Python Packages Used
+</span>
 
 - [django-allauth](https://docs.allauth.org/en/latest/index.html) - for user authentication.
 - [gunicorn](https://gunicorn.org/) - as the HTTP server that allows Django to run on Heroku.
@@ -416,9 +472,13 @@ In general, the code could easily be repurposed to create similar sites with a d
 - [dj_database_url](https://pypi.org/project/dj-database-url/) - to allow the use of the `DATABASE_URL` environment variable inside Django.
 - [Coverage.py](http://Coverage.py) - to measure test coverage of the Python code.
 
-# TESTING
+<span style="color:orange;font-weight:700;font-size:22px">
+TESTING
+</span>
 
-## Automated Testing
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Automated Testing
+</span>
 
 **Python Unit Tests**
 
@@ -526,7 +586,9 @@ A single ‘redundant link’ error was left in the place-detail.html: if is a u
 
 Early testing with the WAVE tool flagged up insufficient contrast in some of the colours, which were then changed to meet the guidelines.
 
-## User Stories Testing
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+User Stories Testing
+</span>
 
 All user stories were tested to confirm that they meet their Acceptance Criteria. The following have all PASSED.
 
@@ -701,7 +763,9 @@ All user stories were tested to confirm that they meet their Acceptance Criteria
 
 
 
-## Manual Testing
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Manual Testing
+</span>
 
 
 
@@ -751,9 +815,13 @@ The following devices and browsers were used for manual & responsive UI testing.
 - Dell Chromebook 3120
     - Chrome (v103)
 
+<span style="color:orange;font-weight:700;font-size:22px">
 # BUGS
+</span>
 
-## Fixed Bugs
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Fixed Bugs
+</span>
 
 | Bug | Fix |
 | --- | --- |
@@ -768,16 +836,22 @@ The following devices and browsers were used for manual & responsive UI testing.
 }
 ```
 
-## Unfixed Bugs
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Unfixed Bugs
+</span>
 
 | Bug |
 | --- |
 | ‘Add a Place’ page: even though the input fields are hidden from user, they could potentially open developer tools and manually modify the form entries, leading to incorrect data. being submitted. |
 | The comments are displayed at the moment without showing any paragraph breaks that can be seen inside the Django admin panel. |
 
+<span style="color:orange;font-weight:700;font-size:22px">
 # DEPLOYMENT
+</span>
 
-## Forking the GitHub Repository
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Forking the GitHub Repository
+</span>
 
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
 
@@ -819,7 +893,9 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-r
     - Type `git push`
     - In Heroku, after pushing to Github - if 'automatic deploys' aren't enabled, manually deploy by clicking 'Deploy Branch' in the Manual Deploy section.
 
-## Set up the Google Maps API
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Set up the Google Maps API
+</span>
 
 Follow the steps outlined in the Google [documentation](https://developers.google.com/maps/get-started), to:
 
@@ -828,7 +904,9 @@ Follow the steps outlined in the Google [documentation](https://developers.googl
 - Get a Google Maps API key
 - Enable the Maps API and Places API
 
-## Cloudinary
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Cloudinary
+</span>
 
 1. Create a [Cloudinary](http://cloudinary.com) account, to host the static files.
 2. Copy your ‘API Environment variable’**.**
@@ -847,7 +925,9 @@ You will also need to add the database to your Django [settings.py](http://seeti
 
 `}`
 
-## Deploy to Heroku
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Deploy to Heroku
+</span>
 
 1. Create a [Heroku](https://www.heroku.com/) account.
 2. In the dashboard, click on ‘Create new app’ from the ‘New’ dropdown menu in the top right.
@@ -864,15 +944,21 @@ You will also need to add the database to your Django [settings.py](http://seeti
 9. In the 'App Connected to GitHub' section, search for the GitHub repository name, select it then click 'connect'.
 10. Finally, either click ‘Enable Automatic Deploys’, or ‘Deploy Branch’ in the ‘Manual deploy’ section.
 
-# References
+<span style="color:orange;font-weight:700;font-size:22px">
+# REFERENCES
+</span>
 
-## Content/Credit
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Content/Credit
+</span>
 
 The original idea for this site was inspired by a [mumsnet thread](https://www.mumsnet.com/talk/_chat/4775974-most-magical-places-in-london-feeling-so-depressed-to-be-back-help-me-find-some-joy-and-wonder?page=1) asking for recommendations of things to do in London. Some of the demo comments were rephrased from this thread.
 
 All photos come from the Google Places API.
 
-## Code
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Code
+</span>
 
 The following docs and tutorials were consulted.
 
@@ -915,6 +1001,8 @@ Getting data from a Django model into javascript:
 - WittCode - [Google Maps JavaScript tutorial](https://www.youtube.com/watch?v=tmdtH1hwlDo)
 - Stack Overflow - [close info window when user clicks anywhere on the map](https://stackoverflow.com/questions/10022873/closing-info-windows-in-google-maps-by-clicking-the-map)
 
-## Acknowledgements
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Acknowledgements
+</span>
 
 - My mentor Brian Macharia for his invaluable guidance.
