@@ -59,9 +59,13 @@ class UnitAdmin(SummernoteModelAdmin):
     #status_unit = models.IntegerField(choices=STATUS, default=0)
 
 
+@admin.register(UserProgress)
+class UserProgressAdmin(SummernoteModelAdmin):
 
-
-
+    list_display = ('user_notes', 'user_notes')
+    search_fields = ['user_notes']
+    #list_filter = ('user_notes')
+    prepopulated_fields = {'user_notes': ('user_notes',)}
 
 
 
