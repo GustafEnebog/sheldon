@@ -11,15 +11,15 @@
 <a href="{% url 'UnitContent'%}">Back </a>
 
 <!--Code from walkthrough-->
-{% if "placeholder" in post.featured_image.url %}
+{% if "placeholder" in unit.featured_image.url %}
 <img class="card-img-top" src="{% static 'images/default.jpg' %}"
   alt="placeholder image">
 {% else %}
-<img class="card-img-top" src=" {{ post.featured_image.url }}"
-  alt="{{ post.title }}">
+<img class="card-img-top" src=" {{ unit.featured_image.url }}"
+  alt="{{ unit.title }}">
 {% endif %}
 <!--END OF Code from walkthrough-->
 
-<img src="{% static 'images/definition-of-forces-on-airfoil.png' %}" alt="definition of forces on airfoil" width="200" height=auto>
+<img src="{% static 'images/definition-of-forces-on-airfoil.png' %}" alt="definition of forces on airfoil" width="400" height=auto>
 {% endblock unit %}
 <!--END OF Unit-->

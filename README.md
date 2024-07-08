@@ -9,15 +9,15 @@ Info on autoslug used below: https://django-autoslug.readthedocs.io/en/latest/
 
 ![amiresponsive-screenshot.png](documentation/amiresponsive-screenshot.png)
 
-View the live site [here](https://magical-places-london-7d2df0d61638.herokuapp.com/).
+View the live site [here](https://sheldon-textbook-3b3e2a751d30.herokuapp.com/).
 
 <span style="color:orange;font-weight:700;font-size:22px">
 INTRODUCTION
 </span>
 
-**Sheldon** is a Learning Managment System (LMS) app for Educational Institutions/Course Provider to place their content and students to access and learn from this content.
+**Sheldon** is a Learning Managment System (LMS) app for Educational Institutions. Where a teachers can place course content in a pre-made course template that the students can access.
 
-Special attention has been given to the UX of the app given special care to give the student a good overview and easy navigation of the course content to make the student not feeling lost in all the course content!
+Special attention has been given to the UX of the app given special care to give the student a good overview and easy navigation of the course content so that the student can keep situtional awareness through out the course and not feel overwhelmed or lost!
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Project Goals
@@ -25,9 +25,9 @@ Project Goals
 
 There seeds to the ideas for Sheldon are two:
 
-1. As a University student and later lecturer at University in Math and Aeronautical Engineering I was disatisfied with the current alternatives and envisioned a tool that implementing my two ideas:
-  a. Topical modules should be created in different categories, theory, examples, equations, exercies etc. Once modules has been filled with content, creating a new course is as easy as stringing modules together like pearls on a string (in a certain order) in a certain order. The modules are reusable so that Creating a new similar course or modifying the current course is to simply restringing some the modules and perhaps creating a few new ones. 
-  b. Secondly, to overcome the problems that the pearls has to be stringed together in a certain order (thus concept might be introduced building on topics that not yet has been covered), Wiki-style, hyperlinks should be created within the modules to overcome (I write Wiki-style however the idea actually preceded Wikipedia).
+1. As a University student and later lecturer at University in Math and Aeronautical Engineering I was disatisfied with the current alternatives and envisioned a tool that implemented my two ideas:
+  - a. Topical modules should be created with different categories, theory, examples, equations, exercies etc. Once enough many modules in different categories, creating a new course would be as easy as stringing modules together like pearls on a string in a certain order. Since the modules would not be course specific, they would be reusable and creating a new similar course or modifying a current course would be as simple as to string together a new set of modules in a certian order or, in the case of modifying a course, to delete or add a few modules (perhaps write a few new modules) and perhaps rearrange the order of a few modules.
+  - b. Secondly, introduce the concept of wiki-style hyperlinks (my original idea, I have to say with not so little pride, predates Wikipedia) so that not known or not understood concepts in a module quickly can be looked up in a differenet module before continuing in the current module. This feature would, if not completly overcome but, at least mittigate the catch-22 where two modules might require each other two have been studies before each other. This would represent a break with the linear appraoch where a read a book is read from cover to cover and be more like reading an encyclopedia where you jump back and forth between the different pages.
 
 2. For as good as the Code Institute course content is I do have identified some room for improvement in its Learning Management Platform (see UX-section). By the way this is actually good news for CI since, despite there current high quality, they can become *even* better!
 
@@ -41,7 +41,8 @@ AGILE DEVELOPMENT
 User Stories
 </span>
 
-A Kanban board in Github projects was used for the Agile development process - see the board [here](https://github.com/users/timgoalen/projects/3).
+A Kanban board in Github projects was used for the Agile development process - see the board [here](https://github.com/users/GustafEnebog/projects/6).
+![Kan-Ban board](static/images/kanban-board.jpg)
 
 ‘Epics’ were broken down into ‘User Stories’, which were further broken down into ‘Tasks’.
 
@@ -88,31 +89,14 @@ A large amount of time was invested into figura out the optimal layout meeting t
 
 A difficult and desisive decision was to if the integrated curriculum/timeline should be vertical (along left side of view port) or horizontal (underneath and along the header). It was first desided to have it horisontal on small screens and vertical on larger however when it was realised that the inconsistency between small and large screens would be confusing for users it was decided to make it horizontal on both devices. 
 
-Home page:
+Large screen:
 
-![x](assets/images/wireframe-horiz-1.jpg)
-![x](assets/images/wireframe-horiz-2.jpg)
-![x](assets/images/wireframe-horiz-3.jpg)
-![x](assets/images/wireframe-horiz-4.jpg)
-![x](assets/images/wireframe-horiz-5.jpg)
-![x](assets/images/wireframe-vert-1.jpg)
-![x](assets/images/wireframe-vert-2.jpg)
+![wireframe desktop screen-size](static/images/wireframe-desktop.jpg)
+![wireframe desktop vertical](static/images/wireframe-desktop-vertical.jpg)
 
-List page:
+Small screen:
 
-![list-page-wireframe.png](documentation/list-page-wireframe.png)
-
-Detail page (mobile):
-
-![detail-page-wireframe.png](documentation/detail-page-wireframe.png)
-
-Detail page (tablet):
-
-![detail-page-tablet-wireframe.png](documentation/detail-page-tablet-wireframe.png)
-
-Add a Place page:
-
-![add-place-page-wireframe.png](documentation/add-place-page-wireframe.png)
+![wireframe handy screen-size](static/images/wireframe-handy.jpg)
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Navigation
