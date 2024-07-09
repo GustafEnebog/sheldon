@@ -135,16 +135,19 @@
         <div class="row">
             <div class="col-sm-3 ps-0">
                 <div style="background-color: Gainsboro">
-                    <p >Been here</p>  <!-- hidden -->
+                    <p >Been here</p>  <!-- Make Toggle between hidden and not hidden depending on a fetsch saying user has been on unit or not-->
 
-                    <input type="checkbox" id="unit-state-1" name="unit-state-1" value="Understood" onclick="displayDate()">
-                    <p id="demo"></p>
-
+                    <input type="checkbox" id="unit-state-1" name="unit-state-1" value="Read" onclick="displayDate(); colorCoding()">
+                    <!-- <p id="demo"></p>-->
                     <label for="unit-state-1">Read</label><br>
-                    <input type="checkbox" id="unit-state-2" name="unit-state-2" value="Understood">
+
+                    <input type="checkbox" id="unit-state-2" name="unit-state-2" value="Understood" onclick="displayDate(); colorCoding()">
                     <label for="unit-state-2">Understood</label><br>
-                    <button class="situ-aware-button">Bookmark</button><br>
-                    <button class="situ-aware-button">Clipboard</button>
+
+                    <input type="checkbox" id="unit-state-3" name="unit-state-3" value="Bookmark" onclick="displayDate(); colorCoding()">
+                    <label for="unit-state-3">Bookmark</label><br>
+
+                    <!-- <button class="situ-aware-button">Clipboard</button> -->
                 </div>
             </div>
             <div class="col-1 col-sm-1 ps-0">

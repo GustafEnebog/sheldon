@@ -7,7 +7,7 @@
 {% for unit in unit_list %} 
  <!--model name (Unit) and the view type (ListView) gives name-->
 
-<div class="btn-group">
+<div class="btn-group" id="user-progress-styling">
     <a href="{% url 'unit_detail' unit.unit_slug %}">
         <button type="button" onclick="{{unit.unit_title}}">{{unit.unit_title}}</button>
     </a>

@@ -43,3 +43,18 @@ readFetcher();
 function displayDate() {
     document.getElementById("demo").innerHTML = Date();
 }
+
+// Conditonal colorcoding of units according to user progress from: https://stackoverflow.com/questions/36587177/how-can-i-conditionally-change-css-styles-with-js
+function colorCoding() {
+    if (been_here === 1)
+        document.getElementById("user-progress-styling").style.backgroundColor = "#E5E5E5";
+    else if (read === 1)
+        document.getElementById("user-progress-styling").style.backgroundColor = "#80D3FF";
+    else if (understood === 1)
+        document.getElementById("user-progress-styling").style.backgroundColor = "#40BCFF";
+    else
+    
+    if (bookmark === 1)
+        document.getElementById("user-progress-styling").style.border = "red";
+}
+// END OF: Conditonal colorcoding of units according to user progress from: https://stackoverflow.com/questions/36587177/how-can-i-conditionally-change-css-styles-with-js
