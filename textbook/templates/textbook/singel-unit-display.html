@@ -40,24 +40,14 @@
       <div class="card-body">
         <!-- We want a for loop inside the empty control tags
           to iterate through each comment in comments -->
-        {% for user_notes in UserProgresses %}
+        {% for notes in Note %}
         <div class="p-2 comments
           {% if not comment.approved and comment.author == user %}
           faded{% elif not comment.approved %} d-none{% endif %}">
-          <p class="font-weight-bold">
-            {{ user_notes.author }}
-            <span class="font-weight-normal">
-              {{ user_notes.created_on }}
-            </span> wrote:
-          </p>
+          <p>{{ note.created_on }}</p>
           <div id="comment{{ comment.id }}">
             {{ user_notes.body | linebreaks }}
           </div>
-          {% if not user_notes.approved and user_notes.author == user %}
-          <p class="approval">
-            This note is awaiting approval
-          </p>
-          {% endif %}
         </div>
         <!-- Our for loop ends here -->
         {% endfor %}
@@ -69,17 +59,16 @@
         <div class="col-md-4 card mb-4 mt-3">
           <div class="card-body">
             {% if user.is_authenticated %}
-            <h3>Leave a comment:</h3>
-            <p>Posting as: {{ user.username }}</p>
+            <h3>Make a Note:</h3>
             <form id="commentForm" method="post"
               style="margin-top: 1.3em;">
-              {{ comment_form | crispy }}
+              {{ note_form | crispy }}
               {% csrf_token %}
               <button id="submitButton" type="submit"
-                class="btn btn-signup btn-lg">Submit</button>
+                class="btn btn-signup btn-lg">Save Note</button>
             </form>
             {% else %}
-            <p>Log in to leave a comment</p>
+            <p>Log in to make a note</p>
             {% endif %}
           </div>
         </div>

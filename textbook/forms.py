@@ -5,4 +5,4 @@ from django import forms
 class NotesForm(forms.ModelForm):
     class Meta:
         model = UserProgress
-        fields = ('user_notes')
+        fields = ['user_notes',]

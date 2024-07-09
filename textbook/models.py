@@ -71,3 +71,12 @@ class UserProgress (models.Model):  # CamelCase!?
     user_notes = models.CharField(max_length=200)
     highlights = models.CharField(max_length=200)
     unit_feedback = models.CharField(max_length=200)
+
+
+class Note(models.Model):
+    unit_id = models.ForeignKey(Unit, on_delete=models.CASCADE,
+                             related_name="unit_note")
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE,
+                             related_name="user_note")
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)

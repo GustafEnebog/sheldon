@@ -3,7 +3,7 @@ from django.views import generic
 from .models import Unit # Earlier: Textbook but it should be a model
 # DELETE do not need it anymore: from django.http import HttpResponse
 from .models import Syllabus
-from .forms import NoteForm
+from .forms import NotesForm #Is this correct!!!
 
 # Create your views here.
 
@@ -33,14 +33,14 @@ def unit_detail(request, unit_slug):
     unit = get_object_or_404(Unit, unit_slug=unit_slug)  # unit instead of queryset
     print("this is Unit in detail view = ",unit)
 
-    # UserProgresses = unit.UserProgresses.all().order_by("-created_on")
-    # UserProgress_count = unit.UserProgresses.filter(approved=True).count()
-    UserProgress_form = UserProgressForm()
+    note = unit.unit_note.all().order_by("-created_on")
+    #note_count = unit.unit_note.filter(approved=True).count()
+    note_form = NotesForm()
     
-    return render(request, "textbook/singel-unit-display.html", {"unit": unit},
-        #    "user_notes": user_notes,
-        # "user_notes_count": user_notes_count,
-        #"user_notes_form": user_notes_form,
+    return render(request, "textbook/singel-unit-display.html", {"unit": unit, "note": note, "note_form": note_form},
+        #"note": note,
+        #"note_count": notes_count,
+        #"note_form": note_form,
         )
 
 
