@@ -3,6 +3,7 @@ from django.views import generic
 from .models import Unit # Earlier: Textbook but it should be a model
 # DELETE do not need it anymore: from django.http import HttpResponse
 from .models import Syllabus
+from .forms import NoteForm
 
 # Create your views here.
 
@@ -34,10 +35,12 @@ def unit_detail(request, unit_slug):
 
     # notes = unit.notes.all().order_by("-created_on")
     # note_count = unit.notes.filter(approved=True).count()
+    note_form = NoteForm()
     
     return render(request, "textbook/singel-unit-display.html", {"unit": unit},
         #    "notes": notes,
         # "note_count": note_count,
+        #"note_form": note_form,
         )
 
 
