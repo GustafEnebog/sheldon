@@ -1,5 +1,14 @@
 console.log("The java script file says hello!");
 
+
+function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+  }
+
+  console.log("The java script file says hello!");
+
+
+no
 function beenHereFetcher() {
     // https://www.youtube.com/watch?v=cuEtnrL9-H0&t=138s
     // Fetch for "Been Here"

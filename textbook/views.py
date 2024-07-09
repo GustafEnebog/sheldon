@@ -33,14 +33,14 @@ def unit_detail(request, unit_slug):
     unit = get_object_or_404(Unit, unit_slug=unit_slug)  # unit instead of queryset
     print("this is Unit in detail view = ",unit)
 
-    # notes = unit.notes.all().order_by("-created_on")
-    # note_count = unit.notes.filter(approved=True).count()
-    note_form = NoteForm()
+    # UserProgresses = unit.UserProgresses.all().order_by("-created_on")
+    # UserProgress_count = unit.UserProgresses.filter(approved=True).count()
+    UserProgress_form = UserProgressForm()
     
     return render(request, "textbook/singel-unit-display.html", {"unit": unit},
-        #    "notes": notes,
-        # "note_count": note_count,
-        #"note_form": note_form,
+        #    "user_notes": user_notes,
+        # "user_notes_count": user_notes_count,
+        #"user_notes_form": user_notes_form,
         )
 
 

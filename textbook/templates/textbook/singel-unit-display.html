@@ -26,7 +26,7 @@
   <div class="row">
     <div class="col-12">
       <strong class="text-secondary">
-        <i class="far fa-comments"></i> {{ comment_count }}
+        <i class="far fa-comments"></i> {{ user_notes_count }}
       </strong>
     </div>
     <div class="col-12">
@@ -40,20 +40,20 @@
       <div class="card-body">
         <!-- We want a for loop inside the empty control tags
           to iterate through each comment in comments -->
-        {% for comment in comments %}
+        {% for user_notes in UserProgresses %}
         <div class="p-2 comments
           {% if not comment.approved and comment.author == user %}
           faded{% elif not comment.approved %} d-none{% endif %}">
           <p class="font-weight-bold">
-            {{ comment.author }}
+            {{ user_notes.author }}
             <span class="font-weight-normal">
-              {{ comment.created_on }}
+              {{ user_notes.created_on }}
             </span> wrote:
           </p>
           <div id="comment{{ comment.id }}">
-            {{ comment.body | linebreaks }}
+            {{ user_notes.body | linebreaks }}
           </div>
-          {% if not comment.approved and comment.author == user %}
+          {% if not user_notes.approved and user_notes.author == user %}
           <p class="approval">
             This note is awaiting approval
           </p>
