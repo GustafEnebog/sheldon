@@ -13,69 +13,115 @@
 
 <!--Code from walkthrough-->
 {% if "placeholder" in unit.featured_image.url %}
-<img class="card-img-top" src="{% static 'images/default.jpg' %}"
-  alt="placeholder image">
+<img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
 {% else %}
-<img class="card-img-top" src=" {{ unit.featured_image.url }}"
-  alt="{{ unit.title }}">
+<img class="card-img-top" src=" {{ unit.featured_image.url }}" alt="{{ unit.title }}">
 {% endif %}
 <!--END OF Code from walkthrough-->
 
-<!--Code from walkthrough displaying user notes -->
-  <!-- Displaying count of comments -->
-  <div class="row">
-    <div class="col-12">
-      <strong class="text-secondary">
-        <i class="far fa-comments"></i> {{ user_notes_count }}
-      </strong>
-    </div>
-    <div class="col-12">
-      <hr>
-    </div>
-  </div>
-  <!-- Displaying Comments -->
-  <div class="row">
-    <div class="col-md-8 card mb-4  mt-3 ">
-      <h3>Notes:</h3>
-      <div class="card-body">
-        <!-- We want a for loop inside the empty control tags
-          to iterate through each comment in comments -->
-        {% for notes in Note %}
-        <div class="p-2 comments
-          {% if not comment.approved and comment.author == user %}
-          faded{% elif not comment.approved %} d-none{% endif %}">
-          <p>{{ note.created_on }}</p>
-          <div id="comment{{ comment.id }}">
-            {{ user_notes.body | linebreaks }}
-          </div>
-        </div>
-        <!-- Our for loop ends here -->
-        {% endfor %}
-      </div>
-    </div>
 
-    <!-- from walkthrough Crispy forms -->
-        <!-- Creating New Comments -->
-        <div class="col-md-4 card mb-4 mt-3">
-          <div class="card-body">
-            {% if user.is_authenticated %}
-            <h3>Make a Note:</h3>
-            <form id="commentForm" method="post"
-              style="margin-top: 1.3em;">
-              {{ note_form | crispy }}
-              {% csrf_token %}
-              <button id="submitButton" type="submit"
-                class="btn btn-signup btn-lg">Save Note</button>
-            </form>
-            {% else %}
-            <p>Log in to make a note</p>
-            {% endif %}
-          </div>
-        </div>
-<!-- END OF: from walkthrough Crispy forms -->
+
+<!-- from walkthrough Crispy forms -->
+<!-- Creating New Comments -->
+<div class="col-md-4 card mb-4 mt-3">
+  <div class="card-body">
+    {% if user.is_authenticated %}
+    <!-- <h3>Make a note on this Unit:</h3> -->
+    <form id="commentForm" method="post" style="margin-top: 1.3em;">
+      {{ note_form | crispy }}
+      {% csrf_token %}
+      <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Save Note</button>
+    </form>
+    {% else %}
+    <p>Log in to make a note</p>
+    {% endif %}
   </div>
+</div>
+<!-- END OF: from walkthrough Crispy forms -->
+</div>
 <!--END OF Code from walkthrough displaying user notes -->
 
-<img src="{% static 'images/definition-of-forces-on-airfoil.png' %}" alt="definition of forces on airfoil" width="400" height=auto>
+<img src="{% static 'images/definition-of-forces-on-airfoil.png' %}" alt="definition of forces on airfoil" width="400"
+  height=auto>
 {% endblock unit %}
 <!--END OF Unit-->
+
+
+
+
+
+
+
+
+{% block content %}
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <!-- Post title goes in these h1 tags -->
+                <h1 class="post-title">{{ unit.unit_title }}</h1>
+                <!-- Post author goes before the | the post's created date goes after -->
+                <p class="post-subtitle">{{ unit.author }} | {{ unit.created_on }}</p>
+            </div>
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left  top">
+            <div class="card-body">
+                <!-- The post content goes inside the card-text. -->
+                <!-- Use the | safe filter inside the template tags -->
+                <p class="card-text">
+                    {{ unit.content | safe }}
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Displaying Comments -->
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <h3>Notes:</h3>
+            <div class="card-body">
+                <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+                {% for note in notes %}
+                <div
+                    class="p-2 comments{% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
+                    <p class="font-weight-bold">
+                        {{ note.author }}
+                        <span class="font-weight-normal">
+                            {{ note.created_on }}
+                        </span> wrote:
+                    </p>
+                    <div id="comment{{ comment.id }}">
+                        {{ note.body | linebreaks }}
+                    </div>
+                </div>
+                <!-- Our for loop ends here -->
+                {% endfor %}
+            </div>
+        </div>
+        <!-- Creating New Comments -->
+        <div class="col-md-4 card mb-4  mt-3 ">
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                <h3>Make a note:</h3>
+                <p>Making a note as: {{ user.username }}</p>
+                <form id="commentForm" method="post" style="margin-top: 1.3em;">
+                    {{ note_form | crispy }}
+                    {% csrf_token %}
+                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+                {% else %}
+                <p>Log in to make a note</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

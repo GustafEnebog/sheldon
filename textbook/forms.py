@@ -1,8 +1,8 @@
-from .models import UserProgress
+from .models import Note
 from django import forms
 
 
 class NotesForm(forms.ModelForm):
     class Meta:
-        model = UserProgress
-        fields = ['user_notes',]
+        model = Note
+        fields = ['body',]

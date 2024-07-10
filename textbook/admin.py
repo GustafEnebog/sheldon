@@ -3,6 +3,7 @@ from .models import Syllabus
 from .models import Module
 from .models import Unit
 from .models import UserProgress
+from .models import Note
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -68,6 +69,10 @@ class UserProgressAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'user_notes': ('user_notes',)}
 
 
+@admin.register(Note)
+class NoteAdmin(SummernoteModelAdmin):
+
+    pass
 
 # Register your models here.
 # admin.site.register(Syllabus)

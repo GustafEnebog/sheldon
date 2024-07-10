@@ -3,7 +3,7 @@ from django.views import generic
 from .models import Unit # Earlier: Textbook but it should be a model
 # DELETE do not need it anymore: from django.http import HttpResponse
 from .models import Syllabus
-from .forms import NotesForm #Is this correct!!!
+from .forms import NotesForm
 
 # Create your views here.
 
@@ -27,21 +27,43 @@ def unit_detail(request, unit_slug):
     **Template:**
     :template:`blog/post_detail.html`
     """
+    
+    #comments = post.comments.all().order_by("-created_on")
+    #comment_count = post.comments.filter(approved=True).count()
     # unit = Unit.objects.get(slug=unit_slug)
     # queryset = Post.objects.filter(status=1)
     # unit = Unit.objects.get(slug=unit_slug)
-    unit = get_object_or_404(Unit, unit_slug=unit_slug)  # unit instead of queryset
+    queryset = Unit.objects.filter(status_unit=1)
+    unit = get_object_or_404(queryset, unit_slug=unit_slug)  # unit instead of queryset
     print("this is Unit in detail view = ",unit)
 
     note = unit.unit_note.all().order_by("-created_on")
     #note_count = unit.unit_note.filter(approved=True).count()
-    note_form = NotesForm()
+    notes_form = NotesForm()
     
-    return render(request, "textbook/singel-unit-display.html", {"unit": unit, "note": note, "note_form": note_form},
+    # post = get_object_or_404(queryset, slug=slug)
+    if request.method == "POST":
+        note_form = NotesForm(data=request.POST)
+        if note_form.is_valid():
+            note = note_form.save(commit=False)
+            #note.author = request.user
+            #note.post = post
+            note.save()
+
+    #note_form = notes_form()
+    
+    return render(request, 
+        "textbook/singel-unit-display.html", 
+        {
+            "unit": unit, 
+            "note": note, 
+            #"note_form": note_form,    THIS MIGHT BE SOMETHING TOO CHANGE!!!!
+            "notes_form": notes_form,
+        },
         #"note": note,
         #"note_count": notes_count,
         #"note_form": note_form,
-        )
+    )
 
 
 def handler404(request, exception):

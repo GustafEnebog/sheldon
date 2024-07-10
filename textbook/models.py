@@ -18,10 +18,6 @@ class Syllabus(models.Model):
     deadline_official = models.DateTimeField(auto_now_add=True)
     status_syllabus = models.IntegerField(choices=STATUS, default=0)
 
-    #class Meta:
-    #        ordering = ["-created_on"]
-
-
 
 class Module(models.Model):
     module_id = models.IntegerField(unique=True, null=True)  #PK
@@ -47,7 +43,7 @@ class Unit(models.Model):
     author = models.CharField(max_length=200)
     created_on = models.DateTimeField(auto_now_add=True)
     featured_image = CloudinaryField('image', default='placeholder')
-    content = models.TextField(max_length=200)
+    content = models.TextField(max_length=1000)
     status_unit = models.IntegerField(choices=STATUS, default=0)
 
     #class Meta:
