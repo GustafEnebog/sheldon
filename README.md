@@ -756,31 +756,24 @@ Manual Testing
 
 | Action         | Expected result | Outcome | 
 |:------------- | :---- | :----: | 
-|  open landing/home page | home page loads with available classes cards and basic navigation  | <span style="color:yellowgreen;"> **PASS**</span> |
-|  attemt to sign up by navigating to sign up | sign up page loads and accepts user inputs / user gets email for confirmation  | <span style="color:yellowgreen;"> **PASS**</span> |
-|  attemt to login by navigating to login | login page loads and accepts user input / user is logged in only if both username and password are correct  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to signup / login from the inline link on login / sign up page | user can sign up / log in successfully exactly like the previous two tests  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to recover passowrd by clicking on forgot password | user can recover password by entering the account associated email  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to navigate as a logged in user | user have access to my classes & profile & log out in the navigation  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to fill profile details | user input is accepted in the profile page and the view reflects the changes after save | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to update profile details | user input is accepted in the profile page and the view reflects the changes after save | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to log in as a teacher | user can add classes by navigating to myclasses  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to add a class as a teacher | user can add classes successfully and the added class show up on home page  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to edit a class as a teacher | user can edit only a class that was added by the user successfully and the edited class details reflect on myclasses & home views  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to delete a class as a teacher | user can delete only a class that was added by the user successfully and the deleted class no longer show on myclasses & home views  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to add material to a class as a teacher | user can add material and attach a file to a class that was added by the user successfully and the added materials show on class view  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to edit material to a class as a teacher | user can edit material and attach a new file to a class that was added by the user successfully and the updated materials show on class view  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to delete material from a class as a teacher | user can delete material from a class nd the deleted material no longer show on class view  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to log in as a student | user can join classes  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to join a class as a student | user can join a class with the correct join code and the joined class show on my classes view  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to join same class again as a student | a message show up iforming user that this class is already joined / prevent duplicate join classes | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to view materials in a class as a student | user can view materials in classes | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  attemt to download a material as a student | user can download the selected material by clicking the download button | <span style="color:yellowgreen;"> **PASS**</span> |
-|  attemt to join a class from home page as a student | user redirected to my classes view where the user can join a class | <span style="color:yellowgreen;"> **PASS**</span> |
-|  attemt to join a class from home page as a student | user redirected to my classes view where the user can join a class | <span style="color:yellowgreen;"> **PASS**</span> |
-|  attemt to unjoin a class | cannot be done by normal user / only admin user can perform this action | <span style="color:yellowgreen;"> **PASS**</span> |
-|  attemt to donate any amount with valid card number | user input is accepted when clicking pay if card details are valid | <span style="color:yellowgreen;"> **PASS**</span> |
-|  attemt to donate any amount with invalid card number | user input is not accepted and a message show underneath the card number field to inform user of invalid card number | <span style="color:yellowgreen;"> **PASS**</span> |
+|  Open landing/home page | home page loads with welcome message in place of unit  | <span style="color:yellowgreen;"> **PASS**</span> |
+|  Sign up by navigating to sign up link | Styled sign up page loads and accepts user inputs / user recieves emailconfirmation  | <span style="color:yellowgreen;"> **PASS**</span> |
+|  Login by navigating to login | login page loads and accepts user input / user is logged in upon giving correct username and password  | <span style="color:yellowgreen;"> **PASS**</span>  |
+|  Signup / login from the inline link on login / sign up page | user can sign up / log in successfully exactly like the previous two tests  | <span style="color:yellowgreen;"> **PASS**</span>  |
+|  Recover password by clicking on forgot password | user can recover password by entering the email that is associated to the account  | <span style="color:yellowgreen;"> **PASS**</span>  |
+|  Use and access "Notes" as a logged in user | user have can write new, and have access to previously written, unit specific notes  | <span style="color:yellowgreen;"> **PASS**</span>  |
+|  Click on a unit as a logged in user | user can see the color of the unit-"button" change from white to light grey accordingly to this  | <span style="color:yellowgreen;"> **PASS**</span>  |
+|  Check the "Read"-checkboxes as a logged in user | user can see the color of the unit-"button" change to light blue accordingly to this  | <span style="color:yellowgreen;"> **PASS**</span>  |
+|  Check the "Understood"-checkboxes as a logged in user | user can see the color of the unit-"button" change to a medium blue accordingly to this  | <span style="color:yellowgreen;"> **PASS**</span>  |
+|  Check the "Bookmark" checkboxas as a logged in user | user can see a red border around the unit-"button"  | <span style="color:yellowgreen;"> **PASS**</span>  |
+|  Fill profile details | user input is accepted in the profile page and the view reflects the changes after save | <span style="color:yellowgreen;"> **PASS**</span>  |
+|  Update profile details | user input is accepted in the profile page and the view reflects the changes after save | <span style="color:yellowgreen;"> **PASS**</span>  |
+|  Add Syllabuses, Modules and Units when loged in as an Admin | The changes are reflected in the app  | <span style="color:yellowgreen;"> **PASS**</span>  |
+|  Edit Syllabuses, Modules and Units when loged in as an Admin | The changes are reflected in the app  | <span style="color:yellowgreen;"> **PASS**</span>  |
+|  Delete Syllabuses, Modules and Units when loged in as an Admin | The changes are reflected in the app  | <span style="color:yellowgreen;"> **PASS**</span>  |
+|  Navigate to a Unit | when clicking on a selected user-button I am taken that selected unit | <span style="color:yellowgreen;"> **PASS**</span>  |
+|  Navigate from a Unit back to the Syllabus | when clicking on the return button I am taken back to the Syllabus | <span style="color:yellowgreen;"> **PASS**</span>  |
+
 
 
 

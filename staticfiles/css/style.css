@@ -9,9 +9,13 @@
 }
 
 /* used to denote code using back-tics <`> in mark down. So this CSS rule is for the README.md */
-code {
+#code {
     color: #ff8400;
   }
+
+.footer-push-down {
+    flex: 1 0 auto;
+}
 
 /* General styles */
 body {
@@ -78,7 +82,7 @@ footer a {
 
 /* Main content */
 main {
-    background-color: rgb(76, 0, 255);
+    background-color: rgb(255, 0, 191);
     /* Make main element take up any surplus space to push footer down */
     width: 100%;
     flex: 1 0 auto;
@@ -92,7 +96,7 @@ main {
 
 footer {
     width: 100%;
-    background-color: rgb(255, 0, 191);
+    background-color: black;
 }
 
 .flex-container {

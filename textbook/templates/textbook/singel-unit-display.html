@@ -28,7 +28,7 @@
     {% if user.is_authenticated %}
     <!-- <h3>Make a note on this Unit:</h3> -->
     <form id="commentForm" method="post" style="margin-top: 1.3em;">
-      {{ note_form | crispy }}
+      {{ notes_form | crispy }}
       {% csrf_token %}
       <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Save Note</button>
     </form>
@@ -112,7 +112,7 @@
                 <h3>Make a note:</h3>
                 <p>Making a note as: {{ user.username }}</p>
                 <form id="commentForm" method="post" style="margin-top: 1.3em;">
-                    {{ note_form | crispy }}
+                    {{ notes_form | crispy }}  <!-- Changing this from note_form to notes_form made the form appear! but instead I get error when clicking submit button-->
                     {% csrf_token %}
                     <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>

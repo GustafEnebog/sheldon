@@ -131,7 +131,7 @@
 
     <!-- ---------- Unit ---------- -->
     <!--col-1 to col-12-->
-    <div class=" container-fluid text-center">
+    <div class=" container-fluid text-center" id="footer-push-down" class="main">
         <div class="row">
             <div class="col-sm-3 ps-0">
                 <div style="background-color: Gainsboro">
@@ -164,9 +164,10 @@
             <div class="col-10 col-sm-6 ps-0">
                 <div style="background-color:DarkGray">
                     <div>
-                        <p>This is where the unit should go!</p>
                         {% block unit %}
-                        Unit in base at least
+                        Welcome to:
+                        <p>{{ syllabus.syllabus_title }}</p> <!-- Why does this not comes through!? -->
+                        Let's click on one of the units in the Syllabus above and start learning!
                         {% endblock unit %}
 
                         {% block content %}
@@ -215,6 +216,25 @@
             </div>
         </div>
     </div>
+
+<!-- Code for displaying confirmation message NOT YET WORKING! also on views-->
+    <!-- displaying Django messages -->
+<div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible
+          fade show" id="msg" role="alert">
+          {{ message | safe }}
+          <button type="button" class="btn-close"
+            data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+<!-- END OF Code for displaying confirmation message -->
+
     <!-- ----------END of Unit---------- -->
 
 
@@ -224,7 +244,7 @@
         <div class="container-fluid text-center">
             <div class="row">
                 <div class="col-4 ps-0">
-                    <div style="background-color: Cornsilk">
+                    <div> <!--style="background-color: Cornsilk"-->
                         <!--<p  class="mb-0">Header</p>-->
                         <a href="">
                             <!--<p  Add URL to Sheldon official website</p>-->
@@ -240,7 +260,7 @@
                     </div>
                 </div>
                 <div class="col-8">
-                    <div style="background-color:tan">
+                    <div>  <!-- style="background-color:tan" -->
                         4
                         <p class="m-0 text-center text-white">
                             {% block footer %}

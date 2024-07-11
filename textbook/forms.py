@@ -5,4 +5,4 @@ from django import forms
 class NotesForm(forms.ModelForm):
     class Meta:
         model = Note
-        fields = ['body',]
+        fields = ('body',)
