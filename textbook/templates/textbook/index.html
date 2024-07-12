@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
-{% load static %} <!--MAYBE DELETE I am not 100% sure if this file uses anything from the static folder, if not then this line should be deleted -->
+{% load static %}
+<!--MAYBE DELETE I am not 100% sure if this file uses anything from the static folder, if not then this line should be deleted -->
 {% load crispy_forms_tags %}
 
 <!--Syllabus-->
 {% block syllabus %}
 <!-- <h1>Syllabus</h1> -->
-{% for unit in unit_list %} 
- <!--model name (Unit) and the view type (ListView) gives name-->
-
+{% if unit_list|length < 1 %}
+    <div class="btn-group" id="user-progress-styling">
+        Oops... Something went wrong and there are no units yet to display.
+    </div>
+{% else %}
+{% for unit in unit_list %}
+<!--model name (Unit) and the view type (ListView) gives name-->
 <div class="btn-group" id="user-progress-styling">
     <a href="{% url 'unit_detail' unit.unit_slug %}">
         <button type="button" onclick="{{unit.unit_title}}">{{unit.unit_title}}</button>
@@ -15,12 +20,13 @@
 </div>
 
 {% endfor unit%}
+{% endif %}
 {% endblock syllabus %}
 <!--END OF Syllabus-->
 
 
 <!--Footer-->
 {% block footer %}
-    Copyright 2024 Gustaf Enebog (index code)
+Copyright 2024 Gustaf Enebog (index code)
 {% endblock %}
 <!-- END OF Footer-->

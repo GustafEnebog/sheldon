@@ -9,13 +9,9 @@
 }
 
 /* used to denote code using back-tics <`> in mark down. So this CSS rule is for the README.md */
-#code {
+code {
     color: #ff8400;
   }
-
-.footer-push-down {
-    flex: 1 0 auto;
-}
 
 /* General styles */
 body {
@@ -82,17 +78,48 @@ footer a {
 
 /* Main content */
 main {
-    background-color: rgb(255, 0, 191);
+    background-color: rgb(76, 0, 255);
     /* Make main element take up any surplus space to push footer down */
     width: 100%;
     flex: 1 0 auto;
-    margin-top: 59px;
+    margin-top: 159px; /* 59px;
+    height: 80 vh; */
+}
+
+.flex-parent-element {
+    display: flex;
+    width: 50%;
+}
+  
+.flex-child-element {
+    flex: 1;
+    border: 2px solid blueviolet;
+    margin: 10px;
+}
+
+.flex-child-element:first-child {
+    margin-right: 20px;
 }
 
 .row {
     /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
 }
+
+.flex-parent-element {
+    display: flex;
+    width: 50%;
+  }
+  
+  .flex-child-element {
+    flex: 1;
+    border: 2px solid blueviolet;
+    margin: 10px;
+  }
+  
+  .flex-child-element:first-child {
+    margin-right: 20px;
+  }
 
 footer {
     width: 100%;
@@ -162,7 +189,7 @@ footer {
   }
 /* END OF: Code snippet "button group" */
 
-/* DELETE MAYBE CHECK FIRST IF THEY ARE NOT IN USE!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
 /* Code snippet "button situ-aware" from 3W Schools https://www.w3schools.com/howto/howto_css_button_group.asp */
 .situ-aware-button {
     background:none; 
@@ -189,9 +216,9 @@ footer {
 
 /* <uniquifier>: Use a unique and descriptive class name */
 /* <weight>: Use a value from 100 to 900 */
-.raleway-<uniquifier> {
+.raleway-uniquifier {
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: 600;
     font-style: normal;
 }

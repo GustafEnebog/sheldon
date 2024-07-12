@@ -41,7 +41,7 @@
     <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}" />
     <!--Custom CSS, Placed AFTER bootstrap imported stylesheet in order to take precidence over it when we want to customise (override bootstrap)-->
     <!-- DELETE (not working now but did work in PP4): <link rel="stylesheet" href="{% static 'css/style.css' %}">-->
-    
+
     <!-- DELETE href="textbook/static/css/style.css"-->
     <!--Google font Chevron Left, Chevron Right, Chevron Up and Chevron Down-->
     <link rel="stylesheet"
@@ -49,193 +49,194 @@
 </head>
 
 <body>
-    <!-- ----------Header---------- -->
-    <!-- <header> -->
-    <!--col-1 to col-12-->
-    <div class="container-fluid text-center">
-        <div class="row">
-            <div class="col-sm-4 ps-0">  <!-- class="col-2 ps-0"  -->
-                <div style="background-color: white">
-                    <!--<p  class="mb-0">Header</p>-->
-                    <!-- <a href="index.html">
+    <header>
+        <!-- ----------Header---------- -->
+        <!-- <header> -->
+        <!--col-1 to col-12-->
+        <div class="container-fluid text-center">
+            <div class="row">
+                <div class="col-sm-4 ps-0">
+                    <!-- class="col-2 ps-0"  -->
+                    <div style="background-color: white">
+                        <!--<p  class="mb-0">Header</p>-->
+                        <!-- <a href="index.html">
                         <h1 id="logo">SHELDON</h1>
                     </a>-->
-                    <h1 id="logo">SHELDON</h1>
+                        <h1 id="logo">SHELDON</h1>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-6">  <!-- class="col-6 ps-0"  -->
-                <div style="background-color:mediumpurple">
-                    <!-- <img src="static/images/usc-logo.png" align="left" alt="University of Southern California logo"
+                <div class="col-sm-6">
+                    <!-- class="col-6 ps-0"  -->
+                    <div style="background-color:mediumpurple">
+                        <!-- <img src="static/images/usc-logo.png" align="left" alt="University of Southern California logo"
                         style="width:100%;max-width:250px"> -->
-                        <img src="{% static  'images/usc-logo.png'%}" align="left" alt="University of Southern California logo"
-                        style="width:100%;max-width:250px">
+                        <img src="{% static  'images/usc-logo.png'%}" align="left"
+                            alt="University of Southern California logo" style="width:100%;max-width:250px">
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-2">  <!-- class="col-1 ps-0"  -->
-                <div style="background-color:MediumSlateBlue">
-                    <nav>
-                        <a href="" id="login">login</a>
-                    </nav>
-                    <!-- Google font Account Circle -->
-                    <span class="material-symbols-outlined">
-                        account_circle
-                    </span>
-                    <!-- END OF: Google font Account Circle -->
-
-                    <!-- Auth logout, signup and login -->
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
-                    <!-- END OF: Auth logout, signup and login -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- </header> -->
-    <!-- ----------END of Header---------- -->
-
-
-    <!-- ---------- Syllabus ---------- -->
-    <!--col-1 to col-12-->
-    <div class=" container-fluid text-center">
-        <div class="row">
-            <div class="col-12 ps-0">
-                <div style="background-color:Fuchsia">
-                    <div>
-                        {% block syllabus %}
-                        <div class="btn-group">
-                            <a href="{% url 'UnitContent'%}">
-                                <button type="button" onclick="{{unit.unit_title}}">Back to Syllabus</button>
-                            </a>
+                <div class="col-sm-2">
+                    <!-- class="col-1 ps-0"  -->
+                    <div style="background-color:MediumSlateBlue">
+                        <!-- Auth logout, signup and login -->
+                        {% if user.is_authenticated %}
+                        <span class="nav-item">
+                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_logout' %}">Logout</a>
+                        </span>
+                        {% else %}
+                        <div class="flex-parent-element">
+                        <div class="nav-item">
+                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" class="flex-child-element" aria-current="page"
+                                href="{% url 'account_signup' %}">Register</a>
                         </div>
-                        {% endblock syllabus %}
+                        <div class="nav-item">
+                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" class="flex-child-element" aria-current="page"
+                                href="{% url 'account_login' %}">Login</a>
+                        </div>
+                    </div>
+                        {% endif %}
+                        <!-- END OF: Auth logout, signup and login -->
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ----------END of Syllabus---------- -->
+        <!-- </header> -->
+        <!-- ----------END of Header---------- -->
 
 
-    <!-- ---------- Unit ---------- -->
-    <!--col-1 to col-12-->
-    <div class=" container-fluid text-center" id="footer-push-down" class="main">
-        <div class="row">
-            <div class="col-sm-3 ps-0">
-                <div style="background-color: Gainsboro">
-                    <p >Been here</p>  <!-- Make Toggle between hidden and not hidden depending on a fetsch saying user has been on unit or not-->
-
-                    <input type="checkbox" id="unit-state-1" name="unit-state-1" value="Read" onclick="displayDate(); colorCoding()">
-                    <!-- <p id="demo"></p>-->
-                    <label for="unit-state-1">Read</label><br>
-
-                    <input type="checkbox" id="unit-state-2" name="unit-state-2" value="Understood" onclick="displayDate(); colorCoding()">
-                    <label for="unit-state-2">Understood</label><br>
-
-                    <input type="checkbox" id="unit-state-3" name="unit-state-3" value="Bookmark" onclick="displayDate(); colorCoding()">
-                    <label for="unit-state-3">Bookmark</label><br>
-
-                    <!-- <button class="situ-aware-button">Clipboard</button> -->
-                </div>
-            </div>
-            <div class="col-1 col-sm-1 ps-0">
-                <div style="background-color:Silver">
-                    <!-- <a href="index.html" class="active">Left</a> -->
-                    <!-- Google font Keyboard Left -->
-                    <!-- Then there is Keyboard Arrow Up Down Left Right -->
-                    <span class="material-symbols-outlined">
-                        keyboard_arrow_left
-                    </span>
-                    <!-- END OF: Google font Keyboard Left -->
-                </div>
-            </div>
-            <div class="col-10 col-sm-6 ps-0">
-                <div style="background-color:DarkGray">
-                    <div>
-                        {% block unit %}
-                        Welcome to:
-                        <p>{{ syllabus.syllabus_title }}</p> <!-- Why does this not comes through!? -->
-                        Let's click on one of the units in the Syllabus above and start learning!
-                        {% endblock unit %}
-
-                        {% block content %}
-                        {% endblock %}
+        <!-- ---------- Syllabus ---------- -->
+        <!--col-1 to col-12-->
+        <div class=" container-fluid text-center">
+            <div class="row">
+                <div class="col-12 ps-0">
+                    <div style="background-color:Fuchsia">
+                        <div>
+                            {% block syllabus %}
+                            <div class="btn-group">
+                                <a href="{% url 'UnitContent'%}">
+                                    <button type="button" onclick="{{unit.unit_title}}">Back to Syllabus</button>
+                                </a>
+                            </div>
+                            {% endblock syllabus %}
+                        </div>
                     </div>
-                    <!-- Google font Add Circle -->
-                    <span class="material-symbols-outlined">
-                        add_circle
-                    </span>
-                    <!-- END OF: Google font Add Circle -->
-                    <!-- Google font Add Circle -->
-                    <span class="material-symbols-outlined">
-                        do_not_disturb_on
-                    </span>
-                    <!-- END OF: Google font Add Circle -->
-                </div>
-            </div>
-            <div class="col-1 col-sm-1 ps-0">
-                <div style="background-color:	Gray">
-                    <!-- Google font Keyboard Right -->
-                    <!-- Then there is Keyboard Arrow Up Down-->
-                    <span class="material-symbols-outlined">
-                        keyboard_arrow_right
-                    </span>
-                    <!-- END OF: Google font Keyboard Right-->
-                </div>
-            </div>
-            <div class="col-sm-1 ps-0">
-                <div style="background-color:DimGray">
-                    <!-- Google font thumb_up -->
-                    <div class="material-symbols-outlined">
-                        thumb_up
-                    </div>
-                    <br>
-                    <!-- END OF: Google font thumb_up-->
-                    <!-- Google font thumb_down -->
-                    <div class="material-symbols-outlined">
-                        thumb_down
-                    </div>
-                    <br>
-                    <!-- END OF: Google font thumb_down-->
-                     <div>
-                        <a href="" id="Print">Print</a>
-                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- ----------END of Syllabus---------- -->
+    </header>
 
-<!-- Code for displaying confirmation message NOT YET WORKING! also on views-->
-    <!-- displaying Django messages -->
-<div class="container">
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        {% for message in messages %}
-        <div class="alert {{ message.tags }} alert-dismissible
+    <main>
+        <!-- ---------- Unit ---------- -->
+        <!--col-1 to col-12-->
+        <div class=" container-fluid text-center" id="footer-push-down" class="main">
+            <div class="row">
+                <div class="col-sm-3 ps-0">
+                    <div style="background-color: Gainsboro">
+                        <p>Been here</p>
+                        <!-- Make Toggle between hidden and not hidden depending on a fetsch saying user has been on unit or not-->
+
+                        <input type="checkbox" id="unit-state-1" name="unit-state-1" value="Read"
+                            onclick="displayDate(); colorCoding()">
+                        <!-- <p id="demo"></p>-->
+                        <label for="unit-state-1">Read</label><br>
+
+                        <input type="checkbox" id="unit-state-2" name="unit-state-2" value="Understood"
+                            onclick="displayDate(); colorCoding()">
+                        <label for="unit-state-2">Understood</label><br>
+
+                        <input type="checkbox" id="unit-state-3" name="unit-state-3" value="Bookmark"
+                            onclick="displayDate(); colorCoding()">
+                        <label for="unit-state-3">Bookmark</label><br>
+
+                        <!-- <button class="situ-aware-button">Clipboard</button> -->
+                    </div>
+                </div>
+                <div class="col-1 col-sm-1 ps-0">
+                    <div style="background-color:Silver">
+                        <!-- <a href="index.html" class="active">Left</a> -->
+                        <!-- Google font Keyboard Left -->
+                        <!-- Then there is Keyboard Arrow Up Down Left Right -->
+                        <span class="material-symbols-outlined">
+                            keyboard_arrow_left
+                        </span>
+                        <!-- END OF: Google font Keyboard Left -->
+                    </div>
+                </div>
+                <div class="col-10 col-sm-6 ps-0">
+                    <div style="background-color:DarkGray">
+                        <div>
+                            {% block unit %}
+                            Welcome to:
+                            <p>{{ syllabus.syllabus_title }}</p> <!-- Why does this not comes through!? -->
+                            Let's click on one of the units in the Syllabus above and start learning!
+                            {% endblock unit %}
+
+                            {% block content %}
+                            {% endblock %}
+                        </div>
+                        <!-- Google font Add Circle -->
+                        <span class="material-symbols-outlined">
+                            add_circle
+                        </span>
+                        <!-- END OF: Google font Add Circle -->
+                        <!-- Google font Add Circle -->
+                        <span class="material-symbols-outlined">
+                            do_not_disturb_on
+                        </span>
+                        <!-- END OF: Google font Add Circle -->
+                    </div>
+                </div>
+                <div class="col-1 col-sm-1 ps-0">
+                    <div style="background-color:	Gray">
+                        <!-- Google font Keyboard Right -->
+                        <!-- Then there is Keyboard Arrow Up Down-->
+                        <span class="material-symbols-outlined">
+                            keyboard_arrow_right
+                        </span>
+                        <!-- END OF: Google font Keyboard Right-->
+                    </div>
+                </div>
+                <div class="col-sm-1 ps-0">
+                    <div style="background-color:DimGray">
+                        <!-- Google font thumb_up -->
+                        <div class="material-symbols-outlined">
+                            thumb_up
+                        </div>
+                        <br>
+                        <!-- END OF: Google font thumb_up-->
+                        <!-- Google font thumb_down -->
+                        <div class="material-symbols-outlined">
+                            thumb_down
+                        </div>
+                        <br>
+                        <!-- END OF: Google font thumb_down-->
+                        <div>
+                            <a href="" id="Print">Print</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Code for displaying confirmation message NOT YET WORKING! also on views-->
+        <!-- displaying Django messages -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible
           fade show" id="msg" role="alert">
-          {{ message | safe }}
-          <button type="button" class="btn-close"
-            data-bs-dismiss="alert" aria-label="Close"></button>
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-<!-- END OF Code for displaying confirmation message -->
-
-    <!-- ----------END of Unit---------- -->
+        <!-- END OF Code for displaying confirmation message -->
+        <!-- ----------END of Unit---------- -->
+    </main>
 
 
     <!-- ----------Footer---------- -->
@@ -244,7 +245,8 @@
         <div class="container-fluid text-center">
             <div class="row">
                 <div class="col-4 ps-0">
-                    <div> <!--style="background-color: Cornsilk"-->
+                    <div>
+                        <!--style="background-color: Cornsilk"-->
                         <!--<p  class="mb-0">Header</p>-->
                         <a href="">
                             <!--<p  Add URL to Sheldon official website</p>-->
@@ -260,7 +262,8 @@
                     </div>
                 </div>
                 <div class="col-8">
-                    <div>  <!-- style="background-color:tan" -->
+                    <div>
+                        <!-- style="background-color:tan" -->
                         4
                         <p class="m-0 text-center text-white">
                             {% block footer %}
@@ -280,4 +283,5 @@
     <script src="{% static 'js/script.js' %}"></script>
 
 </body>
+
 </html>

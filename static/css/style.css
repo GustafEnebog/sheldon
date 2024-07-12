@@ -82,7 +82,23 @@ main {
     /* Make main element take up any surplus space to push footer down */
     width: 100%;
     flex: 1 0 auto;
-    margin-top: 59px;
+    margin-top: 159px; /* 59px;
+    height: 80 vh; */
+}
+
+.flex-parent-element {
+    display: flex;
+    width: 50%;
+}
+  
+.flex-child-element {
+    flex: 1;
+    border: 2px solid blueviolet;
+    margin: 10px;
+}
+
+.flex-child-element:first-child {
+    margin-right: 20px;
 }
 
 .row {
@@ -90,9 +106,24 @@ main {
     flex: 1 0 auto;
 }
 
+.flex-parent-element {
+    display: flex;
+    width: 50%;
+  }
+  
+  .flex-child-element {
+    flex: 1;
+    border: 2px solid blueviolet;
+    margin: 10px;
+  }
+  
+  .flex-child-element:first-child {
+    margin-right: 20px;
+  }
+
 footer {
     width: 100%;
-    background-color: rgb(255, 0, 191);
+    background-color: black;
 }
 
 .flex-container {
@@ -185,9 +216,9 @@ footer {
 
 /* <uniquifier>: Use a unique and descriptive class name */
 /* <weight>: Use a value from 100 to 900 */
-.raleway-<uniquifier> {
+.raleway-uniquifier {
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: 600;
     font-style: normal;
 }
