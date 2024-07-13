@@ -35,11 +35,23 @@ body {
   }
 
 header {
-    background-color: rgb(0, 157, 255);
+    background-color: white; /*  rgb(0, 157, 255) */
     /* padding: 0 1rem; */
     position: fixed;
     z-index: 99;
     width: 100%;
+    height: 111px;
+    /* height: 5 vh; */
+}
+
+#user-logo {
+    /* height: 111px; /* 5 vh; */
+    height: 60px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    align: left;
 }
 
 h1 {
@@ -54,6 +66,10 @@ header a {
     color: inherit;
 }
 
+#syllabus {
+    margin: 10px 0px;
+}
+
 footer a {
     text-decoration: none;
     color: inherit;
@@ -62,10 +78,47 @@ footer a {
 #logo {
     text-align: left;
     padding-left: 20px;
+    height: 60px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
 }
 
 #logo-footer {
-    font-size: 5%;
+    margin-top: 15px;
+    margin-left: 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: lightgray;
+}
+
+footer {
+    width: 100%;
+    background-color: black;
+    color: lightgray;
+    padding-bottom: 70px;
+    /* height: 10 vh; */ 
+}
+
+#footer-text-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 40px;
+}
+
+#header-login {
+    height: 60px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+}
+
+#login-space {
+    margin-right: 95px;
 }
 
 #login {
@@ -76,14 +129,17 @@ footer a {
     color: inherit;
 }
 
+#header-vert {
+    align-items: center;
+}
+
 /* Main content */
 main {
-    background-color: rgb(76, 0, 255);
     /* Make main element take up any surplus space to push footer down */
     width: 100%;
     flex: 1 0 auto;
-    margin-top: 159px; /* 59px;
-    height: 80 vh; */
+    margin-top: 159px; /* 59px; */
+    /* height: 95 vh;  */
 }
 
 .flex-parent-element {
@@ -106,6 +162,16 @@ main {
     flex: 1 0 auto;
 }
 
+/* #scroll {
+    margin: 4px, 4px;
+    padding: 4px;
+    background-color: #08c708;
+    width: 300px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+} */
+
 .flex-parent-element {
     display: flex;
     width: 50%;
@@ -120,11 +186,6 @@ main {
   .flex-child-element:first-child {
     margin-right: 20px;
   }
-
-footer {
-    width: 100%;
-    background-color: black;
-}
 
 .flex-container {
     display: flex;
@@ -185,7 +246,7 @@ footer {
   
   /* Add a background color on hover */
   .btn-group button:hover {
-    background-color: #80d3ff;
+    background-color: orange;
   }
 /* END OF: Code snippet "button group" */
 
@@ -222,3 +283,6 @@ footer {
     font-weight: 600;
     font-style: normal;
 }
+
+
+

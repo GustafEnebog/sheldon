@@ -53,30 +53,30 @@
         <!-- ----------Header---------- -->
         <!-- <header> -->
         <!--col-1 to col-12-->
-        <div class="container-fluid text-center">
+        <div class="container-fluid text-center" style="margin: 5px 0px">
             <div class="row">
                 <div class="col-sm-4 ps-0">
                     <!-- class="col-2 ps-0"  -->
-                    <div style="background-color: white">
+                    <div style="justify-content: center">
                         <!--<p  class="mb-0">Header</p>-->
                         <!-- <a href="index.html">
                         <h1 id="logo">SHELDON</h1>
                     </a>-->
-                        <h1 id="logo">SHELDON</h1>
+                        <h1 id="logo" style="align-items: center">SHELDON</h1>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <!-- class="col-6 ps-0"  -->
-                    <div style="background-color:mediumpurple">
+                    <div>
                         <!-- <img src="static/images/usc-logo.png" align="left" alt="University of Southern California logo"
                         style="width:100%;max-width:250px"> -->
-                        <img src="{% static  'images/usc-logo.png'%}" align="left"
-                            alt="University of Southern California logo" style="width:100%;max-width:250px">
+                        <img src="{% static  'images/usc-logo.png'%}" id="user-logo"
+                            alt="University of Southern California logo">
                     </div>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-2" id="header-login">
                     <!-- class="col-1 ps-0"  -->
-                    <div style="background-color:MediumSlateBlue">
+                    <div>
                         <!-- Auth logout, signup and login -->
                         {% if user.is_authenticated %}
                         <span class="nav-item">
@@ -85,15 +85,17 @@
                         </span>
                         {% else %}
                         <div class="flex-parent-element">
-                        <div class="nav-item">
-                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" class="flex-child-element" aria-current="page"
-                                href="{% url 'account_signup' %}">Register</a>
+                            <span class="nav-item">
+                                <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
+                                    class="flex-child-element" id="login-space" aria-current="page"
+                                    href="{% url 'account_signup' %}">Register</a>
+                            </span>
+                            <div class="nav-item">
+                                <a class="nav-link {% if request.path == login_url %}active{% endif %}"
+                                    class="flex-child-element" aria-current="page"
+                                    href="{% url 'account_login' %}">Login</a>
+                            </div>
                         </div>
-                        <div class="nav-item">
-                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" class="flex-child-element" aria-current="page"
-                                href="{% url 'account_login' %}">Login</a>
-                        </div>
-                    </div>
                         {% endif %}
                         <!-- END OF: Auth logout, signup and login -->
                     </div>
@@ -109,10 +111,11 @@
         <div class=" container-fluid text-center">
             <div class="row">
                 <div class="col-12 ps-0">
-                    <div style="background-color:Fuchsia">
-                        <div>
+                    <div style="background-color: #D1CCC4">
+                        <div style="padding: 15px 0px 15px 0px">
                             {% block syllabus %}
                             <div class="btn-group">
+                                <!-- lass="scroll" -->
                                 <a href="{% url 'UnitContent'%}">
                                     <button type="button" onclick="{{unit.unit_title}}">Back to Syllabus</button>
                                 </a>
@@ -132,7 +135,7 @@
         <div class=" container-fluid text-center" id="footer-push-down" class="main">
             <div class="row">
                 <div class="col-sm-3 ps-0">
-                    <div style="background-color: Gainsboro">
+                    <div style="background-color: white">
                         <p>Been here</p>
                         <!-- Make Toggle between hidden and not hidden depending on a fetsch saying user has been on unit or not-->
 
@@ -153,7 +156,7 @@
                     </div>
                 </div>
                 <div class="col-1 col-sm-1 ps-0">
-                    <div style="background-color:Silver">
+                    <div style="background-color:white">
                         <!-- <a href="index.html" class="active">Left</a> -->
                         <!-- Google font Keyboard Left -->
                         <!-- Then there is Keyboard Arrow Up Down Left Right -->
@@ -164,7 +167,7 @@
                     </div>
                 </div>
                 <div class="col-10 col-sm-6 ps-0">
-                    <div style="background-color:DarkGray">
+                    <div style="background-color:white">
                         <div>
                             {% block unit %}
                             Welcome to:
@@ -188,7 +191,7 @@
                     </div>
                 </div>
                 <div class="col-1 col-sm-1 ps-0">
-                    <div style="background-color:	Gray">
+                    <div style="background-color:	white">
                         <!-- Google font Keyboard Right -->
                         <!-- Then there is Keyboard Arrow Up Down-->
                         <span class="material-symbols-outlined">
@@ -198,7 +201,7 @@
                     </div>
                 </div>
                 <div class="col-sm-1 ps-0">
-                    <div style="background-color:DimGray">
+                    <div style="background-color: white">
                         <!-- Google font thumb_up -->
                         <div class="material-symbols-outlined">
                             thumb_up
@@ -248,27 +251,29 @@
                     <div>
                         <!--style="background-color: Cornsilk"-->
                         <!--<p  class="mb-0">Header</p>-->
-                        <a href="">
-                            <!--<p  Add URL to Sheldon official website</p>-->
-                            <h3 id="logo logo-footer">SHELDON</h3>
-                        </a>
-                        <footer class="footer mt-auto py-3 dark-bg">
-                            <p class="m-0 text-center text-white">Made by Gustaf Enebog</p>
-                            <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-                                <i class="fab fa-twitter-square ms-3"></i>
-                                <i class="fab fa-instagram-square ms-3"></i>
-                                <i class="fab fa-youtube-square ms-3"></i>
-                            </p>
+                        <div id="logo-footer">
+                            <div>
+                                <a href="">
+                                    <!--<p  Add URL to Sheldon official website</p>-->
+                                    <h3 class="m-0 text-center text-white" id="footer-text-left">SHELDON</h3>
+                                </a>
+                                <p class="m-0 text-center text-white" id="footer-text-left">Copyright: Gustaf Enebog, 2024</p>
+                                <p class="m-0 text-center text-white" id="footer-text-left">Follow us:<i class="fab fa-facebook-square ms-3" id="footer-text-left"></i>
+                                    <i class="fab fa-twitter-square ms-3"></i>
+                                    <i class="fab fa-instagram-square ms-3"></i>
+                                    <i class="fab fa-youtube-square ms-3"></i>
+
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-8">
-                    <div>
+                    <div id="logo-footer">
                         <!-- style="background-color:tan" -->
-                        4
                         <p class="m-0 text-center text-white">
-                            {% block footer %}
-                            Made by Gustaf Enebog (base code)
-                            {% endblock footer %}
+
+                            <p class="m-0 text-center text-white">University of Southern Califoria<br>University Park Campus<br>3551 Trousdale Pkwy<br>Los Angeles, CA  90007</p>
                         </p>
                     </div>
                 </div>
