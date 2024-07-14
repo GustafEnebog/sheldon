@@ -780,17 +780,12 @@ Manual Testing
 
 The following devices and browsers were used for manual & responsive UI testing.
 
-- iPhone SE (2020)
+- iPhone 11 (2020)
     - Safari (v16)
     - Chrome (v114)
-- iPad (6th Generation)
-    - Chrome (v111)
-    - Safari (v15)
-- Mac Pro (Mid 2012)
-    - Chrome (v116)
-    - Firefox (v115)
-- Dell Chromebook 3120
-    - Chrome (v103)
+- Think Pad P1
+    - Chrome (v126)
+    - Firefox (v127)
 
 <span style="color:orange;font-weight:700;font-size:22px">
 # BUGS
@@ -806,13 +801,6 @@ Fixed Bugs
 | ‘wrong template "Extended" into base.html’ error bug: Error inserting the correct template due to Jinga reading commented away code (Template language). | Deleting commented away code from the file |
 | ‘Google icons loading time’ error bug: The loading time for the seven Google font Material Symbol (Variable Icon font) is ca 3 min (loading time increase linearly with number of icons on the page so is ca 30 min for one single icon). | Fill in Fix here. |
 
-```css
-/* To hide the form error list (validation is done in the View) */
-#place-add-form ul {
-    display: none;
-}
-```
-
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Unfixed Bugs
 </span>
@@ -821,6 +809,100 @@ Unfixed Bugs
 | --- |
 | ‘Add a Place’ page: even though the input fields are hidden from user, they could potentially open developer tools and manually modify the form entries, leading to incorrect data. being submitted. |
 | The comments are displayed at the moment without showing any paragraph breaks that can be seen inside the Django admin panel. |
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Code Outtakes
+</span>
+
+The following code snippets represent part of the code that had to be taken out since the backend implementation not yet having been completed for the the "situational awareness" and the "pace control"-features as well as handling situation when no units yet has been written:
+
+
+Feature: Pace Control
+![Pace Control]()
+
+```js
+import datetime
+
+def __number_of_units_or_days__(self):
+    from datetime import date
+
+    today = date.today()
+    deadline_official = date(2025, 2, 10)
+    days_to_deadline_official = deadline_official - today
+    print(days_to_deadline_official.days)
+
+    int units_per_day = null
+    int days_per_unit = null
+
+    remaining_units = 12 # replace later with automatically calculated units
+    if remaining_units >= days_to_deadline_official.days
+        units_per_day = remaining_units / days_to_deadline_official.days
+    elif remaining_units > days_to_deadline_official.days
+        days_per_unit = days_to_deadline_official.days / remaining_units
+
+    print(units_per_day, days_per_unit)
+```
+Feature: Situational awarenes: "Been here"- unhide
+!["Been here"- unhide]()
+
+```js
+function beenHereFetcher() {
+    // https://www.youtube.com/watch?v=cuEtnrL9-H0&t=138s
+    // Fetch for "Been Here"
+    fetch('https://8000-gustafenebog-sheldon-snyii1xvpkq.ws.codeinstitute-ide.net/admin/textbook/unit/')
+        .then(res => {
+            if (res.ok) {
+                console.log('SUCCESS')
+            } else {
+                console.log("Not Successful")
+            }
+        })
+        .then(data => console.log(data))
+        .catch(error => console.log("ERROR"))
+}
+// END OF: Fetch for "Been Here"
+```
+Feature: Situational awarenes: Read and Understood checkboxes
+![Read and Understood checkboxes]()
+
+```js
+function readFetcher() {
+    // https://www.youtube.com/watch?v=cuEtnrL9-H0&t=138s
+    // Fetch for "Read" and "Understood"
+    fetch('https://8000-gustafenebog-sheldon-snyii1xvpkq.ws.codeinstitute-ide.net/admin/textbook/unit/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': "application/json"
+            },
+            body: JSON.stringify({
+                name: 'xxxxxxxxxxxxxxxxx'
+            })
+        }).then(res => {
+            return res.json()
+        })
+        .then(data => console.log(data))
+        .catch(error => console.log('ERROR'))
+    // END OF: Fetch for "Read" and "Understood"
+}
+```
+Handling of case when any units have yet been created
+![Units in Syllabus]()
+
+```html
+{% if unit_list|length < 1 %}
+    <div class="btn-group" id="user-progress-styling">
+        Oops... Something went wrong and there are no units yet to display.
+    </div>
+{% else %}
+{% for unit in unit_list %}
+<!--model name (Unit) and the view type (ListView) gives name-->
+<div class="btn-group" id="user-progress-styling">
+    <a href="{% url 'unit_detail' unit.unit_slug %}">
+        <button type="button" onclick="{{unit.unit_title}}">{{unit.unit_title}}</button>
+    </a>
+</div>
+{% endfor unit%}
+```
 
 <span style="color:orange;font-weight:700;font-size:22px">
 # DEPLOYMENT
@@ -844,63 +926,43 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 4. Open Git Bash
 5. Change the current working directory to the location where you want the cloned directory to be made.
 6. Type `git clone`, and then paste the URL you copied in Step 3.
-
-```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-
-```
-
-1. Press Enter. Your local clone will be created.
-
-```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-> Cloning into `CI-Clone`...
-> remote: Counting objects: 10, done.
-> remote: Compressing objects: 100% (8/8), done.
-> remove: Total 10 (delta 1), reused 10 (delta 1)
-> Unpacking objects: 100% (10/10), done.
-
-```
+7. Press Enter. Your local clone will be created.
 
 Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
-1. For changes you've made to reflect on the live site*:
-    - Type `git add <files changed>`
-    - Type `git commit -m <description of change>`
-    - Type `git push`
-    - In Heroku, after pushing to Github - if 'automatic deploys' aren't enabled, manually deploy by clicking 'Deploy Branch' in the Manual Deploy section.
-
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-Set up the Google Maps API
+Push changes through to deployed version
 </span>
 
-Follow the steps outlined in the Google [documentation](https://developers.google.com/maps/get-started), to:
+The following steps needs to be executed to make changes visible in the development environment to also be visible reflect in the deployed live site on Heroku.
 
-- Create a Google Cloud account
-- Create a project
-- Get a Google Maps API key
-- Enable the Maps API and Places API
+1. Type in the IDE terminal
+
+   1. Type in the IDE terminal `git add <files changed>` or simply `git add <files changed>` to add all changed files in workspace
+
+   2. Type `git commit -m <commit message>`
+
+   3. Type `git push`
+
+2. In Heroku (after pushing to Github) - if 'automatic deploys' is not enabled:
+Manually deploy by clicking 'Deploy Branch' in the Manual Deploy section.
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Cloudinary
 </span>
 
 1. Create a [Cloudinary](http://cloudinary.com) account, to host the static files.
-2. Copy your ‘API Environment variable’**.**
+2. Copy your ‘API Environment variable’ (which has the following format: cloudinary://<your_api_key>:<your_api_secret>@dqflyic3b)
+3. Paste into "Config Vars" under the Heroku settings tab
 
-## ElephantSQL
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Code Institute PostgreSQL Database
+</span>
 
-1. Create an [ElephantSQL](https://www.elephantsql.com/) account.
+1. Create an [Code Institute PostgreSQL](https://dbs.ci-dbs.net/manage/KeeMR5RVAMT6WX8k/) account.
 2. Create a new instance.
 3. Copy the database URL.
-
-You will also need to add the database to your Django [settings.py](http://seetings.py) file:
-
-`DATABASES = {`
-
-`'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))`
-
-`}`
+4. Add database to the settings.py-file in Django.
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Deploy to Heroku
@@ -911,10 +973,10 @@ Deploy to Heroku
 3. Name the app and choose a region.
 4. In the ‘Settings’ tab, click on 'Reveal Config Vars’.
 5. Enter the details for these Variables [you will also need these variables in your ‘env.py’ file for local use]:
-    1. CLOUDINARY_URL
-    2. DATABASE_URL (from ElephantSQL)
-    3. GOOGLE_MAPS_API_KEY
-    4. SECRET_KEY (from Django)
+    1. CLOUDINARY_URL (from Cloudinary dash board)
+    2. DATABASE_URL (from Code Institute PostgreSQL)
+    3. DEV_PRODUCTION set to False
+    3. SECRET_KEY (from Django)
 6. In the 'Buildpacks' section click 'Add buildpack'.
 7. Select ‘Python’, and click 'save changes'.
 8. In the 'Deploy' tab, select GitHub as the deployment method, and click 'Connect to GitHub'.
@@ -926,60 +988,31 @@ Deploy to Heroku
 </span>
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-Content/Credit
+Resources used
 </span>
 
-The original idea for this site was inspired by a [mumsnet thread](https://www.mumsnet.com/talk/_chat/4775974-most-magical-places-in-london-feeling-so-depressed-to-be-back-help-me-find-some-joy-and-wonder?page=1) asking for recommendations of things to do in London. Some of the demo comments were rephrased from this thread.
-
-All photos come from the Google Places API.
-
-<span style="color:#1591ea;font-weight:700;font-size:20px">
-Code
-</span>
+- The Code Institute Learning Managmenet Plattform (LMS) for providing a starting point for the Design [Code Institute LMS](https://codeinstitute.net/global/?_gl=1%2Axvuqhx%2A_up%2AMQ..&gclid=CjwKCAjw7s20BhBFEiwABVIMrQulU1ejXB0fh0AAR-Xh8NcPgP3htUbTMmRTQ2Cqni1XbCe4PEuLXRoCoLsQAvD_BwE)
 
 The following docs and tutorials were consulted.
 
-************Django************
+CSS:
 
-General Django tutorials:
+- Kevin Powell [link](https://www.youtube.com/watch?v=_lEkD8IGkwo&list=PL4-IK0AVhVjPv5tfS82UF_iQgFp4Bl998)
 
-- [Django Girls Tutorial](https://tutorial.djangogirls.org/en/)
-- [Django for Beginners](https://djangoforbeginners.com/) [book]
+Django:
 
-Django ‘favouriting’ functionality:
+- Tech with Tim [link](https://www.youtube.com/playlist?list=PLzMcBGfZo4-kQkZp-j9PNyKq7Yw5VYjq9)
+- Django documentation [link](https://docs.djangoproject.com/en/5.0/)
+- Classy Class-Based Views - [link](https://ccbv.co.uk/)
 
-- [Codemy - Create Blog Like Button](https://www.youtube.com/watch?app=desktop&v=PXqRPqDjDgc)
+Other
 
-Django messages:
-
-- [Ordinary Coders](https://ordinarycoders.com/blog/article/django-messages-framework)
-- [Simple Is Better Than Complex](https://simpleisbetterthancomplex.com/tips/2016/09/06/django-tip-14-messages-framework.html)
-
-Getting data from a Django model into javascript:
-
-- [Bugbytes](https://www.youtube.com/watch?v=h39eMGWmEV4&t=36s)
-- [Official Django docs](https://docs.djangoproject.com/en/4.0/ref/templates/builtins/#json-script)
-- [adamj.eu](https://adamj.eu/tech/2020/02/18/safely-including-data-for-javascript-in-a-django-template/)
-
-**Google Maps API/JavaScript**
-
-(Official Google)
-
-- [Adding a map](https://developers.google.com/maps/documentation/javascript/adding-a-google-map#maps_add_map-javascript)
-- [Adding markers](https://developers.google.com/maps/documentation/javascript/advanced-markers/accessible-markers)
-- [Places Autocomplete](https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete)
-- [Retrieving response data](https://developers.google.com/maps/documentation/javascript/place-autocomplete)
-- [Adding multiple markers](https://jsfiddle.net/gh/get/library/pure/googlemaps/js-samples/tree/master/dist/samples/advanced-markers-accessibility/jsfiddle)
-- [Places photos](https://developers.google.com/maps/documentation/javascript/places#places_photos)
-
-(3rd Party)
-
-- W3 Schools - [Google Maps Intro](https://www.w3schools.com/graphics/google_maps_intro.asp)
-- WittCode - [Google Maps JavaScript tutorial](https://www.youtube.com/watch?v=tmdtH1hwlDo)
-- Stack Overflow - [close info window when user clicks anywhere on the map](https://stackoverflow.com/questions/10022873/closing-info-windows-in-google-maps-by-clicking-the-map)
+- W3 Schools - [link](https://www.w3schools.com/)
+- Stack Overflow - [link](https://stackoverflow.co/)
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Acknowledgements
 </span>
 
-- My mentor Brian Macharia for his invaluable guidance.
+- Daisy Mc, Tomas and others for tips and help on Slack  
+- My mentor Brian Macharia for his professional guidance.

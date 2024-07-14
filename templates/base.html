@@ -84,7 +84,7 @@
                                 href="{% url 'account_logout' %}">Logout</a>
                         </span>
                         {% else %}
-                        <div class="flex-parent-element">
+                        <div>  <!-- class="flex-parent-element" -->
                             <span class="nav-item">
                                 <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
                                     class="flex-child-element" id="login-space" aria-current="page"

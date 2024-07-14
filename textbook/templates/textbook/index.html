@@ -6,19 +6,14 @@
 <!--Syllabus-->
 {% block syllabus %}
 <!-- <h1>Syllabus</h1> -->
-{% if unit_list|length < 1 %}
-    <div class="btn-group" id="user-progress-styling">
-        Oops... Something went wrong and there are no units yet to display.
-    </div>
-{% else %}
-{% for unit in unit_list %}
-<!--model name (Unit) and the view type (ListView) gives name-->
+{% for unit in unit_list %} 
+ <!--model name (Unit) and the view type (ListView) gives name-->
+
 <div class="btn-group" id="user-progress-styling">
     <a href="{% url 'unit_detail' unit.unit_slug %}">
         <button type="button" onclick="{{unit.unit_title}}">{{unit.unit_title}}</button>
     </a>
 </div>
 {% endfor unit%}
-{% endif %}
 {% endblock syllabus %}
 <!--END OF Syllabus-->

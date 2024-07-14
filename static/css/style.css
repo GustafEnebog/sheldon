@@ -138,7 +138,7 @@ main {
     /* Make main element take up any surplus space to push footer down */
     width: 100%;
     flex: 1 0 auto;
-    margin-top: 159px; /* 59px; */
+    margin-top: 200px; /* 59px; */
     /* height: 95 vh;  */
 }
 
