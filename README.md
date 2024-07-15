@@ -20,14 +20,14 @@ INTRODUCTION
 Special attention has been given to the UX of the app given special care to give the student a good overview and easy navigation of the course content so that the student can keep situtional awareness through out the course and not feel overwhelmed or lost!
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-Project Goals
+The seed to the idea
 </span>
 
 There seeds to the ideas for Sheldon are two:
 
 1. As a University student and later lecturer at University in Math and Aeronautical Engineering I was disatisfied with the current alternatives and envisioned a tool that implemented my two ideas:
-  - a. Topical modules should be created with different categories, theory, examples, equations, exercies etc. Once enough many modules in different categories, creating a new course would be as easy as stringing modules together like pearls on a string in a certain order. Since the modules would not be course specific, they would be reusable and creating a new similar course or modifying a current course would be as simple as to string together a new set of modules in a certian order or, in the case of modifying a course, to delete or add a few modules (perhaps write a few new modules) and perhaps rearrange the order of a few modules.
-  - b. Secondly, introduce the concept of wiki-style hyperlinks (my original idea, I have to say with not so little pride, predates Wikipedia) so that not known or not understood concepts in a module quickly can be looked up in a differenet module before continuing in the current module. This feature would, if not completly overcome but, at least mittigate the catch-22 where two modules might require each other two have been studies before each other. This would represent a break with the linear appraoch where a read a book is read from cover to cover and be more like reading an encyclopedia where you jump back and forth between the different pages.
+   - Topical modules should be created with different categories, theory, examples, equations, exercies etc. Once enough many modules in different categories, creating a new course would be as easy as stringing modules together like pearls on a string in a certain order. Since the modules would not be course specific, they would be reusable and creating a new similar course or modifying a current course would be as simple as to string together a new set of modules in a certian order or, in the case of modifying a course, to delete or add a few modules (perhaps write a few new modules) and perhaps rearrange the order of a few modules.
+   - Secondly, introduce the concept of wiki-style hyperlinks (my original idea, I have to say with not so little pride, predates Wikipedia) so that not known or not understood concepts in a module quickly can be looked up in a differenet module before continuing in the current module. This feature would, if not completly overcome but, at least mittigate the catch-22 where two modules might require each other two have been studies before each other. This would represent a break with the linear appraoch where a read a book is read from cover to cover and be more like reading an encyclopedia where you jump back and forth between the different pages.
 
 2. For as good as the Code Institute course content is I do have identified some room for improvement in its Learning Management Platform (see UX-section). By the way this is actually good news for CI since, despite there current high quality, they can become *even* better!
 
@@ -42,6 +42,7 @@ User Stories
 </span>
 
 A Kanban board in Github projects was used for the Agile development process - see the board [here](https://github.com/users/GustafEnebog/projects/6).
+
 ![Kan-Ban board](static/images/kanban-board.jpg)
 
 ‘Epics’ were broken down into ‘User Stories’, which were further broken down into ‘Tasks’.
@@ -73,9 +74,15 @@ A second, unintentional, quality of the name Sheldon is that it associates to Sh
 Weakspots in Code Institute LMS
 </span>
 
-Cannot open a module in a new tab once you are at a module.
-Lack of timestamps and content description (so that I also can search the videos)
-Difficult to binge watch (you need to "close fullscreen", "scroll to next-button (or lesson)", "click start" and finally "click fullscreen! that is foour steps between each video)
+* Cannot open a another unit in the same module in a new tab.
+* Lack of timestamps and content description (so that I also can search the videos)
+* Difficult to binge watch (you need four steps between each video: "close fullscreen", "scroll to next-button or lesson", "click start" and finally "click fullscreen!)
+* Lack of categorisation of units (only two: video or text)
+* No opportunity to leave memory notes on a teaching unit
+* Screenshoots are to small in size to be able to read the code
+* No possibility for user to tag a unit according to how degree of completion, there is only a mark based on if you have visited the unti before or not!
+* No way of navigate a "jump" to another part of the Syllabus without first having to leave the unit (since the Syllabus and units are separate views)
+
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Layout and Wireframes
@@ -105,41 +112,13 @@ Navigation
 ![navigation-diagram.png](documentation/navigation-diagram.png)
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-Data Schema
-</span>
-
-![data-schema.png](documentation/data-schema.png)
-
-note: a separate 'Favourite' model was created for the purpose of being able to sort the users Favourites chronologically.
-
-<span style="color:#1591ea;font-weight:700;font-size:20px">
-Google Maps JavaScript Flow Diagrams
-</span>
-
-One of the biggest challenges faced while building this site is the implementation of the Google Places photos. 
-
-The first approach was to save to the database a URL obtained `with` the `getURL()` method.
-That problem in this approach is that these URLs would expire after a few days,  giving a 403 error message when trying to display the photo. 
-
-Google `photo_reference` data is no longer supplied with the JavaScript API, and there are new Google terms and conditions that don’t allow a `photo_reference` to be cached, and instruct the developer get a new link every time, using a `PlaceDetails` request.  
-
-I then had to design a JavaScript system that used the Google `place_id` stored in the database to send a new `PlaceDetails` request every time the page is loaded to get the photos, and dynamically add them to the page.
-
-I used a loading-spinner div (without the spinner) to cover a section of the page as the photos were being fetched.
-
-**x*‘place-add-form.js’***
-x
-
-**x- *‘script.js’***
-
-The Places objects are sent to the HTML template as a JSON array of objects. JavaScript picks them up and uses the `google_place_id` to send requests to Google Places API for the photos. It then re-attaches each newly fetched photo to the corresponding Place object using the `id` as a reference.
-
-![home-page-google-api-schema.png](documentation/home-page-google-api-schema.png)
-
-<span style="color:#1591ea;font-weight:700;font-size:20px">
 Project Goals
 </span>
-## Colour Scheme
+Put some stuff here hjdisalgdfjoajfdojdfsolfjd
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Colour Scheme
+</span>
 
 The color scheme is very neutral where colors serve as much in the role of color coding as accent colors.
 
@@ -196,10 +175,9 @@ FEATURES
 </span>
 
 The database models are implemented according to the below Entity Relationship Diagram (ERD) With the exception for that I use the  module_id (instead of the module_slug as planned in the ERD) as a foreign key in the implementation.
-![ERD Sheldon](static/images/database-erd.png)
 
-This feature is good for all students but especially important for students with a neurodivergent diagnosis such as Asperger syndrome where the structure need to be extremely clear and distinct.  
-![home-page-screenshot.png](assets/images/sheldon-interface.jpg)
+![ERD Sheldon](images-for-readme/sheldon-erd.png)
+
 
 THEME: ADMINISTRATION > EPIC: USER ACCOUNT
 THEME: ADMINISTRATION > EPIC: ADMIN
@@ -217,29 +195,38 @@ Name/logo of Educational Institution (Header)
 </span>
 
 x
+!["Authentication"-feature]()
 
 ### Login/Logout (Header)
 X
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-Curriculum with Modules and Units (Header)
+Syllabus with Modules and Units (Header)*
 </span>
+The course Syllabus is showing directly underneath the header and can almost be considered as a part of the header since it is always showing or at least so it was intended but due to technical restrictions with Django Views the user need to return to this view with a back-button after each time having visited a view. Please see more on the planned (but not yet implemented) features in the "Features to implement in the future"
 
-X
+
 ![add-place-screencapture.gif](documentation/add-place-screencapture.gif)
 
-notes:
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Pace Control (Header)*
+</span>
 
-- The ability for a user to edit or delete a Place that they have added wasn't implemented:
-    - As the form data is not user-generated, and rather supplied by the Google Places API, there is a low chance or user error that would justify ‘edit’ functionality.
-    - If the user had the ability to delete places that were already commented on, other users would lose their comments and lose access to the place if it was in their favourites list.
-- A fallback image was added for places that don’t have a corresponding Google image.
+The pace control gives the user:
+•	the date for the official deadline as well as a user set deadline
+•	Remaining time until the official deadline as well as a user set deadline
+•	Necessary pace to make the deadline as well as a user set deadline in the form of:
+   - Number of units to do per day, or if that number is less then one: Number of days per units
 
-## Pace Control (Header)
-X
+Please see: "Features to implement in the future" for a description of the planned Pace Control
 
+!["Pace Control"-feature]()
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
 ## Unit (Main)
+</span>
 
+A teaching unit, or simply a unit, is like the smallest headline in a textbook, e.g. "the Area-rule" which could be filled with text or images on the topic.
 ![list-page-screenshot.png](documentation/list-page-screenshot.png)
 
 Places can be favourited/unfavourited by clicking on the heart icon.
@@ -256,36 +243,74 @@ Places can be favourited/unfavourited by clicking on the heart icon.
 •	Links
 •	Etc.
 
+Please see: "Features to implement in the future" for a description of planned features for the Unit
+
+![ Unit feature]()
+
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Two level deep expansion/collapse text
 </span>
 
-### Expansion text
-Psycological positive aspect of wanting to click to reveal whats underneath
-### Expand/Collapse text (accordian)
+### Expansion/Collapse text (accordian)
+By clicking a plus icon next to the paragraphs the text below the plus sign slides down and makes space for more, previously hidden, text. This feature can "un-hide" text two levels down and vice versa (by clicking a minus sign).
+
+In order to not overwhelm the student, this feature will unclutter the teaching material which will help the student to see what is important and what is less important. It also helps the Admin/teacher to make a course Syllabus including much deepth (including two levels deep expansion text) in some areas yet only touching on other areas (not opening any expansion text)
+
+As a positive side effect it can make learning more fun by intriguing the student to find what is hiding behind that expand button.
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Situational Awarenes
 </span>
+the Situational Awareness-"panel" helps the user keep track of where he has been and what he has done on each unit. Thus each unit has a text/checkbox relating where the user can indicate how much of that unit he has completed as well as remember units if he want to return to them in the future:
 
-These checkboxes rewards the user with a satisfactory sense of progress and control when he can click away "...one more unit", kind of reading "just one more page" in a good book!
+•	"Been here" - Text appears automatically from the first time (and onwards) the user visits the unit
+•	"Read" - User can check this checkbox once he has read yet not understood the unit (and therefore need to return to it later).
+•	"Understood" - User can check this checkbox when he. If this checkbox is checked without the "Read" checkbox being previoously checked that checkbox will also automatically be checked simoultaniously
+•	"Bookmark" - User can bookmark pages for future refence
+
+This is also reflected through with color coding of the units in the Syllabus. giving the user a sense of "Situational Awareness" for the course. This is also taken as a base for calcuating the "pace control"-feature.
+
+•	Original state - background color: #FFFFFF
+•	"Been here" - background color: #E5E5E5
+•	"Read" - background color: #40BCFF
+•	"Understood" - background color: #80D3FF
+•	"Bookmark" - border color: #FFC020
+
+A positive side-effect of the "Situational awareness"-checkboxes is the satisfying dopamin-reward the user recieves as he checks away ...one more unit, kind of reading "just one more page" in a suspensfull book! The progress becomes concrete and visible!
+
+![Expansion/collapse-text feature]()
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Clip Board
 </span>
 
-### Add note
-### Edit note
-### Delete note
+![Clipboard feature]()
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Note
+</span>
+
+The user can make his own notes on each unit that will stay in place so that the user always can read his own notes when returning to a unit.
+
+The Note features full CRUD (Create, Read, Update, and Delete)
+
+![Note feature]()
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Feedback
 </span>
 
+![Feedback feature]()
+Each unit displays a "thumbs up" and a "thumbs down" icon where the user with a simple click can rate his experience with the unit. If the user want to give more detailed feedback, perhaps top point out an error in the unit he can also click on "Write feedback" upon which a textfield on a modal screen opens up for the user to comment further.
+ 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Footer
 </span>
+
+The footer is divided into two sections, a left section where Sheldon related items, e.g. Social media links for the Sheldon Product is displaied and a middle/right section where the Eduational Institution that is using the Sheldon app can display its information, e.g. contact info.
+![Footer]()
+
 
 The detail page is where the user can:
 
@@ -307,18 +332,25 @@ x
 x
 
 ### Log Out
-
-x
-
-## 404 Page
-
 x
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-500 Page
+Error messages
 </span>
 
+### 403 Page
 x
+
+### 404 Page
+x
+
+### 405 Page
+x
+
+### 500 Page
+x
+
+\* This feature is good for all students but especially important for students with a neurodivergent diagnosis such as Asperger syndrome where the structure need to be extremely clear and distinct.  
 
 <span style="color:orange;font-weight:700;font-size:22px">
 FEATURES TO IMPLEMENT IN THE FUTURE (Out of scoop features)
@@ -370,6 +402,9 @@ FEATURES TO IMPLEMENT IN THE FUTURE (Out of scoop features)
 
 In general, the code could easily be repurposed to create similar sites with a different focus in the places being shared (e.g. cycling-cafes/kids activities/rock-climbing centres etc.).
 
+
+The weakness with the navigation of the Code Institutes LMS is here adressed with an everpresent Syllabus combined with  
+
 <span style="color:orange;font-weight:700;font-size:22px">
 TECHNOLOGIES AND DESIGN PRINCIPLES
 </span>
@@ -377,11 +412,11 @@ TECHNOLOGIES AND DESIGN PRINCIPLES
 Design principles used
 </span>
 
-- x:
+- Languages:
     - Python
-    - JavaScript
     - HTML5
     - CSS3
+    - JavaScript
 - >Patterns:
     - Model-View-Controller (MVC)
 - Design Thinking:
@@ -420,31 +455,16 @@ Design principles used
 - [Cloudinary](https://cloudinary.com/) - to host the static files.
 - [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) - to test responsiveness, edit CSS code, debug JavaScript and generate Lighthouse reports.
 - [Google Fonts](https://fonts.google.com/) - to import the site font, ‘Oswald’.
-- [Figma](http://figma.com) - to create the wireframes.
+- [Balsamiq](https://balsamiq.com/) - to create the wireframes.
 - [Font Awesome](https://fontawesome.com/) - for all the site icons.
-- [Gauger Fonticon](https://gauger.io/fonticon/) - for the favicon.
+- [Favicon](https://favicon.io/) - for the favicon.
 - [Coolers](https://coolers.co/) - for an overview of the chosen colour palette.
 - [Am I Responsive](https://ui.dev/amiresponsive) - to create the responsive demo image at the top of the Readme.
-- [Excalidraw](https://excalidraw.com/) - to create the navigation diagram.
 - [Lucidchart](https://www.lucidchart.com/pages/) - to create the database schemas.
-- [TinyPNG](https://tinypng.com/) - to compress the Readme images.
-- [Quicktime](https://support.apple.com/en-gb/guide/quicktime-player/welcome/mac) - to record the screen capture for GIFs in the readme.
-- [Ezgif](https://ezgif.com/) - to convert the Readme GIFs.
-- [Quillbot](https://quillbot.com/) - for rephrasing demo comments.
-- [WebAIM WAVE](https://wave.webaim.org/) - for automated testing of accessibility.
-- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) - to check colour contrast accessibility.
-- [Eightshapes Contrast Grid](https://contrast-grid.eightshapes.com/) - to visualise the contrast accessibility of the whole site colour palette.
 - [Code Institute’s Python Linter](https://pep8ci.herokuapp.com/) - for automated testing of the Python code.
 - [JSHint](https://jshint.com/) - to test the JavaScript code.
 - [W3C Markup Validator](https://validator.w3.org/) - to test the HTML code.
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator) - to test the CSS code.
-
-<span style="color:#1591ea;font-weight:700;font-size:20px">
-APIs Used
-</span>
-
-- [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview) - to run the home page map.
-- [Google Places API](https://developers.google.com/maps/documentation/places/web-service/overview) - to get details and photos from place searches.
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Python Packages Used
@@ -452,9 +472,6 @@ Python Packages Used
 
 - [django-allauth](https://docs.allauth.org/en/latest/index.html) - for user authentication.
 - [gunicorn](https://gunicorn.org/) - as the HTTP server that allows Django to run on Heroku.
-- [psycopg2](https://pypi.org/project/psycopg2/) - as the PostgreSQL database adapter for Python.
-- [dj_database_url](https://pypi.org/project/dj-database-url/) - to allow the use of the `DATABASE_URL` environment variable inside Django.
-- [Coverage.py](http://Coverage.py) - to measure test coverage of the Python code.
 
 <span style="color:orange;font-weight:700;font-size:22px">
 TESTING
@@ -886,7 +903,7 @@ function readFetcher() {
 }
 ```
 Handling of case when any units have yet been created
-![Units in Syllabus]()
+![Units in Syllabus](images-for-readme/units.jpg)
 
 ```html
 {% if unit_list|length < 1 %}

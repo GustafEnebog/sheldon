@@ -70,6 +70,11 @@ header a {
     margin: 10px 0px;
 }
 
+#Situation-awareness {
+    display: flex;
+    justify-content: flex-start;
+}
+
 footer a {
     text-decoration: none;
     color: inherit;
