@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
-from .models import Unit # Earlier: Textbook but it should be a model
+from django.http import HttpResponseRedirect
+from .models import Unit, Note # Earlier: Textbook but it should be a model
 # DELETE do not need it anymore: from django.http import HttpResponse
-from .models import Syllabus
+from .models import Syllabus # See if this one could be moved to from .models import Unit, Comment on row 5
 from .forms import NotesForm
 from django.contrib.auth.models import User
 
@@ -73,6 +74,29 @@ def unit_detail(request, unit_slug):
         #"note_count": notes_count,
         #"note_form": note_form,
     )
+
+
+def note_edit(request, slug, note_id): # slug or unit_slug!? Here and further down in code in this view as well
+    """
+    view to edit note
+    """
+    if request.method == "POST":
+
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug) # Should maybe be unit to the left of =
+        note = get_object_or_404(Note, pk=comment_id) # Note tot he right of equal sign must refer to the model since capital N
+        note_form = NotesForm(data=request.POST, instance=note) # Plural since I have my forms.py in plural (notes) Same here as comment above. Is POST method or should it be changed ot UNIT?
+
+        if note_form.is_valid() and note.author == request.user: # note.author or note.user_id!? REMEMBER TO CHANGE IN BUTTON IN singel-unit-display.html as well!
+            note = note_form.save(commit=False)
+            note.unit = unit # Should it be post or unit!?
+            note.approved = False
+            note.save()
+            messages.add_message(request, messages.SUCCESS, 'Note Updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating note!')
+
+    return HttpResponseRedirect(reverse('unit_detail', args=[slug]))
 
 
 def handler404(request, exception):

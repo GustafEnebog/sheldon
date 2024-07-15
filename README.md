@@ -82,6 +82,7 @@ Weakspots in Code Institute LMS
 * Screenshoots are to small in size to be able to read the code
 * No possibility for user to tag a unit according to how degree of completion, there is only a mark based on if you have visited the unti before or not!
 * No way of navigate a "jump" to another part of the Syllabus without first having to leave the unit (since the Syllabus and units are separate views)
+* Resizing the window, like going from full screen (maximise button) to make the window smaller (restore button) makes the page scroll away from the place where you where in the text requiring user to scroll to refind his spot in the text.
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
@@ -233,6 +234,8 @@ Please see: "Features to implement in the future" for a description of the plann
 A teaching unit, or simply a unit, is like the smallest headline in a textbook, e.g. "the Area-rule" which could be filled with text or images on the topic.
 ![list-page-screenshot.png](documentation/list-page-screenshot.png)
 
+Pace control should also calculate the average time you spend on a unit, average this out and base average time spent on a unit based on a smart algorithm utilysing this data.
+
 Places can be favourited/unfavourited by clicking on the heart icon.
 •	Introduction
 •	Cheat sheet
@@ -251,6 +254,12 @@ Please see: "Features to implement in the future" for a description of planned f
 
 ![ Unit feature]()
 
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+## Hyperlinks (Main)
+</span>
+The Unit content holds Wiki-style hyperlinks that, when the user click on them, takes him to a different unit relating to the topic in the original unit visited. These hyperlinks are key in the concept of being able to freely combine and order free standing learning units since the hyperlinks can bridge the gap between.
+
+These hyperlinks are to be created both automatically (when a word in a unit matches exactly the title of another unit) as well as manualy. Automatically created hyperlinks should also be possible to remove manually. Functionality that would recognise close yet not exact unit title matches (regex) asking the admin if a "non-exact"-huperlink (possibly with another color to mark that it is a "related" and not an exact word hyperlink)
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Two level deep expansion/collapse text

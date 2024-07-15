@@ -129,4 +129,15 @@
     </div>
 {% endfor %}
 <p>ABOVE HERE IT SHOULD APPEAR</p>
+
+{% if user.is_authenticated and note.author == user %}
+<button class="btn btn-edit"
+  note_id="{{ note.id }}">Edit WOW!</button>
+{% endif %}
+
 {% endblock unit %}
+
+{% block extras %}
+And you do not see this either!?
+<script src="{% static 'js/notes.js' %}"></script>
+{% endblock %}

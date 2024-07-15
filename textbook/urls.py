@@ -7,6 +7,8 @@ from django.urls import path
 urlpatterns = [
     path('', views.UnitListView.as_view(), name='UnitContent'), # UnitContent is a view
     path('<slug:unit_slug>/', views.unit_detail, name="unit_detail"),
+    path('<slug:slug>/edit_note/<int:note_id>',
+         views.note_edit, name='note_edit'),
 ]
 
 handler404 = 'textbook.views.handler404'
