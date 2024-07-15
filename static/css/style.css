@@ -71,8 +71,8 @@ header a {
 }
 
 #Situation-awareness {
-    display: flex;
-    justify-content: flex-start;
+    text-align: left;
+    padding-left: 20px;
 }
 
 footer a {
@@ -92,7 +92,7 @@ footer a {
 
 #logo-footer {
     margin-top: 15px;
-    margin-left: 50px;
+    margin-left: 20px;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -111,7 +111,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 #header-login {

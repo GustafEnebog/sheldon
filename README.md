@@ -205,8 +205,12 @@ Syllabus with Modules and Units (Header)*
 </span>
 The course Syllabus is showing directly underneath the header and can almost be considered as a part of the header since it is always showing or at least so it was intended but due to technical restrictions with Django Views the user need to return to this view with a back-button after each time having visited a view. Please see more on the planned (but not yet implemented) features in the "Features to implement in the future"
 
-
 ![add-place-screencapture.gif](documentation/add-place-screencapture.gif)
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+2D Navigation arrows*
+</span>
+As a secondary method of navigating between the different units the user can click on a left or right arrow to toggle between different modules and an up or down arrow to toggle between different units. These arrows are overlaid on top of the unit stays put indipendent of scrolling. The arrows are made thinn and with a 50% opacity as to not disturb the view when the up and down arrow sits on top of the text. however a larger also opaque grey circle will appear underneath the arrow on hoover. 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Pace Control (Header)*
@@ -338,7 +342,7 @@ x
 Error messages
 </span>
 Sheldon-themed error-pages has been create in order to somwhat mitigate the negative emotion that we all feel when hitting upon an error.
- 
+
 ### "403 Error"-Page
 
 <img src="images-for-readme/error-page-403.jpg" width="700" height="auto">
