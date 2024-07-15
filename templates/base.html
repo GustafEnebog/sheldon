@@ -84,7 +84,8 @@
                                 href="{% url 'account_logout' %}">Logout</a>
                         </span>
                         {% else %}
-                        <div>  <!-- class="flex-parent-element" -->
+                        <div>
+                            <!-- class="flex-parent-element" -->
                             <span class="nav-item">
                                 <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
                                     class="flex-child-element" id="login-space" aria-current="page"
@@ -177,8 +178,6 @@
 
                             {% block content %}
                             {% endblock content %}
-                        
-
                         </div>
                         <!-- Google font Add Circle -->
                         <span class="material-symbols-outlined">
@@ -259,8 +258,10 @@
                                     <!--<p  Add URL to Sheldon official website</p>-->
                                     <h3 class="m-0 text-center text-white" id="footer-text-left">SHELDON</h3>
                                 </a>
-                                <p class="m-0 text-center text-white" id="footer-text-left">Copyright: Gustaf Enebog, 2024</p>
-                                <p class="m-0 text-center text-white" id="footer-text-left">Follow us:<i class="fab fa-facebook-square ms-3" id="footer-text-left"></i>
+                                <p class="m-0 text-center text-white" id="footer-text-left">Copyright: Gustaf Enebog,
+                                    2024</p>
+                                <p class="m-0 text-center text-white" id="footer-text-left">Follow us:<i
+                                        class="fab fa-facebook-square ms-3" id="footer-text-left"></i>
                                     <i class="fab fa-twitter-square ms-3"></i>
                                     <i class="fab fa-instagram-square ms-3"></i>
                                     <i class="fab fa-youtube-square ms-3"></i>
@@ -275,7 +276,8 @@
                         <!-- style="background-color:tan" -->
                         <p class="m-0 text-center text-white">
 
-                            <p class="m-0 text-center text-white">University of Southern Califoria<br>University Park Campus<br>3551 Trousdale Pkwy<br>Los Angeles, CA  90007</p>
+                            <p class="m-0 text-center text-white">University of Southern Califoria<br>University Park
+                                Campus<br>3551 Trousdale Pkwy<br>Los Angeles, CA 90007</p>
                         </p>
                     </div>
                 </div>

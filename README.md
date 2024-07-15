@@ -303,7 +303,7 @@ Feedback
 
 ![Feedback feature]()
 Each unit displays a "thumbs up" and a "thumbs down" icon where the user with a simple click can rate his experience with the unit. If the user want to give more detailed feedback, perhaps top point out an error in the unit he can also click on "Write feedback" upon which a textfield on a modal screen opens up for the user to comment further.
- 
+
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Footer
 </span>
@@ -337,18 +337,24 @@ x
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Error messages
 </span>
+Sheldon-themed error-pages has been create in order to somwhat mitigate the negative emotion that we all feel when hitting upon an error.
+ 
+### "403 Error"-Page
 
-### 403 Page
-x
+<img src="images-for-readme/error-page-403.jpg" width="700" height="auto">
 
-### 404 Page
-x
+### "404 Error"-Page
 
-### 405 Page
-x
+<img src="images-for-readme/error-page-404.jpg" width="700" height="auto">
 
-### 500 Page
-x
+### "405 Error"-Page
+
+<img src="images-for-readme/error-page-405.jpg" width="700" height="auto">
+
+### "500 Error"-Page
+
+<img src="images-for-readme/error-page-500.jpg" width="700" height="auto">
+
 
 \* This feature is good for all students but especially important for students with a neurodivergent diagnosis such as Asperger syndrome where the structure need to be extremely clear and distinct.  
 
