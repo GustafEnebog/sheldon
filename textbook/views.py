@@ -5,6 +5,7 @@ from .models import Unit # Earlier: Textbook but it should be a model
 # DELETE do not need it anymore: from django.http import HttpResponse
 from .models import Syllabus
 from .forms import NotesForm
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -45,19 +46,9 @@ def unit_detail(request, unit_slug):
     if request.method == "POST":
         note_form = NotesForm(data=request.POST)
         if note_form.is_valid():
-            #note = note_form.save(commit=False)
-            note = note_form.save(commit=True)
-            #note.author = request.user
-            note.unit_id = request.user
-            unit.unit_id = request.user
-            note.user_id = request.user
-            note.unit_detail = unit_detail
-            note.unit = request.user
-
-            user_id = request.unit
-            unit_id = request.unit
-            
-            #note.post = post
+            note = note_form.save(commit=False)
+            note.unit_id = Unit.objects.get(unit_slug=unit_slug)  #CORRECT!
+            note.user_id = User.objects.get(id=request.user.id)  #CORRECT!
             note.save()
 
             #Confirmation message, not yet working, also in base

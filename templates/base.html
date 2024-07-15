@@ -171,15 +171,14 @@
                         <div>
                             {% block unit %}
                             Welcome to:
-                            <p>{{ syllabus.syllabus_title }}</p> <!-- Why does this not comes through!? -->
+                            <p>{{ syllabus.syllabus_title }}</p>
                             Let's click on one of the units in the Syllabus above and start learning!
                             {% endblock unit %}
 
-                            {% block 404 %}
-                            {% endblock %}
-
                             {% block content %}
-                            {% endblock %}
+                            {% endblock content %}
+                        
+
                         </div>
                         <!-- Google font Add Circle -->
                         <span class="material-symbols-outlined">
