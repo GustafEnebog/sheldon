@@ -43,17 +43,11 @@
 
 <img src="{% static 'images/definition-of-forces-on-airfoil.png' %}" alt="definition of forces on airfoil" width="400"
   height=auto>
-{% endblock unit %}
 <!--END OF Unit-->
 
 
 
 
-
-
-
-
-{% block content %}
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
@@ -124,4 +118,15 @@
     </div>
 </div>
 
-{% endblock content %}
+
+<p>BELOW HERE IT SHOULD APPEAR</p>
+{% for note in note %}
+    <p>
+        {{ note.author }} wrote:
+    </p>
+    <div>
+        {{ note.body | linebreaks }}
+    </div>
+{% endfor %}
+<p>ABOVE HERE IT SHOULD APPEAR</p>
+{% endblock unit %}
