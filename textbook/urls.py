@@ -9,6 +9,8 @@ urlpatterns = [
     path('<slug:unit_slug>/', views.unit_detail, name="unit_detail"),
     path('<slug:slug>/edit_note/<int:note_id>',
          views.note_edit, name='note_edit'),
+    path('<slug:slug>/delete_note/<int:note_id>',  # DELETE
+         views.note_delete, name='note_delete'),  # DELETE
 ]
 
 handler404 = 'textbook.views.handler404'

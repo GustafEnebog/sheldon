@@ -90,6 +90,8 @@
 
     <!--Edit button-->
     {% if user.is_authenticated and note.author == user %}
+    <button class="btn btn-delete"
+    note_id="{{ note.id }}">Delete</button>  <!--DELETE-->
     <button class="btn btn-edit" note_id="{{ note.id }}">Edit!</button>
     {% endif %}
     <!--END OF Edit button-->
@@ -113,6 +115,38 @@
     </div>
     <!-- END OF Creating Note -->
 </div>
+
+
+<!-- DELETE -->
+
+<!-- Delete confirmation modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1"
+  aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"
+          id="deleteModalLabel">Delete comment?</h5>
+        <button type="button" class="btn-close"
+          data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete your note?
+        This action cannot be undone.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+          data-bs-dismiss="modal">Close</button>
+        <a id="deleteConfirm" href="#" class="btn
+          btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END OF Delete confirmation modal -->
+
+<!-- DELETE -->
+
 {% endblock unit %}
 
 {% block extras %}

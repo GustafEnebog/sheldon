@@ -82,9 +82,9 @@ def note_edit(request, slug, note_id): # slug or unit_slug!? Here and further do
     """
     if request.method == "POST":
 
-        queryset = Post.objects.filter(status=1)
+        queryset = Post.objects.filter(status=1) # Should maybe be unit to the right of =
         post = get_object_or_404(queryset, slug=slug) # Should maybe be unit to the left of =
-        note = get_object_or_404(Note, pk=comment_id) # Note tot he right of equal sign must refer to the model since capital N
+        note = get_object_or_404(Note, pk=comment_id) # Note tot he right of equal sign must refer to the model since capital N  CHANGE comment_id!!!
         note_form = NotesForm(data=request.POST, instance=note) # Plural since I have my forms.py in plural (notes) Same here as comment above. Is POST method or should it be changed ot UNIT?
 
         if note_form.is_valid() and note.author == request.user: # note.author or note.user_id!? REMEMBER TO CHANGE IN BUTTON IN singel-unit-display.html as well!
@@ -98,6 +98,23 @@ def note_edit(request, slug, note_id): # slug or unit_slug!? Here and further do
 
     return HttpResponseRedirect(reverse('unit_detail', args=[slug]))
 
+# DELETE
+def note_delete(request, slug, note_id):
+    """
+    view to delete note
+    """
+    queryset = Post.objects.filter(status=1)
+    post = get_object_or_404(queryset, slug=slug)
+    note = get_object_or_404(Note, pk=comment_id)   # CHANGE comment_id!!!
+
+    if note.author == request.user:
+        note.delete()
+        messages.add_message(request, messages.SUCCESS, 'Note deleted!')  # What is add_message?
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own note!')   # What is add_message?
+
+    return HttpResponseRedirect(reverse('unit_detail', args=[slug]))
+# END OF DELETE
 
 def handler404(request, exception):
     """
