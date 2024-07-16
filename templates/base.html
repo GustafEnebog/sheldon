@@ -70,8 +70,9 @@
                     <div>
                         <!-- <img src="static/images/usc-logo.png" align="left" alt="University of Southern California logo"
                         style="width:100%;max-width:250px"> -->
-                        <img src="{% static  'images/usc-logo.png'%}" id="user-logo"
-                            alt="University of Southern California logo">
+                        <a href=
+                            "https://www.usc.edu/" target="_blank"><img src="{% static  'images/usc-logo.png'%}" id="user-logo"
+                            alt="University of Southern California logo"></a>
                     </div>
                 </div>
                 <div class="col-sm-2" id="header-login">
@@ -170,17 +171,9 @@
                     <div style="background-color:white">
                         <div>
                             {% block unit %}
-                            Welcome to:
-                            <p>{{ syllabus.syllabus_title }}</p>
+                            Welcome to: USC and Aerodynamics 101
                             Let's click on one of the units in the Syllabus above and start learning!
                             {% endblock unit %}
-
-                            {% block content %}
-                            {% endblock content %}
-Do you see this at least!??????????
-                            {% block extras %}
-                            Do you see this? This is extras!
-                            {% endblock %}
                         </div>
                         <!-- Google font Add Circle -->
                         <span class="material-symbols-outlined">
@@ -292,8 +285,12 @@ Do you see this at least!??????????
 
     <!--Javascript file-->
     <!-- <link rel="scriptfile" href="{% static 'js/script.js' %}>" /> -->
-    <script src="{% static 'js/script.js' %}"></script>
+    <!-- <script src="{% static 'js/script.js' %}"></script> -->
 
+
+    {% block extras %}
+    extras in base!!!
+    {% endblock %}
 </body>
 
 </html>

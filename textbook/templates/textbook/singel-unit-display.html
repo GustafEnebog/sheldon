@@ -3,90 +3,60 @@
 {% load crispy_forms_tags %}
 
 
-<!--Unit-->
 {% block unit %}
-<h1>Unit</h1>
-<p>unit_title: {{unit.unit_title}}</p>
-<p>Author: {{unit.author}}</p>
-<p>content: {{unit.content}}</p>
-<a href="{% url 'UnitContent'%}">Back </a>
-
-<!--Code from walkthrough-->
-{% if "placeholder" in unit.featured_image.url %}
-<img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
-{% else %}
-<img class="card-img-top" src=" {{ unit.featured_image.url }}" alt="{{ unit.title }}">
-{% endif %}
-<!--END OF Code from walkthrough-->
 
 
-
-<!-- from walkthrough Crispy forms -->
-<!-- Creating New Comments -->
-<div class="col-md-4 card mb-4 mt-3">
-  <div class="card-body">
-    {% if user.is_authenticated %}
-    <!-- <h3>Make a note on this Unit:</h3> -->
-    <form id="commentForm" method="post" style="margin-top: 1.3em;">
-      {{ notes_form | crispy }}
-      {% csrf_token %}
-      <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Save Note</button>
-    </form>
-    {% else %}
-    <p>Log in to make a note</p>
-    {% endif %}
-  </div>
-</div>
-<!-- END OF: from walkthrough Crispy forms -->
-</div>
-<!--END OF Code from walkthrough displaying user notes -->
-
-<img src="{% static 'images/definition-of-forces-on-airfoil.png' %}" alt="definition of forces on airfoil" width="400"
-  height=auto>
-<!--END OF Unit-->
-
-
-
-
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title">{{ unit.unit_title }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ unit.author }} | {{ unit.created_on }}</p>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
-            </div>
-        </div>
-    </div>
-</div>
-
+<!--Displaying unit-->
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
+                <div class="masthead">
+                    <div class="container">
+                        <div class="row g-0">
+                            <div class="col-md-6 masthead-text">
+                                <!-- Displaying unit title, author and created on -->
+                                <h1 class="post-title">{{ unit.unit_title }}</h1>
+                                <p class="post-subtitle">{{ unit.author }} | {{ unit.created_on }}</p>
+                            </div>
+                            <div class="d-none d-md-block col-md-6 masthead-image">
+                                <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
+                                <!-- END OF: Displaying unit title, author and created on -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Displaying "unit content -->
                 <p class="card-text">
                     {{ unit.content | safe }}
                 </p>
+                <!--END OF Displaying "unit content -->
+
+                <!--Displaying Cloudinary image-->
+                {% if "placeholder" in unit.featured_image.url %}
+                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                {% else %}
+                <img class="card-img-top" src=" {{ unit.featured_image.url }}" alt="{{ unit.title }}">
+                {% endif %}
+                <!--END OF Displaying Cloudinary image-->
             </div>
         </div>
     </div>
-    <!-- Displaying Comments -->
+    <!--END OF Displaying unit-->
+
+    <!--Displaying Note-->
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Notes:</h3>
+            <h3>Note:</h3>
             <div class="card-body">
-                <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
-                {% for note in notes %}
-                <div
-                    class="p-2 comments{% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
+                <!-- We want a for loop inside the empty control tags
+          to iterate through each comment in comments -->
+                {% for note in note %}
+                <div class="p-2 comments
+          {% if not comment.approved and comment.author == user %}
+          faded{% elif not comment.approved %} d-none{% endif %}">
                     <p class="font-weight-bold">
-                        {{ note.author }}
+                        {{ note.author }} wrote:
                         <span class="font-weight-normal">
                             {{ note.created_on }}
                         </span> wrote:
@@ -94,50 +64,57 @@
                     <div id="comment{{ comment.id }}">
                         {{ note.body | linebreaks }}
                     </div>
+                    {% if not note.approved and note.author == user %}
+                    <p class="approval">
+                        This note is awaiting approval
+                    </p>
+                    {% endif %}
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
         </div>
-        <!-- Creating New Comments -->
-        <div class="col-md-4 card mb-4  mt-3 ">
-            <div class="card-body">
-                {% if user.is_authenticated %}
-                <h3>Make a note:</h3>
-                <p>Making a note as: {{ user.username }}</p>
-                <form id="commentForm" method="post" style="margin-top: 1.3em;">
-                    {{ notes_form | crispy }}  <!-- Changing this from note_form to notes_form made the form appear! but instead I get error when clicking submit button-->
-                    {% csrf_token %}
-                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-                </form>
-                {% else %}
-                <p>Log in to make a note</p>
-                {% endif %}
-            </div>
-        </div>
     </div>
-</div>
+    <!--END OF Displaying Note-->
 
-
-<p>BELOW HERE IT SHOULD APPEAR</p>
-{% for note in note %}
+    <!--Displaying Note WITHOUT Styling-->
+    {% for note in note %}
     <p>
         {{ note.author }} wrote:
     </p>
     <div>
         {{ note.body | linebreaks }}
     </div>
-{% endfor %}
-<p>ABOVE HERE IT SHOULD APPEAR</p>
+    {% endfor %}
+    <!--END OF Displaying Note WITHOUT Styling-->
 
-{% if user.is_authenticated and note.author == user %}
-<button class="btn btn-edit"
-  note_id="{{ note.id }}">Edit WOW!</button>
-{% endif %}
+    <!--Edit button-->
+    {% if user.is_authenticated and note.author == user %}
+    <button class="btn btn-edit" note_id="{{ note.id }}">Edit!</button>
+    {% endif %}
+    <!--END OF Edit button-->
 
+    <!-- Creating Note -->
+    <div class="col-md-4 card mb-4  mt-3 ">
+        <div class="card-body">
+            {% if user.is_authenticated %}
+            <h3>Make a note:</h3>
+            <p>Making a note as: {{ user.username }}</p>
+            <form id="commentForm" method="post" style="margin-top: 1.3em;">
+                {{ notes_form | crispy }}
+                <!-- Changing this from note_form to notes_form made the form appear! but instead I get error when clicking submit button-->
+                {% csrf_token %}
+                <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+            </form>
+            {% else %}
+            <p>Log in to make a note</p>
+            {% endif %}
+        </div>
+    </div>
+    <!-- END OF Creating Note -->
+</div>
 {% endblock unit %}
 
 {% block extras %}
-And you do not see this either!?
 <script src="{% static 'js/notes.js' %}"></script>
 {% endblock %}
