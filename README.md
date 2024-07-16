@@ -47,6 +47,17 @@ A Kanban board in Github projects was used for the Agile development process - s
 
 ‘Epics’ were broken down into ‘User Stories’, which were further broken down into ‘Tasks’.
 
+THEME: ADMINISTRATION > EPIC: USER ACCOUNT
+THEME: ADMINISTRATION > EPIC: ADMIN
+THEME: STUDENT AID FEATURES > EPIC: CURRICULUM AND NAVIGATION
+THEME: STUDENT AID FEATURES > EPIC: PACE CONTROL
+THEME: STUDENT AID FEATURES > EPIC: EXPANSION/COLLAPSE TEXT
+THEME: STUDENT AID FEATURES > EPIC: SITUATIONAL AWARENESS
+THEME: STUDENT AID FEATURES > EPIC: CLIP BOARD
+THEME: STUDENT AID FEATURES > EPIC: FEEDBACK
+THEME: RELEASE > EPIC: TESTING
+THEME: RELEASE > EPIC: DEPLOYMENT
+
 <span style="color:orange;font-weight:700;font-size:22px">
 USER EXPERIENCE (UX)
 </span>
@@ -83,6 +94,7 @@ Weakspots in Code Institute LMS
 * No possibility for user to tag a unit according to how degree of completion, there is only a mark based on if you have visited the unti before or not!
 * No way of navigate a "jump" to another part of the Syllabus without first having to leave the unit (since the Syllabus and units are separate views)
 * Resizing the window, like going from full screen (maximise button) to make the window smaller (restore button) makes the page scroll away from the place where you where in the text requiring user to scroll to refind his spot in the text.
+* Poor responsivness: Not well suited for studiyng units on mobile
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
@@ -121,7 +133,7 @@ Put some stuff here hjdisalgdfjoajfdojdfsolfjd
 Colour Scheme
 </span>
 
-The color scheme is very neutral where colors serve as much in the role of color coding as accent colors.
+The color scheme is very neutral where colors serve as much in the role of color coding as they do as accent colors.
 
 ![Color Schem all](images-for-readme/color-theme-all.jpg width="200" height="auto")
 
@@ -179,60 +191,51 @@ The database models are implemented according to the below Entity Relationship D
 
 ![ERD Sheldon](images-for-readme/sheldon-erd.png)
 
-
-THEME: ADMINISTRATION > EPIC: USER ACCOUNT
-THEME: ADMINISTRATION > EPIC: ADMIN
-THEME: STUDENT AID FEATURES > EPIC: CURRICULUM AND NAVIGATION
-THEME: STUDENT AID FEATURES > EPIC: PACE CONTROL
-THEME: STUDENT AID FEATURES > EPIC: EXPANSION/COLLAPSE TEXT
-THEME: STUDENT AID FEATURES > EPIC: SITUATIONAL AWARENESS
-THEME: STUDENT AID FEATURES > EPIC: CLIP BOARD
-THEME: STUDENT AID FEATURES > EPIC: FEEDBACK
-THEME: RELEASE > EPIC: TESTING
-THEME: RELEASE > EPIC: DEPLOYMENT
-
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Name/logo of Educational Institution (Header)
 </span>
 
 x
-!["Authentication"-feature]()
 
-### Login/Logout (Header)
-X
+<img src="" width="700" height="auto">
+
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-Syllabus with Modules and Units (Header)*
+Authentication
 </span>
+
+### Sign Up
+
+x
+
+<img src="" width="700" height="auto">
+
+### Log In
+
+x
+
+<img src="" width="700" height="auto">
+
+### Log Out
+
+x
+
+<img src="" width="700" height="auto">
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Syllabus with Units (Header)*
+</span>
+
 The course Syllabus is showing directly underneath the header and can almost be considered as a part of the header since it is always showing or at least so it was intended but due to technical restrictions with Django Views the user need to return to this view with a back-button after each time having visited a view. Please see more on the planned (but not yet implemented) features in the "Features to implement in the future"
 
 ![add-place-screencapture.gif](documentation/add-place-screencapture.gif)
 
-<span style="color:#1591ea;font-weight:700;font-size:20px">
-2D Navigation arrows*
-</span>
-As a secondary method of navigating between the different units the user can click on a left or right arrow to toggle between different modules and an up or down arrow to toggle between different units. These arrows are overlaid on top of the unit stays put indipendent of scrolling. The arrows are made thinn and with a 50% opacity as to not disturb the view when the up and down arrow sits on top of the text. however a larger also opaque grey circle will appear underneath the arrow on hoover. 
-
-<span style="color:#1591ea;font-weight:700;font-size:20px">
-Pace Control (Header)*
-</span>
-
-The pace control gives the user:
-•	the date for the official deadline as well as a user set deadline
-•	Remaining time until the official deadline as well as a user set deadline
-•	Necessary pace to make the deadline as well as a user set deadline in the form of:
-   - Number of units to do per day, or if that number is less then one: Number of days per units
-
-Please see: "Features to implement in the future" for a description of the planned Pace Control
-
-!["Pace Control"-feature]()
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 ## Unit (Main)
 </span>
 
 A teaching unit, or simply a unit, is like the smallest headline in a textbook, e.g. "the Area-rule" which could be filled with text or images on the topic.
-![list-page-screenshot.png](documentation/list-page-screenshot.png)
 
 Pace control should also calculate the average time you spend on a unit, average this out and base average time spent on a unit based on a smart algorithm utilysing this data.
 
@@ -252,53 +255,9 @@ Places can be favourited/unfavourited by clicking on the heart icon.
 
 Please see: "Features to implement in the future" for a description of planned features for the Unit
 
+<img src="" width="700" height="auto">
 ![ Unit feature]()
 
-<span style="color:#1591ea;font-weight:700;font-size:20px">
-## Hyperlinks (Main)
-</span>
-The Unit content holds Wiki-style hyperlinks that, when the user click on them, takes him to a different unit relating to the topic in the original unit visited. These hyperlinks are key in the concept of being able to freely combine and order free standing learning units since the hyperlinks can bridge the gap between.
-
-These hyperlinks are to be created both automatically (when a word in a unit matches exactly the title of another unit) as well as manualy. Automatically created hyperlinks should also be possible to remove manually. Functionality that would recognise close yet not exact unit title matches (regex) asking the admin if a "non-exact"-huperlink (possibly with another color to mark that it is a "related" and not an exact word hyperlink)
-
-<span style="color:#1591ea;font-weight:700;font-size:20px">
-Two level deep expansion/collapse text
-</span>
-
-### Expansion/Collapse text (accordian)
-By clicking a plus icon next to the paragraphs the text below the plus sign slides down and makes space for more, previously hidden, text. This feature can "un-hide" text two levels down and vice versa (by clicking a minus sign).
-
-In order to not overwhelm the student, this feature will unclutter the teaching material which will help the student to see what is important and what is less important. It also helps the Admin/teacher to make a course Syllabus including much deepth (including two levels deep expansion text) in some areas yet only touching on other areas (not opening any expansion text)
-
-As a positive side effect it can make learning more fun by intriguing the student to find what is hiding behind that expand button.
-
-<span style="color:#1591ea;font-weight:700;font-size:20px">
-Situational Awarenes
-</span>
-the Situational Awareness-"panel" helps the user keep track of where he has been and what he has done on each unit. Thus each unit has a text/checkbox relating where the user can indicate how much of that unit he has completed as well as remember units if he want to return to them in the future:
-
-•	"Been here" - Text appears automatically from the first time (and onwards) the user visits the unit
-•	"Read" - User can check this checkbox once he has read yet not understood the unit (and therefore need to return to it later).
-•	"Understood" - User can check this checkbox when he. If this checkbox is checked without the "Read" checkbox being previoously checked that checkbox will also automatically be checked simoultaniously
-•	"Bookmark" - User can bookmark pages for future refence
-
-This is also reflected through with color coding of the units in the Syllabus. giving the user a sense of "Situational Awareness" for the course. This is also taken as a base for calcuating the "pace control"-feature.
-
-•	Original state - background color: #FFFFFF
-•	"Been here" - background color: #E5E5E5
-•	"Read" - background color: #40BCFF
-•	"Understood" - background color: #80D3FF
-•	"Bookmark" - border color: #FFC020
-
-A positive side-effect of the "Situational awareness"-checkboxes is the satisfying dopamin-reward the user recieves as he checks away ...one more unit, kind of reading "just one more page" in a suspensfull book! The progress becomes concrete and visible!
-
-![Expansion/collapse-text feature]()
-
-<span style="color:#1591ea;font-weight:700;font-size:20px">
-Clip Board
-</span>
-
-![Clipboard feature]()
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Note
@@ -309,21 +268,14 @@ The user can make his own notes on each unit that will stay in place so that the
 The Note features full CRUD (Create, Read, Update, and Delete)
 
 ![Note feature]()
+<img src="" width="700" height="auto">
 
-<span style="color:#1591ea;font-weight:700;font-size:20px">
-Feedback
-</span>
-
-![Feedback feature]()
-Each unit displays a "thumbs up" and a "thumbs down" icon where the user with a simple click can rate his experience with the unit. If the user want to give more detailed feedback, perhaps top point out an error in the unit he can also click on "Write feedback" upon which a textfield on a modal screen opens up for the user to comment further.
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Footer
 </span>
 
 The footer is divided into two sections, a left section where Sheldon related items, e.g. Social media links for the Sheldon Product is displaied and a middle/right section where the Eduational Institution that is using the Sheldon app can display its information, e.g. contact info.
-![Footer]()
-
 
 The detail page is where the user can:
 
@@ -332,24 +284,14 @@ The detail page is where the user can:
 - view the place address
 - view the number of comments
 
-<span style="color:#1591ea;font-weight:700;font-size:20px">
-Authentication
-</span>
+![Footer]()
+<img src="" width="700" height="auto">
 
-### Sign Up
-
-x
-
-### Log In
-
-x
-
-### Log Out
-x
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Error messages
 </span>
+
 Sheldon-themed error-pages has been create in order to somwhat mitigate the negative emotion that we all feel when hitting upon an error.
 
 ### "403 Error"-Page
@@ -421,8 +363,141 @@ FEATURES TO IMPLEMENT IN THE FUTURE (Out of scoop features)
 
 In general, the code could easily be repurposed to create similar sites with a different focus in the places being shared (e.g. cycling-cafes/kids activities/rock-climbing centres etc.).
 
-
 The weakness with the navigation of the Code Institutes LMS is here adressed with an everpresent Syllabus combined with  
+
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Modules (within the Syllabus containing the Units) (Header)*
+</span>
+
+The course Syllabus is showing directly underneath the header and can almost be considered as a part of the header since it is always showing or at least so it was intended but due to technical restrictions with Django Views the user need to return to this view with a back-button after each time having visited a view. Please see more on the planned (but not yet implemented) features in the "Features to implement in the future"
+
+![add-place-screencapture.gif](documentation/add-place-screencapture.gif)
+
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Pace Control (Header)*
+</span>
+
+The pace control gives the user:
+•	the date for the official deadline as well as a user set deadline
+•	Remaining time until the official deadline as well as a user set deadline
+•	Necessary pace to make the deadline as well as a user set deadline in the form of:
+   - Number of units to do per day, or if that number is less then one: Number of days per units
+
+Please see: "Features to implement in the future" for a description of the planned Pace Control
+
+!["Pace Control"-feature]()
+<img src="" width="700" height="auto">
+
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Situational Awarenes
+</span>
+the Situational Awareness-"panel" helps the user keep track of where he has been and what he has done on each unit. Thus each unit has a text/checkbox relating where the user can indicate how much of that unit he has completed as well as remember units if he want to return to them in the future:
+
+•	"Been here" - Text appears automatically from the first time (and onwards) the user visits the unit
+•	"Read" - User can check this checkbox once he has read yet not understood the unit (and therefore need to return to it later).
+•	"Understood" - User can check this checkbox when he. If this checkbox is checked without the "Read" checkbox being previoously checked that checkbox will also automatically be checked simoultaniously
+•	"Bookmark" - User can bookmark pages for future refence
+
+This is also reflected through with color coding of the units in the Syllabus. giving the user a sense of "Situational Awareness" for the course. This is also taken as a base for calcuating the "pace control"-feature.
+
+•	Original state - background color: #FFFFFF
+•	"Been here" - background color: #E5E5E5
+•	"Read" - background color: #40BCFF
+•	"Understood" - background color: #80D3FF
+•	"Bookmark" - border color: #FFC020
+
+A positive side-effect of the "Situational awareness"-checkboxes is the satisfying dopamin-reward the user recieves as he checks away ...one more unit, kind of reading "just one more page" in a suspensfull book! The progress becomes concrete and visible!
+
+![Expansion/collapse-text feature]()
+<img src="" width="700" height="auto">
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Clip Board
+</span>
+
+![Clipboard feature]()
+<img src="" width="700" height="auto">
+
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+2D Navigation arrows*
+</span>
+
+As a secondary method of navigating between the different units the user can click on a left or right arrow to toggle between different modules and an up or down arrow to toggle between different units. These arrows are overlaid on top of the unit stays put indipendent of scrolling. The arrows are made thinn and with a 50% opacity as to not disturb the view when the up and down arrow sits on top of the text. however a larger also opaque grey circle will appear underneath the arrow on hoover. 
+
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+## Categories of Unit (Main)
+</span>
+
+A teaching unit, or simply a unit, is like the smallest headline in a textbook, e.g. "the Area-rule" which could be filled with text or images on the topic.
+
+Pace control should also calculate the average time you spend on a unit, average this out and base average time spent on a unit based on a smart algorithm utilysing this data.
+
+Places can be favourited/unfavourited by clicking on the heart icon.
+•	Introduction
+•	Cheat sheet
+•	Module recap     
+•	Review
+•	Dependent Context unit
+•	User defined
+•	Headlines
+•	Photos
+•	Videos
+•	Formulas
+•	Links
+•	Etc.
+
+Please see: "Features to implement in the future" for a description of planned features for the Unit
+
+<img src="" width="700" height="auto">
+![ Unit feature]()
+
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+## Hyperlinks (Main)
+</span>
+
+The Unit content holds Wiki-style hyperlinks that, when the user click on them, takes him to a different unit relating to the topic in the original unit visited. These hyperlinks are key in the concept of being able to freely combine and order free standing learning units since the hyperlinks can bridge the gap between.
+
+These hyperlinks are to be created both automatically (when a word in a unit matches exactly the title of another unit) as well as manualy. Automatically created hyperlinks should also be possible to remove manually. Functionality that would recognise close yet not exact unit title matches (regex) asking the admin if a "non-exact"-huperlink (possibly with another color to mark that it is a "related" and not an exact word hyperlink)
+
+<img src="" width="700" height="auto">
+
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Two level deep expansion/collapse text (accordian)
+</span>
+
+By clicking a plus icon next to the paragraphs the text below the plus sign slides down and makes space for more, previously hidden, text. This feature can "un-hide" text two levels down and vice versa (by clicking a minus sign).
+
+In order to not overwhelm the student, this feature will unclutter the teaching material which will help the student to see what is important and what is less important. It also helps the Admin/teacher to make a course Syllabus including much deepth (including two levels deep expansion text) in some areas yet only touching on other areas (not opening any expansion text)
+
+As a positive side effect it can make learning more fun by intriguing the student to find what is hiding behind that expand button.
+
+<img src="" width="700" height="auto">
+
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Feedback
+</span>
+
+Each unit displays a "thumbs up" and a "thumbs down" icon where the user with a simple click can rate his experience with the unit. If the user want to give more detailed feedback, perhaps top point out an error in the unit he can also click on "Write feedback" upon which a textfield on a modal screen opens up for the user to comment further.
+
+<img src="" width="700" height="auto">
+
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+"Print unit"-function (or Print Clipboard)
+</span>
+
+Each unit displays a "thumbs up" and a "thumbs down" icon where the user with a simple click can rate his experience with the unit. If the user want to give more detailed feedback, perhaps top point out an error in the unit he can also click on "Write feedback" upon which a textfield on a modal screen opens up for the user to comment further.
+
+<img src="" width="700" height="auto">
+
 
 <span style="color:orange;font-weight:700;font-size:22px">
 TECHNOLOGIES AND DESIGN PRINCIPLES
