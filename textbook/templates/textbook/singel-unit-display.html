@@ -46,15 +46,15 @@
 
     <!--Displaying Note-->
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Note:</h3>
+        <div class="col-md-8 card mb-4  mt-3 " style="width: 600px;"> <!-- Deciding the width of the form-->
+            <h3>My note:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags
           to iterate through each comment in comments -->
                 {% for note in note %}
-                <div class="p-2 comments
+                <!-- <div class="p-2 comments
           {% if not comment.approved and comment.author == user %}
-          faded{% elif not comment.approved %} d-none{% endif %}">
+          faded{% elif not comment.approved %} d-none{% endif %}">  -->
                     <p class="font-weight-bold">
                         {{ note.author }} wrote:
                         <span class="font-weight-normal">
@@ -68,36 +68,27 @@
                     <p class="approval">
                         This note is awaiting approval
                     </p>
-                    {% endif %}
+                    <!-- {% endif %} -->
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
         </div>
-    </div>
+
     <!--END OF Displaying Note-->
 
-    <!--Displaying Note WITHOUT Styling-->
-    {% for note in note %}
-    <p>
-        {{ note.author }} wrote:
-    </p>
-    <div>
-        {{ note.body | linebreaks }}
-    </div>
-    {% endfor %}
-    <!--END OF Displaying Note WITHOUT Styling-->
-
-    <!--Edit button-->
-    {% if user.is_authenticated and note.author == user %}
-    <button class="btn btn-delete"
-    note_id="{{ note.id }}">Delete</button>  <!--DELETE-->
-    <button class="btn btn-edit" note_id="{{ note.id }}">Edit!</button>
-    {% endif %}
-    <!--END OF Edit button-->
+    <div> <!--Are the DIVS here necessary!?-->
+        <!--Edit button-->
+        {% if user.is_authenticated and note.author == user %}
+        <button class="btn btn-delete"
+        note_id="{{ note.id }}">Delete</button>  <!--DELETE-->
+        <button class="btn btn-edit" note_id="{{ note.id }}">Edit!</button>
+        {% endif %}
+        <!--END OF Edit button-->
+    </div> <!--Are the DIVS here necessary!?-->
 
     <!-- Creating Note -->
-    <div class="col-md-4 card mb-4  mt-3 ">
+    <div class="col-md-4 card mb-4  mt-3 " style="width: 555px;"> <!-- Deciding the width of the form-->
         <div class="card-body">
             {% if user.is_authenticated %}
             <h3>Make a note:</h3>
@@ -113,8 +104,8 @@
             {% endif %}
         </div>
     </div>
-    <!-- END OF Creating Note -->
 </div>
+    <!-- END OF Creating Note -->
 
 
 <!-- DELETE -->
