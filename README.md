@@ -204,23 +204,17 @@ x
 Authentication
 </span>
 
-### Sign Up
+### Register and Login
 
 x
 
-<img src="" width="700" height="auto">
-
-### Log In
-
-x
-
-<img src="" width="700" height="auto">
+<img src="images-for-readme/register-login-link.jpg" width="700" height="auto">
 
 ### Log Out
 
 x
 
-<img src="" width="700" height="auto">
+<img src="images-for-readme/logout-link.jpg" width="700" height="auto">
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Syllabus with Units (Header)*
@@ -228,8 +222,7 @@ Syllabus with Units (Header)*
 
 The course Syllabus is showing directly underneath the header and can almost be considered as a part of the header since it is always showing or at least so it was intended but due to technical restrictions with Django Views the user need to return to this view with a back-button after each time having visited a view. Please see more on the planned (but not yet implemented) features in the "Features to implement in the future"
 
-![add-place-screencapture.gif](documentation/add-place-screencapture.gif)
-
+<img src="images-for-readme/syllabus-with-units.jpg" width="700" height="auto">
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 ## Unit (Main)
@@ -255,8 +248,7 @@ Places can be favourited/unfavourited by clicking on the heart icon.
 
 Please see: "Features to implement in the future" for a description of planned features for the Unit
 
-<img src="" width="700" height="auto">
-![ Unit feature]()
+<img src="images-for-readme/unit-top.jpg" width="700" height="auto">
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
@@ -284,8 +276,7 @@ The detail page is where the user can:
 - view the place address
 - view the number of comments
 
-![Footer]()
-<img src="" width="700" height="auto">
+<img src="images-for-readme/footer.jpg" width="700" height="auto">
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
@@ -372,8 +363,7 @@ Modules (within the Syllabus containing the Units) (Header)*
 
 The course Syllabus is showing directly underneath the header and can almost be considered as a part of the header since it is always showing or at least so it was intended but due to technical restrictions with Django Views the user need to return to this view with a back-button after each time having visited a view. Please see more on the planned (but not yet implemented) features in the "Features to implement in the future"
 
-![add-place-screencapture.gif](documentation/add-place-screencapture.gif)
-
+<img src="images-for-readme/modules-expandout-units.jpg" width="400" height="auto">
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Pace Control (Header)*
@@ -387,8 +377,7 @@ The pace control gives the user:
 
 Please see: "Features to implement in the future" for a description of the planned Pace Control
 
-!["Pace Control"-feature]()
-<img src="" width="700" height="auto">
+<img src="images-for-readme/pace-control.jpg" width="700" height="auto">
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
@@ -411,15 +400,13 @@ This is also reflected through with color coding of the units in the Syllabus. g
 
 A positive side-effect of the "Situational awareness"-checkboxes is the satisfying dopamin-reward the user recieves as he checks away ...one more unit, kind of reading "just one more page" in a suspensfull book! The progress becomes concrete and visible!
 
-![Expansion/collapse-text feature]()
-<img src="" width="700" height="auto">
+<img src="images-for-readme/situational-awareness.jpg">
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Clip Board
 </span>
 
-![Clipboard feature]()
-<img src="" width="700" height="auto">
+<img src="images-for-readme/clipboard.jpg" width="700" height="auto">
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
@@ -428,9 +415,11 @@ Clip Board
 
 As a secondary method of navigating between the different units the user can click on a left or right arrow to toggle between different modules and an up or down arrow to toggle between different units. These arrows are overlaid on top of the unit stays put indipendent of scrolling. The arrows are made thinn and with a 50% opacity as to not disturb the view when the up and down arrow sits on top of the text. however a larger also opaque grey circle will appear underneath the arrow on hoover. 
 
+<img src="images-for-readme/navigation-arrows.jpg" width="700" height="auto">
+
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-## Categories of Unit (Main)
+## Unit categories (Main)
 </span>
 
 A teaching unit, or simply a unit, is like the smallest headline in a textbook, e.g. "the Area-rule" which could be filled with text or images on the topic.
@@ -454,7 +443,6 @@ Places can be favourited/unfavourited by clicking on the heart icon.
 Please see: "Features to implement in the future" for a description of planned features for the Unit
 
 <img src="" width="700" height="auto">
-![ Unit feature]()
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
@@ -465,7 +453,7 @@ The Unit content holds Wiki-style hyperlinks that, when the user click on them, 
 
 These hyperlinks are to be created both automatically (when a word in a unit matches exactly the title of another unit) as well as manualy. Automatically created hyperlinks should also be possible to remove manually. Functionality that would recognise close yet not exact unit title matches (regex) asking the admin if a "non-exact"-huperlink (possibly with another color to mark that it is a "related" and not an exact word hyperlink)
 
-<img src="" width="700" height="auto">
+<img src="images-for-readme/wiki-style-hyper-link.jpg" width="500" height="auto">
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
@@ -478,7 +466,7 @@ In order to not overwhelm the student, this feature will unclutter the teaching 
 
 As a positive side effect it can make learning more fun by intriguing the student to find what is hiding behind that expand button.
 
-<img src="" width="700" height="auto">
+<img src="images-for-readme/accordian-text-example.jpg" width="400" height="auto">
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
@@ -487,7 +475,7 @@ Feedback
 
 Each unit displays a "thumbs up" and a "thumbs down" icon where the user with a simple click can rate his experience with the unit. If the user want to give more detailed feedback, perhaps top point out an error in the unit he can also click on "Write feedback" upon which a textfield on a modal screen opens up for the user to comment further.
 
-<img src="" width="700" height="auto">
+<img src="images-for-readme/feedback-icons.jpg">
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
@@ -589,31 +577,7 @@ There were no warnings left in the production code apart from the ‘line too lo
 
 **JavaScript Linting**
 
-All JavaScript files were tested with [JSHint](https://jshint.com/). There were no warnings left in the production code apart from the ones detailed below -
-
-script.js:
-
-- The ‘google’ and  ‘Places’ variables are defined in a separate script in the HTML template.
-
-![script-js-jshint-results.png](documentation/script-js-jshint-results.png)
-
-list-view.js:
-
-- The ’USER_SORT_SELECTION’ and ‘google’ variables are defined in a separate script in the HTML template.
-
-![list-view-js-jshint-results.png](documentation/list-view-js-jshint-results.png)
-
-place-detail.js:
-
-- The ’GOOGLE_PLACE_ID’ and ‘google’ variables are defined in a separate script in the HTML template.
-
-![place-detail-js-jshint-results.png](documentation/place-detail-js-jshint-results.png)
-
-place-add-form.js:
-
-- The ‘google’ variable are defined in a separate script in the HTML template.
-
-![place-add-form-js-jshint-results.png](documentation/place-add-form-js-jshint-results.png)
+All JavaScript files were tested with [JSHint](https://jshint.com/) No errors are present in the production code. There was 19 warnings however they all where only in regards to javascript versions.
 
 **JavaScript Chrome Dev Tools Console:**
 
@@ -629,7 +593,9 @@ A previous console warning - `Loading the Google Maps JavaScript API without a c
 
 **CSS Validation**
 
-The CSS file was validated with [W3C CSS Validator](https://jigsaw.w3.org/css-validator). No errors are present in the production code.
+The CSS file was validated with [W3C CSS Validator](images-for-readme/jigsaw-css-validation.jpg). No errors are present in the production code. There was 455 (!) warnings.
+
+View the validation result for my site [here](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2F8000-gustafenebog-sheldon-snyii1xvpkq.ws.codeinstitute-ide.net%2F&usermedium=all&vextwarning=&warning=1).
 
 **HTML Validation**
 
@@ -639,45 +605,20 @@ To overcome the errors that the Django tags would bring up, the pages were teste
 
 **Lighthouse Testing**
 
-All pages were tested with Google Chrome’s Lighthouse.
+All pages were tested with Google Chrome’s Lighthouse. The low score on best practise was due to "Uses deprecated APIs" in the form of locally installed "Kasperski".
 
-Home Page (desktop):
+Home Page (Syllabus page):
 
-![lighthouse-homepage-desktop.png](documentation/lighthouse-homepage-desktop.png)
+![lighthouse-syllabus-page](images-for-readme/lighthouse-syllabus-page.jpg)
 
-Home Page (mobile):
+Home Page (unit page):
 
-![lighthouse-homepage-mobile.png](documentation/lighthouse-homepage-mobile.png)
+![lighthouse-unit-page](images-for-readme/lighthouse-unit-page.jpg)
 
-List Page (desktop):
-
-![lighthouse-listpage-desktop.png](documentation/lighthouse-listpage-desktop.png)
-
-List Page (mobile):
-
-![lighthouse-listpage-mobile.png](documentation/lighthouse-listpage-mobile.png)
-
-Detail Page (desktop):
-
-![lighthouse-detailpage-desktop.png](documentation/lighthouse-detailpage-desktop.png)
-
-Detail Page (mobile):
-
-![lighthouse-detailpage-mobile.png](documentation/lighthouse-detailpage-mobile.png)
-
-Add a Place Page (desktop):
-
-![lighthouse-addplace-desktop.png](documentation/lighthouse-addplace-desktop.png)
-
-Add a Place Page (mobile):
-
-![lighthouse--addplace-mobile.png](documentation/lighthouse-addplace-mobile.png)
 
 **WebAIM WAVE Accessibility Testing**
 
 All pages were tested with the [WAVE tool](https://wave.webaim.org/).
-
-A single ‘redundant link’ error was left in the place-detail.html: if is a user is signed out, they are given a link to log in to leave a comment, which has a duplicate path to the ‘Log In’ link in the header.
 
 Early testing with the WAVE tool flagged up insufficient contrast in some of the colours, which were then changed to meet the guidelines.
 

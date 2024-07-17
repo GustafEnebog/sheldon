@@ -6,9 +6,9 @@
 {% block unit %}
 
 
-<!--Displaying unit-->
+<!-- ********** Displaying unit ********** -->
 <div class="container">
-    <div class="row" style="width: 600px;">
+    <div class="row" style="width: 750px;">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
                 <div class="masthead">
@@ -42,11 +42,11 @@
             </div>
         </div>
     </div>
-    <!--END OF Displaying unit-->
+    <!-- ********** END OF Displaying unit ********** -->
 
-    <!--Displaying Note-->
+    <!-- ********** Displaying Note ********** -->
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 " style="width: 600px;">
+        <div class="col-md-8 card mb-4  mt-3 " style="width: 750px;">
             <!-- Deciding the width of the form-->
             <h3>My note:</h3>
             <div class="card-body">
@@ -93,12 +93,12 @@
         </div>
     </div>
 </div>
+<!-- ********** END OF Displaying Note ********** -->
 
 
 
-
-<!-- Creating Note -->
-<div class="col-md-4 card mb-4  mt-3 " style="width: 600px;">
+<!-- ********** Creating Note ********** -->
+<div class="col-md-4 card mb-4  mt-3 " style="width: 750px;">
     <!-- Deciding the width of the form-->
     <div class="card-body">
         {% if user.is_authenticated %}
@@ -116,12 +116,9 @@
     </div>
 </div>
 </div>
-<!-- END OF Creating Note -->
+<!-- ********** END OF Creating Note ********** -->
 
-
-<!-- DELETE -->
-
-<!-- Delete confirmation modal -->
+<!-- ********** Delete confirmation modal ********** -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -141,9 +138,8 @@
         </div>
     </div>
 </div>
-<!-- END OF Delete confirmation modal -->
+<!-- ********** END OF Delete confirmation modal ********** -->
 
-<!-- DELETE -->
 
 {% endblock unit %}
 
