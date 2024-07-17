@@ -8,7 +8,7 @@
 
 <!--Displaying unit-->
 <div class="container">
-    <div class="row">
+    <div class="row" style="width: 600px;">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
                 <div class="masthead">
@@ -46,7 +46,8 @@
 
     <!--Displaying Note-->
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 " style="width: 600px;"> <!-- Deciding the width of the form-->
+        <div class="col-md-8 card mb-4  mt-3 " style="width: 600px;">
+            <!-- Deciding the width of the form-->
             <h3>My note:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags
@@ -55,84 +56,90 @@
                 <!-- <div class="p-2 comments
           {% if not comment.approved and comment.author == user %}
           faded{% elif not comment.approved %} d-none{% endif %}">  -->
-                    <p class="font-weight-bold">
-                        {{ note.author }} wrote:
-                        <span class="font-weight-normal">
-                            {{ note.created_on }}
-                        </span> wrote:
-                    </p>
-                    <div id="comment{{ comment.id }}">
-                        {{ note.body | linebreaks }}
-                    </div>
-                    {% if not note.approved and note.author == user %}
-                    <p class="approval">
-                        This note is awaiting approval
-                    </p>
-                    <!-- {% endif %} -->
+                <p class="font-weight-bold">
+                    {{ note.author }} wrote:
+                    <span class="font-weight-normal">
+                        {{ note.created_on }}
+                    </span> wrote:
+                </p>
+                <div id="comment{{ comment.id }}">
+                    {{ note.body | linebreaks }}
                 </div>
-                <!-- Our for loop ends here -->
-                {% endfor %}
+                <!-- HERE for CRUD-->
+                <p>Edit/Delete test</p>
+                <!--END OF Displaying Note-->
+
+                <div>
+                    <!--Are the DIVS here necessary!?-->
+                    <!--Edit button-->
+                    
+                    <button class="btn btn-delete" note_id="{{ note.id }}">Delete</button>
+                    <!--DELETE-->
+                    <button class="btn btn-edit" note_id="{{ note.id }}">Edit!</button>
+                    
+                    <!--END OF Edit button-->
+                </div>
+                <!--Are the DIVS here necessary!?-->
+
+                {% if not note.approved and note.author == user %}
+                <p class="approval">
+                    This note is awaiting approval
+                </p>
+                <!-- {% endif %} -->
             </div>
-        </div>
 
-    <!--END OF Displaying Note-->
-
-    <div> <!--Are the DIVS here necessary!?-->
-        <!--Edit button-->
-        {% if user.is_authenticated and note.author == user %}
-        <button class="btn btn-delete"
-        note_id="{{ note.id }}">Delete</button>  <!--DELETE-->
-        <button class="btn btn-edit" note_id="{{ note.id }}">Edit!</button>
-        {% endif %}
-        <!--END OF Edit button-->
-    </div> <!--Are the DIVS here necessary!?-->
-
-    <!-- Creating Note -->
-    <div class="col-md-4 card mb-4  mt-3 " style="width: 555px;"> <!-- Deciding the width of the form-->
-        <div class="card-body">
-            {% if user.is_authenticated %}
-            <h3>Make a note:</h3>
-            <p>Making a note as: {{ user.username }}</p>
-            <form id="commentForm" method="post" style="margin-top: 1.3em;">
-                {{ notes_form | crispy }}
-                <!-- Changing this from note_form to notes_form made the form appear! but instead I get error when clicking submit button-->
-                {% csrf_token %}
-                <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-            </form>
-            {% else %}
-            <p>Log in to make a note</p>
-            {% endif %}
+            <!-- Our for loop ends here -->
+            {% endfor %}
         </div>
     </div>
 </div>
-    <!-- END OF Creating Note -->
+
+
+
+
+<!-- Creating Note -->
+<div class="col-md-4 card mb-4  mt-3 " style="width: 600px;">
+    <!-- Deciding the width of the form-->
+    <div class="card-body">
+        {% if user.is_authenticated %}
+        <h3>Make a note:</h3>
+        <p>Making a note as: {{ user.username }}</p>
+        <form id="commentForm" method="post" style="margin-top: 1.3em;">
+            {{ notes_form | crispy }}
+            <!-- Changing this from note_form to notes_form made the form appear! but instead I get error when clicking submit button-->
+            {% csrf_token %}
+            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+        </form>
+        {% else %}
+        <p>Log in to make a note</p>
+        {% endif %}
+    </div>
+</div>
+</div>
+<!-- END OF Creating Note -->
 
 
 <!-- DELETE -->
 
 <!-- Delete confirmation modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1"
-  aria-labelledby="deleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"
-          id="deleteModalLabel">Delete comment?</h5>
-        <button type="button" class="btn-close"
-          data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure you want to delete your note?
-        This action cannot be undone.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"
-          data-bs-dismiss="modal">Close</button>
-        <a id="deleteConfirm" href="#" class="btn
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your note?
+                This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a id="deleteConfirm" href="#" class="btn
           btn-danger">Delete</a>
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <!-- END OF Delete confirmation modal -->
 

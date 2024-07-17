@@ -7,7 +7,7 @@ Info on autoslug used below: https://django-autoslug.readthedocs.io/en/latest/
 
 ![Sheldon logo](static/images/Sheldon-logo.png)
 
-![amiresponsive-screenshot.png](documentation/amiresponsive-screenshot.png)
+![amiresponsive-screenshot.png](images-for-readme/am-i-responsive-sheldon.jpg)
 
 View the live site [here](https://sheldon-textbook-3b3e2a751d30.herokuapp.com/).
 
