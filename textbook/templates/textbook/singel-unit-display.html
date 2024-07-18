@@ -8,20 +8,16 @@
 
 <!-- ********** Displaying unit ********** -->
 <div class="container">
-    <div class="row" style="width: 750px;">
+    <div class="row" style="width: 48vw;">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
                 <div class="masthead">
                     <div class="container">
                         <div class="row g-0">
-                            <div class="col-md-6 masthead-text">
+                            <div class="col-md-6 masthead-text" style="width: 100%;">
                                 <!-- Displaying unit title, author and created on -->
                                 <h1 class="post-title">{{ unit.unit_title }}</h1>
                                 <p class="post-subtitle">{{ unit.author }} | {{ unit.created_on }}</p>
-                            </div>
-                            <div class="d-none d-md-block col-md-6 masthead-image">
-                                <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
-                                <!-- END OF: Displaying unit title, author and created on -->
                             </div>
                         </div>
                     </div>
@@ -72,36 +68,29 @@
                 <div>
                     <!--Are the DIVS here necessary!?-->
                     <!--Edit button-->
-                    
+
                     <button class="btn btn-delete" note_id="{{ note.id }}">Delete</button>
                     <!--DELETE-->
                     <button class="btn btn-edit" note_id="{{ note.id }}">Edit!</button>
-                    
+
                     <!--END OF Edit button-->
                 </div>
                 <!--Are the DIVS here necessary!?-->
 
-                {% if not note.approved and note.author == user %}
-                <p class="approval">
-                    This note is awaiting approval
-                </p>
-                <!-- {% endif %} -->
+                <!-- Our for loop ends here -->
+                {% endfor %}
             </div>
-
-            <!-- Our for loop ends here -->
-            {% endfor %}
         </div>
     </div>
 </div>
 <!-- ********** END OF Displaying Note ********** -->
 
-
-
 <!-- ********** Creating Note ********** -->
-<div class="col-md-4 card mb-4  mt-3 " style="width: 750px;">
+<div class="col-md-4 card mb-4  mt-3 " style="width: 48vw;">
     <!-- Deciding the width of the form-->
     <div class="card-body">
         {% if user.is_authenticated %}
+        <!-- case if user is logged in -->
         <h3>Make a note:</h3>
         <p>Making a note as: {{ user.username }}</p>
         <form id="commentForm" method="post" style="margin-top: 1.3em;">
@@ -111,11 +100,12 @@
             <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
         </form>
         {% else %}
+        <!-- case if user is NOT logged in -->
         <p>Log in to make a note</p>
         {% endif %}
     </div>
 </div>
-</div>
+
 <!-- ********** END OF Creating Note ********** -->
 
 <!-- ********** Delete confirmation modal ********** -->

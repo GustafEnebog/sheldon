@@ -357,6 +357,8 @@ In general, the code could easily be repurposed to create similar sites with a d
 The weakness with the navigation of the Code Institutes LMS is here adressed with an everpresent Syllabus combined with  
 
 
+The necessary focus on a Minimal Viable Product (MVP) has unfortunatly resulted in a unusually large "Features to implement in the future"-section
+
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Modules (within the Syllabus containing the Units) (Header)*
 </span>
@@ -467,6 +469,22 @@ In order to not overwhelm the student, this feature will unclutter the teaching 
 As a positive side effect it can make learning more fun by intriguing the student to find what is hiding behind that expand button.
 
 <img src="images-for-readme/accordian-text-example.jpg" width="400" height="auto">
+
+Code for add-icon (to expand text) and subtract-icon (to collapse text)
+
+```html
+<!-- Google font Add Circle -->
+<span class="material-symbols-outlined">
+    add_circle
+</span>
+<!-- END OF: Google font Add Circle -->
+<!-- Google font subtract Circle -->
+<span class="material-symbols-outlined">
+    do_not_disturb_on
+</span>
+<!-- END OF: Google font subtract Circle -->
+{% endfor unit%}
+```
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
@@ -607,11 +625,11 @@ To overcome the errors that the Django tags would bring up, the pages were teste
 
 All pages were tested with Google Chrome’s Lighthouse. The low score on best practise was due to "Uses deprecated APIs" in the form of locally installed "Kasperski".
 
-Home Page (Syllabus page):
+Syllabus page(Home Page)):
 
 ![lighthouse-syllabus-page](images-for-readme/lighthouse-syllabus-page.jpg)
 
-Home Page (unit page):
+Unit page:
 
 ![lighthouse-unit-page](images-for-readme/lighthouse-unit-page.jpg)
 
