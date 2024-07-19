@@ -1,10 +1,3 @@
-
-Add that I as a user has added the users!?
-
-
-Relying on Djangos Primary keys
-Info on autoslug used below: https://django-autoslug.readthedocs.io/en/latest/
-
 ![Sheldon logo](static/images/Sheldon-logo.png)
 
 ![amiresponsive-screenshot.png](images-for-readme/am-i-responsive-sheldon.jpg)
@@ -15,7 +8,7 @@ View the live site [here](https://sheldon-textbook-3b3e2a751d30.herokuapp.com/).
 INTRODUCTION
 </span>
 
-**Sheldon** is a Learning Managment System (LMS) app for Educational Institutions. Where a teachers can place course content in a pre-made course template that the students can access.
+**Sheldon** is a Learning Managment System (LMS) app for Educational Institutions. Where a teachers can place course content in a pre-made course template the students can access.
 
 Special attention has been given to the UX of the app given special care to give the student a good overview and easy navigation of the course content so that the student can keep situtional awareness through out the course and not feel overwhelmed or lost!
 
@@ -45,22 +38,48 @@ A Kanban board in Github projects was used for the Agile development process - s
 
 ![Kan-Ban board](static/images/kanban-board.jpg)
 
-‘Epics’ were broken down into ‘User Stories’, which were further broken down into ‘Tasks’.
+Initially ‘Epics’ were broken down into ‘User Stories’, which were further broken down into ‘Tasks’ according to below list however later more user stories where written and added to teh kanban-board.
 
 THEME: ADMINISTRATION > EPIC: USER ACCOUNT
+
 THEME: ADMINISTRATION > EPIC: ADMIN
+
 THEME: STUDENT AID FEATURES > EPIC: CURRICULUM AND NAVIGATION
+
 THEME: STUDENT AID FEATURES > EPIC: PACE CONTROL
+
 THEME: STUDENT AID FEATURES > EPIC: EXPANSION/COLLAPSE TEXT
+
 THEME: STUDENT AID FEATURES > EPIC: SITUATIONAL AWARENESS
+
 THEME: STUDENT AID FEATURES > EPIC: CLIP BOARD
+
 THEME: STUDENT AID FEATURES > EPIC: FEEDBACK
+
 THEME: RELEASE > EPIC: TESTING
+
 THEME: RELEASE > EPIC: DEPLOYMENT
 
 <span style="color:orange;font-weight:700;font-size:22px">
 USER EXPERIENCE (UX)
 </span>
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Weakspots in Code Institute LMS
+</span>
+
+For all the quality that the CI educational material and LMS brings, there is nothing good that cannot become better. Below are a some points our design has identified as points for improvement:
+
+*  No possibility for user to tag a unit according to how degree of completion, there is only a mark based on if you have visited the unti before or not!
+* No way of navigate a "jump" to another part of the Syllabus without first having to leave the unit (since the Syllabus and units are separate views)
+* Cannot open another unit in the same module in a new tab.
+* Lack of timestamps and content description (so that I also can search the videos)
+* Difficult to binge watch (you need four steps between each video: "close fullscreen", "scroll to next-button or lesson", "click start" and finally "click fullscreen!)
+* Lack of categorisation of units (only two: video or text)
+* No opportunity to leave memory notes on a teaching unit
+* Screenshoots are to small in size to be able to read the code
+* Resizing the window, like going from full screen (maximise button) to make the window smaller (restore button) makes the page scroll away from the place where you where in the text requiring user to scroll to refind his spot in the text.
+* Poor responsivness: Not well suited for studiyng units on mobile
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Naming
@@ -82,22 +101,6 @@ The app naming-ideation started with logic yet too generic and thus ultimatly bo
 A second, unintentional, quality of the name Sheldon is that it associates to Shell (in the meaning of a software shell) which the SHELDON app realy is, a shell for the course content.
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-Weakspots in Code Institute LMS
-</span>
-
-* Cannot open a another unit in the same module in a new tab.
-* Lack of timestamps and content description (so that I also can search the videos)
-* Difficult to binge watch (you need four steps between each video: "close fullscreen", "scroll to next-button or lesson", "click start" and finally "click fullscreen!)
-* Lack of categorisation of units (only two: video or text)
-* No opportunity to leave memory notes on a teaching unit
-* Screenshoots are to small in size to be able to read the code
-* No possibility for user to tag a unit according to how degree of completion, there is only a mark based on if you have visited the unti before or not!
-* No way of navigate a "jump" to another part of the Syllabus without first having to leave the unit (since the Syllabus and units are separate views)
-* Resizing the window, like going from full screen (maximise button) to make the window smaller (restore button) makes the page scroll away from the place where you where in the text requiring user to scroll to refind his spot in the text.
-* Poor responsivness: Not well suited for studiyng units on mobile
-
-
-<span style="color:#1591ea;font-weight:700;font-size:20px">
 Layout and Wireframes
 </span>
 
@@ -107,7 +110,7 @@ A large amount of time was invested into figura out the optimal layout meeting t
 * Clean uncluttered work space as to not draw attention away from the course content and overwhelm the student with graphic information.
 * Consider grouping items that belong together in the same location
 
-A difficult and desisive decision was to if the integrated curriculum/timeline should be vertical (along left side of view port) or horizontal (underneath and along the header). It was first desided to have it horisontal on small screens and vertical on larger however when it was realised that the inconsistency between small and large screens would be confusing for users it was decided to make it horizontal on both devices. 
+A difficult and desisive decision was if the integrated curriculum/timeline should be vertical (along left side of view port) or horizontal (underneath and along the header). It was first decided to have it horisontal on small screens and vertical on larger however an inconsistency between small and large screens was deemed confusing for users (=bad UX) so it was decided to make it horizontal on both screens. 
 
 Large screen:
 
@@ -117,17 +120,6 @@ Large screen:
 Small screen:
 
 ![wireframe handy screen-size](static/images/wireframe-handy.jpg)
-
-<span style="color:#1591ea;font-weight:700;font-size:20px">
-Navigation
-</span>
-
-![navigation-diagram.png](documentation/navigation-diagram.png)
-
-<span style="color:#1591ea;font-weight:700;font-size:20px">
-Project Goals
-</span>
-Put some stuff here hjdisalgdfjoajfdojdfsolfjd
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Colour Scheme
@@ -153,14 +145,12 @@ The color indicating your progress is green (you'r in the green!) if you are ahe
 the colors Hue saturation/saturation and Value was carefully anually choosen according to the followng reasoning:
 - The "colorless" light grey (zero saturation) was choosen to mark the relative low importance of only having "Been there"
 - The "same hue" blue was choosen to mark that "read" and "understood" is in the same category
-- The increase in hue going from low to high saturation blue indicate the increase in strenght when going from a only a "read" to an "understood"
-- The light grey () and low-saturation Blue () should "feel" () similar in value, and only be differentiated by its hue.  
-- The high saturation Blue () should be as light (low value) as too keep contrast between text and background color.
-- The green needed to decrese its value somewhat (x%) to match the orange. This seemed counterinutitive as different values would be needed to make the two colors match.
+- The increase in hue going from low to high saturation blue indicate the increase in strenght when going from a only "read" to an "understood"
+- The light grey and low-saturation Blue should "feel" similar in value, and only be differentiated by its hue.  
+- The high saturation Blue should be as light (low value) as too keep contrast between text and background color.
+- The green needed to decrese its value somewhat to match the orange. This seemed counterinutitive as different values would be needed to make the two colors match.
 
 The unit categories are distinguisehed by using shape instead of color for the same reason as above to keep it cognitivly separate from the color coded "situational awarenes" and "pace controll".     
-
-Contrast accessibility was checked for with [Eightshapes Contrast Grid](https://contrast-grid.eightshapes.com/) and some of the originally chosen colours were darkened to improve their contrast ratio.
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Typography and app logo
@@ -195,7 +185,7 @@ The database models are implemented according to the below Entity Relationship D
 Name/logo of Educational Institution (Header)
 </span>
 
-x
+The logo of the name of the Eduational Institution ("University of Southern California" in my example) is currently hardcoded.
 
 <img src="" width="700" height="auto">
 
@@ -206,47 +196,31 @@ Authentication
 
 ### Register and Login
 
-x
+The user can register or login by clicking on "Register" or "Login" top right in the Header. The user is then taken to a special Register or login page
 
 <img src="images-for-readme/register-login-link.jpg" width="700" height="auto">
 
 ### Log Out
 
-x
+Similar too the Register and Login the user can Logout by clicking on "Logout" to the top right in the header
 
 <img src="images-for-readme/logout-link.jpg" width="700" height="auto">
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-Syllabus with Units (Header)*
+Syllabus with Units*
 </span>
 
-The course Syllabus is showing directly underneath the header and can almost be considered as a part of the header since it is always showing or at least so it was intended but due to technical restrictions with Django Views the user need to return to this view with a back-button after each time having visited a view. Please see more on the planned (but not yet implemented) features in the "Features to implement in the future"
+The course Syllabus is showing directly underneath the header and can almost be considered a part of the header since it is always showing or at least so it was intended but due to technical restrictions with Django Views the user need to return to this view with a back-button after each time having visited a view.
 
 <img src="images-for-readme/syllabus-with-units.jpg" width="700" height="auto">
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-## Unit (Main)
+Unit
 </span>
 
-A teaching unit, or simply a unit, is like the smallest headline in a textbook, e.g. "the Area-rule" which could be filled with text or images on the topic.
+The collection of teaching unit is the core of the app. A unit, is like the smallest headline in a textbook, e.g. "the Area-rule" which could be filled with text or images on a small topic. If another unit should wish to be selected the user first need to return to via the "Back to Syllabus"-button
 
-Pace control should also calculate the average time you spend on a unit, average this out and base average time spent on a unit based on a smart algorithm utilysing this data.
 
-Places can be favourited/unfavourited by clicking on the heart icon.
-•	Introduction
-•	Cheat sheet
-•	Module recap     
-•	Review
-•	Dependent Context unit
-•	User defined
-•	Headlines
-•	Photos
-•	Videos
-•	Formulas
-•	Links
-•	Etc.
-
-Please see: "Features to implement in the future" for a description of planned features for the Unit
 
 <img src="images-for-readme/unit-top.jpg" width="700" height="auto">
 
@@ -255,26 +229,35 @@ Please see: "Features to implement in the future" for a description of planned f
 Note
 </span>
 
-The user can make his own notes on each unit that will stay in place so that the user always can read his own notes when returning to a unit.
+A user can "take notes" at the bottom of each unit that will be saved so that the user can read his own notes when returning to a unit. These units are unique to one unit and one user so other users can not access each others notes. The notes should feature full CRUD (Create, Read, Update, and Delete)**
 
-The Note features full CRUD (Create, Read, Update, and Delete)
+Click submit to save note:
 
-![Note feature]()
-<img src="" width="700" height="auto">
+<span style="color:red;font-weight:700;font-size:20px">
+Warning the code throws an error (because of error on line 48 in single-unit-display.html) when saving however it does succesfully save!
+</span>
 
+<img src="images-for-readme/note-made-save.jpg" width="700" height="auto">
+
+Confirmation that the note was succesfully saved!
+
+<img src="images-for-readme/note-succesfully-saved.jpg" width="700" height="auto">
+
+Here the user can edit his note (click "edit") or delete the note (click "delete"):
+
+<img src="images-for-readme/note-made-delete-edit-button.jpg" width="700" height="auto">
+
+An extra safety questions before deleting note:
+
+<img src="images-for-readme/delete-comment-second-button.jpg" width="700" height="auto">
+
+** Please see "Unfixed Bugs"
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Footer
 </span>
 
 The footer is divided into two sections, a left section where Sheldon related items, e.g. Social media links for the Sheldon Product is displaied and a middle/right section where the Eduational Institution that is using the Sheldon app can display its information, e.g. contact info.
-
-The detail page is where the user can:
-
-- create, read, update and delete a comment
-- favourite/unfavourite a place
-- view the place address
-- view the number of comments
 
 <img src="images-for-readme/footer.jpg" width="700" height="auto">
 
@@ -302,62 +285,13 @@ Sheldon-themed error-pages has been create in order to somwhat mitigate the nega
 <img src="images-for-readme/error-page-500.jpg" width="700" height="auto">
 
 
-\* This feature is good for all students but especially important for students with a neurodivergent diagnosis such as Asperger syndrome where the structure need to be extremely clear and distinct.  
-
 <span style="color:orange;font-weight:700;font-size:22px">
 FEATURES TO IMPLEMENT IN THE FUTURE (Out of scoop features)
 </span>
-- Types of unit content
-  - Video
-  - image
-  - equations
-  - qoutes
-  - links
-  - equations
-  - x
-  - x
-  - x
-  - x
-- Unit categories
-  - Introduction
-  - Cheat sheet
-  - Module recap/review
-  - Context unit
-  - User defined
-  - Video
-  - x
-  - x
-- X
-- XS
-- X
-- X
-- X
-- X
-- Navigation with Pace data
-- Thumps up or down (display to admin panel)
-- Login and profile image
-- Course name appearing
-- Login
-- User feedback
-- Bookmark, clipboard (with modal screen) and comments
-- User progress checkboxes
-- From admin panel: Download Course provider logo to be displayed
-- Tool tips
-- Print function
-- Search (between modules) function
-- Expand and collapse text
-- horizontal and vertical arrows that stays put
-- Password reset: add ability to reset password.
-- Social sign-in: allow users to sign in with their Google/Apples/etc. accounts.
-- User profiles: a user page with a list of places created and comments left, either private to the user or publicly accessible.
-- Jest testing: create a suite of JavaScript test using JEST.
 
-In general, the code could easily be repurposed to create similar sites with a different focus in the places being shared (e.g. cycling-cafes/kids activities/rock-climbing centres etc.).
+The necessary focus on achiving a Minimal Viable Product (MVP) has unfortunatly resulted in a unusually large "Features to implement in the future"-section
 
-The weakness with the navigation of the Code Institutes LMS is here adressed with an everpresent Syllabus combined with  
-
-
-The necessary focus on a Minimal Viable Product (MVP) has unfortunatly resulted in a unusually large "Features to implement in the future"-section
+<img src="images-for-readme/sheldon-app-future.jpg" width="700" height="auto">
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Modules (within the Syllabus containing the Units) (Header)*
@@ -372,27 +306,28 @@ Pace Control (Header)*
 </span>
 
 The pace control gives the user:
-•	the date for the official deadline as well as a user set deadline
-•	Remaining time until the official deadline as well as a user set deadline
-•	Necessary pace to make the deadline as well as a user set deadline in the form of:
-   - Number of units to do per day, or if that number is less then one: Number of days per units
+*	the date for the official deadline as well as a user set deadline
+*	Remaining time until the official deadline as well as a user set deadline
+*	Necessary pace to make the deadline as well as a user set deadline in the form of:
+    - Number of units to do per day, or if that number is less then one: Number of days per units
 
-Please see: "Features to implement in the future" for a description of the planned Pace Control
+Pace control should also calculate the average time you spend on a unit, average this out and base average time spent on a unit based on a smart algorithm utilysing this data.
 
 <img src="images-for-readme/pace-control.jpg" width="700" height="auto">
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-Situational Awarenes
+Situational Awarenes*
 </span>
-the Situational Awareness-"panel" helps the user keep track of where he has been and what he has done on each unit. Thus each unit has a text/checkbox relating where the user can indicate how much of that unit he has completed as well as remember units if he want to return to them in the future:
+
+the Situational Awareness-"panel" helps the user keep track of where he has been and what he has done on each unit. Each unit has a text/checkbox where the user can indicate how much of the unit he has completed as well as to remember units if he want to return to them in the future. This gives the user a sense of "Situational Awareness" for the course:
 
 •	"Been here" - Text appears automatically from the first time (and onwards) the user visits the unit
 •	"Read" - User can check this checkbox once he has read yet not understood the unit (and therefore need to return to it later).
-•	"Understood" - User can check this checkbox when he. If this checkbox is checked without the "Read" checkbox being previoously checked that checkbox will also automatically be checked simoultaniously
+•	"Understood" - User can check this checkbox when he considers himself "finished" with the unit. The "Read"-checkbox will be automatically checked (if it was note already by the user) when the "Understood"-checkbox is checked.
 •	"Bookmark" - User can bookmark pages for future refence
 
-This is also reflected through with color coding of the units in the Syllabus. giving the user a sense of "Situational Awareness" for the course. This is also taken as a base for calcuating the "pace control"-feature.
+This will be reflected with color coding of the units in the Syllabus:
 
 •	Original state - background color: #FFFFFF
 •	"Been here" - background color: #E5E5E5
@@ -400,13 +335,40 @@ This is also reflected through with color coding of the units in the Syllabus. g
 •	"Understood" - background color: #80D3FF
 •	"Bookmark" - border color: #FFC020
 
-A positive side-effect of the "Situational awareness"-checkboxes is the satisfying dopamin-reward the user recieves as he checks away ...one more unit, kind of reading "just one more page" in a suspensfull book! The progress becomes concrete and visible!
+A positive side-effect of the "Situational awareness"-checkboxes is the satisfying dopamin-reward the user recieves as he checks away ...one more unit, kind of reading "just one more page" in a suspensfull book! The progress becomes concrete and visible! Furthermore The "pace control"-feature is using this user-provided data for its calculations.
+
+```html
+<div class="col-sm-3 ps-0">
+    <div style="background-color: white" id="Situation-awareness">
+        <p>Been here</p>
+        <!-- Make Toggle between hidden and not hidden depending on a fetsch saying user has been on unit or not-->
+
+        <input type="checkbox" id="unit-state-1" name="unit-state-1" value="Read"
+            onclick="displayDate(); colorCoding()">
+        <!-- <p id="demo"></p>-->
+        <label for="unit-state-1">Read</label><br>
+
+        <input type="checkbox" id="unit-state-2" name="unit-state-2" value="Understood"
+            onclick="displayDate(); colorCoding()">
+        <label for="unit-state-2">Understood</label><br>
+
+        <input type="checkbox" id="unit-state-3" name="unit-state-3" value="Bookmark"
+            onclick="displayDate(); colorCoding()">
+        <label for="unit-state-3">Bookmark</label><br>
+        <!-- <button class="situ-aware-button">Clipboard</button> -->
+    </div>
+</div>
+```
 
 <img src="images-for-readme/situational-awareness.jpg">
+
+\* This feature is good for all students but especially important for students with a neurodivergent diagnosis such as Asperger syndrome where the structure need to be extremely clear and distinct.  
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Clip Board
 </span>
+
+This feature is similar to the Note-featuer yet instead of allowing the user to write his notes, this features allows the user to mark text in the unit, click a button and having this text saved down onto a digital clipboard for future reference. 
 
 <img src="images-for-readme/clipboard.jpg" width="700" height="auto">
 
@@ -415,20 +377,34 @@ Clip Board
 2D Navigation arrows*
 </span>
 
-As a secondary method of navigating between the different units the user can click on a left or right arrow to toggle between different modules and an up or down arrow to toggle between different units. These arrows are overlaid on top of the unit stays put indipendent of scrolling. The arrows are made thinn and with a 50% opacity as to not disturb the view when the up and down arrow sits on top of the text. however a larger also opaque grey circle will appear underneath the arrow on hoover. 
+As a secondary method of navigating between the different units the user can click on a left or right arrow to toggle between different modules together with an up and down arrow to to toggle between different units. These arrows are overlaid on top of the unit and should stay put indipendent of scrolling. The arrows are made thinn and with a 50% opacity as to not disturb the view when the up and down arrow sits on top of the text. however a larger also opaque grey circle will appear underneath the arrow on hoover. 
+
+```html
+<div style="background-color:white">
+<span class="material-symbols-outlined">
+    keyboard_arrow_left
+</span>
+</div>
+
+<div style="background-color:	white">
+    <span class="material-symbols-outlined">
+        keyboard_arrow_right
+    </span>
+</div>
+```
+Below image showing horizontal arrows.
 
 <img src="images-for-readme/navigation-arrows.jpg" width="700" height="auto">
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-## Unit categories (Main)
+Unit categories
 </span>
 
 A teaching unit, or simply a unit, is like the smallest headline in a textbook, e.g. "the Area-rule" which could be filled with text or images on the topic.
 
 Pace control should also calculate the average time you spend on a unit, average this out and base average time spent on a unit based on a smart algorithm utilysing this data.
 
-Places can be favourited/unfavourited by clicking on the heart icon.
 •	Introduction
 •	Cheat sheet
 •	Module recap     
@@ -448,12 +424,14 @@ Please see: "Features to implement in the future" for a description of planned f
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-## Hyperlinks (Main)
+Hyperlinks
 </span>
 
-The Unit content holds Wiki-style hyperlinks that, when the user click on them, takes him to a different unit relating to the topic in the original unit visited. These hyperlinks are key in the concept of being able to freely combine and order free standing learning units since the hyperlinks can bridge the gap between.
+The Unit content holds Wiki-style hyperlinks that, when the user click on them, takes him to a different unit relating to the topic in the original unit visited. These hyperlinks are key in the concept of being able to freely combine and order free standing learning units since the hyperlinks can bridge the gap between units that requires each others content being read before each other (catch-22).
 
-These hyperlinks are to be created both automatically (when a word in a unit matches exactly the title of another unit) as well as manualy. Automatically created hyperlinks should also be possible to remove manually. Functionality that would recognise close yet not exact unit title matches (regex) asking the admin if a "non-exact"-huperlink (possibly with another color to mark that it is a "related" and not an exact word hyperlink)
+These hyperlinks are to be created both automatically (when a word in a unit matches exactly the title of another unit) as well as manualy. Automatically created hyperlinks should also be possible to remove manually. Functionality that would recognise close, yet not exact unit title, matches (regex) asking the admin if a "non-exact"-hyperlink (possibly with another color to mark that it is a "related" and not an exact word hyperlink)
+
+Example from Wikipedia:
 
 <img src="images-for-readme/wiki-style-hyper-link.jpg" width="500" height="auto">
 
@@ -467,6 +445,8 @@ By clicking a plus icon next to the paragraphs the text below the plus sign slid
 In order to not overwhelm the student, this feature will unclutter the teaching material which will help the student to see what is important and what is less important. It also helps the Admin/teacher to make a course Syllabus including much deepth (including two levels deep expansion text) in some areas yet only touching on other areas (not opening any expansion text)
 
 As a positive side effect it can make learning more fun by intriguing the student to find what is hiding behind that expand button.
+
+Example of a expansion/collapse text:
 
 <img src="images-for-readme/accordian-text-example.jpg" width="400" height="auto">
 
@@ -486,23 +466,40 @@ Code for add-icon (to expand text) and subtract-icon (to collapse text)
 {% endfor unit%}
 ```
 
+<img src="images-for-readme/expand-collapse-google-icons.jpg">
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Feedback
 </span>
 
-Each unit displays a "thumbs up" and a "thumbs down" icon where the user with a simple click can rate his experience with the unit. If the user want to give more detailed feedback, perhaps top point out an error in the unit he can also click on "Write feedback" upon which a textfield on a modal screen opens up for the user to comment further.
+Each unit displays a "thumbs up" and a "thumbs down" icon where the user can rate his experience with the unit. If the user want to give more detailed feedback, perhaps top point out a difficult to understand passage in the unit he can also click on "Write feedback" upon which a textfield on a modal screen opens up for the user to comment further.
+
+```html
+  <!-- Google font thumb_up -->
+  <div class="material-symbols-outlined">
+      thumb_up
+  </div>
+  <br>
+  <!-- END OF: Google font thumb_up-->
+  <!-- Google font thumb_down -->
+  <div class="material-symbols-outlined">
+      thumb_down
+  </div>
+  <br>
+  <!-- END OF: Google font thumb_down-->
+```
 
 <img src="images-for-readme/feedback-icons.jpg">
 
-
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-"Print unit"-function (or Print Clipboard)
+Miscellanious functionality
 </span>
 
-Each unit displays a "thumbs up" and a "thumbs down" icon where the user with a simple click can rate his experience with the unit. If the user want to give more detailed feedback, perhaps top point out an error in the unit he can also click on "Write feedback" upon which a textfield on a modal screen opens up for the user to comment further.
-
-<img src="" width="700" height="auto">
+* From admin panel: Upload Course provider logo to be displayed
+* Tool tips on modules and units
+* Search (between modules and units)
+* Password reset: add ability to reset password.
+* Social sign-in: allow users to sign in with their Google/Apples/etc. accounts.
 
 
 <span style="color:orange;font-weight:700;font-size:22px">
@@ -525,13 +522,12 @@ Design principles used
     - KIS - Keep It Simple
     - YAGNI - You aren't gonna need it
     - DRY (Don't Repeat Yourself)
-- Agile(xxx):
+- Agile:
     - User Stories
     - JavaScript
     - HTML5
     - CSS3
-- [Agile](https://agilemanifesto.org/) - as process.
-- 
+
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 # TECHNOLOGIES USED
 </span>
@@ -545,7 +541,6 @@ Design principles used
     - Django
 - Database:
     - PostgreSQL
-- [Visual Studio Code](https://code.visualstudio.com/) - as the code editor.
 - [Git](https://git-scm.com/) - for version control (using the Gitpod IDE).
 - [GitPod](https://www.gitpod.io/) - IDE for creating code.
 - [GitHub](https://github.com/) - for storing the project.
@@ -581,11 +576,6 @@ TESTING
 Automated Testing
 </span>
 
-**Python Unit Tests**
-
-Extensive unit tests were written for the Python code in Django, achieving a 94% coverage.
-
-![coverage-results.png](documentation/coverage-results.png)
 
 **Python Linting**
 
@@ -597,17 +587,6 @@ There were no warnings left in the production code apart from the ‘line too lo
 
 All JavaScript files were tested with [JSHint](https://jshint.com/) No errors are present in the production code. There was 19 warnings however they all where only in regards to javascript versions.
 
-**JavaScript Chrome Dev Tools Console:**
-
-All pages with JavaScript files were tested for errors with the Dev Tools console. Only one remains.
-
-Warning on home page - 
-
-This code suggested didn’t work in our context, so was left as is.
-
-![homepage-devtools-warning.png](documentation/homepage-devtools-warning.png)
-
-A previous console warning - `Loading the Google Maps JavaScript API without a callback is not supported` - for the JavaScript in ‘place-add.html’ was fixed with the help of this Stack Overflow [post](https://stackoverflow.com/questions/75179573/how-to-fix-loading-the-google-maps-javascript-api-without-a-callback-is-not-supp), which suggested the code: `callback=Function.prototype`
 
 **CSS Validation**
 
@@ -634,11 +613,12 @@ Unit page:
 ![lighthouse-unit-page](images-for-readme/lighthouse-unit-page.jpg)
 
 
-**WebAIM WAVE Accessibility Testing**
+**WebAIM WAVE, Web Accessibility Testing**
 
 All pages were tested with the [WAVE tool](https://wave.webaim.org/).
 
-Early testing with the WAVE tool flagged up insufficient contrast in some of the colours, which were then changed to meet the guidelines.
+![lwave-tool for syllabus-page](images-for-readme/wave-tool-summary-syllabus.jpg)
+![wave-tool for unit-page](images-for-readme/wave-tool-summary-unit-detail.jpg)
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 User Stories Testing
@@ -888,7 +868,6 @@ The following code snippets represent part of the code that had to be taken out 
 
 
 Feature: Pace Control
-![Pace Control]()
 
 ```js
 import datetime
@@ -913,7 +892,6 @@ def __number_of_units_or_days__(self):
     print(units_per_day, days_per_unit)
 ```
 Feature: Situational awarenes: "Been here"- unhide
-!["Been here"- unhide]()
 
 ```js
 function beenHereFetcher() {
@@ -933,7 +911,6 @@ function beenHereFetcher() {
 // END OF: Fetch for "Been Here"
 ```
 Feature: Situational awarenes: Read and Understood checkboxes
-![Read and Understood checkboxes]()
 
 ```js
 function readFetcher() {
@@ -956,7 +933,6 @@ function readFetcher() {
 }
 ```
 Handling of case when any units have yet been created
-![Units in Syllabus](images-for-readme/units.jpg)
 
 ```html
 {% if unit_list|length < 1 %}
@@ -1056,6 +1032,12 @@ Deploy to Heroku
 <span style="color:orange;font-weight:700;font-size:22px">
 # REFERENCES
 </span>
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Resources used
+</span>
+
+"Handling of case when any units have yet been created"-code snippet Tomas_K
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Resources used

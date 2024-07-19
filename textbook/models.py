@@ -4,14 +4,9 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-# Create your models here.
-# Info on autoslug used below: https://django-autoslug.readthedocs.io/en/latest/
-
 
 class Syllabus(models.Model):
-    # syllabus_id = models.IntegerField(unique=True)  #PK    UNCOMMENT THIS!  
     syllabus_title = models.CharField(max_length=200, unique=True)
-    #slug = AutoSlugField(populate_from='syllabus_title')
     syllabus_slug = models.SlugField(max_length=200, unique=True)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="syllabus_user")  # FK
     created_on = models.DateTimeField(auto_now_add=True)
@@ -21,21 +16,18 @@ class Syllabus(models.Model):
 
 class Module(models.Model):
     module_id = models.IntegerField(unique=True, null=True)  #PK
-    syllabus_id = models.ForeignKey(Syllabus, on_delete=models.CASCADE, related_name="syllabus_module")  # FK    UNCOMMENT THIS!
+    syllabus_id = models.ForeignKey(Syllabus, on_delete=models.CASCADE, related_name="syllabus_module")  # FK
     module_title = models.CharField(max_length=200, unique=True)
     module_slug = models.SlugField(max_length=200, unique=True)
     author = models.CharField(max_length=200)
     created_on = models.DateTimeField(auto_now_add=True)
     status_module = models.IntegerField(choices=STATUS, default=0)
 
-    #class Meta:
-    #    ordering = ["-created_on"]
-
     def __str__(self):
         return f"{self.module_title} | written by {self.author}"
 
 class Unit(models.Model):
-    unit_id = models.IntegerField(unique=True, null=True)  #PK    UNCOMMENT THIS!
+    unit_id = models.IntegerField(unique=True, null=True)  #PK
     module_id = models.ForeignKey(Module, on_delete=models.CASCADE, related_name="module_unit")  #FK
     unit_title = models.CharField(max_length=200, unique=True)
     unit_slug = models.SlugField(max_length=200, unique=True)
@@ -46,15 +38,12 @@ class Unit(models.Model):
     content = models.TextField(max_length=1000)
     status_unit = models.IntegerField(choices=STATUS, default=0)
 
-    #class Meta:
-    #    ordering = ["-created_on"]
-
     def __str__(self):
         return f"{self.unit_title} | written by {self.author}"
 
 
-class UserProgress (models.Model):  # CamelCase!?
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_user_progress", null=True)  # PK, FK  UNCOMMENT THIS!
+class UserProgress (models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_user_progress", null=True)  # PK, FK
     unit_id = models.ForeignKey(Unit, on_delete=models.CASCADE, related_name="unit_user_progress")  # FK
     deadline_set = models.DateTimeField(auto_now_add=True)
     pace_set = models.DateTimeField(auto_now_add=True)

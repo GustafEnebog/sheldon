@@ -43,15 +43,9 @@
     <!-- ********** Displaying Note ********** -->
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 " style="width: 750px;">
-            <!-- Deciding the width of the form-->
             <h3>My note:</h3>
             <div class="card-body">
-                <!-- We want a for loop inside the empty control tags
-          to iterate through each comment in comments -->
-                {% for note in note %}
-                <!-- <div class="p-2 comments
-          {% if not comment.approved and comment.author == user %}
-          faded{% elif not comment.approved %} d-none{% endif %}">  -->
+                {% for note in note %}   <!-- one of the variables in the for loop are wrong!  -->
                 <p class="font-weight-bold">
                     {{ note.author }} wrote:
                     <span class="font-weight-normal">
@@ -61,23 +55,10 @@
                 <div id="comment{{ comment.id }}">
                     {{ note.body | linebreaks }}
                 </div>
-                <!-- HERE for CRUD-->
-                <p>Edit/Delete test</p>
-                <!--END OF Displaying Note-->
-
                 <div>
-                    <!--Are the DIVS here necessary!?-->
-                    <!--Edit button-->
-
                     <button class="btn btn-delete" note_id="{{ note.id }}">Delete</button>
-                    <!--DELETE-->
                     <button class="btn btn-edit" note_id="{{ note.id }}">Edit!</button>
-
-                    <!--END OF Edit button-->
                 </div>
-                <!--Are the DIVS here necessary!?-->
-
-                <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
         </div>
@@ -87,15 +68,12 @@
 
 <!-- ********** Creating Note ********** -->
 <div class="col-md-4 card mb-4  mt-3 " style="width: 48vw;">
-    <!-- Deciding the width of the form-->
     <div class="card-body">
         {% if user.is_authenticated %}
-        <!-- case if user is logged in -->
         <h3>Make a note:</h3>
         <p>Making a note as: {{ user.username }}</p>
         <form id="commentForm" method="post" style="margin-top: 1.3em;">
             {{ notes_form | crispy }}
-            <!-- Changing this from note_form to notes_form made the form appear! but instead I get error when clicking submit button-->
             {% csrf_token %}
             <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
         </form>

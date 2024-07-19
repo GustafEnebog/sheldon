@@ -72,15 +72,6 @@ class UserProgressAdmin(SummernoteModelAdmin):
 @admin.register(Note)
 class NoteAdmin(SummernoteModelAdmin):
 
-    #pass
+
     list_display = ('created_on', 'body')
-    #search_fields = ['body']
-    #prepopulated_fields = {'body': ('body',)}
 
-
-
-# Register your models here.
-# admin.site.register(Syllabus)
-# admin.site.register(Module)
-# admin.site.register(Unit)
-# admin.site.register(UserProgress)

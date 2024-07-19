@@ -2,64 +2,45 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Unit, Note # Earlier: Textbook but it should be a model
-# DELETE do not need it anymore: from django.http import HttpResponse
-from .models import Syllabus # See if this one could be moved to from .models import Unit, Comment on row 5
+from .models import Unit, Note
+from .models import Syllabus
 from .forms import NotesForm
 from django.contrib.auth.models import User
 
-# Create your views here.
-
-# DELETE do not need it anymore: def my_textbook(request):
-# DELETE do not need it anymore:     return HttpResponse("Hello, Textbook!")
 
 class UnitListView(generic.ListView):
-    # model = Unit # Earlier: Textbook but it should be a model
-    queryset = Unit.objects.filter(status_unit=1)  # queryset = Unit.objects.all()
+    queryset = Unit.objects.filter(status_unit=1)
     template_name = "textbook/index.html"
-    #paginate_by = 3
     context_object_name = "unit_list"
 
 
 def unit_detail(request, unit_slug):
     """
-    Display an individual :model:`blog.Post`.
+    Display an individual :model:`unit.note`.
     **Context**
-    ``post``
-        An instance of :model:`blog.Post`.
+    ``unit``
+        An instance of :model:`textbook.Unit`.
     **Template:**
-    :template:`blog/post_detail.html`
+    :template:`textbook/unit_detail.html`
     """
-    
-    #comments = post.comments.all().order_by("-created_on")
-    #comment_count = post.comments.filter(approved=True).count()
-    # unit = Unit.objects.get(slug=unit_slug)
-    # queryset = Post.objects.filter(status=1)
-    # unit = Unit.objects.get(slug=unit_slug)
     queryset = Unit.objects.filter(status_unit=1)
-    unit_detail = get_object_or_404(queryset, unit_slug=unit_slug)  # Help from Sarah
-    unit = get_object_or_404(queryset, unit_slug=unit_slug)  # unit instead of queryset
+    unit_detail = get_object_or_404(queryset, unit_slug=unit_slug)
+    unit = get_object_or_404(queryset, unit_slug=unit_slug)
+    # notes = unit.notes.all().order_by("-created_on")
     print("this is Unit in detail view = ",unit)
     note = unit.unit_note.all().order_by("-created_on")
-    #note_count = unit.unit_note.filter(approved=True).count()
     notes_form = NotesForm()
-    # post = get_object_or_404(queryset, slug=slug)
     if request.method == "POST":
         note_form = NotesForm(data=request.POST)
         if note_form.is_valid():
             note = note_form.save(commit=False)
-            note.unit_id = Unit.objects.get(unit_slug=unit_slug)  #CORRECT!
-            note.user_id = User.objects.get(id=request.user.id)  #CORRECT!
+            note.unit_id = Unit.objects.get(unit_slug=unit_slug)
+            note.user_id = User.objects.get(id=request.user.id)
             note.save()
-
-            #Confirmation message, not yet working, also in base
             messages.add_message(
             request, messages.SUCCESS,
-            'Note Succesfully save'
+            'Note Succesfully saved'
             )
-            #END OF Confirmation message, not yet working, also in base
-
-    #note_form = notes_form()
     
     return render(request, 
         "textbook/singel-unit-display.html", 
@@ -67,30 +48,26 @@ def unit_detail(request, unit_slug):
             "unit": unit, 
             "note": note,
             "unit_detail": unit_detail,
-            #"note_form": note_form,    THIS MIGHT BE SOMETHING TOO CHANGE!!!!
             "notes_form": notes_form,
         },
-        #"note": note,
-        #"note_count": notes_count,
-        #"note_form": note_form,
     )
 
 
-def note_edit(request, unit_slug, note_id): # slug or unit_slug!? Here and further down in code in this view as well
+def note_edit(request, unit_slug, note_id):
     """
     view to edit note
     """
     if request.method == "POST":
 
-        queryset = Unit.objects.filter(status_unit=1) # Should maybe be unit to the right of =
-        unit = get_object_or_404(queryset, unit_slug=unit_slug) # Should maybe be unit to the left of =
-        note = get_object_or_404(Note, pk=note_id) # Note to the right of equal sign must refer to the model since capital N  CHANGE comment_id!!!
-        note_form = NotesForm(data=request.POST, instance=note) # Plural since I have my forms.py in plural (notes) Same here as comment above. Is POST method or should it be changed ot UNIT?
+        queryset = Unit.objects.filter(status_unit=1)
+        unit = get_object_or_404(queryset, unit_slug=unit_slug)
+        note = get_object_or_404(Note, pk=note_id)
+        note_form = NotesForm(data=request.POST, instance=note)
 
-        if note_form.is_valid() and note.user == request.user: # note.author or note.user_id!? REMEMBER TO CHANGE IN BUTTON IN singel-unit-display.html as well!
+        if note_form.is_valid() and note.user == request.user:
             note = note_form.save(commit=False)
-            note.unit = unit # Should it be post or unit!?
-            note.approved = False
+            note.unit = unit
+            note.status_unit = False
             note.save()
             messages.add_message(request, messages.SUCCESS, 'Note Updated!')
         else:
@@ -98,23 +75,21 @@ def note_edit(request, unit_slug, note_id): # slug or unit_slug!? Here and furth
 
     return HttpResponseRedirect(reverse('unit_detail', args=[unit_slug]))
 
-# DELETE
 def note_delete(request, unit_slug, note_id):
     """
     view to delete note
     """
     queryset = Unit.objects.filter(status_unit=1)
     unit = get_object_or_404(queryset, unit_slug=unit_slug)
-    note = get_object_or_404(Note, pk=note_id)   # CHANGE comment_id!!!
+    note = get_object_or_404(Note, pk=note_id)
 
     if note.user_id == request.user:
         note.delete()
-        messages.add_message(request, messages.SUCCESS, 'Note deleted!')  # What is add_message?
+        messages.add_message(request, messages.SUCCESS, 'Note deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own note!')   # What is add_message?
+        messages.add_message(request, messages.ERROR, 'You can only delete your own note!')
 
     return HttpResponseRedirect(reverse('unit_detail', args=[unit_slug]))
-# END OF DELETE
 
 def handler404(request, exception):
     """

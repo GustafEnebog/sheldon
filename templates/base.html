@@ -1,7 +1,5 @@
 {% load static %}
 
-<!--{% url 'home' as home_url %}
-{% url 'about' as about_url %}-->
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -38,10 +36,6 @@
     <link rel="shortcut icon" href="{% static 'favicon/favicon-16x16.png' %}" />
     <link rel="shortcut icon" href="{% static 'favicon/favicon-32x32.png' %}" />
     <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}" />
-    <!--Custom CSS, Placed AFTER bootstrap imported stylesheet in order to take precidence over it when we want to customise (override bootstrap)-->
-    <!-- DELETE (not working now but did work in PP4): <link rel="stylesheet" href="{% static 'css/style.css' %}">-->
-
-    <!-- DELETE href="textbook/static/css/style.css"-->
     <!--Google font Chevron Left, Chevron Right, Chevron Up and Chevron Down-->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -50,33 +44,22 @@
 <body>
     <header>
         <!-- ********** Header ********** -->
-        <!--col-1 to col-12-->
         <div class="container-fluid text-center" style="margin: 5px 0px">
             <div class="row">
                 <div class="col-sm-4 ps-0">
-                    <!-- class="col-2 ps-0"  -->
                     <div style="justify-content: center">
-                        <!--<p  class="mb-0">Header</p>-->
-                        <!-- <a href="index.html">
-                        <h1 id="logo">SHELDON</h1>
-                    </a>-->
                         <h1 id="logo" style="align-items: center">SHELDON</h1>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <!-- class="col-6 ps-0"  -->
                     <div>
-                        <!-- <img src="static/images/usc-logo.png" align="left" alt="University of Southern California logo"
-                        style="width:100%;max-width:250px"> -->
                         <a href="https://www.usc.edu/" target="_blank"><img src="{% static  'images/usc-logo.png'%}"
                                 id="user-logo" alt="University of Southern California logo"></a>
                     </div>
                 </div>
                 <div class="col-sm-2" id="header-login">
-                    <!-- class="col-1 ps-0"  -->
                     <div>
                         <!-- Auth logout, signup and login -->
-
                         {% if user.is_authenticated %}
                         <div class="nav-item">
                             <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
@@ -92,7 +75,6 @@
                                 href="{% url 'account_login' %}">Login</a>
                         </div>
                         {% endif %}
-
                         <!-- END OF: Auth logout, signup and login -->
                     </div>
                 </div>
@@ -110,7 +92,6 @@
                         <div style="padding: 15px 0px 15px 0px">
                             {% block syllabus %}
                             <div class="btn-group">
-                                <!-- lass="scroll" -->
                                 <a href="{% url 'UnitContent'%}">
                                     <button type="button" onclick="{{unit.unit_title}}">Back to Syllabus</button>
                                 </a>
@@ -126,39 +107,11 @@
 
     <main>
         <!-- ********** Unit ********** -->
-        <!--col-1 to col-12-->
         <div class=" container-fluid text-center" id="footer-push-down" class="main">
             <div class="row">
                 <div class="col-sm-3 ps-0">
-                    <div style="background-color: white" id="Situation-awareness">
-                        <p>Been here</p>
-                        <!-- Make Toggle between hidden and not hidden depending on a fetsch saying user has been on unit or not-->
-
-                        <input type="checkbox" id="unit-state-1" name="unit-state-1" value="Read"
-                            onclick="displayDate(); colorCoding()">
-                        <!-- <p id="demo"></p>-->
-                        <label for="unit-state-1">Read</label><br>
-
-                        <input type="checkbox" id="unit-state-2" name="unit-state-2" value="Understood"
-                            onclick="displayDate(); colorCoding()">
-                        <label for="unit-state-2">Understood</label><br>
-
-                        <input type="checkbox" id="unit-state-3" name="unit-state-3" value="Bookmark"
-                            onclick="displayDate(); colorCoding()">
-                        <label for="unit-state-3">Bookmark</label><br>
-                        <!-- <button class="situ-aware-button">Clipboard</button> -->
-                    </div>
                 </div>
                 <div class="col-1 col-sm-1 ps-0">
-                    <div style="background-color:white">
-                        <!-- <a href="index.html" class="active">Left</a> -->
-                        <!-- Google font Keyboard Left -->
-                        <!-- Then there is Keyboard Arrow Up Down Left Right -->
-                        <span class="material-symbols-outlined">
-                            keyboard_arrow_left
-                        </span>
-                        <!-- END OF: Google font Keyboard Left -->
-                    </div>
                 </div>
                 <div class="col-10 col-sm-6 ps-0">
                     <div style="background-color:white">
@@ -171,39 +124,14 @@
                     </div>
                 </div>
                 <div class="col-1 col-sm-1 ps-0">
-                    <div style="background-color:	white">
-                        <!-- Google font Keyboard Right -->
-                        <!-- Then there is Keyboard Arrow Up Down-->
-                        <span class="material-symbols-outlined">
-                            keyboard_arrow_right
-                        </span>
-                        <!-- END OF: Google font Keyboard Right-->
-                    </div>
                 </div>
                 <div class="col-sm-1 ps-0">
                     <div style="background-color: white">
-                        <!-- Google font thumb_up -->
-                        <div class="material-symbols-outlined">
-                            thumb_up
-                        </div>
-                        <br>
-                        <!-- END OF: Google font thumb_up-->
-                        <!-- Google font thumb_down -->
-                        <div class="material-symbols-outlined">
-                            thumb_down
-                        </div>
-                        <br>
-                        <!-- END OF: Google font thumb_down-->
-                        <div>
-                            <a href="" id="Print">Print</a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Code for displaying confirmation message NOT YET WORKING! also on views-->
-        <!-- displaying Django messages -->
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
@@ -217,24 +145,19 @@
                 </div>
             </div>
         </div>
-        <!-- END OF Code for displaying confirmation message -->
         <!-- ********** END of Unit ********** -->
     </main>
 
 
     <!-- ********** Footer ********** -->
     <footer class="footer">
-        <!--col-1 to col-12-->
         <div class="container-fluid text-center">
             <div class="row">
                 <div class="col-4 ps-0">
                     <div>
-                        <!--style="background-color: Cornsilk"-->
-                        <!--<p  class="mb-0">Header</p>-->
                         <div id="logo-footer">
                             <div>
                                 <a href="">
-                                    <!--<p  Add URL to Sheldon official website</p>-->
                                     <h3 class="m-0 text-center text-white" id="footer-text-left">SHELDON</h3>
                                 </a>
                                 <p class="m-0 text-center text-white" id="footer-text-left">Copyright: Gustaf Enebog,
@@ -252,7 +175,6 @@
                 </div>
                 <div class="col-8">
                     <div id="logo-footer">
-                        <!-- style="background-color:tan" -->
                         <p class="m-0 text-center text-white">University of Southern Califoria<br>University Park
                             Campus<br>3551 Trousdale Pkwy<br>Los Angeles, CA 90007</p>
                     </div>
@@ -261,13 +183,6 @@
         </div>
     </footer>
     <!-- ********** END of Footer ********** -->
-
-
-    <!--Javascript file-->
-    <!-- <link rel="scriptfile" href="{% static 'js/script.js' %}>" /> -->
-    <!-- <script src="{% static 'js/script.js' %}"></script> -->
-
-
     {% block extras %}
     {% endblock %}
 </body>
