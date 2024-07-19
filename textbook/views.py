@@ -25,10 +25,10 @@ def unit_detail(request, unit_slug):
     """
     queryset = Unit.objects.filter(status_unit=1)
     unit_detail = get_object_or_404(queryset, unit_slug=unit_slug)
-    unit = get_object_or_404(queryset, unit_slug=unit_slug)
+    units = get_object_or_404(queryset, unit_slug=unit_slug)
     # notes = unit.notes.all().order_by("-created_on")
-    print("this is Unit in detail view = ",unit)
-    note = unit.unit_note.all().order_by("-created_on")
+    print("this is Unit in detail view = ",units)
+    note = units.unit_note.all().order_by("-created_on")
     notes_form = NotesForm()
     if request.method == "POST":
         note_form = NotesForm(data=request.POST)
@@ -45,7 +45,7 @@ def unit_detail(request, unit_slug):
     return render(request, 
         "textbook/singel-unit-display.html", 
         {
-            "unit": unit, 
+            "units": units, 
             "note": note,
             "unit_detail": unit_detail,
             "notes_form": notes_form,
