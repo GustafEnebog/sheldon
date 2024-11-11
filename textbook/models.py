@@ -15,7 +15,7 @@ class Syllabus(models.Model):
 
 
 class Module(models.Model):
-    module_id = models.IntegerField(unique=True, null=True)  #PK
+    module_id = models.IntegerField(unique=True, null=True)  # PK
     syllabus_id = models.ForeignKey(Syllabus, on_delete=models.CASCADE, related_name="syllabus_module")  # FK
     module_title = models.CharField(max_length=200, unique=True)
     module_slug = models.SlugField(max_length=200, unique=True)
@@ -26,9 +26,10 @@ class Module(models.Model):
     def __str__(self):
         return f"{self.module_title} | written by {self.author}"
 
+
 class Unit(models.Model):
-    unit_id = models.IntegerField(unique=True, null=True)  #PK
-    module_id = models.ForeignKey(Module, on_delete=models.CASCADE, related_name="module_unit")  #FK
+    unit_id = models.IntegerField(unique=True, null=True)  # PK
+    module_id = models.ForeignKey(Module, on_delete=models.CASCADE, related_name="module_unit")  # FK
     unit_title = models.CharField(max_length=200, unique=True)
     unit_slug = models.SlugField(max_length=200, unique=True)
     category = models.CharField(max_length=200)
@@ -60,8 +61,8 @@ class UserProgress (models.Model):
 
 class Note(models.Model):
     unit_id = models.ForeignKey(Unit, on_delete=models.CASCADE,
-                             related_name="unit_note")
+                                related_name="unit_note")
     user_id = models.ForeignKey(User, on_delete=models.CASCADE,
-                             related_name="user_note")
+                                related_name="user_note")
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
