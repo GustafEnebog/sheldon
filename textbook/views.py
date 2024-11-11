@@ -15,42 +15,22 @@ class UnitListView(generic.ListView):
 
 
 def unit_detail(request, unit_slug):
-    """
-    Display an individual :model:`unit.note`.
-    **Context**
-    ``unit``
-        An instance of :model:`textbook.Unit`.
-    **Template:**
-    :template:`textbook/unit_detail.html`
-    """
-    queryset = Unit.objects.filter(status_unit=1)
-    unit_detail = get_object_or_404(queryset, unit_slug=unit_slug)
-    unit = get_object_or_404(queryset, unit_slug=unit_slug)  #should be note in plural
-    # notes = unit.notes.all().order_by("-created_on")
-    print("this is Unit in detail view = ",unit)  #should be note in plural
-    note = units.unit_note.all().order_by("-created_on")
+    unit = get_object_or_404(Unit.objects.filter(status_unit=1), unit_slug=unit_slug)
+    notes = unit.unit_note.all().order_by("-created_on")  # plural form of 'note'
     notes_form = NotesForm()
     if request.method == "POST":
         note_form = NotesForm(data=request.POST)
         if note_form.is_valid():
             note = note_form.save(commit=False)
-            note.unit_id = Unit.objects.get(unit_slug=unit_slug)
-            note.user_id = User.objects.get(id=request.user.id)
+            note.unit_id = unit
+            note.user_id = request.user
             note.save()
-            messages.add_message(
-            request, messages.SUCCESS,
-            'Note Succesfully saved'
-            )
-    
-    return render(request, 
-        "textbook/singel-unit-display.html", 
-        {
-            "unit": unit,
-            "note": note,  #should be note in plural
-            "unit_detail": unit_detail,
-            "notes_form": notes_form,
-        },
-    )
+            messages.success(request, 'Note Successfully saved!')
+    return render(request, "textbook/singel-unit-display.html", {
+        "unit": unit,
+        "notes": notes,  # Pass notes as plural
+        "notes_form": notes_form,
+    })
 
 
 def note_edit(request, unit_slug, note_id):

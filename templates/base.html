@@ -92,9 +92,9 @@
                         <div style="padding: 15px 0px 15px 0px">
                             {% block syllabus %}
                             <div class="btn-group">
-                                <a href="{% url 'UnitContent'%}">
-                                    <button type="button" onclick="{{unit.unit_title}}">Back to Syllabus</button>
-                                </a>
+                                <a href="{% url 'unit_detail' unit_slug=unit.unit_slug %}">
+                                    <button type="button">Back to Syllabus</button>
+                                </a>                                
                             </div>
                             {% endblock syllabus %}
                         </div>

@@ -31,8 +31,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = 'DEV_PRODUCTION' in os.environ
-#DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = ["*"]  # DELETE!!!!!!!: JUST FOR TESTING 404-page
 #ALLOWED_HOSTS = ['8000-gustafenebog-sheldon-snyii1xvpkq.ws.codeinstitute-ide.net',

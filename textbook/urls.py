@@ -1,16 +1,11 @@
 from . import views
 from django.urls import path
-#from django.urls import path
-# from . import views
-
 
 urlpatterns = [
-    path('', views.UnitListView.as_view(), name='UnitContent'),
+    path('', views.UnitListView.as_view(), name='index'),  # Changed name to 'index'
     path('<slug:unit_slug>/', views.unit_detail, name="unit_detail"),
-    path('<slug:unit_slug>/edit_note/<int:note_id>',
-         views.note_edit, name='note_edit'),
-    path('<slug:unit_slug>/delete_note/<int:note_id>',
-         views.note_delete, name='note_delete'),
+    path('<slug:unit_slug>/edit_note/<int:note_id>', views.note_edit, name='note_edit'),
+    path('<slug:unit_slug>/delete_note/<int:note_id>', views.note_delete, name='note_delete'),
 ]
 
 handler404 = 'textbook.views.handler404'
