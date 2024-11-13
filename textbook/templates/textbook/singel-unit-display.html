@@ -7,7 +7,8 @@
 <!-- ********** Displaying unit ********** -->
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-12 card mb-4 mt-3"> <!-- Ensure full width within container -->
+        <div class="col-12 card mb-4 mt-3">
+            <!-- Ensure full width within container -->
             <div class="card-body">
                 <div class="masthead">
                     <div class="container">
@@ -38,7 +39,8 @@
 <!-- ********** Displaying Note ********** -->
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-12 card mb-4 mt-3"> <!-- Ensure full width within container -->
+        <div class="col-12 card mb-4 mt-3">
+            <!-- Ensure full width within container -->
             <div class="card-body">
                 <h3>Notes</h3>
                 {% for note in notes %}
@@ -53,7 +55,10 @@
                 </div>
                 <div>
                     <button class="btn btn-delete" note_id="{{ note.id }}">Delete</button>
-                    <button class="btn btn-edit" note_id="{{ note.id }}">Edit!</button>
+                    <!-- Edit button -->
+                    <a href="{% url 'note_edit' unit_slug=unit.unit_slug note_id=note.id %}"
+                        class="btn btn-edit">Edit!</a>
+                    </a>
                 </div>
                 {% if not forloop.last %}
                 <hr class="note-divider">
@@ -68,7 +73,8 @@
 <!-- ********** Creating Note ********** -->
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-12 card mb-4 mt-3"> <!-- Ensure full width within container -->
+        <div class="col-12 card mb-4 mt-3">
+            <!-- Ensure full width within container -->
             <div class="card-body">
                 {% if user.is_authenticated %}
                 <h3>Make a note</h3>

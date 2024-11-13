@@ -1,8 +1,7 @@
-from .models import Note
 from django import forms
+from .models import Note
 
-
-class NotesForm(forms.ModelForm):
+class NoteForm(forms.ModelForm):
     class Meta:
         model = Note
-        fields = ('body',)
+        fields = ['body']

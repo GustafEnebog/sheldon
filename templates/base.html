@@ -5,6 +5,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,7 +51,7 @@
                             <a href="/" style="text-decoration: none; color: inherit;">SHELDON</a>
                         </h1>
                     </div>
-                </div>                
+                </div>
                 <div class="col-sm-6">
                     <div>
                         <a href="https://www.usc.edu/" target="_blank"><img src="{% static  'images/usc-logo.png'%}"
@@ -59,23 +60,24 @@
                 </div>
                 <div class="col-sm-2" id="header-login">
                     <div>
-                        <!-- Auth logout, signup and login -->
+                        <!-- Check if user is logged in -->
                         {% if user.is_authenticated %}
                         <div class="nav-item">
-                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_logout' %}">Log Out</a>
+                            <!-- If logged in, show username and link to profile -->
+                            <a class="nav-link" href="{{ user.get_absolute_url }}">{{ user.username }}</a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
                         </div>
                         {% else %}
+                        <!-- Show login and register links if user is not authenticated -->
                         <div class="nav-item">
-                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_signup' %}">Register</a>
+                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_login' %}">Log In</a>
+                            <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
                         </div>
                         {% endif %}
-                        <!-- END OF: Auth logout, signup and login -->
                     </div>
                 </div>
             </div>
@@ -88,13 +90,14 @@
         <div class=" container-fluid text-center">
             <div class="row">
                 <div class="col-12 ps-0">
-                    <div style="background-color: #E5E5E5">  <!--  #D1CCC4 -->
+                    <div style="background-color: #E5E5E5">
+                        <!--  #D1CCC4 -->
                         <div style="padding: 15px 0px 15px 0px">
                             {% block syllabus %}
                             <div class="btn-group">
                                 <a href="{% url 'index' %}">
                                     <button type="button">Back to Syllabus</button>
-                                </a>                                
+                                </a>
                             </div>
                             {% endblock syllabus %}
                         </div>
