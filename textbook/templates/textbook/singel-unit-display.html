@@ -2,63 +2,62 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-
 {% block unit %}
-
 
 <!-- ********** Displaying unit ********** -->
 <div class="container">
-    <div class="row" style="width: 48vw;">
-        <div class="col card mb-4  mt-3 left  top">
+    <div class="row justify-content-center">
+        <div class="col-12 card mb-4 mt-3"> <!-- Ensure full width within container -->
             <div class="card-body">
                 <div class="masthead">
                     <div class="container">
                         <div class="row g-0">
-                            <div class="col-md-6 masthead-text" style="width: 100%;">
-                                <!-- Displaying unit title, author and created on -->
+                            <div class="col-md-6 masthead-text">
                                 <h1 class="post-title">{{ unit.unit_title }}</h1>
                                 <p class="post-subtitle">{{ unit.author }} | {{ unit.created_on }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--Displaying "unit content -->
+                <!-- Displaying "unit content" -->
                 <p class="card-text">
                     {{ unit.content | safe }}
                 </p>
-                <!--END OF Displaying "unit content -->
-
-                <!--Displaying Cloudinary image-->
+                <!-- Displaying Cloudinary image -->
                 {% if "placeholder" in unit.featured_image.url %}
                 <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
                 {% else %}
-                <img class="card-img-top" src=" {{ unit.featured_image.url }}" alt="{{ unit.title }}">
+                <img class="card-img-top" src="{{ unit.featured_image.url }}" alt="{{ unit.title }}">
                 {% endif %}
-                <!--END OF Displaying Cloudinary image-->
             </div>
         </div>
     </div>
-    <!-- ********** END OF Displaying unit ********** -->
+</div>
+<!-- ********** END OF Displaying unit ********** -->
 
-    <!-- ********** Displaying Note ********** -->
-    <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 " style="width: 750px;">
-            <h3>My note:</h3>
+<!-- ********** Displaying Note ********** -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 card mb-4 mt-3"> <!-- Ensure full width within container -->
             <div class="card-body">
+                <h3>Notes</h3>
                 {% for note in notes %}
                 <p class="font-weight-bold">
-                    {{ note.author }} wrote:
-                    <span class="font-weight-normal">
+                    {{ note.author }}
+                    <span class="font-weight-normal" style="color: #838383;">
                         {{ note.created_on }}
-                    </span> wrote:
+                    </span>
                 </p>
                 <div id="comment{{ comment.id }}">
-                    {{ note.body | linebreaks }}
+                    {{ note.body | safe }}
                 </div>
                 <div>
                     <button class="btn btn-delete" note_id="{{ note.id }}">Delete</button>
                     <button class="btn btn-edit" note_id="{{ note.id }}">Edit!</button>
                 </div>
+                {% if not forloop.last %}
+                <hr class="note-divider">
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
@@ -67,23 +66,25 @@
 <!-- ********** END OF Displaying Note ********** -->
 
 <!-- ********** Creating Note ********** -->
-<div class="col-md-4 card mb-4  mt-3 " style="width: 48vw;">
-    <div class="card-body">
-        {% if user.is_authenticated %}
-        <h3>Make a note:</h3>
-        <p>Making a note as: {{ user.username }}</p>
-        <form id="commentForm" method="post" style="margin-top: 1.3em;">
-            {{ notes_form | crispy }}
-            {% csrf_token %}
-            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-        </form>
-        {% else %}
-        <!-- case if user is NOT logged in -->
-        <p>Log in to make a note</p>
-        {% endif %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 card mb-4 mt-3"> <!-- Ensure full width within container -->
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                <h3>Make a note</h3>
+                <p>as: {{ user.username }}</p>
+                <form id="commentForm" method="post" style="margin-top: 1.3em;">
+                    {{ notes_form | crispy }}
+                    {% csrf_token %}
+                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+                {% else %}
+                <p>Log in to make a note!</p>
+                {% endif %}
+            </div>
+        </div>
     </div>
 </div>
-
 <!-- ********** END OF Creating Note ********** -->
 
 <!-- ********** Delete confirmation modal ********** -->
@@ -100,14 +101,12 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a id="deleteConfirm" href="#" class="btn
-          btn-danger">Delete</a>
+                <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>
 </div>
 <!-- ********** END OF Delete confirmation modal ********** -->
-
 
 {% endblock unit %}
 

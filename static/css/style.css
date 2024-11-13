@@ -248,5 +248,11 @@ main {
     font-style: normal;
 }
 
+/* Style for the divider line between notes */
+.note-divider {
+    border: 0;
+    border-top: 1px solid #212121;
+    margin: 10px 0;
+}
 
 
