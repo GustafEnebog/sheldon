@@ -66,7 +66,9 @@ def note_edit(request, unit_slug, note_id):
         form = NoteForm(request.POST, instance=note)  # Pre-populate form with existing note data
         if form.is_valid():
             form.save()  # Save the updated note
-            return redirect('note_detail', note_id=note.id)  # Redirect to the note detail page after editing
+            # return redirect('note_detail', note_id=note.id)  # Redirect to the note detail page after editing
+            # Redirect to unit_detail view after saving
+            return redirect('unit_detail', unit_slug=unit_slug)  # Redirect to unit_detail
     else:
         form = NoteForm(instance=note)  # Show the form with the existing note content
 
