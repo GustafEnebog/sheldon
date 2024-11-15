@@ -10,7 +10,7 @@
 
 /* used to denote code using back-tics <`> in mark down. This CSS rule is for the README.md */
 code {
-    color: #ff8400;
+    color: #ffc020;
   }
 
 body {
@@ -214,7 +214,7 @@ main {
   
   /* Add a background color on hover */
   .btn-group button:hover {
-    background-color: orange;
+    background-color: #FFC020;
   }
 /* END OF: Code snippet "button group" */
 

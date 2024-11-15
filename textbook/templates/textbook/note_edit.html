@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block unit %}
     <h2>Edit Note</h2>
     
     <form method="POST">
@@ -10,5 +10,6 @@
     </form>
 
     <br>
-    <a href="{% url 'note_detail' note.id %}">Cancel</a>  <!-- Link to view the note -->
-{% endblock %}
+    <!-- Link back to the unit detail page after editing -->
+    <a href="{% url 'unit_detail' unit_slug=unit.unit_slug %}">Cancel</a>  
+{% endblock unit %}

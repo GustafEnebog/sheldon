@@ -4,9 +4,9 @@ from django.urls import path
 urlpatterns = [
     path('', views.UnitListView.as_view(), name='index'),
     path('<slug:unit_slug>/', views.unit_detail, name="unit_detail"),
-    # path('<slug:unit_slug>/edit_note/<int:note_id>', views.note_edit, name='note_edit'),
     path('<slug:unit_slug>/edit_note/<int:note_id>/', views.note_edit, name='note_edit'),
     path('<slug:unit_slug>/delete_note/<int:note_id>/', views.note_delete, name='note_delete'),
+    #path('<slug:unit_slug>/note_detail/<int:note_id>/', views.note_detail, name='note_detail'),
     path('profile/', views.profile, name='profile')
 ]
 
