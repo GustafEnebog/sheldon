@@ -1,15 +1,32 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
 
 {% block unit %}
-    <h2>Edit Note</h2>
-    
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}  <!-- Render the form fields (body of the note) -->
-        <button type="submit">Save Changes</button>
-    </form>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 card mb-4 mt-3">
+            <div class="card-body">
+                <h3>Edit Note</h3>
 
-    <br>
-    <!-- Link back to the unit detail page after editing -->
-    <a href="{% url 'unit_detail' unit_slug=unit.unit_slug %}">Cancel</a>  
+                <form method="POST" style="margin-top: 1.3em;">
+                    {% csrf_token %}
+                    <!-- Render the form fields (body of the note) with crispy forms -->
+                    {{ form | crispy }}
+
+                    <!-- Submit button styled with Bootstrap -->
+                    <!-- <button type="submit" class="btn btn-primary btn-lg">Save Changes</button> -->
+                    <!-- Save Changes button styled as a text button -->
+                    <button type="submit" class="text-button">Save Changes</button>
+                </form>
+
+                <br>
+                <!-- Link back to the unit detail page after editing, styled as a button -->
+                <!--  <a href="{% url 'unit_detail' unit_slug=unit.unit_slug %}" class="btn btn-secondary btn-lg">Cancel</a> -->
+                <a href="{% url 'unit_detail' unit_slug=unit.unit_slug %}" class="text-button">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock unit %}
