@@ -97,13 +97,69 @@ footer {
     padding-bottom: 50px;
 }
 
-#footer-text-left {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-left: 20px;
+
+
+
+
+
+/* Add the following to your existing stylesheet */
+
+/* Ensure the container allows overflow to the left */
+.logo-container {
+    display: block;               /* Ensures the anchor takes up space */
+    position: relative;           /* Necessary for absolute positioning */
+    width: 70%;                   /* Adjust the width as needed for your layout */
+    overflow-x: visible;          /* Allows the image to overflow to the left */
 }
 
+/* Image styling: Shrinks until a minimum width, then overflows */
+#logo-of-maker-of-lms {
+    width: 100%;                  /* Image takes up the full width of its container */
+    height: auto;                 /* Maintain aspect ratio */
+    object-fit: contain;          /* Maintain image aspect ratio within container */
+    max-width: none;              /* Prevent image from growing too large */
+    min-width: 150px;             /* Minimum width to stop shrinking */
+    transition: width 0.3s ease-in-out; /* Smooth transition for resizing */
+}
+
+/* Media Queries to handle the shrinking effect */
+@media screen and (max-width: 1200px) {
+    .logo-container {
+        width: 60%;               /* Reduce container width */
+    }
+
+    #logo-of-maker-of-lms {
+        width: 70%;               /* Image shrinks with container width */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .logo-container {
+        width: 50%;               /* Further reduce container width on smaller screens */
+    }
+
+    #logo-of-maker-of-lms {
+        width: 50%;               /* Further shrink image size */
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .logo-container {
+        width: 40%;               /* Reduce container width for very small screens */
+    }
+
+    #logo-of-maker-of-lms {
+        width: 30%;               /* Image stops shrinking and remains at minimum size */
+    }
+}
+
+
+
+
+
+
+
+  
 #header-login {
     height: 60px;
     margin-top: 8px;

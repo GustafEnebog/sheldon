@@ -151,50 +151,57 @@
         <!-- ********** END of Unit ********** -->
     </main>
 
-
-    <!-- ********** Footer ********** -->
-    <footer class="footer">
-        <div class="container-fluid text-center">
-            <div class="row">
-                <div class="col-4 ps-0">
-                    <div>
-                        <div id="logo-footer">
-                            <div>
-                                <a href="">
-                                    <h3 class="m-0 text-center text-white" id="footer-text-left">SHELDON</h3>
+<!-- ********** Footer ********** -->
+<footer class="footer">
+    <div class="container-fluid text-center">
+        <div class="row">
+            <div class="col-4 ps-0">
+                <div>
+                    <div id="logo-footer">
+                        <div>
+                            <a href="">
+                                <h3 class="m-0 text-center text-white" id="footer-text-left">SHELDON</h3>
+                            </a>
+                            <p class="m-0 text-center text-white" id="footer-text-left">Copyright: Gustaf Enebog,
+                                2024</p>
+                            <p class="m-0 text-center text-white" id="footer-text-left">Follow us:
+                                <a href="https://www.facebook.com" target="_blank">
+                                    <i class="fab fa-facebook-square ms-3" id="footer-text-left"></i>
                                 </a>
-                                <p class="m-0 text-center text-white" id="footer-text-left">Copyright: Gustaf Enebog,
-                                    2024</p>
-                                <p class="m-0 text-center text-white" id="footer-text-left">Follow us:
-                                    <a href="https://www.facebook.com" target="_blank">
-                                        <i class="fab fa-facebook-square ms-3" id="footer-text-left"></i>
-                                    </a>
-                                    <a href="https://twitter.com" target="_blank">
-                                        <i class="fab fa-twitter-square ms-3" id="footer-text-left"></i>
-                                    </a>
-                                    <a href="https://www.instagram.com" target="_blank">
-                                        <i class="fab fa-instagram-square ms-3" id="footer-text-left"></i>
-                                    </a>
-                                    <a href="https://www.youtube.com" target="_blank">
-                                        <i class="fab fa-youtube-square ms-3" id="footer-text-left"></i>
-                                    </a>
-                                </p>
-                            </div>
+                                <a href="https://twitter.com" target="_blank">
+                                    <i class="fab fa-twitter-square ms-3" id="footer-text-left"></i>
+                                </a>
+                                <a href="https://www.instagram.com" target="_blank">
+                                    <i class="fab fa-instagram-square ms-3" id="footer-text-left"></i>
+                                </a>
+                                <a href="https://www.youtube.com" target="_blank">
+                                    <i class="fab fa-youtube-square ms-3" id="footer-text-left"></i>
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-8">
-                    <div id="logo-footer">
-                        <p class="m-0 text-center text-white">University of Southern Califoria<br>University Park
-                            Campus<br>3551 Trousdale Pkwy<br>Los Angeles, CA 90007</p>
+            </div>
+            <div class="col-6">
+                <div id="logo-footer">
+                    <p class="m-0 text-center text-white">University of Southern Califoria<br>University Park
+                        Campus<br>3551 Trousdale Pkwy<br>Los Angeles, CA 90007</p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div id="logo-footer">
+                    <!-- Displaying Cloudinary image -->
+                    <div>
+                        <div class="logo-container">
+                            <img src="{% static 'images/the-lms-expert.png' %}" id="logo-of-maker-of-lms" alt="The LMS Expert">
+                        </div>                                                                                                                               
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- ********** END of Footer ********** -->
-    {% block extras %}
-    {% endblock %}
-</body>
+    </div>
+</footer>
+<!-- ********** END of Footer ********** -->
+
 
 </html>

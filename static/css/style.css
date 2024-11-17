@@ -90,6 +90,45 @@ footer a {
     color: lightgray;
 }
 
+
+
+/* The container that holds the logo */
+.logo-container {
+    position: relative; /* Ensure positioning works correctly */
+    display: block;
+    overflow-x: visible; /* Allow image to overflow horizontally */
+    width: 100%; /* The container takes up the full width */
+}
+
+/* Image rules */
+#logo-of-maker-of-lms {
+    width: 100%; /* Image will resize based on its container */
+    max-width: 200px; /* Set the maximum width */
+    min-width: 150px; /* Minimum width (won't shrink smaller than this) */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: contain; /* Prevent distortion */
+    transition: width 0.3s ease; /* Smooth transition on resize */
+}
+
+/* When the viewport shrinks to smaller sizes */
+@media screen and (max-width: 768px) {
+    #logo-of-maker-of-lms {
+        position: absolute; /* Take the image out of the normal document flow */
+        left: -50px; /* Allow the image to overflow into the left of its container */
+        width: 150px; /* Lock the width at 150px (its minimum size) */
+        height: auto; /* Keep the aspect ratio intact */
+    }
+
+    .logo-container {
+        width: 30%; /* Container shrinks to 30% of its parent, leaving space for overflow */
+    }
+}
+
+
+
+
+
+
 footer {
     width: 100%;
     background-color: black;
@@ -100,6 +139,13 @@ footer {
 #footer-text-left {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+#footer-text-right {
+    display: flex;
+    align-items: left;
     justify-content: flex-start;
     margin-left: 20px;
 }
@@ -255,4 +301,19 @@ main {
     margin: 10px 0;
 }
 
+/* Text-based buttons with no background */
+.text-button {
+    background: none;  /* Remove background */
+    border: none;      /* Remove border */
+    color: #007bff;    /* Blue text color similar to a link */
+    font-size: 1rem;    /* Ensure the text size matches the buttons */
+    font-weight: bold;  /* Optional: make the text bold */
+    text-decoration: none;  /* Remove underline */
+    cursor: pointer;   /* Pointer cursor on hover */
+}
+
+/* Hover effect for text-based buttons */
+.text-button:hover {
+    text-decoration: underline;  /* Underline on hover */
+}
 
