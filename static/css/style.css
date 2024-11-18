@@ -31,9 +31,6 @@ body {
 
 
 
-
-
-
 /* Make sure the main section and unit content stay flexible */
 main {
     width: 100%;
@@ -43,7 +40,7 @@ main {
 
 /* Style the "Unit" section */
 #unit-section {
-    margin-top: 111px; /* Adjusted for header height */
+    margin-top: 0px; /* Adjusted for header height */
     background-color: white;
     padding: 15px 0;
     display: flex;
@@ -72,9 +69,62 @@ main {
 
 @media screen and (max-width: 768px) {
     #unit-section {
-        margin-top: calc(111px + 20px); /* Adjust the margin-top when the header grows */
+        margin-top: calc(0px + 20px); /* Adjust the margin-top when the header grows */
     }
 }
+
+
+
+
+/* Reset the container padding */
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+
+
+/* Ensure there’s no margin on the left of the main content */
+main {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Remove padding for the unit-section */
+#unit-section {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0; /* Remove any margin pushing the unit content down */
+}
+
+/* Ensure the row doesn't have extra margin or padding */
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Ensure the columns inside the row are aligned */
+.col-sm-3, .col-sm-6, .col-sm-1 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* Ensure no padding on the left or right of the .col-12 */
+.col-12.ps-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -107,6 +157,26 @@ header a {
 #syllabus {
     margin: 10px 0px;
 }
+
+
+
+
+/* Ensure the Syllabus section spans the full width */
+#syllabus {
+    width: 100%;
+    margin: 0; /* Remove any unwanted margin */
+    padding: 0; /* Remove any padding, but if you want padding, you can add it back */
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+
+
+
 
 #Situation-awareness {
     text-align: left;
@@ -219,13 +289,6 @@ footer {
 
 #header-vert {
     align-items: center;
-}
-
-main {
-    width: 100%;
-    flex: 1 0 auto;
-    margin-top: 200px;
-
 }
 
 .flex-parent-element {
