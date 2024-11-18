@@ -110,46 +110,39 @@
 
     <main>
         <!-- ********** Unit ********** -->
-        <div class=" container-fluid text-center" id="footer-push-down" class="main">
+        <div class="container-fluid text-center" id="unit-section">
             <div class="row">
                 <div class="col-sm-3 ps-0">
+                    <!-- Empty column for layout spacing -->
                 </div>
                 <div class="col-1 col-sm-1 ps-0">
+                    <!-- Empty column for layout spacing -->
                 </div>
                 <div class="col-10 col-sm-6 ps-0">
                     <div style="background-color:white">
                         <div>
                             {% block unit %}
-                            Welcome to: USC and Aerodynamics 101
-                            Let's click on one of the units in the Syllabus above and start learning!
+                                <!-- Unit content here -->
+                                Welcome to: USC and Aerodynamics 101
+                                Let's click on one of the units in the Syllabus above and start learning!
                             {% endblock unit %}
                         </div>
                     </div>
                 </div>
                 <div class="col-1 col-sm-1 ps-0">
+                    <!-- Empty column for layout spacing -->
                 </div>
                 <div class="col-sm-1 ps-0">
                     <div style="background-color: white">
+                        <!-- Any content you might want to add in this side column -->
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    {% for message in messages %}
-                    <div class="alert {{ message.tags }} alert-dismissible
-          fade show" id="msg" role="alert">
-                        {{ message | safe }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    {% endfor %}
                 </div>
             </div>
         </div>
         <!-- ********** END of Unit ********** -->
     </main>
+    
+    
 
 <!-- ********** Footer ********** -->
 <footer class="footer">

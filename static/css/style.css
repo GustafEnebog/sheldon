@@ -29,13 +29,60 @@ body {
     'opsz' 48
   }
 
-header {
-    background-color: white;
-    position: fixed;
-    z-index: 99;
+
+
+
+
+
+/* Make sure the main section and unit content stay flexible */
+main {
     width: 100%;
-    height: 111px;
+    flex: 1 0 auto;
+    margin-top: 0; /* Remove fixed margin, let the unit section naturally adjust */
 }
+
+/* Style the "Unit" section */
+#unit-section {
+    margin-top: 111px; /* Adjusted for header height */
+    background-color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: flex-start; /* Align content to the top */
+}
+
+/* Ensuring top alignment of content within the column */
+#unit-section .row {
+    align-items: flex-start; /* Ensure the row's content is top-aligned */
+}
+
+#unit-section .col-sm-3, #unit-section .col-1 {
+    /* Remove any margin/padding that might push the content down */
+    padding: 0;
+}
+
+#unit-section .col-10 {
+    padding: 0;
+}
+
+#unit-section .col-sm-6 {
+    padding: 0; 
+    display: flex;
+    flex-direction: column; /* Allow the content to be stacked from top to bottom */
+}
+
+@media screen and (max-width: 768px) {
+    #unit-section {
+        margin-top: calc(111px + 20px); /* Adjust the margin-top when the header grows */
+    }
+}
+
+
+
+
+
+
+
+
 
 #user-logo {
     height: 60px;
@@ -103,8 +150,8 @@ footer a {
 /* Image rules */
 #logo-of-maker-of-lms {
     width: 100%; /* Image will resize based on its container */
-    max-width: 200px; /* Set the maximum width */
-    min-width: 150px; /* Minimum width (won't shrink smaller than this) */
+    max-width: 150px; /* Set the maximum width */
+    min-width: 100px; /* Minimum width (won't shrink smaller than this) */
     height: auto; /* Maintain the aspect ratio */
     object-fit: contain; /* Prevent distortion */
     transition: width 0.3s ease; /* Smooth transition on resize */
@@ -115,7 +162,7 @@ footer a {
     #logo-of-maker-of-lms {
         position: absolute; /* Take the image out of the normal document flow */
         left: -50px; /* Allow the image to overflow into the left of its container */
-        width: 150px; /* Lock the width at 150px (its minimum size) */
+        width: 100px; /* Lock the width at 150px (its minimum size) */
         height: auto; /* Keep the aspect ratio intact */
     }
 
