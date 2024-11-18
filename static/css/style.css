@@ -20,6 +20,37 @@ body {
     font-family: "Raleway", sans-serif;
 }
 
+
+
+
+
+
+/* Ensure the body and html take up the full height */
+html, body {
+    height: 100%;               /* Make the body and html elements fill the screen */
+    display: flex;              /* Enable flexbox layout */
+    flex-direction: column;     /* Stack the elements vertically */
+}
+
+/* Main content should grow to fill available space */
+main {
+    flex-grow: 1;               /* Allow the main content to grow and fill available space */
+}
+
+/* Footer should always be at the bottom */
+footer {
+    width: 100%;
+    background-color: black;
+    color: lightgray;
+    padding-bottom: 50px;
+    position: relative;         /* Ensure the footer is not fixed or absolute */
+    margin-top: auto;            /* Push footer to the bottom of the page */
+}
+
+
+
+
+
 /* Class for styling Google Material Symbols (Variable Icon Font). For tutorial 7min 48sec in: https://www.youtube.com/watch?v=VzlbeFGxU9U */
 .material-symbols-outlined {
     font-variation-settings:
