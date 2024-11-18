@@ -31,48 +31,6 @@ body {
 
 
 
-/* Make sure the main section and unit content stay flexible */
-main {
-    width: 100%;
-    flex: 1 0 auto;
-    margin-top: 0; /* Remove fixed margin, let the unit section naturally adjust */
-}
-
-/* Style the "Unit" section */
-#unit-section {
-    margin-top: 0px; /* Adjusted for header height */
-    background-color: white;
-    padding: 15px 0;
-    display: flex;
-    justify-content: flex-start; /* Align content to the top */
-}
-
-/* Ensuring top alignment of content within the column */
-#unit-section .row {
-    align-items: flex-start; /* Ensure the row's content is top-aligned */
-}
-
-#unit-section .col-sm-3, #unit-section .col-1 {
-    /* Remove any margin/padding that might push the content down */
-    padding: 0;
-}
-
-#unit-section .col-10 {
-    padding: 0;
-}
-
-#unit-section .col-sm-6 {
-    padding: 0; 
-    display: flex;
-    flex-direction: column; /* Allow the content to be stacked from top to bottom */
-}
-
-@media screen and (max-width: 768px) {
-    #unit-section {
-        margin-top: calc(0px + 20px); /* Adjust the margin-top when the header grows */
-    }
-}
-
 
 
 
@@ -81,6 +39,33 @@ main {
     padding-left: 0;
     padding-right: 0;
 }
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .col-10 {
+        width: 100%;           /* Take full width of the viewport */
+        max-width: none;       /* Remove the max-width restriction */
+        margin-left: auto;     /* Center the content */
+        margin-right: auto;    /* Center the content */
+        padding-left: 0;       /* Remove any left padding */
+        padding-right: 0;      /* Remove any right padding */
+    }
+
+    /* Ensure the unit section container is properly constrained */
+    #unit-section {
+        width: 100%;             /* Take up full width */
+        max-width: none;        /* Remove the max-width restriction */
+        margin-left: auto;      /* Center the unit section */
+        margin-right: auto;     /* Center the unit section */
+        padding-left: 0;        /* Remove padding */
+        padding-right: 0;       /* Remove padding */
+    }
+}
+
 
 
 
@@ -123,7 +108,87 @@ main {
 
 
 
+@media screen and (max-width: 768px) {
+    .col-10 {
+        width: 100%;           /* Take full width of the viewport */
+        max-width: none;       /* Remove the max-width restriction */
+        margin-left: auto;     /* Center the content */
+        margin-right: auto;    /* Center the content */
+        padding-left: 0;       /* Remove any left padding */
+        padding-right: 0;      /* Remove any right padding */
+    }
 
+    /* Ensure the unit section container is properly constrained */
+    #unit-section {
+        width: 100%;             /* Take up full width */
+        max-width: none;        /* Remove the max-width restriction */
+        margin-left: auto;      /* Center the unit section */
+        margin-right: auto;     /* Center the unit section */
+        padding-left: 0;        /* Remove padding */
+        padding-right: 0;       /* Remove padding */
+    }
+}
+
+
+
+
+
+
+
+
+/* Targeting screens below 768px */
+@media (max-width: 768px) {
+
+    /* Make sure the container is full width and remove padding/margins */
+    .container {
+        max-width: 100% !important;  /* Ensure container spans the full width */
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Make the card span the full width of the container */
+    .card {
+        width: 100% !important;  /* Remove any constraints on the card width */
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Prevent card content from overflowing */
+    .card-body {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Ensure the content in the card doesn't overflow horizontally */
+    .post-title,
+    .post-subtitle,
+    .card-text,
+    .masthead-text {
+        word-wrap: break-word;  /* Break long words that could overflow */
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    /* Adjust padding and margins in other areas to prevent overflow */
+    .masthead {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Ensure columns take full width of container at small screens */
+    .col-12 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Adjust the card image so it fits inside the card */
+    .card-img-top {
+        width: 100%;
+        height: auto;
+    }
+}
 
 
 
