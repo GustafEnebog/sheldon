@@ -45,26 +45,6 @@ body {
 
 
 
-@media screen and (max-width: 768px) {
-    .col-10 {
-        width: 100%;           /* Take full width of the viewport */
-        max-width: none;       /* Remove the max-width restriction */
-        margin-left: auto;     /* Center the content */
-        margin-right: auto;    /* Center the content */
-        padding-left: 0;       /* Remove any left padding */
-        padding-right: 0;      /* Remove any right padding */
-    }
-
-    /* Ensure the unit section container is properly constrained */
-    #unit-section {
-        width: 100%;             /* Take up full width */
-        max-width: none;        /* Remove the max-width restriction */
-        margin-left: auto;      /* Center the unit section */
-        margin-right: auto;     /* Center the unit section */
-        padding-left: 0;        /* Remove padding */
-        padding-right: 0;       /* Remove padding */
-    }
-}
 
 
 
@@ -108,27 +88,30 @@ main {
 
 
 
-@media screen and (max-width: 768px) {
-    .col-10 {
-        width: 100%;           /* Take full width of the viewport */
-        max-width: none;       /* Remove the max-width restriction */
-        margin-left: auto;     /* Center the content */
-        margin-right: auto;    /* Center the content */
-        padding-left: 0;       /* Remove any left padding */
-        padding-right: 0;      /* Remove any right padding */
-    }
 
-    /* Ensure the unit section container is properly constrained */
-    #unit-section {
-        width: 100%;             /* Take up full width */
-        max-width: none;        /* Remove the max-width restriction */
-        margin-left: auto;      /* Center the unit section */
-        margin-right: auto;     /* Center the unit section */
-        padding-left: 0;        /* Remove padding */
-        padding-right: 0;       /* Remove padding */
-    }
+/* Before the breakpoint */
+#unit-section {
+    width: 100%;              /* Take up full width */
+    max-width: 1200px;        /* Set a maximum width to prevent it from growing too wide */
+    min-width: 800px;         /* Set a minimum width to prevent it from becoming too narrow */
+    margin-left: auto;        /* Center the unit section */
+    margin-right: auto;       /* Center the unit section */
+    padding-left: 20px;       /* Padding for inner spacing */
+    padding-right: 20px;      /* Padding for inner spacing */
 }
 
+/* On smaller screens (below 768px) */
+@media screen and (max-width: 768px) {
+    #unit-section {
+        width: 100%;              /* Take up full width */
+        max-width: 100%;          /* Remove any max-width restriction */
+        min-width: 320px;         /* Set a min-width to prevent it from getting too narrow */
+        margin-left: auto;        /* Center the unit section */
+        margin-right: auto;       /* Center the unit section */
+        padding-left: 20px;       /* Padding for inner spacing */
+        padding-right: 20px;      /* Padding for inner spacing */
+    }
+}
 
 
 
