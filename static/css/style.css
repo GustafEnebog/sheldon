@@ -216,7 +216,6 @@ footer a {
 /* Align footer text to the left with some margin */
 #footer-text-right {
     display: flex;
-    align-items: left;
     justify-content: flex-start;
     margin-left: 20px;
 }
