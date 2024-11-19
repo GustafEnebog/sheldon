@@ -306,10 +306,10 @@ footer a {
     transition: width 0.3s ease; /* Smooth transition on resize */
 }
 
-/* When the viewport shrinks to smaller sizes */
+/* When the viewport shrinks to smaller sizes  ideally 575pxS*/
 @media screen and (max-width: 768px) {
     #logo-of-maker-of-lms {
-        position: absolute; /* Take the image out of the normal document flow */
+        position: absolute; /* Take the image out of the normal document flow      position: absolute; */
         left: -50px; /* Allow the image to overflow into the left of its container */
         width: 100px; /* Lock the width at 150px (its minimum size) */
         height: auto; /* Keep the aspect ratio intact */
@@ -514,14 +514,10 @@ footer {
 
 
 
-@media (max-width: 768px) {
-    footer {
-        width: 100%;
-        background-color: black;
-        color: lightgray;
-        padding-bottom: 50px;
-    }
 
+    /* 575px     678px */
+
+@media (max-width: 575px) {
     /* Stack all items in the footer vertically */
     footer .container-fluid {
         display: flex;
@@ -551,7 +547,17 @@ footer {
         text-align: center;   /* Center the text */
     }
 
-    /* Social media links container should be centered and spaced out */
+    /* Adjust the logo in the footer */
+    #logo-footer {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center content horizontally */
+        color: lightgray;
+        text-align: center;
+    }
+
+    /* Adjust the social media links to be centered */
     .social-media-links {
         display: flex;
         justify-content: center;  /* Center social icons */
@@ -583,110 +589,5 @@ footer {
         text-align: center;   /* Center the address text */
         width: 100%;          /* Make sure the address takes full width */
         margin-bottom: 10px;  /* Space below the address */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 768px) {
-    footer {
-        padding-left: 0;      /* Remove any left padding */
-        padding-right: 0;     /* Remove any right padding */
-        width: 100%;          /* Ensure it takes full width */
-        text-align: center;   /* Center everything horizontally */
-    }
-
-    /* Container inside footer should take full width, and no padding */
-    .container-fluid {
-        display: flex;
-        flex-direction: column; /* Stack footer items vertically */
-        align-items: center;    /* Center all items horizontally */
-        padding-left: 0;        /* No padding */
-        padding-right: 0;       /* No padding */
-    }
-
-    /* Row inside footer, stack items vertically */
-    footer .row {
-        display: flex;
-        flex-direction: column; /* Stack the columns vertically */
-        align-items: center;    /* Center content horizontally */
-        width: 100%;            /* Full width */
-        margin-bottom: 10px;    /* Space between elements */
-    }
-
-    /* Ensure that each column takes full width and text is centered */
-    footer .col-12,
-    footer .col-4,
-    footer .col-6,
-    footer .col-2 {
-        display: block;         /* Stack the columns */
-        width: 100%;            /* Full width for each column */
-        margin-bottom: 10px;    /* Space between items */
-        text-align: center;     /* Center the text */
-    }
-
-    /* Social media links */
-    .social-media-links {
-        display: flex;
-        justify-content: center; /* Center social media icons */
-        gap: 10px;               /* Space between icons */
-        margin-bottom: 10px;     /* Space below icons */
-    }
-
-    /* Address block */
-    .col-6 p {
-        text-align: center;     /* Center the address text */
-        width: 100%;            /* Ensure address takes full width */
-        margin-bottom: 10px;    /* Space below address */
-    }
-
-    /* Logo container - should be centered below the other items */
-    .logo-container {
-        display: block;
-        width: 100%;
-        text-align: center;  /* Center logo */
-        margin-top: 15px;     /* Space between content and logo */
-    }
-
-    /* Make the logo image responsive */
-    #logo-of-maker-of-lms {
-        width: 100%;         /* Allow logo to resize with container */
-        max-width: 150px;    /* Max width for the logo */
-        min-width: 100px;    /* Min width to avoid it getting too small */
-        height: auto;        /* Maintain aspect ratio */
-        object-fit: contain; /* Prevent distortion */
-        margin-left: 0;      /* No extra margin */
-        margin-right: 0;     /* No extra margin */
-    }
-
-    /* REMOVE padding for logo-footer for small screens */
-    #logo-footer {
-        padding-left: 0 !important;  /* Forcefully remove left padding */
-        padding-right: 0 !important; /* Forcefully remove right padding */
-        margin-left: 0;               /* Ensure there's no left margin */
-        margin-right: 0;              /* Ensure there's no right margin */
-    }
-}
-
-/* Restore padding for larger screens */
-@media (min-width: 769px) {
-    .container-fluid {
-        padding-left: 15px;  /* Restore padding for larger screens */
-        padding-right: 15px; /* Restore padding for larger screens */
-    }
-
-    #logo-footer {
-        padding-right: 20px; /* Restore right padding */
     }
 }
