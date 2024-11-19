@@ -10,9 +10,10 @@
 
 /* used to denote code using back-tics <`> in mark down. This CSS rule is for the README.md */
 code {
-    color: #ff8400;
-  }
+    color: #ffc020;
+}
 
+/* Sets body to full viewport height, uses flexbox layout, and applies Raleway font */
 body {
     min-height: 100vh;
     display: flex;
@@ -20,23 +21,81 @@ body {
     font-family: "Raleway", sans-serif;
 }
 
-/* Class for styling Google Material Symbols (Variable Icon Font). For tutorial 7min 48sec in: https://www.youtube.com/watch?v=VzlbeFGxU9U */
-.material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 48
-  }
-
-header {
-    background-color: white;
-    position: fixed;
-    z-index: 99;
-    width: 100%;
-    height: 111px;
+/* Ensure the body and html take up the full height */
+html,
+body {
+    height: 100%; /* Make the body and html elements fill the screen */
 }
 
+/* Main content should grow to fill available space */
+main {
+    flex-grow: 1; /* Allow the main content to grow and fill available space */
+}
+
+/* Footer should always be at the bottom */
+footer {
+    width: 100%;
+    background-color: black;
+    color: lightgray;
+    padding-bottom: 50px;
+    position: relative; /* Ensure the footer is not fixed or absolute */
+    margin-top: auto; /* Push footer to the bottom of the page */
+}
+
+/* Class for styling Google Material Symbols (Variable Icon Font). */
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL'0,
+        'wght'400,
+        'GRAD'0,
+        'opsz'48
+}
+
+/* Reset the container padding */
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Ensure there’s no margin on the left of the main content */
+main {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Ensure the row doesn't have extra margin or padding */
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Ensure the columns inside the row are aligned */
+.col-sm-3,
+.col-sm-6,
+.col-sm-1 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Ensure no padding on the left or right of the .col-12 */
+.col-12.ps-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Before the breakpoint */
+#unit-section {
+    width: 100%; /* Take up full width */
+    max-width: 1200px; /* Set a maximum width to prevent it from growing too wide */
+    min-width: 800px; /* Set a minimum width to prevent it from becoming too narrow */
+    margin-left: auto; /* Center the unit section */
+    margin-right: auto; /* Center the unit section */
+    margin-top: 0; /* Remove any margin pushing the unit content down */
+    padding-left: 20px; /* Padding for inner spacing */
+    padding-right: 20px; /* Padding for inner spacing */
+}
+
+/* Style for the user logo in the header */
 #user-logo {
     height: 60px;
     margin-top: 8px;
@@ -45,6 +104,7 @@ header {
     align-items: center;
 }
 
+/* Header h1 styling */
 h1 {
     font-family: "IBM Plex Sans", "Montserrat", "Arial", sans-serif;
     text-transform: uppercase;
@@ -52,25 +112,44 @@ h1 {
     color: #252525;
 }
 
+/* Header link styles */
 header a {
     text-decoration: none;
     color: inherit;
 }
 
+/* Syllabus section styling */
 #syllabus {
     margin: 10px 0px;
 }
 
+/* Ensure the Syllabus section spans the full width */
+#syllabus {
+    width: 100%;
+    margin: 0; /* Remove any unwanted margin */
+    padding: 0; /* Remove any padding, but if you want padding, you can add it back */
+}
+
+/* Removes horizontal padding and sets container width to 100% */
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+/* Situation awareness section alignment */
 #Situation-awareness {
     text-align: left;
     padding-left: 20px;
 }
 
+/* Footer links style */
 footer a {
     text-decoration: none;
     color: inherit;
 }
 
+/* Logo styles in the footer */
 #logo {
     text-align: left;
     padding-left: 20px;
@@ -81,6 +160,7 @@ footer a {
     align-items: center;
 }
 
+/* Footer logo positioning */
 #logo-footer {
     margin-top: 15px;
     margin-left: 20px;
@@ -90,76 +170,57 @@ footer a {
     color: lightgray;
 }
 
-footer {
-    width: 100%;
-    background-color: black;
-    color: lightgray;
-    padding-bottom: 50px;
-}
-
-
-
-
-
-
-/* Add the following to your existing stylesheet */
-
-/* Ensure the container allows overflow to the left */
+/* The container that holds the logo */
 .logo-container {
-    display: block;               /* Ensures the anchor takes up space */
-    position: relative;           /* Necessary for absolute positioning */
-    width: 70%;                   /* Adjust the width as needed for your layout */
-    overflow-x: visible;          /* Allows the image to overflow to the left */
+    position: relative; /* Ensure positioning works correctly */
+    display: block;
+    overflow-x: visible; /* Allow image to overflow horizontally */
+    width: 100%; /* The container takes up the full width */
 }
 
-/* Image styling: Shrinks until a minimum width, then overflows */
+/* Image rules */
 #logo-of-maker-of-lms {
-    width: 100%;                  /* Image takes up the full width of its container */
-    height: auto;                 /* Maintain aspect ratio */
-    object-fit: contain;          /* Maintain image aspect ratio within container */
-    max-width: none;              /* Prevent image from growing too large */
-    min-width: 150px;             /* Minimum width to stop shrinking */
-    transition: width 0.3s ease-in-out; /* Smooth transition for resizing */
+    width: 100%; /* Image will resize based on its container */
+    max-width: 150px; /* Set the maximum width */
+    min-width: 100px; /* Minimum width (won't shrink smaller than this) */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: contain; /* Prevent distortion */
+    transition: width 0.3s ease; /* Smooth transition on resize */
 }
 
-/* Media Queries to handle the shrinking effect */
-@media screen and (max-width: 1200px) {
-    .logo-container {
-        width: 60%;               /* Reduce container width */
-    }
+/* When the viewport shrinks to smaller sizes  ideally 575pxS*/
+@media screen and (max-width: 768px) {
 
+    /* Position logo absolutely and allow overflow to the left with fixed width and auto height */
     #logo-of-maker-of-lms {
-        width: 70%;               /* Image shrinks with container width */
+        position: absolute; /* Take the image out of the normal document flow      position: absolute; */
+        left: -50px; /* Allow the image to overflow into the left of its container */
+        width: 100px; /* Lock the width at 150px (its minimum size) */
+        height: auto; /* Keep the aspect ratio intact */
     }
-}
 
-@media screen and (max-width: 800px) {
+    /* Shrink container width to 30% to allow logo overflow */
     .logo-container {
-        width: 50%;               /* Further reduce container width on smaller screens */
-    }
-
-    #logo-of-maker-of-lms {
-        width: 50%;               /* Further shrink image size */
+        width: 30%; /* Container shrinks to 30% of its parent, leaving space for overflow */
     }
 }
 
-@media screen and (max-width: 500px) {
-    .logo-container {
-        width: 40%;               /* Reduce container width for very small screens */
-    }
-
-    #logo-of-maker-of-lms {
-        width: 30%;               /* Image stops shrinking and remains at minimum size */
-    }
+/* Footer text alignment */
+#footer-text-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 20px;
 }
 
+/* Align footer text to the left with some margin */
+#footer-text-right {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
 
-
-
-
-
-
-  
+/* Header login area styling */
 #header-login {
     height: 60px;
     margin-top: 8px;
@@ -167,11 +228,13 @@ footer {
     text-align: left;
 }
 
+/* Login space width */
 #login-space {
     margin-right: 0px;
     width: 100px;
 }
 
+/* Login link styles */
 #login {
     font-size: 110%;
     letter-spacing: 4px;
@@ -180,73 +243,78 @@ footer {
     color: inherit;
 }
 
+/* Header vertical alignment */
 #header-vert {
     align-items: center;
 }
 
-main {
-    width: 100%;
-    flex: 1 0 auto;
-    margin-top: 200px;
-
-}
-
+/* Flexbox parent element */
 .flex-parent-element {
     display: flex;
     width: 50%;
 }
-  
+
+/* Flexbox child element */
 .flex-child-element {
     flex: 1;
     border: 2px solid blueviolet;
     margin: 10px;
 }
 
+/* Add right margin to the first child element in the flex container */
 .flex-child-element:first-child {
     margin-right: 20px;
 }
 
+/* Flexbox row styling */
 .row {
     flex: 1 0 auto;
 }
 
+/* Define a flex container with 50% width */
 .flex-parent-element {
     display: flex;
     width: 50%;
-  }
-  
-  .flex-child-element {
+}
+
+/* Flex item with equal growth, border, and margin */
+.flex-child-element {
     flex: 1;
     border: 2px solid blueviolet;
     margin: 10px;
-  }
-  
-  .flex-child-element:first-child {
-    margin-right: 20px;
-  }
+}
 
+/* Adds extra right margin to the first flex item */
+.flex-child-element:first-child {
+    margin-right: 20px;
+}
+
+/* Flexbox container */
 .flex-container {
     display: flex;
     justify-content: center;
 }
 
+/* Flexbox child styling */
 .flex-child {
     border: 2px solid yellow;
     flex-basis: auto;
     justify-content: center;
 }
 
+/* Centers content in the first flex child */
 .flex-child:first-child {
     justify-content: center;
 }
 
-.flex-child > p {
+/* Centers text inside flex child and removes bottom margin */
+.flex-child>p {
     display: flex;
     justify-content: center;
     margin-bottom: 0;
 }
 
-/* Code snippet "button group" from 3W Schools https://www.w3schools.com/howto/howto_css_button_group.asp */
+/* Button group styling */
 .btn-group button {
     background-color: white;
     border: 1px solid black;
@@ -255,38 +323,41 @@ main {
     margin: 2px 4px;
     cursor: pointer;
     float: left;
-  }
-  
-  /* Clear floats (clearfix hack) */
-  .btn-group:after {
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
     content: "";
     clear: both;
     display: table;
-  }
-  
-  .btn-group button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
-  }
-  
-  /* Add a background color on hover */
-  .btn-group button:hover {
-    background-color: orange;
-  }
+}
+
+/* Removes right border for all buttons except the last one in the group */
+.btn-group button:not(:last-child) {
+    border-right: none;
+    /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #FFC020;
+}
 /* END OF: Code snippet "button group" */
 
 
-/* Code snippet "button situ-aware" from 3W Schools https://www.w3schools.com/howto/howto_css_button_group.asp */
+/* Code snippet "button situ-aware" */
 .situ-aware-button {
-    background:none; 
-    border:none;     
+    background: none;
+    border: none;
 }
 
-.situ-aware-button:hover{
+/* Applies bold font-weight on hover for situ-aware button */
+.situ-aware-button:hover {
     /* background-color: #80d3ff; */
     font-weight: bold;
 }
 /* END OF: Code snippet "button sitaware" */
-  
+
 
 /* Google fonts: "IBM Plex Sans". Use value: 400*/
 /* https://fonts.google.com/specimen/IBM+Plex+Sans */
@@ -304,5 +375,175 @@ main {
     font-style: normal;
 }
 
+/* Style for the divider line between notes */
+.note-divider {
+    border: 0;
+    border-top: 1px solid #212121;
+    margin: 10px 0;
+}
+
+/* Text-based buttons with no background */
+.text-button {
+    background: none;
+    /* Remove background */
+    border: none;
+    /* Remove border */
+    color: #007bff;
+    /* Blue text color similar to a link */
+    font-size: 1rem;
+    /* Ensure the text size matches the buttons */
+    font-weight: bold;
+    /* Optional: make the text bold */
+    text-decoration: none;
+    /* Remove underline */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+/* Hover effect for text-based buttons */
+.text-button:hover {
+    text-decoration: underline;
+    /* Underline on hover */
+}
 
 
+/* Targeting screens below 768px */
+@media (max-width: 768px) {
+
+    /* Ensure #unit-section spans full width on smaller screens, with a minimum width */
+    #unit-section {
+        max-width: 100%;
+        /* Remove any max-width restriction */
+        min-width: 320px;
+        /* Set a min-width to prevent it from getting too narrow */
+    }
+
+    /* Make sure the container is full width and remove padding/margins */
+    .container {
+        max-width: 100% !important;
+        /* Ensure container spans the full width */
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Make the card span the full width of the container */
+    .card {
+        width: 100% !important;
+        /* Remove any constraints on the card width */
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Prevent card content from overflowing */
+    .card-body {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Ensure the content in the card doesn't overflow horizontally */
+    .post-title,
+    .post-subtitle,
+    .card-text,
+    .masthead-text {
+        word-wrap: break-word;
+        /* Break long words that could overflow */
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    /* Adjust padding and margins in other areas to prevent overflow */
+    .masthead {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Ensure columns take full width of container at small screens */
+    .col-12 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Adjust the card image so it fits inside the card */
+    .card-img-top {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+@media (max-width: 575px) {
+
+    /* Stack all items in the footer vertically */
+    footer .container-fluid {
+        display: flex;
+        flex-direction: column; /* Stack the items vertically */
+        align-items: center; /* Center everything horizontally */
+        padding-left: 15px; /* Prevent cut-off by adding padding */
+        padding-right: 15px; /* Prevent cut-off by adding padding */
+    }
+
+    /* Ensure the row also stacks vertically and is centered */
+    footer .row {
+        display: flex;
+        flex-direction: column; /* Stack the columns */
+        width: 100%; /* Take full width */
+        align-items: center; /* Center all items horizontally */
+        margin-bottom: 10px; /* Add space between the items */
+    }
+
+    /* Force all columns inside the footer to be block-level and centered */
+    footer .col-12,
+    footer .col-4,
+    footer .col-6,
+    footer .col-2 {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center; /* Center the text */
+    }
+
+    /* Adjust the logo in the footer */
+    #logo-footer {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center content horizontally */
+        color: lightgray;
+        text-align: center;
+    }
+
+    /* Adjust the social media links to be centered */
+    .social-media-links {
+        display: flex;
+        justify-content: center; /* Center social icons */
+        gap: 10px; /* Space between icons */
+        margin-bottom: 10px; /* Space below social media links */
+    }
+
+    /* Logo container should also be centered */
+    .logo-container {
+        display: block;
+        width: 100%;
+        text-align: center; /* Center the logo */
+        margin-top: 15px; /* Space between content and logo */
+    }
+
+    /* Make sure the logo image stays responsive and does not get cut off */
+    #logo-of-maker-of-lms {
+        width: 100%; /* Allow logo to resize with container */
+        max-width: 150px; /* Set max width */
+        min-width: 100px; /* Set min width */
+        object-fit: contain; /* Prevent distortion */
+        margin-left: 0; /* No left margin */
+        margin-right: 0; /* No right margin */
+    }
+
+    /* Ensure the address text is centered */
+    .col-6 p {
+        text-align: center; /* Center the address text */
+        width: 100%; /* Make sure the address takes full width */
+        margin-bottom: 10px; /* Space below the address */
+    }
+}
