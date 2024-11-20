@@ -624,198 +624,276 @@ All pages were tested with the [WAVE tool](https://wave.webaim.org/).
 ![wave-tool for unit-page](images-for-readme/wave-tool-summary-unit-detail.jpg)
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-User Stories Testing
+User Story Testing (Manual testing)
 </span>
 
 All user stories were tested to confirm that they meet their Acceptance Criteria. The following have all PASSED.
 
-(View the EPICS, User Stories, Acceptance Criteria and Tasks on the GitHub [Kanban Board](https://github.com/users/GustafEnebog/projects/1/views/1?layout=board).
+(View the original (not updated) EPICS, User Stories, Acceptance Criteria and Tasks on the GitHub [Kanban Board](https://github.com/users/GustafEnebog/projects/1/views/1?layout=board).
 
 
 ### THEME: Administration > EPIC: User Account
 
-- As a **user** I can **sign up and log in** to the site to **View Modules/Units with pace control, check "Situational Awareness"-boxes, add notes on "Clipboard" and give "feedback"**.  
+1. As a **user**, I can **sign up and log in** to the site to **View Modules/Units with content and add notes**.
 
-  **AC1** Then personal information can be added to the user profil -<span style="color:yellowgreen;"> **PASS**</span>  
-**AC2** Then a profile image can be added -<span style="color:orangered;"> **-**</span>  
-**AC3** Then a user can sign in with username/password -<span style="color:yellowgreen;"> **PASS**</span>  
-**AC3** Then a user can sign in with Social Network -<span style="color:orangered;"> **-**</span>  
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | Personal information can be added to the user profile | User should be able to add and save personal information to their profile. | <span style="color:#4CAF50;">PASS</span> |
+| AC2 | A profile image can be added | User should be able to upload and save a profile image. | <span style="color:red;">FAIL</span> |
+| AC3 | A user can sign in with username/password | User should be able to log in successfully with their username and password. | <span style="color:#4CAF50;">PASS</span> |
+| AC4 | A user can sign in with Social Network | User should be able to sign in using their social network account (e.g., Google, Facebook). | <span style="color:red;">FAIL</span> |
 
+<br>
 
 ### THEME: Administration > EPIC: Admin
 
-- As an **admin** I can **create, read, update and delete (CRUD) Modules/Units**, to **create the content for a course**.  
+2. As an **admin**, I can **create, read, update and delete (CRUD) Modules/Units**, to **create the content for a course**.
 
-  **AC1** Then course content can be created in Django Admin panel -<span style="color:yellowgreen;"> **PASS**</span>  
-**AC2** Then course content can be read in Django Admin panel -<span style="color:yellowgreen;"> **PASS**</span>  
-**AC3** Then course content can be updated in Django Admin panel -<span style="color:yellowgreen;"> **PASS**</span>  
-**AC4** Then course content can be deleted in Django Admin panel -<span style="color:yellowgreen;"> **PASS**</span>  
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | Course content can be created in Django Admin panel | Admin should be able to create course content in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
+| AC2 | Course content can be read in Django Admin panel | Admin should be able to read/view course content in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
+| AC3 | Course content can be updated in Django Admin panel | Admin should be able to update existing course content in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
+| AC4 | Course content can be deleted in Django Admin panel | Admin should be able to delete course content from the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
 
-- As an **admin** I can **check a "Draft"-check box**, to **prohibit it from being released as well as to signal this "Draft"-stage to admin**.  
+<br>
+3. As an **admin**, I can **check a "Draft"-check box**, to **prohibit it from being released as well as to signal this "Draft"-stage to admin**.
 
-  **AC1** Then a course unit can be flagged as "Draft" in the Django admin panel -<span style="color:yellowgreen;"> **PASS**</span>  
-**AC2** Then a "Draft"-flagged unit in the Django admin panel is not eligable for publishing  -<span style="color:yellowgreen;"> **PASS**</span> 
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | A course unit can be flagged as "Draft" in the Django admin panel | Admin should be able to flag a course unit as "Draft" in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
+| AC2 | A "Draft"-flagged unit in the Django admin panel is not eligible for publishing | A unit flagged as "Draft" should not be eligible for publishing in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
 
-- As an app **admin** I can **put together a course by selecting a number of units and stringing them together in a certain order within  Modules (like chapters in a book)**, so that I can **create a course curriculum**.  
+<br>
+4. As an app **admin**, I can **put together a course by selecting a number of units and stringing them together in a certain order within Modules (like chapters in a book)**, so that I can **create a course curriculum**.
 
-  **AC1** Given a logged in user, they can save a draft noted -<span style="color:yellowgreen;"> **PASS**</span>  
-**AC2** Then they can finish the content at a later time -<span style="color:yellowgreen;"> **PASS**</span>  
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | Given a logged-in user, they can save a draft noted | Admin should be able to save a draft of the course content. | <span style="color:#4CAF50;">PASS</span> |
+| AC2 | Then they can finish the content at a later time | Admin should be able to return and complete the course content at a later time. | <span style="color:#4CAF50;">PASS</span> |
 
-- As an app **admin** I can **view a list of all Modules/Units and be able to create a course content by choosing a number modules, order them and populate them with a number of units and ordering these units**, so I can **create a course curriculum**.
+<br>
+5. As an app **admin**, I can **view a list of all Modules/Units and be able to create a course content by choosing a number of modules, order them and populate them with a number of units and ordering these units**, so I can **create a course curriculum**.
 
-  **AC1** Given a logged in admin, they can view a list of all *modules* -<span style="color:yellowgreen;"> **PASS!**</span>  
-**AC2** Given a logged in admin, they can view a list of all *units* -<span style="color:yellowgreen;"> **PASS!**</span>  
-**AC3** Given a logged in admin, they Choose a number of units for a course -<span style="color:yellowgreen;"> **PASS!**</span>  
-**AC4** Given a logged in admin, they Choose a number of modules for a course -<span style="color:yellowgreen;"> **PASS!**</span>  
-**AC5** Given a logged in admin, they can "populate" the selected modules with selected number of units for a course -<span style="color:yellowgreen;"> **PASS!**</span>  
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | Given a logged-in admin, they can view a list of all *modules* | Admin should be able to view a list of all modules. | <span style="color:#4CAF50;">PASS</span> |
+| AC2 | Given a logged-in admin, they can view a list of all *units* | Admin should be able to view a list of all units. | <span style="color:#4CAF50;">PASS</span> |
+| AC3 | Given a logged-in admin, they can choose a number of units for a course | Admin should be able to select multiple units for a course. | <span style="color:#4CAF50;">PASS</span> |
+| AC4 | Given a logged-in admin, they can choose a number of modules for a course | Admin should be able to select multiple modules for a course. | <span style="color:#4CAF50;">PASS</span> |
+| AC5 | Given a logged-in admin, they can "populate" the selected modules with selected number of units for a course | Admin should be able to populate modules with selected units for a course. | <span style="color:#4CAF50;">PASS</span> |
 
+<br>
+6. As an app **admin**, I can **view a list of all Modules/Units and be able to create a course content by choosing a number of modules, order them and populate them with a number of units and ordering these units**, so I can **create a course curriculum**.
 
-### THEME: Students and Features > EPIC: Syllabus and Navigation
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | Given a logged-in admin, they can view a list of all *modules* | Admin should be able to view a list of all modules. | <span style="color:#4CAF50;">PASS</span> |
+| AC2 | Given a logged-in admin, they can view a list of all *units* | Admin should be able to view a list of all units. | <span style="color:#4CAF50;">PASS</span> |
+| AC3 | Given a logged-in admin, they can choose a number of units for a course | Admin should be able to select multiple units for a course. | <span style="color:#4CAF50;">PASS</span> |
+| AC4 | Given a logged-in admin, they can choose a number of modules for a course | Admin should be able to select multiple modules for a course. | <span style="color:#4CAF50;">PASS</span> |
+| AC5 | Given a logged-in admin, they can "populate" the selected modules with selected number of units for a course | Admin should be able to populate modules with selected units for a course. | <span style="color:#4CAF50;">PASS</span> |
 
-- As a **user** I can **view and navigate all Modules and Units in a Syllabus** to easily be able to **see where I currently am at in the Curriculum/course content.**
+<br>
 
-  **AC1** Distinguishing unit-category with category unique-icons -<span style="color:yellowgreen;"> **PASS**</span>  
-**AC2** Tool tips on Module/Units -<span style="color:orangered;"> **-**</span>  
-**AC3** Navigate between Modules by clicking on horizontal left and arrows that stays put in the middle, vertically, of the screen independent of scrolling -<span style="color:orangered;"> **-**</span>  
-**AC4** Navigate between Units by clicking on vertical up and down arrows that stays centered on the screen independent of scrolling -<span style="color:orangered;"> **-**</span>  
-**AC5** Course name is always visible independent of which unit I am currently on -<span style="color:yellowgreen;"> **PASS**</span>  
+### THEME: Students and Features > EPIC: Syllabus and Navigation  
 
-- As a **user** I can **have different units open in the same browser (but in different tabs) from the same course as well as separate courses** so that **I do not need to close one course before opening the next.**  
-**AC1**  I can right click a unit and select "open link in new tab" or "open link in new window" -<span style="color:yellowgreen;"> **PASS**</span>  
+7. As a **user**, I can **view and navigate all Modules and Units in a Syllabus** to easily be able to **see where I currently am at in the Curriculum/course content.**
 
-- As a **user** I can **carrie out a normal text search of the Module/Unit names and unit contents** so that **I am able to find myself back to earlier course content that I need to revisite.**
-**AC1**  I can search for Module and Unit *titles* -<span style="color:orangered;"> **-**</span>  
-**AC2**  I can search for Module and Unit *contents* -<span style="color:orangered;"> **-**</span>  
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | Distinguishing unit-category with category unique-icons | User should be able to see unique icons for different unit categories. | <span style="color:red;">FAIL</span> |
+| AC2 | Tool tips on Module/Units | User should see tool tips when hovering over Modules/Units for more information. | <span style="color:red;">FAIL</span> |
+| AC3 | Navigate between Modules by clicking on horizontal left and arrows that stay put in the middle, vertically, of the screen independent of scrolling | User should be able to navigate between modules using the left and right arrows, which remain fixed in the middle of the screen while scrolling. | <span style="color:red;">FAIL</span> |
+| AC4 | Navigate between Units by clicking on vertical up and down arrows that stay centered on the screen independent of scrolling | User should be able to navigate between units using the up and down arrows, which stay fixed in the center of the screen. | <span style="color:red;">FAIL</span> |
+| AC5 | Course name is always visible independent of which unit I am currently on | The course name should remain visible regardless of the unit currently being viewed. | <span style="color:red;">FAIL</span> |
+
+<br>
+
+### THEME: Students and Features > EPIC: Multi-tab Navigation
+
+8. As a **user**, I can **have different units open in the same browser (but in different tabs) from the same course as well as separate courses** so that **I do not need to close one course before opening the next.**
+
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | I can right-click a unit and select "open link in new tab" or "open link in new window" | User should be able to right-click a unit and open it in a new tab or window. | <span style="color:#4CAF50;">PASS</span> |
+
+<br>
+
+### THEME: Students and Features > EPIC: Text Search for Modules/Units
+
+9. As a **user**, I can **carry out a normal text search of the Module/Unit names and unit contents** so that **I am able to find myself back to earlier course content that I need to revisit.**
+
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | I can search for Module and Unit *titles* | User should be able to search for titles of modules and units. | <span style="color:red;">FAIL</span> |
+| AC2 | I can search for Module and Unit *contents* | User should be able to search the contents of modules and units. | <span style="color:red;">FAIL</span> |
+
+<br>
 
 ### THEME: Students and Features > EPIC: Pace Control
 
-- As a **user** I can **set my own deadline and view my pace according to this and the number of "Understood" and "Read" units (See: Situational Awareness), one "Read" count as half of one "understood"** so that **I can see if I am on pace, ahead or behind and by how much based on both the official and user selected deadline.**  
+10. As a **user**, I can **set my own deadline and view my pace according to this and the number of "Understood" and "Read" units (See: Situational Awareness), one "Read" count as half of one "understood"** so that **I can see if I am on pace, ahead or behind and by how much based on both the official and user selected deadline.**
 
-  **AC1** Set my own deadline -<span style="color:orangered;"> **-**</span>  
-**AC2** View the "correct" pace (shown as "PACE" at the Unit where you should be at) according to the deadline (User selected deadline or official deadline if user-selected deadline has not been set) -<span style="color:orangered;"> **-**</span>  
-**AC3** View your pace (shown as "YOU") at the Unit where you should be at according to the deadline and number of Units with "Situational Awareness"-Check boxes checked (User selected deadline or official deadline if user-selected deadline has not been set) -<span style="color:orangered;"> **-**</span>  
-**AC4** Arrow between "PACE" and "YOU" (Green if "PACE" is behind you and Orange (at first and then Red as distance increases) if "PACE" is in front of you) -<span style="color:orangered;"> **-**</span>  
-**AC5** View average time on unit before "Read" checkbox is checked -<span style="color:orangered;"> **-**</span>  
-**AC6** View a "PACE"-date (the date the unit should be done to be on pace) for each unit  -<span style="color:orangered;"> **-**</span>  
-**AC7** Include warning if deadline is set to a date after that of the official deadline  -<span style="color:orangered;"> **-**</span>  
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | Set my own deadline | User should be able to set their own deadline for the course. | <span style="color:red;">FAIL</span> |
+| AC2 | View the "correct" pace (shown as "PACE" at the Unit where you should be at) according to the deadline (User selected deadline or official deadline if user-selected deadline has not been set) | User should see the correct pace according to the deadline (either user-selected or official). | <span style="color:red;">FAIL</span> |
+| AC3 | View your pace (shown as "YOU") at the Unit where you should be at according to the deadline and number of Units with "Situational Awareness"-Check boxes checked (User selected deadline or official deadline if user-selected deadline has not been set) | User should see their pace in relation to the deadline and their Situational Awareness checkboxes. | <span style="color:red;">FAIL</span> |
+| AC4 | Arrow between "PACE" and "YOU" (Green if "PACE" is behind you and Orange (at first and then Red as distance increases) if "PACE" is in front of you) | An arrow should indicate whether the user is ahead or behind in terms of pace. | <span style="color:red;">FAIL</span> |
+| AC5 | View average time on unit before "Read" checkbox is checked | User should be able to view the average time spent on a unit before marking it as "Read." | <span style="color:red;">FAIL</span> |
+| AC6 | View a "PACE"-date (the date the unit should be done to be on pace) for each unit | User should be able to see the date each unit should be completed by to stay on pace. | <span style="color:red;">FAIL</span> |
+| AC7 | Include warning if deadline is set to a date after that of the official deadline | User should see a warning if their selected deadline is later than the official deadline. | <span style="color:red;">FAIL</span> |
 
-- As a **user** I can **view my average time as well as that of the average student, on each individual unit before a checkmark in the "read" and "understood" checkbox are clicked respectively and see my pace and expected finished date (relative to the deadline)** so that **I can recieve some extra pace information in addition to (and independent of) the other pace control**.  
+<br>
 
-  **AC1** View average time on unit before "Read" checkbox is checked -<span style="color:orangered;"> **-**</span>  
-**AC2** View average student time on unit before "Read" checkbox is checked -<span style="color:orangered;"> **-**</span>  
-**AC3** View average time on unit before "Understood" checkbox is checked -<span style="color:orangered;"> **-**</span>  
-**AC4** View average student time on unit before "Understood" checkbox is checked -<span style="color:orangered;"> **-**</span>  
+### THEME: Students and Features > EPIC: Average Time and Pace Information
 
-### THEME: Students and Features > EPIC: Expansion/Collapse text
+11. As a **user**, I can **view my average time as well as that of the average student, on each individual unit before a checkmark in the "read" and "understood" checkbox are clicked respectively and see my pace and expected finished date (relative to the deadline)** so that **I can receive some extra pace information in addition to (and independent of) the other pace control.**
 
-- As a **user** I can **click on a plus sign to expand collapsed text (two levels deep)** So that **I can access more in-depth text after having understood the fundamental text first** to the site to.  
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | View average time on unit before "Read" checkbox is checked | User should be able to view the average time spent on a unit before marking it as "Read." | <span style="color:red;">FAIL</span> |
+| AC2 | View average student time on unit before "Read" checkbox is checked | User should be able to view the average time other students spent on a unit before marking it as "Read." | <span style="color:red;">FAIL</span> |
+| AC3 | View average time on unit before "Understood" checkbox is checked | User should be able to view the average time spent on a unit before marking it as "Understood." | <span style="color:red;">FAIL</span> |
+| AC4 | View average student time on unit before "Understood" checkbox is checked | User should be able to view the average time other students spent on a unit before marking it as "Understood." | <span style="color:red;">FAIL</span> |
 
-  **AC1** User can expand one individual "expansion text" to the *first* level by clicking a plus sign at the spot of the expansion text -<span style="color:orangered;"> **-**</span>  
-**AC2** User can expand one individual "expansion text" to the *second* level by clicking a plus sign at the spot of the expansion text -<span style="color:orangered;"> **-**</span>  
-**AC3** User can expand *all* "expansion text" to the *first* level by clicking on one "expand all"-button -<span style="color:orangered;"> **-**</span>  
-**AC4** User can expand *all* "expansion text" to the *second* level by clicking on one "expand all"-button -<span style="color:orangered;"> **-**</span>  
+<br>
 
-- As a **user** I can **click on a minus sign to collapse expanded text (two levels deep)** So that **the expanded more detailed text do not clutter and overwhelm the learning process.**
+### THEME: Students and Features > EPIC: Expansion/Collapse Text
 
-  **AC1** Users can create an account with a Sign Up page -<span style="color:yellowgreen;"> **PASS**</span>  
-**AC2** Users can log in with a Log In page -<span style="color:yellowgreen;"> **PASS**</span>  
-**AC3** Users can log out with a Log Out Page -<span style="color:yellowgreen;"> **PASS**</span>  
+12. As a **user**, I can **click on a plus sign to expand collapsed text (two levels deep)** so that **I can access more in-depth text after having understood the fundamental text first**.
 
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | User can expand one individual "expansion text" to the *first* level by clicking a plus sign at the spot of the expansion text | User should be able to expand one collapsed text to the first level by clicking the plus sign. | <span style="color:red;">FAIL</span> |
+| AC2 | User can expand one individual "expansion text" to the *second* level by clicking a plus sign at the spot of the expansion text | User should be able to expand one collapsed text to the second level by clicking the plus sign. | <span style="color:red;">FAIL</span> |
+| AC3 | User can expand *all* "expansion text" to the *first* level by clicking on one "expand all"-button | User should be able to expand all collapsed text to the first level by clicking a single "expand all" button. | <span style="color:red;">FAIL</span> |
+| AC4 | User can expand *all* "expansion text" to the *second* level by clicking on one "expand all"-button | User should be able to expand all collapsed text to the second level by clicking a single "expand all" button. | <span style="color:red;">FAIL</span> |
+
+<br>
+13. As a **user**, I can **click on a plus sign to expand collapsed text (two levels deep)** so that **I can access more in-depth text after having understood the fundamental text first**.
+
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | User can expand one individual "expansion text" to the *first* level by clicking a plus sign at the spot of the expansion text | User should be able to expand one collapsed text to the first level by clicking the plus sign. | <span style="color:red;">FAIL</span> |
+| AC2 | User can expand one individual "expansion text" to the *second* level by clicking a plus sign at the spot of the expansion text | User should be able to expand one collapsed text to the second level by clicking the plus sign. | <span style="color:red;">FAIL</span> |
+| AC3 | User can expand *all* "expansion text" to the *first* level by clicking on one "expand all"-button | User should be able to expand all collapsed text to the first level by clicking a single "expand all" button. | <span style="color:red;">FAIL</span> |
+| AC4 | User can expand *all* "expansion text" to the *second* level by clicking on one "expand all"-button | User should be able to expand all collapsed text to the second level by clicking a single "expand all" button. | <span style="color:red;">FAIL</span> |
+
+<br>
 
 ### THEME: Students and Features > EPIC: Situational Awareness
 
-- As a **user** I can **view an automaticaly updated "been here"-marks and a last visited-mark in the syllabus and on the unit I am currently visiting**, to easily **see what units I have visited earlier at some point in time**.
+14. As a **user**, I can **view an automatically updated "been here"-mark and a last visited-mark in the syllabus and on the unit I am currently visiting**, to easily **see what units I have visited earlier at some point in time**.
 
-  **AC1** A "Been here"-mark is automatically added to a unit in the Syllabus and stays even after having loged out and in again. -<span style="color:orangered;"> **-**</span>  
-**AC1** A "Last visited"-mark is automatically added to a unit in the Syllabus that was last visited. This mark will constantly be "assigned" to different units and can only be "assigned" to one unit at a time. -<span style="color:orangered;"> **-**</span> 
+| **Acceptance Criteria** | **User Story (Acceptance Criteria)** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | A "Been here"-mark is automatically added to a unit in the Syllabus and stays even after having logged out and in again. | The "Been here"-mark should remain even after logging out and back in. | <span style="color:red;">FAIL</span> |
+| AC2 | A "Last visited"-mark is automatically added to a unit in the Syllabus that was last visited. This mark will constantly be "assigned" to different units and can only be "assigned" to one unit at a time. | The "Last visited"-mark should only be assigned to one unit at a time and update as you visit different units. | <span style="color:red;">FAIL</span> |
 
-- As a **user** I can **check a "read"- and an "understood"-checkbox (if the "read"-checkbox is unchecked as the "understood" checkbox gets checked it automatically get checked) which I also can view in the curriculum and on the unit I am currently on**, to **keep an improved sense of situational awareness in regards to what units I still need to return to.**.
+<br>
+15. As a **user**, I can **view an automatically updated "been here"-mark and a last visited-mark in the syllabus and on the unit I am currently visiting**, to easily **see what units I have visited earlier at some point in time**.
 
-  **AC1** User can select "Read"-checkbox -<span style="color:orangered;"> **-**</span>  
-**AC2** When a "Read"-checkbox is checked a "Read"-color coding appears on the unit in the Syllabus -<span style="color:orangered;"> **-**</span>  
-**AC3** User can select "Understood"-checkbox -<span style="color:orangered;"> **-**</span>  
-**AC4** When a "Understood"-checkbox is checked a "Understood"-color coding appears on the unit in the Syllabus -<span style="color:orangered;"> **-**</span>  
-**AC5** If the user selects the "Understood"-checkbox without first having selected the "Read"-checkbox the "Read"-checkbox gets checked also -<span style="color:orangered;"> **-**</span>  
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | A "Been here"-mark is automatically added to a unit in the Syllabus and stays even after having logged out and in again. | User should see a "Been here" mark on a unit in the syllabus, and it should persist even after logging out and in again. | <span style="color:red;">FAIL</span> |
+| AC2 | A "Last visited"-mark is automatically added to a unit in the Syllabus that was last visited. This mark will constantly be "assigned" to different units and can only be "assigned" to one unit at a time. | User should see a "Last visited" mark on the unit that was most recently visited, and it should be assigned to only one unit at a time. | <span style="color:red;">FAIL</span> |
 
-- As a **user** I can **see how many percent of the units (graphically as a gradually filled bar and as an number) that has had its "understood"-checkbox checked! (and the same for the "been here"- and "read"-checkboxes)** so that I can **see how many units remain to be "read" and "understod" independently of the chronological pace**.
+<br>
+16. As a **user**, I can **check a "read"- and an "understood"-checkbox (if the "read"-checkbox is unchecked as the "understood" checkbox gets checked it automatically gets checked)**, which I also can view in the curriculum and on the unit I am currently on, to **keep an improved sense of situational awareness in regards to what units I still need to return to**.
 
-  **AC1** Add persent as a *number* to "Been here", "Read" and "Understood" -<span style="color:orangered;"> **-**</span>  
-**AC1** Add persent as a *graphical bar* to "Been here", "Read" and "Understood" -<span style="color:orangered;"> **-**</span>  
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | User can select "Read"-checkbox | User should be able to check and uncheck the "Read" checkbox. | <span style="color:red;">FAIL</span> |
+| AC2 | When a "Read"-checkbox is checked, a "Read"-color coding appears on the unit in the Syllabus | The "Read" checkbox should trigger a color change on the unit in the syllabus. | <span style="color:red;">FAIL</span> |
+| AC3 | User can select "Understood"-checkbox | User should be able to check and uncheck the "Understood" checkbox. | <span style="color:red;">FAIL</span> |
+| AC4 | When an "Understood"-checkbox is checked, a "Understood"-color coding appears on the unit in the Syllabus | The "Understood" checkbox should trigger a color change on the unit in the syllabus. | <span style="color:red;">FAIL</span> |
+| AC5 | If the user selects the "Understood"-checkbox without first having selected the "Read"-checkbox, the "Read"-checkbox gets checked also | When the "Understood" checkbox is checked first, the "Read" checkbox should automatically check as well. | <span style="color:red;">FAIL</span> |
 
-- As a **user** I can **bookmark a unit and view a mark on bookmarked units**, to **keep a record of extras important units that I might want to return to later**.
+<br>
+17. As a **user**, I can **see how many percent of the units (graphically as a gradually filled bar and as a number) that has had its "understood"-checkbox checked! (and the same for the "been here"- and "read"-checkboxes)** so that I can **see how many units remain to be "read" and "understood" independently of the chronological pace**.
 
-  **AC1** User can click a "bookmark" check box. -<span style="color:orangered;"> **-**</span>  
-**AC2** 'User can view a "bookmark"-mark on units in Syllabus. -<span style="color:orangered;"> **-**</span>  
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | Add percent as a *number* to "Been here", "Read" and "Understood" | The percentage of units with each checkbox checked should be displayed numerically. | <span style="color:red;">FAIL</span> |
+| AC2 | Add percent as a *graphical bar* to "Been here", "Read" and "Understood" | A graphical bar (progress bar) should show the percentage of units with each checkbox checked. | <span style="color:red;">FAIL</span> |
 
+<br>
+
+### THEME: Students and Features > EPIC: Bookmarking Units
+
+18. As a **user**, I can **bookmark a unit and view a mark on bookmarked units**, to **keep a record of extra important units that I might want to return to later**.
+
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | User can click a "bookmark" check box. | A user should be able to click a checkbox to bookmark a unit. | <span style="color:red;">FAIL</span> |
+| AC2 | User can view a "bookmark"-mark on units in Syllabus. | A visible mark should appear on units that are bookmarked in the syllabus. | <span style="color:red;">FAIL</span> |
+
+<br>
 
 ### THEME: Students and Features > EPIC: Clip Board
 
-- As a **user** I can **write, edit or delete text on a clipboard**, to **take notes relating to the individual units**.
+19. As a **user**, I can **write, edit or delete text on a clipboard**, to **take notes relating to the individual units**.
 
-  **AC1** User can click on "Clipboard"-button to have clipboard appear on a modal screen -<span style="color:orangered;"> **-**</span>  
-**AC2** Clipboard can be used for writing and editing notes with a basic editor -<span style="color:orangered;"> **-**</span>  
-**AC3** I can delete the clipboard by deleting all the content on the Clipboard -<span style="color:yellowgreen;"> **PASS**</span>  
-**AC4** Clipboard can be used for deleting notes with a basic editor - -<span style="color:yellowgreen;"> **PASS**</span>  
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | User can click on "Clipboard"-button to have clipboard appear on a modal screen. | A clipboard modal should appear when the user clicks the "Clipboard" button. | <span style="color:red;">FAIL</span> |
+| AC2 | Clipboard can be used for writing and editing notes with a basic editor. | The user should be able to write and edit notes with a basic text editor on the clipboard. | <span style="color:green;">PASS</span> |
+| AC3 | I can delete the clipboard by deleting all the content on the Clipboard. | The clipboard should be cleared when all content is deleted. | <span style="color:green;">PASS</span> |
+| AC4 | Clipboard can be used for deleting notes with a basic editor. | Notes should be deletable via the basic editor in the clipboard. | <span style="color:green;">PASS</span> |
 
-- As a **user** I can **mark text, images etc. in the untis and have it stay marked also when I come back to a page after having left it or having loged out and loged in again as well as having the marked text appear on the clipboard**, to **to have **.
+<br>
+20. As a **user**, I can **mark text, images etc. in the units and have it stay marked also when I come back to a page after having left it or having logged out and logged in again, as well as having the marked text appear on the clipboard**, to **have an improved note-taking experience**.
 
-  **AC1** When text, formulas, images etc. are marked in a unit, the mark becomes permanent also after the user have logged out and back in again. -<span style="color:orangered;"> **-**</span>  
-**AC2** Marked text automatically appears on the clipboard and stay there also after the user have logged out and back in again. -<span style="color:orangered;"> **-**</span>  
-**AC3** Marked text can be deleted from the unit and clipboard simultaniously by marking the marked text again and clicking delete. -<span style="color:orangered;"> **-**</span>  
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | When text, formulas, images etc. are marked in a unit, the mark becomes permanent also after the user has logged out and back in again. | Marked content should remain highlighted even after logging out and back in. | <span style="color:red;">FAIL</span> |
+| AC2 | Marked text automatically appears on the clipboard and stays there also after the user has logged out and back in again. | The marked content should appear in the clipboard and stay there after login/logout. | <span style="color:red;">FAIL</span> |
+| AC3 | Marked text can be deleted from the unit and clipboard simultaneously by marking the marked text again and clicking delete. | When the marked text is selected again and deleted, it should be removed from both the unit and clipboard. | <span style="color:red;">FAIL</span> |
 
+<br>
 
 ### THEME: Students and Features > EPIC: Feedback
 
-- As a **user** I can **give user feedback on each unit by clicking a thumbs up or down icon as well as leave a comment in a text field**, to easily **allow a quality improving feedback loop to the content creators**.
+21. As a **user**, I can **give user feedback on each unit by clicking a thumbs up or down icon as well as leave a comment in a text field**, to easily **allow a quality improving feedback loop to the content creators**.
 
-  **AC1** I can click on a thumbs up or down icon -<span style="color:orangered;"> **-**</span>  
-**AC2** The count of thumbs up or down icon can be vied by the admin on the admin page -<span style="color:orangered;"> **-**</span>  
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | I can click on a thumbs up or down icon. | User should be able to click on either a thumbs up or thumbs down icon. | <span style="color:red;">FAIL</span> |
+| AC2 | The count of thumbs up or down icon can be viewed by the admin on the admin page. | Admin should be able to see the count of thumbs up and thumbs down on the admin page. | <span style="color:red;">FAIL</span> |
 
+<br>
 
 ### THEME: Release > EPIC: Testing and Error Handling
 
-- Add and update the about text: As a Site Admin, I can create or update the about page content so that it is available on the site.
+22. As a **Site Admin**, I can **create or update the about page content** so that it is available on the site.
 
-  **AC1** The About app is visible in the admin panel -<span style="color:yellowgreen;"> **PASS**</span>  
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | The About app is visible in the admin panel. | The About app should be visible in the admin panel for site admins. | <span style="color:red;">FAIL</span> </span> |
 
+<br>
+23. As a **user**, I will **see a humorous 403, 404, 405 and 500 error page in the case of a "not found" or "server error" respectively**, so as to somewhat cut the edge of my frustration and lighten my mood to continue using the app.
 
-- As a **user** I will **see a humorous 404 and 500 error page when in the case of a "not found" or "server error" respectivly **so as to somewhat cut the edge of my frustration and lighten my mood to continue using the app**.
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | A 403 page is created and "connected". | The 403 error page should be displayed when access is forbidden (e.g., no permission to view resource). | <span style="color:yellowgreen;">**PASS**</span> |
+| AC2 | A 404 page is created and "connected". | The 404 error page should be displayed when the requested resource is not found. | <span style="color:yellowgreen;">**PASS**</span> |
+| AC2 | A 405 page is created and "connected". | The 405 error page should be displayed when a request method is not allowed (e.g., trying to use POST where only GET is allowed). | <span style="color:yellowgreen;">**PASS**</span> |
+| AC2 | A 500 page is created and "connected". | The 500 error page should be displayed for server errors (e.g., issues with the server or code execution). | <span style="color:yellowgreen;">**PASS**</span> |
 
-  **AC1** A 404 page is created and "connected" -<span style="color:yellowgreen;"> **PASS**</span>  
-**AC2**  A 500 page is created and "connected" -<span style="color:yellowgreen;"> **PASS**</span>  
-
+<br>
 
 ### THEME: Release > EPIC: Deployment
 
-- As a **developer** I can **deploy to a hosting service**, so that **the site is available to the public**.
+24. As a **developer**, I can **deploy to a hosting service**, so that **the site is available to the public**.
 
-  **AC1** Functioning deployment to Heroku -<span style="color:yellowgreen;"> **PASS**</span>  
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | Functioning deployment to Heroku. | The site should be successfully deployed to Heroku and accessible to the public. | <span style="color:yellowgreen;">**PASS**</span> |
 
-
-
-
-
-
-
-<span style="color:#1591ea;font-weight:700;font-size:20px">
-Manual Testing
-</span>
-
-
-
-
-| Action         | Expected result | Outcome | 
-|:------------- | :---- | :----: | 
-|  Open landing/home page | home page loads with welcome message in place of unit  | <span style="color:yellowgreen;"> **PASS**</span> |
-|  Sign up by navigating to sign up link | Styled sign up page loads and accepts user inputs / user recieves emailconfirmation  | <span style="color:yellowgreen;"> **PASS**</span> |
-|  Login by navigating to login | login page loads and accepts user input / user is logged in upon giving correct username and password  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  Use and access "Notes" as a logged in user | user have can write new, and have access to previously written, unit specific notes  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  Add Syllabuses, Modules and Units when loged in as an Admin | The changes are reflected in the app  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  Edit Syllabuses, Modules and Units when loged in as an Admin | The changes are reflected in the app  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  Delete Syllabuses, Modules and Units when loged in as an Admin | The changes are reflected in the app  | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  Navigate to a Unit | when clicking on a selected user-button I am taken that selected unit | <span style="color:yellowgreen;"> **PASS**</span>  |
-|  Navigate from a Unit back to the Syllabus | when clicking on the return button I am taken back to the Syllabus | <span style="color:yellowgreen;"> **PASS**</span>  |
-
+<br>
 
 The following devices and browsers were used for manual & responsive UI testing.
 
@@ -1056,4 +1134,4 @@ Acknowledgements
 </span>
 
 - Daisy Mc, Tomas and others for tips and help on Slack  
-- My mentor Brian Macharia for his professional guidance.
+- To my mentors, Brian Macharia and Mo Shamy, for their expert guidance, advice, and encouragement.
