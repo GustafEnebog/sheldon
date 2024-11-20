@@ -4,27 +4,36 @@
 {% block head_title %}{% trans "Signup" %}{% endblock head_title %}
 
 {% block content %}
-  <h1 style="margin-top: 40px; margin-bottom: 20px;">{% trans "Sign Up" %}</h1>
 
-  <p style="margin-top: 20px; margin-bottom: 20px;">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">Log In</a>.{% endblocktrans %}</p>
+<!-- styling is made directly into the tags because it would otherwise be overidden by the crisp -->
+ 
+<h1 style="margin-top: 40px; margin-bottom: 20px;">{% trans "Sign Up" %}</h1>
 
-  <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}" style="max-width: 400px; margin: 20px auto;"> <!-- Added margin-top and margin-bottom here -->
-    {% csrf_token %}
-    {{ form|crispy }}  <!-- Use crispy to render form -->
+<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}" 
+  style="max-width: 400px; margin: 20px auto;">
+  {% csrf_token %}
+  {{ form|crispy }}  <!-- Use crispy to render form -->
+
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+
+  <!-- Container for "Already have an account?" link and "Sign Up" button -->
+  <div class="form-footer" 
+    style="display: flex; justify-content: space-between; width: 100%; margin-top: 20px; margin-bottom: 20px;">
+
+    <p style="margin-top: 20px; margin-bottom: 20px; margin-top: 0px;">
+      {% blocktrans %}
+        Already have an account? <br> Then please <a href="{{ login_url }}">Log In</a>.
+      {% endblocktrans %}
+    </p>
     
-    {% if redirect_field_value %}
-      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
-    
-    <!-- Container for "Already have an account?" link and "Sign Up" button side by side -->
-    <div class="form-footer" style="display: flex; justify-content: space-between; width: 100%; margin-top: 20px; margin-bottom: 20px;">
-      <a href="{% url 'account_login' %}" class="login-link" style="text-align: left; align-self: center;">
-        {% trans "Already have an account? Log In" %}
-      </a>
-      <button type="submit" class="primaryAction" style="width: 48%; align-self: center;" style="margin-bottom: 40px;">
-        {% trans "Sign Up" %}
-      </button>
-    </div>
-  </form>
+    <button type="submit" class="primaryAction" style="width: 48%; align-self: center; margin-bottom: 40px;">
+      {% trans "Sign Up" %}
+    </button>
+  </div>
+
+  <div style="margin-bottom: 50px;"></div>
+</form>
 
 {% endblock content %}

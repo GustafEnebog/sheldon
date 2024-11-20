@@ -1,39 +1,48 @@
 {% extends "account/base.html" %}
-{% load i18n crispy_forms_tags %}  <!-- Add crispy_forms_tags to load crispy filter -->
+{% load i18n crispy_forms_tags %}
+<!-- Add crispy_forms_tags to load crispy filter -->
 
 {% block head_title %}{% trans "Login" %}{% endblock head_title %}
 
 {% block content %}
-  <h1>{% trans "Login" %}</h1>
 
-  <form method="POST" action="{% url 'account_login' %}" style="max-width: 400px; margin: 0 auto;">
-    {% csrf_token %}
-    {{ form|crispy }}  <!-- Use crispy to render form -->
-    {% if redirect_field_value %}
-      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
+<!-- styling is made directly into the tags because it would otherwise be overidden by the crisp -->
 
-    <!-- Container for "Forgot Password" and "Login" button -->
-    <div style="display: flex; justify-content: space-between; width: 100%;">
-      <a class="button secondaryAction" href="{% url 'account_reset_password' %}" style="text-align: left;">
-        {% trans "Forgot Password?" %}
-      </a>
-      <button class="primaryAction" type="submit" style="text-align: right;">
-        {% trans "Login" %}
-      </button>
-    </div>
-  </form>
+<h1 style="margin-top: 40px">{% trans "Login" %}</h1>
+
+<form method="POST" action="{% url 'account_login' %}" style="max-width: 400px; margin: 0 auto;">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <!-- Use crispy to render form -->
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+
+  <!-- Container for "Forgot Password" and "Login" button -->
+  <div style="display: flex; justify-content: space-between; width: 100%;">
+    <a class="button secondaryAction" href="{% url 'account_reset_password' %}" style="text-align: left;">
+      {% trans "Forgot Password?" %}
+    </a>
+    <button class="primaryAction" type="submit" style="text-align: right;">
+      {% trans "Login" %}
+    </button>
+  </div>
+  <div style="margin-bottom: 50px;">
+  </div>
+</form>
 {% endblock content %}
 
 <!-- Add custom CSS for darker checkbox -->
 <style>
   /* Darker color for checkboxes */
   input[type="checkbox"] {
-    accent-color: #555;  /* Sets a dark color for the checkbox */
+    accent-color: #555;
+    /* Sets a dark color for the checkbox */
   }
 
   /* Darker color when the checkbox is checked */
   input[type="checkbox"]:checked {
-    accent-color: #333;  /* Makes the checkbox even darker when checked */
+    accent-color: #333;
+    /* Makes the checkbox even darker when checked */
   }
 </style>
