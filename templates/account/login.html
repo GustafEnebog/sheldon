@@ -1,41 +1,39 @@
 {% extends "account/base.html" %}
-
-{% load i18n %}
-{% load account socialaccount %}
+{% load i18n crispy_forms_tags %}  <!-- Add crispy_forms_tags to load crispy filter -->
 
 {% block head_title %}{% trans "Login" %}{% endblock head_title %}
 
 {% block content %}
+  <h1>{% trans "Login" %}</h1>
 
+  <form method="POST" action="{% url 'account_login' %}" style="max-width: 400px; margin: 0 auto;">
+    {% csrf_token %}
+    {{ form|crispy }}  <!-- Use crispy to render form -->
+    {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
 
-<h1>{% trans "Login" %}</h1>
-
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Login" %}</button>
-</form>
-
-<div class="container"></div>
-    
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
-      …
+    <!-- Container for "Forgot Password" and "Login" button -->
+    <div style="display: flex; justify-content: space-between; width: 100%;">
+      <a class="button secondaryAction" href="{% url 'account_reset_password' %}" style="text-align: left;">
+        {% trans "Forgot Password?" %}
+      </a>
+      <button class="primaryAction" type="submit" style="text-align: right;">
+        {% trans "Login" %}
+      </button>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <form class="login" method="POST"
-        action="{% url 'account_login' %}">
-        …
-      </form>
-    </div>
-  </div>
-</div>
-
+  </form>
 {% endblock content %}
+
+<!-- Add custom CSS for darker checkbox -->
+<style>
+  /* Darker color for checkboxes */
+  input[type="checkbox"] {
+    accent-color: #555;  /* Sets a dark color for the checkbox */
+  }
+
+  /* Darker color when the checkbox is checked */
+  input[type="checkbox"]:checked {
+    accent-color: #333;  /* Makes the checkbox even darker when checked */
+  }
+</style>

@@ -590,7 +590,10 @@ All JavaScript files were tested with [JSHint](https://jshint.com/) No errors ar
 
 **CSS Validation**
 
-The CSS file was validated with [W3C CSS Validator](images-for-readme/jigsaw-css-validation.jpg). No errors are present in the production code. There was 455 (!) warnings.
+The CSS file was validated with [W3C CSS Validator](images-for-readme/jigsaw-css-validation.jpg). No errors are present in the production code. There was x (!) warnings of the type:  
+- "Due to their dynamic nature, CSS variables are currently not statically checked"  
+- "...is a vendor extension"  
+- "Same color for background-color and border-color"  
 
 View the validation result for my site [here](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2F8000-gustafenebog-sheldon-snyii1xvpkq.ws.codeinstitute-ide.net%2F&usermedium=all&vextwarning=&warning=1).
 
@@ -604,13 +607,13 @@ To overcome the errors that the Django tags would bring up, the pages were teste
 
 All pages were tested with Google Chrome’s Lighthouse. The low score on best practise was due to "Uses deprecated APIs" in the form of locally installed "Kasperski".
 
-Syllabus page(Home Page)):
+Syllabus page(Home Page):
 
-![lighthouse-syllabus-page](images-for-readme/lighthouse-syllabus-page.jpg)
+![lighthouse-syllabus-page](images-for-readme/lighthouse-syllabus-page.png)
 
-Unit page:
+Unit page (sears-haack-body):
 
-![lighthouse-unit-page](images-for-readme/lighthouse-unit-page.jpg)
+![lighthouse-unit-page](images-for-readme/lighthouse-unit-page.png)
 
 
 **WebAIM WAVE, Web Accessibility Testing**

@@ -407,6 +407,56 @@ footer a {
 }
 
 
+/* Styling for forms */
+/* 1. Close the space between the "Remember Me" checkbox and the text */
+.form-check-input {
+    margin-right: 5px;  /* Reduce right margin for the checkbox */
+}
+
+.form-check-label {
+    margin-left: 0;     /* Remove any left margin for the label */
+}
+
+/* 2. Align "Forgot Password" and "Login" Button horizontally with input fields */
+.form-actions {
+    display: flex;
+    justify-content: space-between; /* Align items across the width */
+    align-items: center;
+    width: 100%;
+}
+
+.forgot-password {
+    text-align: left; /* Left-align the "Forgot Password" link */
+    padding-left: 0;  /* Remove left padding to align better with the inputs */
+}
+
+.login-button {
+    text-align: right; /* Right-align the "Login" button */
+    padding-right: 0;  /* Remove right padding for better alignment */
+}
+
+/* 3. Add padding around the "Login" button text for breathing space */
+button.primaryAction {
+    padding: 12px 30px; /* Vertical padding 12px, horizontal padding 30px */
+    font-size: 16px;    /* Keep font size consistent */
+}
+
+/* Ensure the form is using a container with a maximum width */
+.container {
+    max-width: 400px;  /* Adjust container width */
+}
+
+/* 4. Fix spacing between Forgot Password and Login button */
+.form-actions a,
+.form-actions button {
+    width: 45%; /* Give equal width to both items */
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+/* End of Styling for forms */
+
+
 /* Targeting screens below 768px */
 @media (max-width: 768px) {
 
