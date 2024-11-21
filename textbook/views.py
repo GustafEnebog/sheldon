@@ -47,28 +47,39 @@ def unit_detail(request, unit_slug):
 #    return render(request, 'textbook/note_detail.html', {'note': note})
 
 
+from django.contrib import messages
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponseForbidden
+from .models import Unit, Note
+from .forms import NoteForm
+
+
+from django.contrib import messages
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponseForbidden
+from .models import Unit, Note
+from .forms import NoteForm
+
+
 def note_edit(request, unit_slug, note_id):
     """
-    view to edit note
+    View to edit a note
     """
-    #if request.method == "POST":
-    # Retrieve the note by its ID
+    # Retrieve the unit and note based on their slugs and IDs
     unit = get_object_or_404(Unit.objects.filter(status_unit=1), unit_slug=unit_slug)
     note = get_object_or_404(Note, id=note_id)
     
-    # Line that Sean suggested to me (I might have misunderstood the syntax)
-    form = NoteForm()
-
-    # Ensure only the note's owner can edit it
+    # Ensure the current user is the author of the note
     if note.user_id != request.user:
         return HttpResponseForbidden("You do not have permission to edit this note.")
+
     if request.method == 'POST':
         form = NoteForm(request.POST, instance=note)  # Pre-populate form with existing note data
         if form.is_valid():
             form.save()  # Save the updated note
-            # return redirect('note_detail', note_id=note.id)  # Redirect to the note detail page after editing
-            # Redirect to unit_detail view after saving
-            return redirect('unit_detail', unit_slug=unit_slug)  # Redirect to unit_detail
+            # Add a success message after saving the note
+            messages.success(request, "Note updated successfully!")
+            return redirect('unit_detail', unit_slug=unit_slug)  # Redirect to unit detail
     else:
         form = NoteForm(instance=note)  # Show the form with the existing note content
 
