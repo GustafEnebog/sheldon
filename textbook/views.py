@@ -16,9 +16,13 @@ class UnitListView(generic.ListView):
 
 def unit_detail(request, unit_slug):
     unit = get_object_or_404(Unit.objects.filter(status_unit=1), unit_slug=unit_slug)
-    notes = unit.unit_note.all().order_by("-created_on")
-    
-    # Use NoteForm here (not NotesForm)
+    if request.user.is_authenticated:
+        # If logged in, display only the user's own notes
+        notes = unit.unit_note.filter(user_id=request.user).order_by("-created_on")
+    else:
+        # If logged out, don't display any notes
+        notes = []
+
     notes_form = NoteForm()
 
     if request.method == "POST":
@@ -28,7 +32,8 @@ def unit_detail(request, unit_slug):
             note.unit_id = unit
             note.user_id = request.user
             note.save()
-            messages.success(request, 'Note Successfully saved!')
+            messages.success(request, 'Note successfully saved!')
+            return redirect('unit_detail', unit_slug=unit_slug)  # This redirects back to the unit details page
 
     return render(request, "textbook/singel-unit-display.html", {
         "unit": unit,
@@ -37,35 +42,10 @@ def unit_detail(request, unit_slug):
     })
 
 
-# views.py
-#from django.shortcuts import render, get_object_or_404
-#from .models import Note
-
-#def note_detail(request, unit_slug, note_id):
-    # Get the note using its ID
-#    note = get_object_or_404(Note, id=note_id)
-#    return render(request, 'textbook/note_detail.html', {'note': note})
-
-
-from django.contrib import messages
-from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponseForbidden
-from .models import Unit, Note
-from .forms import NoteForm
-
-
-from django.contrib import messages
-from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponseForbidden
-from .models import Unit, Note
-from .forms import NoteForm
-
-
 def note_edit(request, unit_slug, note_id):
     """
     View to edit a note
     """
-    # Retrieve the unit and note based on their slugs and IDs
     unit = get_object_or_404(Unit.objects.filter(status_unit=1), unit_slug=unit_slug)
     note = get_object_or_404(Note, id=note_id)
     
@@ -74,14 +54,13 @@ def note_edit(request, unit_slug, note_id):
         return HttpResponseForbidden("You do not have permission to edit this note.")
 
     if request.method == 'POST':
-        form = NoteForm(request.POST, instance=note)  # Pre-populate form with existing note data
+        form = NoteForm(request.POST, instance=note)
         if form.is_valid():
-            form.save()  # Save the updated note
-            # Add a success message after saving the note
+            form.save()
             messages.success(request, "Note updated successfully!")
-            return redirect('unit_detail', unit_slug=unit_slug)  # Redirect to unit detail
+            return redirect('unit_detail', unit_slug=unit_slug)
     else:
-        form = NoteForm(instance=note)  # Show the form with the existing note content
+        form = NoteForm(instance=note)
 
     return render(request, 'textbook/note_edit.html', {'form': form, 'note': note, 'unit': unit})
 

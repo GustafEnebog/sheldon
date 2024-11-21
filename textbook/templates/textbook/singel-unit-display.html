@@ -37,6 +37,7 @@
 </div>
 <!-- ********** END OF Displaying unit ********** -->
 
+
 <!-- ********** Displaying Note ********** -->
 <div class="container">
     <div class="row justify-content-center">
@@ -44,32 +45,40 @@
             <!-- Ensure full width within container -->
             <div class="card-body">
                 <h3>Notes</h3>
-                {% for note in notes %}
-                <p class="font-weight-bold">
-                    {{ note.author }}
-                    <span class="font-weight-normal" style="color: #838383;">
-                        {{ note.created_on }}
-                    </span>
-                </p>
-                <div id="comment{{ comment.id }}">
-                    {{ note.body | safe }}
-                </div>
-                <div>
-                    <button class="btn btn-delete" note_id="{{ note.id }}">Delete</button>
-                    <!-- Edit button -->
-                    <a href="{% url 'note_edit' unit_slug=unit.unit_slug note_id=note.id %}"
-                        class="btn btn-edit">Edit!</a>
-                    </a>
-                </div>
-                {% if not forloop.last %}
-                <hr class="note-divider">
+
+                {% if notes %}
+                    {% for note in notes %}
+                        <p class="font-weight-bold">
+                            {{ note.user_id.username }}  <!-- Display the author's username -->
+                            <span class="font-weight-normal" style="color: #838383;">
+                                {{ note.created_on }}  <!-- Display the creation date -->
+                            </span>
+                        </p>
+                        
+                        <div id="comment{{ note.id }}">
+                            {{ note.body | safe }}  <!-- Display the body of the note -->
+                        </div>
+
+                        <div>
+                            {% if note.user_id == user %}  <!-- Only allow the user to edit or delete their own note -->
+                                <button class="btn btn-delete" note_id="{{ note.id }}">Delete</button>
+                                <a href="{% url 'note_edit' unit_slug=unit.unit_slug note_id=note.id %}" class="btn btn-edit">Edit!</a>
+                            {% endif %}
+                        </div>
+
+                        {% if not forloop.last %}
+                            <hr class="note-divider">  <!-- Divider between notes -->
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <p>No notes available.</p>  <!-- Message for when no notes exist -->
                 {% endif %}
-                {% endfor %}
             </div>
         </div>
     </div>
 </div>
 <!-- ********** END OF Displaying Note ********** -->
+
 
 <!-- ********** Creating Note ********** -->
 <div class="container">
