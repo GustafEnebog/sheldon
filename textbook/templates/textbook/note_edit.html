@@ -2,9 +2,8 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-
 {% block unit %}
-<div class="container">
+<div class="container" style="margin-top: 20px; margin-bottom: 40px;">
     <div class="row justify-content-center">
         <div class="col-12 card mb-4 mt-3">
             <div class="card-body">
@@ -15,18 +14,27 @@
                     <!-- Render the form fields (body of the note) with crispy forms -->
                     {{ form | crispy }}
 
-                    <!-- Submit button styled with Bootstrap -->
-                    <!-- <button type="submit" class="btn btn-primary btn-lg">Save Changes</button> -->
                     <!-- Save Changes button styled as a text button -->
                     <button type="submit" class="text-button">Save Changes</button>
                 </form>
 
                 <br>
                 <!-- Link back to the unit detail page after editing, styled as a button -->
-                <!--  <a href="{% url 'unit_detail' unit_slug=unit.unit_slug %}" class="btn btn-secondary btn-lg">Cancel</a> -->
                 <a href="{% url 'unit_detail' unit_slug=unit.unit_slug %}" class="text-button">Cancel</a>
             </div>
         </div>
     </div>
 </div>
 {% endblock unit %}
+
+{% block extras %}
+<script>
+    // Show the toast notification if the form is valid (saved successfully)
+    {% if form.is_valid %}
+    document.addEventListener("DOMContentLoaded", function() {
+        var toast = new bootstrap.Toast(document.getElementById('saveToast'));
+        toast.show();
+    });
+    {% endif %}
+</script>
+{% endblock %}
