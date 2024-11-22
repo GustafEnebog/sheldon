@@ -4,7 +4,6 @@
 
 {% block unit %}
 
-
 <!-- ********** Displaying unit ********** -->
 <div class="container" style="margin-top: 20px">
     <div class="row justify-content-center">
@@ -40,49 +39,48 @@
 
 <!-- ********** Displaying Note ********** -->
 {% if user.is_authenticated %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-12 card mb-4 mt-3">
-            <!-- Ensure full width within container -->
-            <div class="card-body">
-                <h3>Notes</h3>
+    {% if notes %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 card mb-4 mt-3">
+                <!-- Ensure full width within container -->
+                <div class="card-body">
+                    <!-- Only display the Notes section if there are notes for this specific unit -->
+                    <h3>Notes</h3>
 
-                {% if notes %}
-                {% for note in notes %}
-                <p class="font-weight-bold">
-                    {{ note.user_id.username }}
-                    <!-- Display the author's username -->
-                    <span class="font-weight-normal" style="color: #838383;">
-                        {{ note.created_on }}
-                        <!-- Display the creation date -->
-                    </span>
-                </p>
+                    {% for note in notes %}
+                        <p class="font-weight-bold">
+                            {{ note.user_id.username }}
+                            <!-- Display the author's username -->
+                            <span class="font-weight-normal" style="color: #838383;">
+                                {{ note.created_on }}
+                                <!-- Display the creation date -->
+                            </span>
+                        </p>
 
-                <div id="comment{{ note.id }}">
-                    {{ note.body | safe }}
-                    <!-- Display the body of the note -->
+                        <div id="comment{{ note.id }}">
+                            {{ note.body | safe }}
+                            <!-- Display the body of the note -->
+                        </div>
+
+                        <div>
+                            {% if note.user_id == user %}
+                                <!-- Only allow the user to edit or delete their own note -->
+                                <button class="btn btn-delete" note_id="{{ note.id }}">Delete</button>
+                                <a href="{% url 'note_edit' unit_slug=unit.unit_slug note_id=note.id %}"
+                                   class="btn btn-edit">Edit!</a>
+                            {% endif %}
+                        </div>
+
+                        {% if not forloop.last %}
+                            <hr class="note-divider"> <!-- Divider between notes -->
+                        {% endif %}
+                    {% endfor %}
                 </div>
-
-                <div>
-                    {% if note.user_id == user %}
-                    <!-- Only allow the user to edit or delete their own note -->
-                    <button class="btn btn-delete" note_id="{{ note.id }}">Delete</button>
-                    <a href="{% url 'note_edit' unit_slug=unit.unit_slug note_id=note.id %}"
-                        class="btn btn-edit">Edit!</a>
-                    {% endif %}
-                </div>
-
-                {% if not forloop.last %}
-                <hr class="note-divider"> <!-- Divider between notes -->
-                {% endif %}
-                {% endfor %}
-                {% else %}
-                <p>No notes available.</p> <!-- Message for when no notes exist -->
-                {% endif %}
             </div>
         </div>
     </div>
-</div>
+    {% endif %}
 {% endif %}
 <!-- ********** END OF Displaying Note ********** -->
 
