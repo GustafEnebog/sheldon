@@ -25,7 +25,7 @@ def unit_detail(request, unit_slug):
 
     notes_form = NoteForm()
 
-    if request.method == "POST":
+    if request.method == "POST" and request.user.is_authenticated:
         note_form = NoteForm(data=request.POST)
         if note_form.is_valid():
             note = note_form.save(commit=False)
