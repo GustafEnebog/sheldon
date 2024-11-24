@@ -16,12 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-#from textbook.views import textbook
-#DELETE: we do no longer need this: from textbook import views as textbook_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
     path('summernote/', include('django_summernote.urls')),
-    path("", include("textbook.urls"), name="textbook-urls"),  #DELETE change this: path('textbook/', textbook_views.my_textbook, name='textbook'),   
+    path("", include("textbook.urls"), name="textbook-urls"),
 ]

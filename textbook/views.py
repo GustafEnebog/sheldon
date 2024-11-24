@@ -3,9 +3,8 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponseForbidden
 from .models import Unit, Note
-from .forms import NoteForm  # Make sure it's NoteForm, not NotesForm
+from .forms import NoteForm
 from django.contrib.auth.decorators import login_required
-
 
 
 class UnitListView(generic.ListView):
@@ -33,7 +32,8 @@ def unit_detail(request, unit_slug):
             note.user_id = request.user
             note.save()
             messages.success(request, 'Note successfully saved!')
-            return redirect('unit_detail', unit_slug=unit_slug)  # This redirects back to the unit details page
+            # This redirects back to the unit details page
+            return redirect('unit_detail', unit_slug=unit_slug)
 
     return render(request, "textbook/singel-unit-display.html", {
         "unit": unit,
@@ -48,7 +48,7 @@ def note_edit(request, unit_slug, note_id):
     """
     unit = get_object_or_404(Unit.objects.filter(status_unit=1), unit_slug=unit_slug)
     note = get_object_or_404(Note, id=note_id)
-    
+
     # Ensure the current user is the author of the note
     if note.user_id != request.user:
         return HttpResponseForbidden("You do not have permission to edit this note.")
@@ -90,11 +90,14 @@ def profile(request):
 def handler404(request, exception):
     return render(request, '404.html', status=404)
 
+
 def handler500(request):
     return render(request, '500.html', status=500)
 
+
 def handler403(request, exception):
     return render(request, '403.html', status=403)
+
 
 def handler405(request, exception):
     return render(request, '405.html', status=405)

@@ -24,14 +24,12 @@ body {
 /* Ensure the body and html take up the full height */
 html,
 body {
-    height: 100%;
-    /* Make the body and html elements fill the screen */
+    height: 100%; /* Make the body and html elements fill the screen */
 }
 
 /* Main content should grow to fill available space */
 main {
-    flex-grow: 1;
-    /* Allow the main content to grow and fill available space */
+    flex-grow: 1; /* Allow the main content to grow and fill available space */
 }
 
 /* Footer should always be at the bottom */
@@ -40,10 +38,8 @@ footer {
     background-color: black;
     color: lightgray;
     padding-bottom: 50px;
-    position: relative;
-    /* Ensure the footer is not fixed or absolute */
-    margin-top: auto;
-    /* Push footer to the bottom of the page */
+    position: relative; /* Ensure the footer is not fixed or absolute */
+    margin-top: auto; /* Push footer to the bottom of the page */
 }
 
 /* Class for styling Google Material Symbols (Variable Icon Font). */
@@ -89,22 +85,14 @@ main {
 
 /* Before the breakpoint */
 #unit-section {
-    width: 100%;
-    /* Take up full width */
-    max-width: 1200px;
-    /* Set a maximum width to prevent it from growing too wide */
-    min-width: 800px;
-    /* Set a minimum width to prevent it from becoming too narrow */
-    margin-left: auto;
-    /* Center the unit section */
-    margin-right: auto;
-    /* Center the unit section */
-    margin-top: 0;
-    /* Remove any margin pushing the unit content down */
-    padding-left: 20px;
-    /* Padding for inner spacing */
-    padding-right: 20px;
-    /* Padding for inner spacing */
+    width: 100%; /* Take up full width */
+    max-width: 1200px; /* Set a maximum width to prevent it from growing too wide */
+    min-width: 800px; /* Set a minimum width to prevent it from becoming too narrow */
+    margin-left: auto; /* Center the unit section */
+    margin-right: auto; /* Center the unit section */
+    margin-top: 0; /* Remove any margin pushing the unit content down */
+    padding-left: 20px; /* Padding for inner spacing */
+    padding-right: 20px; /* Padding for inner spacing */
 }
 
 /* Style for the user logo in the header */
@@ -138,10 +126,8 @@ header a {
 /* Ensure the Syllabus section spans the full width */
 #syllabus {
     width: 100%;
-    margin: 0;
-    /* Remove any unwanted margin */
-    padding: 0;
-    /* Remove any padding, but if you want padding, you can add it back */
+    margin: 0; /* Remove any unwanted margin */
+    padding: 0; /* Remove any padding, but if you want padding, you can add it back */
 }
 
 /* Removes horizontal padding and sets container width to 100% */
@@ -186,29 +172,20 @@ footer a {
 
 /* The container that holds the logo */
 .logo-container {
-    position: relative;
-    /* Ensure positioning works correctly */
+    position: relative; /* Ensure positioning works correctly */
     display: block;
-    overflow-x: visible;
-    /* Allow image to overflow horizontally */
-    width: 100%;
-    /* The container takes up the full width */
+    overflow-x: visible; /* Allow image to overflow horizontally */
+    width: 100%; /* The container takes up the full width */
 }
 
 /* Image rules */
 #logo-of-maker-of-lms {
-    width: 100%;
-    /* Image will resize based on its container */
-    max-width: 150px;
-    /* Set the maximum width */
-    min-width: 100px;
-    /* Minimum width (won't shrink smaller than this) */
-    height: auto;
-    /* Maintain the aspect ratio */
-    object-fit: contain;
-    /* Prevent distortion */
-    transition: width 0.3s ease;
-    /* Smooth transition on resize */
+    width: 100%; /* Image will resize based on its container */
+    max-width: 150px; /* Set the maximum width */
+    min-width: 100px; /* Minimum width (won't shrink smaller than this) */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: contain; /* Prevent distortion */
+    transition: width 0.3s ease; /* Smooth transition on resize */
 }
 
 /* When the viewport shrinks to smaller sizes  ideally 575pxS*/
@@ -216,20 +193,15 @@ footer a {
 
     /* Position logo absolutely and allow overflow to the left with fixed width and auto height */
     #logo-of-maker-of-lms {
-        position: absolute;
-        /* Take the image out of the normal document flow      position: absolute; */
-        left: -50px;
-        /* Allow the image to overflow into the left of its container */
-        width: 100px;
-        /* Lock the width at 150px (its minimum size) */
-        height: auto;
-        /* Keep the aspect ratio intact */
+        position: absolute; /* Take the image out of the normal document flow      position: absolute; */
+        left: -50px; /* Allow the image to overflow into the left of its container */
+        width: 100px; /* Lock the width at 150px (its minimum size) */
+        height: auto; /* Keep the aspect ratio intact */
     }
 
     /* Shrink container width to 30% to allow logo overflow */
     .logo-container {
-        width: 30%;
-        /* Container shrinks to 30% of its parent, leaving space for overflow */
+        width: 30%; /* Container shrinks to 30% of its parent, leaving space for overflow */
     }
 }
 
@@ -370,7 +342,6 @@ footer a {
 .btn-group button:hover {
     background-color: #FFC020;
 }
-
 /* END OF: Code snippet "button group" */
 
 
@@ -385,7 +356,6 @@ footer a {
     /* background-color: #80d3ff; */
     font-weight: bold;
 }
-
 /* END OF: Code snippet "button sitaware" */
 
 
@@ -437,57 +407,54 @@ footer a {
 }
 
 
-
-
-
-/* Styling of forms */
-
-/* Make the form container narrower */
-form[action="{% url 'account_login' %}"] {
-    max-width: 400px !important;  /* Adjust the max-width to make the form narrower */
-    margin: 0 auto !important;    /* Center the form horizontally */
+/* Styling for forms */
+/* 1. Close the space between the "Remember Me" checkbox and the text */
+.form-check-input {
+    margin-right: 5px;  /* Reduce right margin for the checkbox */
 }
 
-/* Style for input fields within the form */
-form[action="{% url 'account_login' %}"] input.form-control,
-form[action="{% url 'account_login' %}"] button.btn {
-    width: 100% !important;      /* Ensure inputs take the full width of the form */
-    max-width: 100% !important;  /* Prevent any input from going beyond the form width */
-    margin-bottom: 15px !important; /* Add space below inputs */
+.form-check-label {
+    margin-left: 0;     /* Remove any left margin for the label */
 }
 
-/* Style for the "Forgot Password" link */
-form[action="{% url 'account_login' %}"] a.button.secondaryAction {
-    width: 100% !important;  /* Make the "Forgot Password" button full width */
-    text-align: center !important; /* Center the text within the button */
-    display: block !important;  /* Make it a block element so it occupies full width */
-    margin-bottom: 15px !important; /* Space between "Forgot Password" and login button */
+/* 2. Align "Forgot Password" and "Login" Button horizontally with input fields */
+.form-actions {
+    display: flex;
+    justify-content: space-between; /* Align items across the width */
+    align-items: center;
+    width: 100%;
 }
 
-/* Style for the Submit Button */
-form[action="{% url 'account_login' %}"] button.primaryAction {
-    width: 100% !important;  /* Make the Login button take full width of the form */
-    padding: 12px !important; /* Add some padding for better touchability */
+.forgot-password {
+    text-align: left; /* Left-align the "Forgot Password" link */
+    padding-left: 0;  /* Remove left padding to align better with the inputs */
 }
 
-/* Optional: Style the form elements to add padding and spacing */
-form[action="{% url 'account_login' %}"] .form-group {
-    margin-bottom: 20px !important; /* Add space between form groups */
+.login-button {
+    text-align: right; /* Right-align the "Login" button */
+    padding-right: 0;  /* Remove right padding for better alignment */
 }
 
-/* If you want the form elements to be slightly more compact */
-form[action="{% url 'account_login' %}"] .form-group input,
-form[action="{% url 'account_login' %}"] .form-group button {
-    padding: 10px !important; /* Adjust padding for inputs and buttons */
+/* 3. Add padding around the "Login" button text for breathing space */
+button.primaryAction {
+    padding: 12px 30px; /* Vertical padding 12px, horizontal padding 30px */
+    font-size: 16px;    /* Keep font size consistent */
 }
 
+/* Ensure the form is using a container with a maximum width */
+.container {
+    max-width: 400px;  /* Adjust container width */
+}
 
-/* END OF - Styling of forms */
+/* 4. Fix spacing between Forgot Password and Login button */
+.form-actions a,
+.form-actions button {
+    width: 45%; /* Give equal width to both items */
+    display: inline-block;
+    box-sizing: border-box;
+}
 
-
-
-
-
+/* End of Styling for forms */
 
 
 /* Targeting screens below 768px */
@@ -556,48 +523,24 @@ form[action="{% url 'account_login' %}"] .form-group button {
 }
 
 
-/* For small screen sizes */
 @media (max-width: 575px) {
-
-    /* Indent USC logo */
-    /* Style for the user logo in the header */
-    #user-logo {
-        margin-left: 20px !important;  /* Move the logo slightly to the right */
-        padding-left: 10px !important; /* Add some padding on the left */
-    }
-
-    /* Optional: Ensure the login container behaves correctly */
-    #header-login {
-        display: flex;
-        justify-content: flex-start; /* Align login links to the left */
-        align-items: center;         /* Center the items vertically */
-        padding-left: 20px;           /* Add left padding to the login section */
-    }
 
     /* Stack all items in the footer vertically */
     footer .container-fluid {
         display: flex;
-        flex-direction: column;
-        /* Stack the items vertically */
-        align-items: center;
-        /* Center everything horizontally */
-        padding-left: 15px;
-        /* Prevent cut-off by adding padding */
-        padding-right: 15px;
-        /* Prevent cut-off by adding padding */
+        flex-direction: column; /* Stack the items vertically */
+        align-items: center; /* Center everything horizontally */
+        padding-left: 15px; /* Prevent cut-off by adding padding */
+        padding-right: 15px; /* Prevent cut-off by adding padding */
     }
 
     /* Ensure the row also stacks vertically and is centered */
     footer .row {
         display: flex;
-        flex-direction: column;
-        /* Stack the columns */
-        width: 100%;
-        /* Take full width */
-        align-items: center;
-        /* Center all items horizontally */
-        margin-bottom: 10px;
-        /* Add space between the items */
+        flex-direction: column; /* Stack the columns */
+        width: 100%; /* Take full width */
+        align-items: center; /* Center all items horizontally */
+        margin-bottom: 10px; /* Add space between the items */
     }
 
     /* Force all columns inside the footer to be block-level and centered */
@@ -608,8 +551,7 @@ form[action="{% url 'account_login' %}"] .form-group button {
         display: block;
         width: 100%;
         margin-bottom: 10px;
-        text-align: center;
-        /* Center the text */
+        text-align: center; /* Center the text */
     }
 
     /* Adjust the logo in the footer */
@@ -617,8 +559,7 @@ form[action="{% url 'account_login' %}"] .form-group button {
         margin-top: 15px;
         display: flex;
         align-items: center;
-        justify-content: center;
-        /* Center content horizontally */
+        justify-content: center; /* Center content horizontally */
         color: lightgray;
         text-align: center;
     }
@@ -626,47 +567,33 @@ form[action="{% url 'account_login' %}"] .form-group button {
     /* Adjust the social media links to be centered */
     .social-media-links {
         display: flex;
-        justify-content: center;
-        /* Center social icons */
-        gap: 10px;
-        /* Space between icons */
-        margin-bottom: 10px;
-        /* Space below social media links */
+        justify-content: center; /* Center social icons */
+        gap: 10px; /* Space between icons */
+        margin-bottom: 10px; /* Space below social media links */
     }
 
     /* Logo container should also be centered */
     .logo-container {
         display: block;
         width: 100%;
-        text-align: center;
-        /* Center the logo */
-        margin-top: 15px;
-        /* Space between content and logo */
+        text-align: center; /* Center the logo */
+        margin-top: 15px; /* Space between content and logo */
     }
 
     /* Make sure the logo image stays responsive and does not get cut off */
     #logo-of-maker-of-lms {
-        width: 100%;
-        /* Allow logo to resize with container */
-        max-width: 150px;
-        /* Set max width */
-        min-width: 100px;
-        /* Set min width */
-        object-fit: contain;
-        /* Prevent distortion */
-        margin-left: 0;
-        /* No left margin */
-        margin-right: 0;
-        /* No right margin */
+        width: 100%; /* Allow logo to resize with container */
+        max-width: 150px; /* Set max width */
+        min-width: 100px; /* Set min width */
+        object-fit: contain; /* Prevent distortion */
+        margin-left: 0; /* No left margin */
+        margin-right: 0; /* No right margin */
     }
 
     /* Ensure the address text is centered */
     .col-6 p {
-        text-align: center;
-        /* Center the address text */
-        width: 100%;
-        /* Make sure the address takes full width */
-        margin-bottom: 10px;
-        /* Space below the address */
+        text-align: center; /* Center the address text */
+        width: 100%; /* Make sure the address takes full width */
+        margin-bottom: 10px; /* Space below the address */
     }
 }
