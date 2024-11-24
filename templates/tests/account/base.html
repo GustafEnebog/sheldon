@@ -11,12 +11,12 @@
   <body>
     {% block body %}
 
-    {% if messages %}
+    {% if s %}
     <div>
-      <strong>{% trans "Messages:" %}</strong>
+      <strong>{% trans "s:" %}</strong>
       <ul>
-        {% for message in messages %}
-        <li>{{message}}</li>
+        {% for  in s %}
+        <li>{{}}</li>
         {% endfor %}
       </ul>
     </div>

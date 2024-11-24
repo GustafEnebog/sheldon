@@ -2,14 +2,19 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+
 <!-- ********** Syllabus ********** -->
 {% block syllabus %}
-{% for unit in unit_list %}
-<div class="btn-group user-progress-styling">
-    <a href="{% url 'unit_detail' unit.unit_slug %}">
-        <button type="button">{{ unit.unit_title }}</button>
-    </a>
-</div>
-{% endfor %}
+{% if unit_list %}
+    {% for unit in unit_list %}
+    <div class="btn-group user-progress-styling">
+        <a href="{% url 'unit_detail' unit.unit_slug %}">
+            <button type="button">{{ unit.unit_title }}</button>
+        </a>
+    </div>
+    {% endfor %}
+{% else %}
+    <p>No units available.</p>
+{% endif %}
 {% endblock syllabus %}
 <!-- ********** END OF Syllabus ********** -->

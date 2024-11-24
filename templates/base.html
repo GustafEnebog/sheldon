@@ -7,20 +7,16 @@
 <html lang="en">
 
 <head>
+    <!--Meta tags for search engines-->
     <meta charset="UTF-8">
-    <meta name="description" content="Your page description">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="Your Name">
-    <meta id="vscode-workbench-web-configuration" data-settings="{{WORKBENCH_WEB_CONFIGURATION}}" content="some_value">
-    <meta id="vscode-workbench-auth-session" data-settings="{{WORKBENCH_AUTH_SESSION}}" content="some_value">
+    <meta name="description" content="Sheldon is a Learning Management System">
+    <meta name="keywords" content="Sheldon, LMS, Learning Management Platform, Learning, Education, University, digital classroom, Course provider, Educational Institutions">
+    <meta name="author" content="Gustaf Enebog">
+    <meta name="vscode-workbench-web-configuration" content="some_value">
+    <meta name="vscode-workbench-auth-session" content="some_value">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sheldon</title>
-    <!--Meta tags for search engines-->
-    <meta name="description"
-        content="Sheldon is a Learning Management System with a unique integrated timeline/curriculum always visible">
-    <meta name="keywords"
-        content="Sheldon, LMS, Learning Management Platform, Learning, Education, University, digital classroom, Course provider, Educational Institutions">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!--Bootstrap framework v5.3.3 - first link under "jsDelivr"-headline at https://getbootstrap.com/docs/4.6/getting-started/download/ -->
@@ -121,7 +117,7 @@
             {% if messages %}
             <div class="alert alert-success" role="alert">
                 {% for message in messages %}
-                <p>{{ message }}</p>
+                <p>{{ message }}</p>  <!-- This will only be rendered if messages exist -->
                 {% endfor %}
             </div>
             {% endif %}
