@@ -8,6 +8,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Your page description">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Your Name">
+    <meta id="vscode-workbench-web-configuration" data-settings="{{WORKBENCH_WEB_CONFIGURATION}}" content="some_value">
+    <meta id="vscode-workbench-auth-session" data-settings="{{WORKBENCH_AUTH_SESSION}}" content="some_value">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sheldon</title>
@@ -111,23 +116,20 @@
     <main>
 
         <!-- ********** Django messages framework ********** -->
-
-        <body>
-            <!-- Display any messages -->
-            <div class="container">
-                {% if messages %}
-                <div class="alert alert-success" role="alert">
-                    {% for message in messages %}
-                    <p>{{ message }}</p>
-                    {% endfor %}
-                </div>
-                {% endif %}
+        <!-- Display any messages -->
+        <div class="container">
+            {% if messages %}
+            <div class="alert alert-success" role="alert">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
             </div>
-        </body>
+            {% endif %}
+        </div>
         <!-- ********** END OF Django messages framework ********** -->
 
         <!-- ********** Unit ********** -->
-        <div class="container-fluid text-center" id="unit-section" class="main" style="margin: 5px 0px">
+        <div class="container-fluid text-center main" id="unit-section" style="margin: 5px 0px">
             <div class="row">
                 <div class="col-sm-3 ps-0">
                     <!-- Empty column for layout spacing -->
@@ -141,7 +143,7 @@
                             {% block unit %}
                             <!-- Unit content here -->
                             <h4><br><br><br><br>Welcome to: USC and Aerodynamics 101
-                            Let's click on one of the units in the Syllabus above and start learning!</h4>
+                                Let's click on one of the units in the Syllabus above and start learning!</h4>
                             {% endblock unit %}
                         </div>
                     </div>
@@ -166,25 +168,25 @@
             <div class="row">
                 <div class="col-4 ps-0">
                     <div>
-                        <div id="logo-footer">
+                        <div class="logo-footer">
                             <div>
                                 <a href="">
-                                    <h3 class="m-0 text-center text-white" id="footer-text-left">SHELDON</h3>
+                                    <h3 class="m-0 text-center text-white footer-text-left">SHELDON</h3>
                                 </a>
-                                <p class="m-0 text-center text-white" id="footer-text-left">Copyright: Gustaf Enebog,
+                                <p class="m-0 text-center text-white footer-text-left">Copyright: Gustaf Enebog,
                                     2024</p>
-                                <p class="m-0 text-center text-white" id="footer-text-left">Follow us:
+                                <p class="m-0 text-center text-white footer-text-left">Follow us:
                                     <a href="https://www.facebook.com" target="_blank">
-                                        <i class="fab fa-facebook-square ms-3" id="footer-text-left"></i>
+                                        <i class="fab fa-facebook-square ms-3 footer-text-left"></i>
                                     </a>
                                     <a href="https://twitter.com" target="_blank">
-                                        <i class="fab fa-twitter-square ms-3" id="footer-text-left"></i>
+                                        <i class="fab fa-twitter-square ms-3 footer-text-left"></i>
                                     </a>
                                     <a href="https://www.instagram.com" target="_blank">
-                                        <i class="fab fa-instagram-square ms-3" id="footer-text-left"></i>
+                                        <i class="fab fa-instagram-square ms-3 footer-text-left"></i>
                                     </a>
                                     <a href="https://www.youtube.com" target="_blank">
-                                        <i class="fab fa-youtube-square ms-3" id="footer-text-left"></i>
+                                        <i class="fab fa-youtube-square ms-3 footer-text-left"></i>
                                     </a>
                                 </p>
                             </div>
@@ -192,13 +194,13 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div id="logo-footer">
+                    <div class="logo-footer">
                         <p class="m-0 text-center text-white">University of Southern Califoria<br>University Park
                             Campus<br>3551 Trousdale Pkwy<br>Los Angeles, CA 90007</p>
                     </div>
                 </div>
                 <div class="col-2">
-                    <div id="logo-footer">
+                    <div class="logo-footer">
                         <!-- Displaying Cloudinary image -->
                         <div>
                             <div class="logo-container">

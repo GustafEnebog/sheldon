@@ -5,7 +5,7 @@
 <!-- ********** Syllabus ********** -->
 {% block syllabus %}
 {% for unit in unit_list %}
-<div class="btn-group" id="user-progress-styling">
+<div class="btn-group user-progress-styling">
     <a href="{% url 'unit_detail' unit.unit_slug %}">
         <button type="button">{{ unit.unit_title }}</button>
     </a>
