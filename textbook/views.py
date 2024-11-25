@@ -39,6 +39,7 @@ def unit_detail(request, unit_slug):
         "unit": unit,
         "notes": notes,
         "notes_form": notes_form,
+        "unit_id": unit.unit_id,  # Pass the unit ID to the template
     })
 
 
