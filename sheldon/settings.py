@@ -26,9 +26,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = ["*"]
 
-# ALLOWED_HOSTS = ["8000-gustafenebog-sheldon-snyii1xvpkq.ws.codeinstitute-ide.net"]
+ALLOWED_HOSTS = ["8000-gustafenebog-sheldon-snyii1xvpkq.ws.codeinstitute-ide.net","sheldon-textbook-3b3e2a751d30.herokuapp.com"]
 
 # Application definition
 INSTALLED_APPS = [
