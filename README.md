@@ -4,17 +4,26 @@
 
 View the live site [here](https://sheldon-textbook-3b3e2a751d30.herokuapp.com/).
 
-<span style="color:orange;font-weight:700;font-size:22px">
-INTRODUCTION
-</span>
+# <span style="color:orange;font-weight:700;font-size:22px">INTRODUCTION</span>
 
 **Sheldon** is a Learning Managment System (LMS) app for Educational Institutions. Where a teachers can place course content in a pre-made course template the students can access.
 
 Special attention has been given to the UX of the app given special care to give the student a good overview and easy navigation of the course content so that the student can keep situtional awareness through out the course and not feel overwhelmed or lost!
 
-<span style="color:#1591ea;font-weight:700;font-size:20px">
-The seed to the idea
-</span>
+## Table of Contents
+
+- [THE SEED TO THE IDEA](#the-seed-to-the-idea)
+- [AGILE DEVELOPMENT](#agile-development)
+- [USER EXPERIENCE (UX)](#user-experience-ux)
+- [FEATURES](#features)
+- [FEATURES TO IMPLEMENT IN THE FUTURE](#features-to-implement-in-the-future-out-of-scoop-features)
+- [TECHNOLOGIES AND DESIGN PRINCIPLES](#technologies-and-design-principles)
+- [TESTING](#testing)
+- [BUGS](#bugs)
+- [DEPLOYMENT](#deployment)
+- [REFERENCES](#references)
+
+# <span style="color:orange;font-weight:700;font-size:22px">THE SEED TO THE IDEA</span>
 
 There seeds to the ideas for Sheldon are two:
 
@@ -26,9 +35,7 @@ There seeds to the ideas for Sheldon are two:
 
 How do I develope a LMS that provide improves on these features to the user?
 
-<span style="color:orange;font-weight:700;font-size:22px">
-AGILE DEVELOPMENT
-</span>
+# <span style="color:orange;font-weight:700;font-size:22px">AGILE DEVELOPMENT</span>
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 User Stories
@@ -44,25 +51,15 @@ THEME: ADMINISTRATION > EPIC: USER ACCOUNT
 
 THEME: ADMINISTRATION > EPIC: ADMIN
 
-THEME: STUDENT AID FEATURES > EPIC: CURRICULUM AND NAVIGATION
+THEME: STUDENT AID FEATURES > EPIC: Multitab Navigation
 
-THEME: STUDENT AID FEATURES > EPIC: PACE CONTROL
+THEME: STUDENT AID FEATURES > EPIC: Notes
 
-THEME: STUDENT AID FEATURES > EPIC: EXPANSION/COLLAPSE TEXT
-
-THEME: STUDENT AID FEATURES > EPIC: SITUATIONAL AWARENESS
-
-THEME: STUDENT AID FEATURES > EPIC: CLIP BOARD
-
-THEME: STUDENT AID FEATURES > EPIC: FEEDBACK
-
-THEME: RELEASE > EPIC: TESTING
+THEME: RELEASE > EPIC: TESTING and ERROR HANDLING
 
 THEME: RELEASE > EPIC: DEPLOYMENT
 
-<span style="color:orange;font-weight:700;font-size:22px">
-USER EXPERIENCE (UX)
-</span>
+# <span style="color:orange;font-weight:700;font-size:22px">USER EXPERIENCE (UX)</span>
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Weakspots in Code Institute LMS
@@ -172,14 +169,21 @@ The conservative choise of limiting the number of fonts to only one is explained
 
 Furthermore, Medium 500 has been used instead of the Regular 400 since recent research has shown that this slightly heavier is the most legible thickness. 
 
-
-<span style="color:orange;font-weight:700;font-size:22px">
-FEATURES
-</span>
+# <span style="color:orange;font-weight:700;font-size:22px">FEATURES</span>
 
 The database models are implemented according to the below Entity Relationship Diagram (ERD) With the exception for that I use the  module_id (instead of the module_slug as planned in the ERD) as a foreign key in the implementation.
 
 ![ERD Sheldon](images-for-readme/sheldon-erd.png)
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Favicon
+</span>
+
+The first letter of the APP name 'Sheldon' serve as the "small space" version of the logo.
+
+<img src="images-for-readme/tabs.png">
+
+<br>
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Name/logo of Educational Institution (Header)
@@ -281,9 +285,7 @@ Sheldon-themed error-pages has been create in order to somwhat mitigate the nega
 <img src="images-for-readme/error-page-500.jpg" width="700" height="auto">
 
 
-<span style="color:orange;font-weight:700;font-size:22px">
-FEATURES TO IMPLEMENT IN THE FUTURE (Out of scoop features)
-</span>
+# <span style="color:orange;font-weight:700;font-size:22px">FEATURES TO IMPLEMENT IN THE FUTURE (Out of scoop features)</span>
 
 The necessary focus on achiving a Minimal Viable Product (MVP) has unfortunatly resulted in a unusually large "Features to implement in the future"-section
 
@@ -677,10 +679,8 @@ Miscellanious functionality
 * Password reset: add ability to reset password.
 * Social sign-in: allow users to sign in with their Google/Apples/etc. accounts.
 
+# <span style="color:orange;font-weight:700;font-size:22px">TECHNOLOGIES AND DESIGN PRINCIPLES</span>
 
-<span style="color:orange;font-weight:700;font-size:22px">
-TECHNOLOGIES AND DESIGN PRINCIPLES
-</span>
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Design principles used
 </span>
@@ -704,8 +704,10 @@ Design principles used
     - HTML5
     - CSS3
 
+</span>
+
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-# TECHNOLOGIES USED
+Technologies used
 </span>
 
 - Languages:
@@ -744,9 +746,7 @@ Python Packages Used
 - [django-allauth](https://docs.allauth.org/en/latest/index.html) - for user authentication.
 - [gunicorn](https://gunicorn.org/) - as the HTTP server that allows Django to run on Heroku.
 
-<span style="color:orange;font-weight:700;font-size:22px">
-TESTING
-</span>
+# <span style="color:orange;font-weight:700;font-size:22px">TESTING</span>
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Automated Testing
@@ -805,7 +805,7 @@ User Story Testing (Manual testing)
 
 All user stories were tested to confirm that they meet their Acceptance Criteria. The following have all PASSED.
 
-(View the original (not updated) EPICS, User Stories, Acceptance Criteria and Tasks on the GitHub [Kanban Board](https://github.com/users/GustafEnebog/projects/1/views/1?layout=board).
+View the original (not updated) EPICS, User Stories, Acceptance Criteria and Tasks on the GitHub [Kanban Board](https://github.com/users/GustafEnebog/projects/1/views/1?layout=board).
 
 
 ### THEME: Administration > EPIC: User Account
@@ -934,9 +934,7 @@ The following devices and browsers were used for manual & responsive UI testing.
     - Chrome (v126)
     - Firefox (v127)
 
-<span style="color:orange;font-weight:700;font-size:22px">
-# BUGS
-</span>
+# <span style="color:orange;font-weight:700;font-size:22px">BUGS</span>
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Fixed Bugs
@@ -1047,9 +1045,7 @@ Handling of case when any units have yet been created
 {% endfor unit%}
 ```
 
-<span style="color:orange;font-weight:700;font-size:22px">
-# DEPLOYMENT
-</span>
+# <span style="color:orange;font-weight:700;font-size:22px">DEPLOYMENT</span>
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Forking the GitHub Repository
@@ -1126,9 +1122,7 @@ Deploy to Heroku
 9. In the 'App Connected to GitHub' section, search for the GitHub repository name, select it then click 'connect'.
 10. Finally, either click ‘Enable Automatic Deploys’, or ‘Deploy Branch’ in the ‘Manual deploy’ section.
 
-<span style="color:orange;font-weight:700;font-size:22px">
-# REFERENCES
-</span>
+# <span style="color:orange;font-weight:700;font-size:22px">REFERENCES</span>
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Resources used
