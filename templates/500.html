@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <style>
@@ -18,7 +19,7 @@
             <img src="{% static 'images/sheldon-oh-no-500.jpg' %}"   
                 alt="Sitcom character Sheldon Cooper" style="width:400px;height:auto;">
             <div>
-                <a href="{% url 'UnitContent' %}" class="btn btn-signup btn-lg">
+                <a href="{% url 'index' %}" class="btn btn-signup btn-lg">
                     Go back to the Home Page!
                 </a>
             </div>
