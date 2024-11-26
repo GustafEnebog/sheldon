@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from textbook.views import custom_404
 
 
 urlpatterns = [
@@ -24,3 +25,6 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path("", include("textbook.urls"), name="textbook-urls"),
 ]
+
+
+handler404 = custom_404

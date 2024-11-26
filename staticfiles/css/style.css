@@ -161,7 +161,7 @@ footer a {
 }
 
 /* Footer logo positioning */
-#logo-footer {
+.logo-footer {
     margin-top: 15px;
     margin-left: 20px;
     display: flex;
@@ -555,7 +555,7 @@ button.primaryAction {
     }
 
     /* Adjust the logo in the footer */
-    #logo-footer {
+    .logo-footer {
         margin-top: 15px;
         display: flex;
         align-items: center;

@@ -88,7 +88,7 @@ def profile(request):
 
 
 # Custom error pages
-def handler404(request, exception):
+def custom_404(request, exception=None):
     return render(request, '404.html', status=404)
 
 
