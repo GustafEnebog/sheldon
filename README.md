@@ -501,8 +501,11 @@ Situational Awarenes*
 the Situational Awareness-"panel" helps the user keep track of where he has been and what he has done on each unit. Each unit has a text/checkbox where the user can indicate how much of the unit he has completed as well as to remember units if he want to return to them in the future. This gives the user a sense of "Situational Awareness" for the course:
 
 •	"Been here" - Text appears automatically from the first time (and onwards) the user visits the unit
+
 •	"Read" - User can check this checkbox once he has read yet not understood the unit (and therefore need to return to it later).
+
 •	"Understood" - User can check this checkbox when he considers himself "finished" with the unit. The "Read"-checkbox will be automatically checked (if it was note already by the user) when the "Understood"-checkbox is checked.
+
 •	"Bookmark" - User can bookmark pages for future refence
 
 This will be reflected with color coding of the units in the Syllabus:
@@ -731,7 +734,7 @@ Technologies used
 - [Balsamiq](https://balsamiq.com/) - to create the wireframes.
 - [Font Awesome](https://fontawesome.com/) - for all the site icons.
 - [Favicon](https://favicon.io/) - for the favicon.
-- [Coolers](https://coolers.co/) - for an overview of the chosen colour palette.
+- [Coolors](https://coolors.co/) - for an overview of the chosen colour palette.
 - [Am I Responsive](https://ui.dev/amiresponsive) - to create the responsive demo image at the top of the Readme.
 - [Lucidchart](https://www.lucidchart.com/pages/) - to create the database schemas.
 - [Code Institute’s Python Linter](https://pep8ci.herokuapp.com/) - for automated testing of the Python code.
@@ -805,7 +808,7 @@ User Story Testing (Manual testing)
 
 All user stories were tested to confirm that they meet their Acceptance Criteria. The following have all PASSED.
 
-View the original (not updated) EPICS, User Stories, Acceptance Criteria and Tasks on the GitHub [Kanban Board](https://github.com/users/GustafEnebog/projects/1/views/1?layout=board).
+View the original (not updated) EPICS, User Stories, Acceptance Criteria and Tasks on the GitHub [Kanban Board](https://github.com/users/GustafEnebog/projects/6/views/1).
 
 
 ### THEME: Administration > EPIC: User Account
