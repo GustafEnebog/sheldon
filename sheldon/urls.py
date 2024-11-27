@@ -27,7 +27,8 @@ urlpatterns = [
 ]
 
 
-handler403 = custom_403
-handler404 = custom_404
-handler405 = custom_405
-handler500 = custom_500
+# Set the handlers to your custom view
+handler403 = 'textbook.views.custom_403'
+handler404 = 'textbook.views.custom_404'
+handler405 = 'textbook.views.custom_405'
+handler500 = 'textbook.views.custom_500'
