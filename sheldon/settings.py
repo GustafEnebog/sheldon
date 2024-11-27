@@ -17,16 +17,13 @@ if os.path.isfile('env.py'):
     import env
 
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-# BASE_DIR / 'textbook/templates' REMOVE!!!!!!!!!!!!!!!!!!!!!!!!
+
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = False
-
-# ALLOWED_HOSTS = ["*"]
 
 ALLOWED_HOSTS = ["8000-gustafenebog-sheldon-snyii1xvpkq.ws.codeinstitute-ide.net", "sheldon-textbook-3b3e2a751d30.herokuapp.com"]
 

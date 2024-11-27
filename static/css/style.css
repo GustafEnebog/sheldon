@@ -127,7 +127,7 @@ header a {
 #syllabus {
     width: 100%;
     margin: 0; /* Remove any unwanted margin */
-    padding: 0; /* Remove any padding, but if you want padding, you can add it back */
+    padding: 0; /* Remove any padding */
 }
 
 /* Removes horizontal padding and sets container width to 100% */
@@ -172,7 +172,7 @@ footer a {
 
 /* The container that holds the logo */
 .logo-container {
-    position: relative; /* Ensure positioning works correctly */
+    position: relative;
     display: block;
     overflow-x: visible; /* Allow image to overflow horizontally */
     width: 100%; /* The container takes up the full width */

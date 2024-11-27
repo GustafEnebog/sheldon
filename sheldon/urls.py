@@ -27,4 +27,7 @@ urlpatterns = [
 ]
 
 
+handler403 = custom_403
 handler404 = custom_404
+handler405 = custom_405
+handler500 = custom_500

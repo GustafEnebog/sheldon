@@ -17,4 +17,7 @@ urlpatterns = [
 ]
 
 # Set the handler404 to your custom view
+handler403 = 'textbook.views.custom_403'
 handler404 = 'textbook.views.custom_404'
+handler405 = 'textbook.views.custom_405'
+handler500 = 'textbook.views.custom_500'
