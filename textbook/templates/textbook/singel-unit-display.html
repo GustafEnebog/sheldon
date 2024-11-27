@@ -21,9 +21,13 @@
                     </div>
                 </div>
                 <!-- Displaying "unit content" -->
+                {% if unit.content %}
                 <p class="card-text">
                     {{ unit.content | safe }}
                 </p>
+                {% else %}
+                <p class="card-text">No content available.</p>
+                {% endif %}
                 <!-- Displaying Cloudinary image -->
                 {% if "placeholder" in unit.featured_image.url %}
                 <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">

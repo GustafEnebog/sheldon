@@ -2,10 +2,10 @@ from . import views
 from django.urls import path
 
 from django.conf import settings
-# from django.conf.urls import handler403, handler404, handler405, handler500
 from django.contrib import admin
 from textbook import views
 from textbook.views import custom_404
+
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
