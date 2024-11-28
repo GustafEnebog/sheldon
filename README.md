@@ -925,10 +925,14 @@ Unit page (sears-haack-body):
 
 **WebAIM WAVE, Web Accessibility Testing**
 
-All pages were tested with the [WAVE tool](https://wave.webaim.org/).
+All pages were tested with the [WAVE tool](https://wave.webaim.org/), syllabus-page, unit-page, login-page, sign up-page. Please see: [Bugs](#bugs)-chapter for an explenation of the error on the signup page.
 
-![lwave-tool for syllabus-page](images-for-readme/wave-tool-summary-syllabus.jpg)
-![wave-tool for unit-page](images-for-readme/wave-tool-summary-unit-detail.jpg)
+<img src="images-for-readme/wave-landing-page.png" width="200" height="auto">
+<img src="images-for-readme/wave-f-102-delta-dagger.png" width="200" height="auto">
+<img src="images-for-readme/wave-login.png" width="200" height="auto">
+<img src="images-for-readme/wave-sign-up-one-error.png" width="200" height="auto">
+
+<br>
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 User Story Testing (Manual testing)
@@ -1261,10 +1265,11 @@ Unfixed Bugs
 </details>
 <br>
 
-| "The aria-describedby attribute must point to an element in the same document" | The error thrown for the "signup" does not come from my own code but most likely crispy forms. (disconnection of Summernote have not silenst the error)|
+| "The aria-describedby attribute must point to an element in the same document" | The error thrown for the "signup" (in both the W3 validator and the Wave-web accessibility evaluation tool) does not come from my own code but most likely crispy forms. (disconnection of Summernote have not silenst the error)|
 
 <details><summary></summary>
 <img src="images-for-readme/w3-error-unit-f-102-signup.png">
+<img src="images-for-readme/wave-sign-up-one-error-explenation.png">
 </details>
 <br>
 
