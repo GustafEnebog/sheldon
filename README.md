@@ -191,24 +191,82 @@ Name/logo of Educational Institution (Header)
 
 The logo of the name of the Eduational Institution ("University of Southern California" in my example) is currently hardcoded.
 
-<img src="" width="700" height="auto">
+<img src="images-for-readme/logo-educational-inst.jpg" width="700" height="auto">
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Authentication
 </span>
 
-### Register and Login
 
-The user can register or login by clicking on "Register" or "Login" top right in the Header. The user is then taken to a special Register or login page
 
-<img src="images-for-readme/register-login-link.jpg" width="700" height="auto">
+
+
+<img src="images-for-readme/landing-page.png" width="700" height="auto">
+<img src="images-for-readme/orange-upon-hover.png" width="700" height="auto">
+<img src="images-for-readme/unit_page.png" width="700" height="auto">
+
+
+
+
+### Sign Up
+
+The user can sign up by clicking on "Sign up" at the top right in the Header.  
+<br>
+<img src="images-for-readme/sign-up-login.png" width="400" height="auto">
+<br>
+The user is then taken to a Sign Up page.  
+<br>
+<img src="images-for-readme/sign-up.png" width="400" height="auto">
+<br>
+Upon successful sign up the user receives a confirmation message.  
+<br>
+<img src="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" width="400" height="auto">
+
+### Login
+
+The user can log in by clicking on "Log In" at the top right in the Header.  
+<br>
+<img src="images-for-readme/sign-up-login.png" width="400" height="auto">
+<br>
+The user is then taken to a Log In page.  
+<br>
+<img src="images-for-readme/login.png" width="400" height="auto">
+<br>
+Upon successful Log In the user receives a confirmation message.  
+<br>
+<img src="images-for-readme/succes-signed-in.png" width="400" height="auto">
+
+### Password reset
+
+The user can reset his password by clicking Forgot Password? in the login section.  
+<br>
+<img src="images-for-readme/forgot-password.png" width="400" height="auto">
+<br>
+and then fill in the Password reset.  
+<br>
+<img src="images-for-readme/password-reset.png" width="400" height="auto">
+<br>
+
+Upon successful reset the user receives a confirmation message.  
+<br>
+<img src="xxxxxxxxxxxxxxxxxxxxxxxxxx" width="400" height="auto">
+<br>
 
 ### Log Out
 
-Similar too the Register and Login the user can Logout by clicking on "Logout" to the top right in the header
+Similar too the Register and Login the user can Logout by clicking on "Logout" to the top right in the header  
+<br>
+<img src="images-for-readme/logout-link.jpg" width="400" height="auto">
+<br>
+The user is asked if he realy wants to log out. 
+<br>
+<img src="images-for-readme/are-you-sure-log-out.png" width="400" height="auto">
+<br>
+Upon successful Log Out the user receives a confirmation message.  
+<br>
+<img src="images-for-readme/success-signed-out.png" width="400" height="auto">
 
-<img src="images-for-readme/logout-link.jpg" width="700" height="auto">
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Syllabus with Units*
@@ -216,40 +274,77 @@ Syllabus with Units*
 
 The course Syllabus is showing directly underneath the header and can almost be considered a part of the header since it is always showing or at least so it was intended but due to technical restrictions with Django Views the user need to return to this view with a back-button after each time having visited a view.
 
-<img src="images-for-readme/syllabus-with-units.jpg" width="700" height="auto">
+<img src="images-for-readme/syllabus-with-units.jpg" width="400" height="auto">
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Unit
 </span>
 
-The collection of teaching unit is the core of the app. A unit, is like the smallest headline in a textbook, e.g. "the Area-rule" which could be filled with text or images on a small topic. If another unit should wish to be selected the user first need to return to via the "Back to Syllabus"-button
+The collection of teaching unit is the core of the app. A unit, is like the smallest headline in a textbook, e.g. "the Area-rule" which could be filled with text or images on a small topic. If another unit should wish to be selected the user first need to return to via the "Back to Syllabus"-button  
 
-
-
-<img src="images-for-readme/unit-top.jpg" width="700" height="auto">
-
+<img src="images-for-readme/unit-top.jpg" width="400" height="auto">
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-Note
+Notes (CRUD)
 </span>
 
-A user can "take notes" at the bottom of each unit that will be saved so that the user can read his own notes when returning to a unit. These units are unique to one unit and one user so other users can not access each others notes. The notes should feature full CRUD (Create, Read, Update, and Delete)**
+### Make a Note (The C in CRUD)
 
-Click submit to save note:
+A logged in user can "take notes" at the bottom of each unit. These notes are unique to one unit and one user so other users can not access each others notes.  
+<br>
+<img src="images-for-readme/make-a-note.png" width="400" height="auto">
+<br>
 
-<img src="images-for-readme/note-made-save.jpg" width="700" height="auto">
+If the user is logged out he is, instead of seeing the notes, prompted to log in to make a note.  
+<br>
+<img src="images-for-readme/log-in-to-make-a-note.png" width="400" height="auto">
+<br>
 
-Confirmation that the note was succesfully saved!
+A confirmation message appears upon submitting a note:  
+<br>
+<img src="images-for-readme/note-successfully-saved.png" width="400" height="auto">
+<br>
 
-<img src="images-for-readme/note-succesfully-saved.jpg" width="700" height="auto">
+### View a Note (The R in CRUD)
 
-Here the user can edit his note (click "edit") or delete the note (click "delete"):
+A logged in user can View the notes that he has made in the current or previous sessions.  
+<br>
+<img src="images-for-readme/made-notes.png" width="400" height="auto">
+<br>
 
-<img src="images-for-readme/note-made-delete-edit-button.jpg" width="700" height="auto">
+### Edit a Note (the U in CRUD) 
 
-An extra safety questions before deleting note:
+A user can Edit a note that he has created in a current or previous session by clicking "Edit" right below the note.  
+<br>
+<img src="images-for-readme/delete-edit-note-first-step.png" width="400" height="auto">
+<br>
 
-<img src="images-for-readme/delete-comment-second-button.jpg" width="700" height="auto">
+A logged in user can then Edit the notes (or cancel) that he has made in the current or previous sessions.  
+<br>
+<img src="images-for-readme/edit_note.png" width="400" height="auto">
+<br>
+
+When the user clicks Save Changes he will receive a confirmation message that the note has been successfully edited.  
+<br>
+<img src="images-for-readme/note-succesfully-uppdated.png" width="400" height="auto">
+<br>
+
+### Delete a Note (The D in CRUD)
+
+A user can Delete a note that he has created in a current or previous session by clicking "Delete" right below the note.  
+<br>
+<img src="images-for-readme/delete-edit-note-first-step.png" width="400" height="auto">
+<br>
+
+An extra safety questions is provided before deleting the note:  
+<br>
+<img src="images-for-readme/delete-note-modal.png" width="400" height="auto">
+<br>
+
+The user will receive a confirmation message that the note has been successfully deleted.  
+<br>
+<img src="images-for-readme/note-deleted.png" width="400" height="auto">
+<br>
 
 ** Please see "Unfixed Bugs"
 
@@ -261,6 +356,13 @@ The footer is divided into two sections, a left section where Sheldon related it
 
 <img src="images-for-readme/footer.jpg" width="700" height="auto">
 
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Responsiveness
+</span>
+
+The responsiveness is based on stacking the element on top of each other combined with shrinking the elements
+<img src="images-for-readme/responsiveness.jpg" width="500" height="auto">
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Error messages
