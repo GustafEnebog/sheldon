@@ -16,6 +16,7 @@ Special attention has been given to the UX of the app given special care to give
 - [AGILE DEVELOPMENT](#agile-development)
 - [USER EXPERIENCE (UX)](#user-experience-ux)
 - [FEATURES](#features)
+- [CRUD](#crud)
 - [FEATURES TO IMPLEMENT IN THE FUTURE](#features-to-implement-in-the-future-out-of-scoop-features)
 - [TECHNOLOGIES AND DESIGN PRINCIPLES](#technologies-and-design-principles)
 - [TESTING](#testing)
@@ -298,65 +299,7 @@ The collection of teaching unit is the core of the app. A unit, is like the smal
 Notes (CRUD)
 </span>
 
-### Make a Note (The C in CRUD)
-
-A logged in user can "take notes" at the bottom of each unit. These notes are unique to one unit and one user so other users can not access each others notes.  
-<br>
-<img src="images-for-readme/make-a-note.png" width="400" height="auto">
-<br>
-
-If the user is logged out he is, instead of seeing the notes, prompted to log in to make a note.  
-<br>
-<img src="images-for-readme/log-in-to-make-a-note.png" width="400" height="auto">
-<br>
-
-A confirmation message appears upon submitting a note:  
-<br>
-<img src="images-for-readme/note-successfully-saved.png" width="400" height="auto">
-<br>
-
-### View a Note (The R in CRUD)
-
-A logged in user can View the notes that he has made in the current or previous sessions.  
-<br>
-<img src="images-for-readme/made-notes.png" width="400" height="auto">
-<br>
-
-### Edit a Note (the U in CRUD) 
-
-A user can Edit a note that he has created in a current or previous session by clicking "Edit" right below the note.  
-<br>
-<img src="images-for-readme/delete-edit-note-first-step.png" width="400" height="auto">
-<br>
-
-A logged in user can then Edit the notes (or cancel) that he has made in the current or previous sessions.  
-<br>
-<img src="images-for-readme/edit_note.png" width="400" height="auto">
-<br>
-
-When the user clicks Save Changes he will receive a confirmation message that the note has been successfully edited.  
-<br>
-<img src="images-for-readme/note-succesfully-uppdated.png" width="400" height="auto">
-<br>
-
-### Delete a Note (The D in CRUD)
-
-A user can Delete a note that he has created in a current or previous session by clicking "Delete" right below the note.  
-<br>
-<img src="images-for-readme/delete-edit-note-first-step.png" width="400" height="auto">
-<br>
-
-An extra safety questions is provided before deleting the note:  
-<br>
-<img src="images-for-readme/delete-note-modal.png" width="400" height="auto">
-<br>
-
-The user will receive a confirmation message that the note has been successfully deleted.  
-<br>
-<img src="images-for-readme/note-deleted.png" width="400" height="auto">
-<br>
-
-** Please see "Unfixed Bugs"
+For information on the Notes, please see the chapter: [CRUD](#crud)
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Footer
@@ -400,6 +343,74 @@ Sheldon-themed error-pages has been create in order to somwhat mitigate the nega
 
 <img src="images-for-readme/error-page-500.jpg" width="700" height="auto">
 
+<br>
+
+# <span style="color:orange;font-weight:700;font-size:22px">CRUD</span>
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Make a Note (The C in CRUD)
+</span>
+
+A logged in user can "take notes" at the bottom of each unit. These notes are unique to one unit and one user so other users can not access each others notes.  
+<br>
+<img src="images-for-readme/make-a-note.png" width="400" height="auto">
+<br>
+
+If the user is logged out he is, instead of seeing the notes, prompted to log in to make a note.  
+<br>
+<img src="images-for-readme/log-in-to-make-a-note.png" width="400" height="auto">
+<br>
+
+A confirmation message appears upon submitting a note:  
+<br>
+<img src="images-for-readme/note-successfully-saved.png" width="400" height="auto">
+<br>
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+View a Note (The R in CRUD)
+</span>
+
+A logged in user can View the notes that he has made in the current or previous sessions.  
+<br>
+<img src="images-for-readme/made-notes.png" width="400" height="auto">
+<br>
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Edit a Note (the U in CRUD)
+</span>
+
+A user can Edit a note that he has created in a current or previous session by clicking "Edit" right below the note.  
+<br>
+<img src="images-for-readme/delete-edit-note-first-step.png" width="400" height="auto">
+<br>
+
+A logged in user can then Edit the notes (or cancel) that he has made in the current or previous sessions.  
+<br>
+<img src="images-for-readme/edit_note.png" width="400" height="auto">
+<br>
+
+When the user clicks Save Changes he will receive a confirmation message that the note has been successfully edited.  
+<br>
+<img src="images-for-readme/note-succesfully-uppdated.png" width="400" height="auto">
+<br>
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Delete a Note (The D in CRUD)
+</span>
+
+A user can Delete a note that he has created in a current or previous session by clicking "Delete" right below the note.  
+<br>
+<img src="images-for-readme/delete-edit-note-first-step.png" width="400" height="auto">
+<br>
+
+An extra safety questions is provided before deleting the note:  
+<br>
+<img src="images-for-readme/delete-note-modal.png" width="400" height="auto">
+<br>
+
+The user will receive a confirmation message that the note has been successfully deleted.  
+<br>
+<img src="images-for-readme/note-deleted.png" width="400" height="auto">
 <br>
 
 # <span style="color:orange;font-weight:700;font-size:22px">FEATURES TO IMPLEMENT IN THE FUTURE (Out of scoop features)</span>
@@ -935,8 +946,25 @@ USER STORY: 1. As a **user**, I can **sign up and log in** to the site to **View
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
 | AC1 | Personal information can be added to the user profile | User should be able to add and save personal information to their profile. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC2 | A user can sign up with username/password | User should be able to sign up successfully with their username and password. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC3 | A user can sign in with username/password | User should be able to log in successfully with their username and password. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
 
 <br>
 
@@ -947,9 +975,32 @@ USER STORY: 2. As an **admin**, I can **create, read, update and delete (CRUD) M
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
 | AC1 | Course content can be created in Django Admin panel | Admin should be able to create course content in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC2 | Course content can be read in Django Admin panel | Admin should be able to read/view course content in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC3 | Course content can be updated in Django Admin panel | Admin should be able to update existing course content in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC4 | Course content can be deleted in Django Admin panel | Admin should be able to delete course content from the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
 
 <br>
 
@@ -958,7 +1009,18 @@ USER STORY: 3. As an **admin**, I can **check a "Draft"-check box**, to **prohib
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
 | AC1 | A course unit can be flagged as "Draft" in the Django admin panel | Admin should be able to flag a course unit as "Draft" in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC2 | A "Draft"-flagged unit in the Django admin panel is not eligible for publishing | A unit flagged as "Draft" should not be eligible for publishing in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
 
 <br>
 
@@ -967,7 +1029,18 @@ USER STORY: 4. As an app **admin**, I can **put together a course by selecting a
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
 | AC1 | Given a logged-in user, they can save a draft noted | Admin should be able to save a draft of the course content. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC2 | Then they can finish the content at a later time | Admin should be able to return and complete the course content at a later time. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
 
 <br>
 
@@ -976,10 +1049,39 @@ USER STORY: 5. As an app **admin**, I can **view a list of all Modules/Units and
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
 | AC1 | Given a logged-in admin, they can view a list of all *modules* | Admin should be able to view a list of all modules. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC2 | Given a logged-in admin, they can view a list of all *units* | Admin should be able to view a list of all units. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC3 | Given a logged-in admin, they can choose a number of units for a course | Admin should be able to select multiple units for a course. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC4 | Given a logged-in admin, they can choose a number of modules for a course | Admin should be able to select multiple modules for a course. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC5 | Given a logged-in admin, they can "populate" the selected modules with selected number of units for a course | Admin should be able to populate modules with selected units for a course. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
 
 <br>
 
@@ -988,10 +1090,39 @@ USER STORY: 6. As an app **admin**, I can **view a list of all Modules/Units and
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
 | AC1 | Given a logged-in admin, they can view a list of all *modules* | Admin should be able to view a list of all modules. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC2 | Given a logged-in admin, they can view a list of all *units* | Admin should be able to view a list of all units. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC3 | Given a logged-in admin, they can choose a number of units for a course | Admin should be able to select multiple units for a course. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC4 | Given a logged-in admin, they can choose a number of modules for a course | Admin should be able to select multiple modules for a course. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC5 | Given a logged-in admin, they can "populate" the selected modules with selected number of units for a course | Admin should be able to populate modules with selected units for a course. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
 
 <br>
 
@@ -1005,6 +1136,11 @@ USER STORY: 8. As a **user**, I can **have different units open in the same brow
 |-------------------------|--------------------------------------|---------------------|-----------------|
 | AC1 | I can right-click a unit and select "open link in new tab" or "open link in new window" | User should be able to right-click a unit and open it in a new tab or window. | <span style="color:#4CAF50;">PASS</span> |
 
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 <br>
 
 <span style="color: orange;">**Please see chapter "Future User Stories" for plannede User stories 9 - 18**</span>
@@ -1016,7 +1152,18 @@ USER STORY: 19. As a **user**, I can **write, edit or delete text on a Note**, t
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
 | AC1 | Notes can be used for writing and editing notes. | The user should be able to write and edit notes. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC2 | I can delete a note by deleting all the content in a note. | The Note should be cleared when all content is deleted. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
 
 <br>
 
@@ -1029,9 +1176,32 @@ USER STORY: 23. As a **user**, I will **see a humorous 403, 404, 405 and 500 err
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
 | AC1 | A 403 page is created and "connected". | The 403 error page should be displayed when access is forbidden (e.g., no permission to view resource). | <span style="color:#4CAF50;">Not been able to test</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC2 | A 404 page is created and "connected". | The 404 error page should be displayed when the requested resource is not found. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC2 | A 405 page is created and "connected". | The 405 error page should be displayed when a request method is not allowed (e.g., trying to use POST where only GET is allowed). | <span style="color:#4CAF50;">Not been able to test</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
+
 | AC2 | A 500 page is created and "connected". | The 500 error page should be displayed for server errors (e.g., issues with the server or code execution). | <span style="color:#4CAF50;">Not been able to test</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
 
 <br>
 
@@ -1042,6 +1212,11 @@ USER STORY: 24. As a **developer**, I can **deploy to a hosting service**, so th
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
 | AC1 | Functioning deployment to Heroku. | The site should be successfully deployed to Heroku and accessible to the public. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="">
+</details>
+<br>
 
 <br>
 
@@ -1070,10 +1245,29 @@ Fixed Bugs
 Unfixed Bugs
 </span>
 
-| Bug |
-| --- |
-| - |
-| The notes are displayed at the moment without showing any paragraph breaks that can be seen inside the Django admin panel. |
+| Bug | Comment |
+| --- | --- |
+| "No p element in scope but a p end tag seen" | The error thrown for all of the "units" probably comes from my own code (and not an API). Other errors of this type was solved by wrapping, for example, `{{ unit.content | safe }}` in an if statement to handle situations when there the unit.content is empty however this error could not be solved this way |
+
+<details><summary></summary>
+<img src="images-for-readme/w3-error-unit-f-102-delta-dagger-p-element.png">
+</details>
+<br>
+
+| "The font element is obsolete" | The error thrown for some of the "units" does not come from my own code but most likely crispy forms. (disconnection of Summernote have not silenst this error) |
+
+<details><summary></summary>
+<img src="images-for-readme/w3-error-unit-f-102-delta-dagger-font-element.png">
+</details>
+<br>
+
+| "The aria-describedby attribute must point to an element in the same document" | The error thrown for the "signup" does not come from my own code but most likely crispy forms. (disconnection of Summernote have not silenst the error)|
+
+<details><summary></summary>
+<img src="images-for-readme/w3-error-unit-f-102-signup.png">
+</details>
+<br>
+
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Code Outtakes
