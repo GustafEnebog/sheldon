@@ -4,15 +4,14 @@ from .models import Module
 from .models import Unit
 from .models import UserProgress
 from .models import Note
-# from django_summernote.admin import SummernoteModelAdmin
+from django_summernote.admin import SummernoteModelAdmin
 
 from django.contrib import admin
 from .models import Syllabus, Module, Unit, UserProgress, Note
 
 
 @admin.register(Syllabus)
-# class SyllabusAdmin(SummernoteModelAdmin):
-class SyllabusAdmin(admin.ModelAdmin):  # Changed to ModelAdmin temporarily
+class SyllabusAdmin(SummernoteModelAdmin):
 
     list_display = ('syllabus_title', 'syllabus_slug', 'status_syllabus')
     search_fields = ['syllabus_title']
@@ -21,8 +20,7 @@ class SyllabusAdmin(admin.ModelAdmin):  # Changed to ModelAdmin temporarily
 
 
 @admin.register(Module)
-# class ModuleAdmin(SummernoteModelAdmin):
-class ModuleAdmin(admin.ModelAdmin):  # Changed to ModelAdmin temporarily
+class ModuleAdmin(SummernoteModelAdmin):
 
     list_display = ('module_title', 'module_slug', 'status_module')
     search_fields = ['module_title']
@@ -31,8 +29,7 @@ class ModuleAdmin(admin.ModelAdmin):  # Changed to ModelAdmin temporarily
 
 
 @admin.register(Unit)
-# class UnitAdmin(SummernoteModelAdmin):
-class UnitAdmin(admin.ModelAdmin):  # Changed to ModelAdmin temporarily
+class UnitAdmin(SummernoteModelAdmin):
 
     list_display = ('unit_title', 'unit_slug', 'status_unit')
     search_fields = ['unit_title']
@@ -41,8 +38,7 @@ class UnitAdmin(admin.ModelAdmin):  # Changed to ModelAdmin temporarily
 
 
 @admin.register(UserProgress)
-# class UserProgressAdmin(SummernoteModelAdmin):
-class UserProgressAdmin(admin.ModelAdmin):  # Changed to ModelAdmin temporarily
+class UserProgressAdmin(SummernoteModelAdmin):
 
     list_display = ('user_notes', 'user_notes')
     search_fields = ['user_notes']
@@ -50,7 +46,6 @@ class UserProgressAdmin(admin.ModelAdmin):  # Changed to ModelAdmin temporarily
 
 
 @admin.register(Note)
-# class NoteAdmin(SummernoteModelAdmin):
-class NoteAdmin(admin.ModelAdmin):  # Changed to ModelAdmin temporarily
+class NoteAdmin(SummernoteModelAdmin):
 
     list_display = ('created_on', 'body')

@@ -22,7 +22,7 @@ from textbook.views import custom_404
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
-    # path('summernote/', include('django_summernote.urls')),
+    path('summernote/', include('django_summernote.urls')),
     path("", include("textbook.urls"), name="textbook-urls"),
 ]
 
