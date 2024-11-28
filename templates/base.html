@@ -97,10 +97,8 @@
                         <div style="padding: 15px 0px 15px 0px">
                             {% block syllabus %}
                             <div class="btn-group">
-                                <a href="{% url 'index' %}">
-                                    <button type="button">Back to Syllabus</button>
-                                </a>
-                            </div>
+                                <button type="button" onclick="window.location.href='{% url 'index' %}'">Back to Syllabus</button>
+                            </div>  
                             {% endblock syllabus %}
                         </div>
                     </div>

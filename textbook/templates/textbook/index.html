@@ -6,15 +6,15 @@
 <!-- ********** Syllabus ********** -->
 {% block syllabus %}
 {% if unit_list %}
-    {% for unit in unit_list %}
-    <div class="btn-group user-progress-styling">
-        <a href="{% url 'unit_detail' unit.unit_slug %}">
-            <button type="button">{{ unit.unit_title }}</button>
-        </a>
-    </div>
-    {% endfor %}
+{% for unit in unit_list %}
+<div class="btn-group user-progress-styling">
+    <button type="button" onclick="window.location.href='{% url 'unit_detail' unit.unit_slug %}'">
+        {{ unit.unit_title }}
+    </button>
+</div>
+{% endfor %}
 {% else %}
-    <p>No units available.</p>
+<p>No units available.</p>
 {% endif %}
 {% endblock syllabus %}
 <!-- ********** END OF Syllabus ********** -->
