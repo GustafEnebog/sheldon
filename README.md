@@ -176,38 +176,44 @@ The database models are implemented according to the below Entity Relationship D
 ![ERD Sheldon](images-for-readme/sheldon-erd.png)
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
+Landing page.
+</span>
+
+This is the first page that meets the user. This page allows the user to select a unit in the Syllabus (grey backgropund.)  
+<br>
+<img src="images-for-readme/landing-page.png" width="700" height="auto">
+<br>
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
+Unit page
+</span>
+
+Unit page with unit and notes.  
+<br>
+<img src="images-for-readme/unit-page-complete.png" width="700" height="auto">
+<br>
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
 Favicon
 </span>
 
 The first letter of the APP name 'Sheldon' serve as the "small space" version of the logo.
 
+<br>
 <img src="images-for-readme/tabs.png">
-
 <br>
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Name/logo of Educational Institution (Header)
 </span>
 
-The logo of the name of the Eduational Institution ("University of Southern California" in my example) is currently hardcoded.
+The logo of the name of the Educational Institution ("University of Southern California" in my example) is currently hardcoded.
 
 <img src="images-for-readme/logo-educational-inst.jpg" width="700" height="auto">
-
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Authentication
 </span>
-
-
-
-
-
-<img src="images-for-readme/landing-page.png" width="700" height="auto">
-<img src="images-for-readme/orange-upon-hover.png" width="700" height="auto">
-<img src="images-for-readme/unit_page.png" width="700" height="auto">
-
-
-
 
 ### Sign Up
 
@@ -219,9 +225,13 @@ The user is then taken to a Sign Up page.
 <br>
 <img src="images-for-readme/sign-up.png" width="400" height="auto">
 <br>
+A user that already have an account that have mistakenly landed on the sign up page is here also given a chance to divert to the login page.  
+<br>
+<img src="images-for-readme/already-an-account.png" width="400" height="auto">
+<br>
 Upon successful sign up the user receives a confirmation message.  
 <br>
-<img src="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" width="400" height="auto">
+<img src="images-for-readme/sign-up-confirmation-message.png" width="400" height="auto">
 
 ### Login
 
@@ -355,15 +365,19 @@ Footer
 The footer is divided into two sections, a left section where Sheldon related items, e.g. Social media links for the Sheldon Product is displaied and a middle/right section where the Eduational Institution that is using the Sheldon app can display its information, e.g. contact info.
 
 <img src="images-for-readme/footer.jpg" width="700" height="auto">
-
+<br>
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-Responsiveness
+Responsiveness  
 </span>
 
-The responsiveness is based on stacking the element on top of each other combined with shrinking the elements
+<br>
+The responsiveness is based on stacking the element on top of each other combined with shrinking the elements  
+
+<br>
 <img src="images-for-readme/responsiveness.jpg" width="500" height="auto">
 
+<br>
 <span style="color:#1591ea;font-weight:700;font-size:20px">
 Error messages
 </span>
@@ -386,6 +400,7 @@ Sheldon-themed error-pages has been create in order to somwhat mitigate the nega
 
 <img src="images-for-readme/error-page-500.jpg" width="700" height="auto">
 
+<br>
 
 # <span style="color:orange;font-weight:700;font-size:22px">FEATURES TO IMPLEMENT IN THE FUTURE (Out of scoop features)</span>
 
@@ -1032,7 +1047,7 @@ USER STORY: 24. As a **developer**, I can **deploy to a hosting service**, so th
 
 The following devices and browsers were used for manual & responsive UI testing.
 
-- iPhone 11 (2020)
+- iPhone 11 (2020) and iPhone 5 (2020)
     - Safari (v16)
     - Chrome (v114)
 - Think Pad P1
@@ -1158,13 +1173,13 @@ Forking the GitHub Repository
 
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/timgoalen/command-line-coffee)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/GustafEnebog/sheldon)
 2. At the top right of the Repository, just below the GitHub navbar, click on the "Fork" Button.
 3. You should now have a copy of the original repository in your GitHub account.
 
 ## Making a Local Clone
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/timgoalen/command-line-coffee)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/GustafEnebog/sheldon)
 2. Above the list of files, click "Code".
 3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
 4. Open Git Bash
