@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponseForbidden
-from .models import Unit, Note
+from .models import Unit, Note, UserProgress
 from .forms import NoteForm
 from django.contrib.auth.decorators import login_required
 
@@ -15,7 +15,20 @@ class UnitListView(generic.ListView):
 
 def unit_detail(request, unit_slug):
     unit = get_object_or_404(Unit.objects.filter(status_unit=1), unit_slug=unit_slug)
+    
+    # Initialize the "visited" variable
+    visited = False
+
     if request.user.is_authenticated:
+        # Check if the user has already visited the unit
+        user_progress = UserProgress.objects.filter(user_id=request.user, unit_id=unit).first()
+        
+        if user_progress:
+            visited = True  # The user has visited before
+        else:
+            # If no visit exists, create a new UserProgress record
+            UserProgress.objects.create(user_id=request.user, unit_id=unit)
+        
         # If logged in, display only the user's own notes
         notes = unit.unit_note.filter(user_id=request.user).order_by("-created_on")
     else:
@@ -40,6 +53,7 @@ def unit_detail(request, unit_slug):
         "notes": notes,
         "notes_form": notes_form,
         "unit_id": unit.unit_id,  # Pass the unit ID to the template
+        "visited": visited,  # Pass the "visited" status to the template
     })
 
 

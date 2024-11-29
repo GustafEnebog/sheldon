@@ -23,7 +23,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["8000-gustafenebog-sheldon-snyii1xvpkq.ws.codeinstitute-ide.net", "sheldon-textbook-3b3e2a751d30.herokuapp.com"]
 
