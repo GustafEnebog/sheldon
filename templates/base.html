@@ -57,7 +57,7 @@
                 <div class="col-sm-6">
                     <div>
                         <a href="https://www.usc.edu/" target="_blank"><img src="{% static  'images/usc-logo.png'%}"
-                                id="user-logo" alt="University of Southern California logo"></a>
+                                id="logo" alt="University of Southern California logo"></a>
                     </div>
                 </div>
                 <div class="col-sm-2" id="header-login">
@@ -66,18 +66,18 @@
                         {% if user.is_authenticated %}
                         <div class="nav-item">
                             <!-- If logged in, show username and link to profile -->
-                            <a class="nav-link" href="{{ user.get_absolute_url }}">{{ user.username }}</a>
+                            <a class="nav-link" id="nav-head" href="{{ user.get_absolute_url }}">{{ user.username }}</a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
+                            <a class="nav-link" id="nav-head" href="{% url 'account_logout' %}">Log Out</a>
                         </div>
                         {% else %}
                         <!-- Show login and register links if user is not authenticated -->
                         <div class="nav-item">
-                            <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+                            <a class="nav-link" id="nav-head" href="{% url 'account_signup' %}">Sign Up</a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
+                            <a class="nav-link" id="nav-head" href="{% url 'account_login' %}">Log In</a>
                         </div>
                         {% endif %}
                     </div>
