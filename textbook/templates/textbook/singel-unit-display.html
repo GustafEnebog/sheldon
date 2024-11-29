@@ -3,12 +3,12 @@
 {% block been_here_message %}
 {% if user.is_authenticated %}
 {% if visited %}
-<div class="alert alert-info" role="alert">
-    You have been here before!
+<div>
+    Been here!
 </div>
 {% else %}
-<div class="alert alert-info" role="alert">
-    This is your first visit to this unit.
+<div>
+    First visit
 </div>
 {% endif %}
 {% endif %}
