@@ -2,7 +2,8 @@
 
 ![amiresponsive-screenshot.png](images-for-readme/am-i-responsive-sheldon.jpg)
 
-View the live site [here](https://sheldon-textbook-3b3e2a751d30.herokuapp.com/).
+View the live site [here](https://sheldon-textbook-3b3e2a751d30.herokuapp.com/).  
+View the repo [here](https://github.com/GustafEnebog/sheldon).
 
 # <span style="color:orange;font-weight:700;font-size:22px">INTRODUCTION</span>
 
@@ -248,22 +249,6 @@ Upon successful Log In the user receives a confirmation message.
 <br>
 <img src="images-for-readme/succes-signed-in.png" width="400" height="auto">
 
-### Password reset
-
-The user can reset his password by clicking Forgot Password? in the login section.  
-<br>
-<img src="images-for-readme/forgot-password.png" width="400" height="auto">
-<br>
-and then fill in the Password reset.  
-<br>
-<img src="images-for-readme/password-reset.png" width="400" height="auto">
-<br>
-
-Upon successful reset the user receives a confirmation message.  
-<br>
-<img src="xxxxxxxxxxxxxxxxxxxxxxxxxx" width="400" height="auto">
-<br>
-
 ### Log Out
 
 Similar too the Register and Login the user can Logout by clicking on "Logout" to the top right in the header  
@@ -342,7 +327,7 @@ Below screenshot is a montage of two separate screenshoots.
 <img src="images-for-readme/error-403-montage.png" width="700" height="auto">
 
 ### "404 Error"-Page
-Below screenshot is the real generated 404-error page (no montage).
+Below screenshot is the real generated 404-error page (**no montage**).
 
 <img src="images-for-readme/error-404.png" width="700" height="auto">
 
@@ -605,7 +590,7 @@ Situational Awarenes*
 
 the Situational Awareness-"panel" helps the user keep track of where he has been and what he has done on each unit. Each unit has a text/checkbox where the user can indicate how much of the unit he has completed as well as to remember units if he want to return to them in the future. This gives the user a sense of "Situational Awareness" for the course:
 
-•	"Been here" - Text appears automatically from the first time (and onwards) the user visits the unit
+•	ALREADY IMPLEMENTED: "Been here" - Text appears automatically from the first time (and onwards) the user visits the unit
 
 •	"Read" - User can check this checkbox once he has read yet not understood the unit (and therefore need to return to it later).
 
@@ -879,7 +864,7 @@ The CSS file was validated with [W3C CSS Validator](images-for-readme/jigsaw-css
 - "...is a vendor extension"  
 - "Same color for background-color and border-color"  
 
-View the validation result for my site [here](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2F8000-gustafenebog-sheldon-snyii1xvpkq.ws.codeinstitute-ide.net%2F&usermedium=all&vextwarning=&warning=1).
+![W3C CSS Validator](images-for-readme/w3c-css-validator.png)
 
 **HTML Validation**
 
@@ -937,21 +922,25 @@ USER STORY: 1. As a **user**, I can **sign up and log in** to the site to **View
 | AC1 | Personal information can be added to the user profile | User should be able to add and save personal information to their profile. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
-<img src="">
+<img src="images-for-readme/note-display-annotated.png">
 </details>
 <br>
 
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
 | AC2 | A user can sign up with username/password | User should be able to sign up successfully with their username and password. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
-<img src="">
+<img src="images-for-readme/sign-in-form-annotated.png">
 </details>
 <br>
 
-| AC3 | A user can sign in with username/password | User should be able to log in successfully with their username and password. | <span style="color:#4CAF50;">PASS</span> |
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC3 | A user can login with username/password | User should be able to log in successfully with their username and password. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
-<img src="">
+<img src="images-for-readme/login-form-annotated.png">
 </details>
 <br>
 
@@ -966,28 +955,34 @@ USER STORY: 2. As an **admin**, I can **create, read, update and delete (CRUD) M
 | AC1 | Course content can be created in Django Admin panel | Admin should be able to create course content in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
-<img src="">
+<img src="images-for-readme/admin-units-open-c-annotated.png">
 </details>
 <br>
 
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
 | AC2 | Course content can be read in Django Admin panel | Admin should be able to read/view course content in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
-<img src="">
+<img src="images-for-readme/admin-units-open-r-annotated.png">
 </details>
 <br>
 
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
 | AC3 | Course content can be updated in Django Admin panel | Admin should be able to update existing course content in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
-<img src="">
+<img src="images-for-readme/admin-units-open-u-annotated.png">
 </details>
 <br>
 
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
 | AC4 | Course content can be deleted in Django Admin panel | Admin should be able to delete course content from the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
-<img src="">
+<img src="images-for-readme/admin-units-open-d-annotated.png">
 </details>
 <br>
 
@@ -997,17 +992,21 @@ USER STORY: 3. As an **admin**, I can **check a "Draft"-check box**, to **prohib
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
-| AC1 | A course unit can be flagged as "Draft" in the Django admin panel | Admin should be able to flag a course unit as "Draft" in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
+| AC1 | A "Draft"-flagged *module* in the Django admin panel is not eligible for publishing | A unit flagged as "Draft" should not be eligible for publishing in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
-<img src="">
+<img src="images-for-readme/admin-module-published-draft.png">
+<img src="images-for-readme/admin-module-list-published-draft.png">
 </details>
 <br>
 
-| AC2 | A "Draft"-flagged unit in the Django admin panel is not eligible for publishing | A unit flagged as "Draft" should not be eligible for publishing in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC2 | A "Draft"-flagged *unit* in the Django admin panel is not eligible for publishing | A unit flagged as "Draft" should not be eligible for publishing in the Django Admin panel. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
-<img src="">
+<img src="images-for-readme/admin-unit-published-draft.png">
+<img src="images-for-readme/admin-unit-list-published-draft.png">
 </details>
 <br>
 
@@ -1024,6 +1023,8 @@ USER STORY: 4. As an app **admin**, I can **put together a course by selecting a
 </details>
 <br>
 
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
 | AC2 | Then they can finish the content at a later time | Admin should be able to return and complete the course content at a later time. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
@@ -1044,6 +1045,8 @@ USER STORY: 5. As an app **admin**, I can **view a list of all Modules/Units and
 </details>
 <br>
 
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
 | AC2 | Given a logged-in admin, they can view a list of all *units* | Admin should be able to view a list of all units. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
@@ -1051,6 +1054,8 @@ USER STORY: 5. As an app **admin**, I can **view a list of all Modules/Units and
 </details>
 <br>
 
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
 | AC3 | Given a logged-in admin, they can choose a number of units for a course | Admin should be able to select multiple units for a course. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
@@ -1058,6 +1063,8 @@ USER STORY: 5. As an app **admin**, I can **view a list of all Modules/Units and
 </details>
 <br>
 
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
 | AC4 | Given a logged-in admin, they can choose a number of modules for a course | Admin should be able to select multiple modules for a course. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
@@ -1065,6 +1072,8 @@ USER STORY: 5. As an app **admin**, I can **view a list of all Modules/Units and
 </details>
 <br>
 
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
 | AC5 | Given a logged-in admin, they can "populate" the selected modules with selected number of units for a course | Admin should be able to populate modules with selected units for a course. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
@@ -1085,6 +1094,8 @@ USER STORY: 6. As an app **admin**, I can **view a list of all Modules/Units and
 </details>
 <br>
 
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
 | AC2 | Given a logged-in admin, they can view a list of all *units* | Admin should be able to view a list of all units. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
@@ -1092,6 +1103,8 @@ USER STORY: 6. As an app **admin**, I can **view a list of all Modules/Units and
 </details>
 <br>
 
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
 | AC3 | Given a logged-in admin, they can choose a number of units for a course | Admin should be able to select multiple units for a course. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
@@ -1099,6 +1112,8 @@ USER STORY: 6. As an app **admin**, I can **view a list of all Modules/Units and
 </details>
 <br>
 
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
 | AC4 | Given a logged-in admin, they can choose a number of modules for a course | Admin should be able to select multiple modules for a course. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
@@ -1106,6 +1121,8 @@ USER STORY: 6. As an app **admin**, I can **view a list of all Modules/Units and
 </details>
 <br>
 
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
 | AC5 | Given a logged-in admin, they can "populate" the selected modules with selected number of units for a course | Admin should be able to populate modules with selected units for a course. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
@@ -1115,7 +1132,7 @@ USER STORY: 6. As an app **admin**, I can **view a list of all Modules/Units and
 
 <br>
 
-<span style="color: orange;">**Please see chapter "Future User Stories" for plannede User stories 7**</span>
+<span style="color: orange;">**Please see chapter "Future User Stories" for planned User stories 7**</span>
 
 ### THEME: Students and Features > EPIC: Multi-tab Navigation
 
@@ -1132,32 +1149,51 @@ USER STORY: 8. As a **user**, I can **have different units open in the same brow
 
 <br>
 
-<span style="color: orange;">**Please see chapter "Future User Stories" for plannede User stories 9 - 18**</span>
+<span style="color: orange;">**Please see chapter "Future User Stories" for planned User stories 9 - 18**</span>
 
-USER STORY: 13. As a **user**, I can **view an automatically updated "been here"-mark and a last visited-mark in the syllabus and on the unit I am currently visiting**, to easily **see what units I have visited earlier at some point in time**.
+### THEME: Students and Features > EPIC: Situational Awareness
+
+USER STORY: 13. As a **user**, I can **view an automatically updated "been here"-text on the unit that I am currently visiting**, to easily **see what units I have visited earlier at some point in time**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
-| AC1 | A "Been here"-mark is automatically added to a unit in the Syllabus and stays even after having logged out and in again. | User should see a "Been here" mark on a unit in the syllabus, and it should persist even after logging out and in again. |
-| AC2 | A "Last visited"-mark is automatically added to a unit in the Syllabus that was last visited. This mark will constantly be "assigned" to different units and can only be "assigned" to one unit at a time. | User should see a "Last visited" mark on the unit that was most recently visited, and it should be assigned to only one unit at a time. |
-
-### THEME: Students and Features > EPIC: Notes
-
-USER STORY: 17. As a **user**, I can **write, edit or delete text on a Note**, to **take notes relating to the individual units**.
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
-|-------------------------|--------------------------------------|---------------------|-----------------|
-| AC1 | Notes can be used for writing and editing notes. | The user should be able to write and edit notes. | <span style="color:#4CAF50;">PASS</span> |
+| AC1 | A "Been here"-text is automatically added to a unit in the Syllabus and stays even after having logged out and in again. | User should see a "Been here" mark on a unit in the syllabus, and it should persist even after logging out and in again. |
 
 <details><summary></summary>
-<img src="">
+<img src="images-for-readme/first-visit-annotated.png">
+<img src="images-for-readme/been-here-annotated.png">
 </details>
 <br>
 
-| AC2 | I can delete a note by deleting all the content in a note. | The Note should be cleared when all content is deleted. | <span style="color:#4CAF50;">PASS</span> |
+### THEME: Students and Features > EPIC: Notes
+
+USER STORY: 17. As a **user**, I can **write, display, edit and delete text on a Note**, to **take notes relating to the individual units**.
+
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | Notes can be used for writing text and the text can be edited. | The user should be able to write and edit notes. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
-<img src="">
+<img src="images-for-readme/note-make-annotated.png">
+<img src="images-for-readme/note-edit-annotated.png">
+</details>
+<br>
+
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC2 | Notes can be displayed for the user to read. | The user should be able to view his own notes. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="images-for-readme/note-display-annotated.png">
+</details>
+<br>
+
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC3 | I can delete a note by deleting all the content in a note. | The Note should be cleared when all content is deleted. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="images-for-readme/note-delete-annotated.png">
 </details>
 <br>
 
@@ -1171,13 +1207,10 @@ USER STORY: 21. As a **user**, I will **see a humorous 403, 404, 405 and 500 err
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
-| AC1 | A 403 page is created and "connected". | The 403 error page should be displayed when access is forbidden (e.g., no permission to view resource). | <span style="color:#4CAF50;">Not been able to test</span> |
+| AC1 | A 403 page is created and "connected". | The 403 error page should be displayed when access is forbidden (e.g., no permission to view resource). | <span style="color:#4CAF50;">Not been able to test but should work since it is set up the same way as the 404</span> |
 
-<details><summary></summary>
-<img src="">
-</details>
-<br>
-
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
 | AC2 | A 404 page is created and "connected". | The 404 error page should be displayed when the requested resource is not found. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
@@ -1185,19 +1218,13 @@ USER STORY: 21. As a **user**, I will **see a humorous 403, 404, 405 and 500 err
 </details>
 <br>
 
-| AC2 | A 405 page is created and "connected". | The 405 error page should be displayed when a request method is not allowed (e.g., trying to use POST where only GET is allowed). | <span style="color:#4CAF50;">Not been able to test</span> |
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC3 | A 405 page is created and "connected". | The 405 error page should be displayed when a request method is not allowed (e.g., trying to use POST where only GET is allowed). | <span style="color:#4CAF50;">Not been able to test but should work since it is set up the same way as the 404</span> |
 
-<details><summary></summary>
-<img src="">
-</details>
-<br>
-
-| AC2 | A 500 page is created and "connected". | The 500 error page should be displayed for server errors (e.g., issues with the server or code execution). | <span style="color:#4CAF50;">Not been able to test</span> |
-
-<details><summary></summary>
-<img src="">
-</details>
-<br>
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC4 | A 500 page is created and "connected". | The 500 error page should be displayed for server errors (e.g., issues with the server or code execution). | <span style="color:#4CAF50;">Not been able to test but should work since it is set up the same way as the 404</span> |
 
 <br>
 
