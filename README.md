@@ -296,6 +296,15 @@ The collection of teaching unit is the core of the app. A unit, is like the smal
 <img src="images-for-readme/unit-top.jpg" width="400" height="auto">
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
+"First visit" and "Been here" user information
+</span>
+
+The first time a logged in user opens a unit he will receive a "First time"-message (to the left of the unit) showing him that this is the first time that he has clicked on this unit in the Syllabus. If the logged in user at a later point comes back to this unit the text "been here" instead appear informing him that he has been on this unit before. This adds to the users situational awareness.
+
+<img src="images-for-readme/first-visit.png" width="400" height="auto">
+<img src="images-for-readme/been-here.png" width="400" height="auto">
+
+<span style="color:#1591ea;font-weight:700;font-size:20px">
 Notes (CRUD)
 </span>
 
@@ -328,20 +337,24 @@ Error messages
 Sheldon-themed error-pages has been create in order to somwhat mitigate the negative emotion that we all feel when hitting upon an error.
 
 ### "403 Error"-Page
+Below screenshot is a montage of two separate screenshoots.
 
-<img src="images-for-readme/error-page-403.jpg" width="700" height="auto">
+<img src="images-for-readme/error-403-montage.png" width="700" height="auto">
 
 ### "404 Error"-Page
+Below screenshot is the real generated 404-error page (no montage).
 
-<img src="images-for-readme/error-page-404.jpg" width="700" height="auto">
+<img src="images-for-readme/error-404.png" width="700" height="auto">
 
 ### "405 Error"-Page
+Below screenshot is a montage of two separate screenshoots.
 
-<img src="images-for-readme/error-page-405.jpg" width="700" height="auto">
+<img src="images-for-readme/error-405-montage.png" width="700" height="auto">
 
 ### "500 Error"-Page
+Below screenshot is a montage of two separate screenshoots.
 
-<img src="images-for-readme/error-page-500.jpg" width="700" height="auto">
+<img src="images-for-readme/error-500-montage.png" width="700" height="auto">
 
 <br>
 
@@ -425,13 +438,6 @@ Future User Stories
 
 ### THEME: Administration > EPIC: User Account
 
-USER STORY: 1. As a **user**, I can **sign up and log in** to the site to **View Modules/Units with content and add notes**.
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** |
-|-------------------------|--------------------------------------|---------------------|
-| AC3 | A profile image can be added | User should be able to upload and save a profile image. | <span style="color:red;">FAIL</span> |
-| AC4 | A user can sign in with Social Network | User should be able to sign in using their social network account (e.g., Google, Facebook). |
-
 <br>
 
 ### THEME: Students and Features > EPIC: Syllabus and Navigation  
@@ -501,38 +507,9 @@ USER STORY: 12. As a **user**, I can **click on a plus sign to expand collapsed 
 
 <br>
 
-USER STORY: 13. As a **user**, I can **click on a plus sign to expand collapsed text (two levels deep)** so that **I can access more in-depth text after having understood the fundamental text first**.
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** |
-|-------------------------|--------------------------------------|---------------------|
-| AC1 | User can expand one individual "expansion text" to the *first* level by clicking a plus sign at the spot of the expansion text | User should be able to expand one collapsed text to the first level by clicking the plus sign. |
-| AC2 | User can expand one individual "expansion text" to the *second* level by clicking a plus sign at the spot of the expansion text | User should be able to expand one collapsed text to the second level by clicking the plus sign. |
-| AC3 | User can expand *all* "expansion text" to the *first* level by clicking on one "expand all"-button | User should be able to expand all collapsed text to the first level by clicking a single "expand all" button. |
-| AC4 | User can expand *all* "expansion text" to the *second* level by clicking on one "expand all"-button | User should be able to expand all collapsed text to the second level by clicking a single "expand all" button. |
-
-<br>
-
 ### THEME: Students and Features > EPIC: Situational Awareness
 
-USER STORY: 14. As a **user**, I can **view an automatically updated "been here"-mark and a last visited-mark in the syllabus and on the unit I am currently visiting**, to easily **see what units I have visited earlier at some point in time**.
-
-| **Acceptance Criteria** | **User Story (Acceptance Criteria)** | **Expected Result** |
-|-------------------------|--------------------------------------|---------------------|
-| AC1 | A "Been here"-mark is automatically added to a unit in the Syllabus and stays even after having logged out and in again. | The "Been here"-mark should remain even after logging out and back in. |
-| AC2 | A "Last visited"-mark is automatically added to a unit in the Syllabus that was last visited. This mark will constantly be "assigned" to different units and can only be "assigned" to one unit at a time. | The "Last visited"-mark should only be assigned to one unit at a time and update as you visit different units. |
-
-<br>
-
-USER STORY: 15. As a **user**, I can **view an automatically updated "been here"-mark and a last visited-mark in the syllabus and on the unit I am currently visiting**, to easily **see what units I have visited earlier at some point in time**.
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** |
-|-------------------------|--------------------------------------|---------------------|
-| AC1 | A "Been here"-mark is automatically added to a unit in the Syllabus and stays even after having logged out and in again. | User should see a "Been here" mark on a unit in the syllabus, and it should persist even after logging out and in again. |
-| AC2 | A "Last visited"-mark is automatically added to a unit in the Syllabus that was last visited. This mark will constantly be "assigned" to different units and can only be "assigned" to one unit at a time. | User should see a "Last visited" mark on the unit that was most recently visited, and it should be assigned to only one unit at a time. |
-
-<br>
-
-USER STORY: 16. As a **user**, I can **check a "read"- and an "understood"-checkbox (if the "read"-checkbox is unchecked as the "understood" checkbox gets checked it automatically gets checked)**, which I also can view in the curriculum and on the unit I am currently on, to **keep an improved sense of situational awareness in regards to what units I still need to return to**.
+USER STORY: 14. As a **user**, I can **check a "read"- and an "understood"-checkbox (if the "read"-checkbox is unchecked as the "understood" checkbox gets checked it automatically gets checked)**, which I also can view in the curriculum and on the unit I am currently on, to **keep an improved sense of situational awareness in regards to what units I still need to return to**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -544,7 +521,7 @@ USER STORY: 16. As a **user**, I can **check a "read"- and an "understood"-check
 
 <br>
 
-USER STORY: 17. As a **user**, I can **see how many percent of the units (graphically as a gradually filled bar and as a number) that has had its "understood"-checkbox checked! (and the same for the "been here"- and "read"-checkboxes)** so that I can **see how many units remain to be "read" and "understood" independently of the chronological pace**.
+USER STORY: 15. As a **user**, I can **see how many percent of the units (graphically as a gradually filled bar and as a number) that has had its "understood"-checkbox checked! (and the same for the "been here"- and "read"-checkboxes)** so that I can **see how many units remain to be "read" and "understood" independently of the chronological pace**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -555,7 +532,7 @@ USER STORY: 17. As a **user**, I can **see how many percent of the units (graphi
 
 ### THEME: Students and Features > EPIC: Bookmarking Units
 
-USER STORY: 18. As a **user**, I can **bookmark a unit and view a mark on bookmarked units**, to **keep a record of extra important units that I might want to return to later**.
+USER STORY: 16. As a **user**, I can **bookmark a unit and view a mark on bookmarked units**, to **keep a record of extra important units that I might want to return to later**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -568,7 +545,7 @@ USER STORY: 18. As a **user**, I can **bookmark a unit and view a mark on bookma
 
 <br>
 
-USER STORY: 20. As a **user**, I can **mark text, images etc. in the units and have it stay marked also when I come back to a page after having left it or having logged out and logged in again, as well as having the marked text appear on the clipboard**, to **have an improved note-taking experience**.
+USER STORY: 18. As a **user**, I can **mark text, images etc. in the units and have it stay marked also when I come back to a page after having left it or having logged out and logged in again, as well as having the marked text appear on the clipboard**, to **have an improved note-taking experience**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -580,7 +557,7 @@ USER STORY: 20. As a **user**, I can **mark text, images etc. in the units and h
 
 ### THEME: Students and Features > EPIC: Feedback
 
-USER STORY: 21. As a **user**, I can **give user feedback on each unit by clicking a thumbs up or down icon as well as leave a comment in a text field**, to easily **allow a quality improving feedback loop to the content creators**.
+USER STORY: 19. As a **user**, I can **give user feedback on each unit by clicking a thumbs up or down icon as well as leave a comment in a text field**, to easily **allow a quality improving feedback loop to the content creators**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -591,7 +568,7 @@ USER STORY: 21. As a **user**, I can **give user feedback on each unit by clicki
 
 ### THEME: Release > EPIC: Testing and Error Handling
 
-USER STORY: 22. As a **Site Admin**, I can **create or update the about page content** so that it is available on the site.
+USER STORY: 20. As a **Site Admin**, I can **create or update the about page content** so that it is available on the site.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -914,13 +891,21 @@ To overcome the errors that the Django tags would bring up, the pages were teste
 
 All pages were tested with Google Chrome’s Lighthouse. The low score on best practise was due to "Uses deprecated APIs" in the form of locally installed "Kasperski".
 
-Syllabus page(Home Page):
+Syllabus page(Landing Page):
 
-![lighthouse-syllabus-page](images-for-readme/lighthouse-syllabus-page.png)
+![lighthouse-syllabus-page](images-for-readme/lighthouse-syllabus.png)
 
-Unit page (sears-haack-body):
+Unit page (f-102 Delta Dagger):
 
-![lighthouse-unit-page](images-for-readme/lighthouse-unit-page.png)
+![lighthouse-unit-page](images-for-readme/lighthouse-unit.png)
+
+Login-Page:
+
+![lighthouse-login-page](images-for-readme/lighthouse-login.png)
+
+Signup-page:
+
+![lighthouse-signup-page](images-for-readme/lighthouse-signup.png)
 
 
 **WebAIM WAVE, Web Accessibility Testing**
@@ -1149,9 +1134,16 @@ USER STORY: 8. As a **user**, I can **have different units open in the same brow
 
 <span style="color: orange;">**Please see chapter "Future User Stories" for plannede User stories 9 - 18**</span>
 
+USER STORY: 13. As a **user**, I can **view an automatically updated "been here"-mark and a last visited-mark in the syllabus and on the unit I am currently visiting**, to easily **see what units I have visited earlier at some point in time**.
+
+| **Acceptance Criteria** | **User Story** | **Expected Result** |
+|-------------------------|--------------------------------------|---------------------|
+| AC1 | A "Been here"-mark is automatically added to a unit in the Syllabus and stays even after having logged out and in again. | User should see a "Been here" mark on a unit in the syllabus, and it should persist even after logging out and in again. |
+| AC2 | A "Last visited"-mark is automatically added to a unit in the Syllabus that was last visited. This mark will constantly be "assigned" to different units and can only be "assigned" to one unit at a time. | User should see a "Last visited" mark on the unit that was most recently visited, and it should be assigned to only one unit at a time. |
+
 ### THEME: Students and Features > EPIC: Notes
 
-USER STORY: 19. As a **user**, I can **write, edit or delete text on a Note**, to **take notes relating to the individual units**.
+USER STORY: 17. As a **user**, I can **write, edit or delete text on a Note**, to **take notes relating to the individual units**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
@@ -1175,7 +1167,7 @@ USER STORY: 19. As a **user**, I can **write, edit or delete text on a Note**, t
 
 ### THEME: Release > EPIC: Testing and Error Handling
 
-USER STORY: 23. As a **user**, I will **see a humorous 403, 404, 405 and 500 error page in the case of a "not found" or "server error" respectively**, so as to somewhat cut the edge of my frustration and lighten my mood to continue using the app.
+USER STORY: 21. As a **user**, I will **see a humorous 403, 404, 405 and 500 error page in the case of a "not found" or "server error" respectively**, so as to somewhat cut the edge of my frustration and lighten my mood to continue using the app.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
@@ -1189,7 +1181,7 @@ USER STORY: 23. As a **user**, I will **see a humorous 403, 404, 405 and 500 err
 | AC2 | A 404 page is created and "connected". | The 404 error page should be displayed when the requested resource is not found. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
-<img src="">
+<img src="images-for-readme/error-404-annotated.png">
 </details>
 <br>
 
@@ -1211,14 +1203,14 @@ USER STORY: 23. As a **user**, I will **see a humorous 403, 404, 405 and 500 err
 
 ### THEME: Release > EPIC: Deployment
 
-USER STORY: 24. As a **developer**, I can **deploy to a hosting service**, so that **the site is available to the public**.
+USER STORY: 22. As a **developer**, I can **deploy to a hosting service**, so that **the site is available to the public**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
 | AC1 | Functioning deployment to Heroku. | The site should be successfully deployed to Heroku and accessible to the public. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
-<img src="">
+<img src="images-for-readme/deploy-heroku-annotated.png">
 </details>
 <br>
 
