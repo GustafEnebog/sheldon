@@ -9,7 +9,9 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Syllabus(models.Model):
     syllabus_title = models.CharField(max_length=200, unique=True)
     syllabus_slug = models.SlugField(max_length=200, unique=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="syllabus_user")  # FK
+    user_id = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="syllabus_user"
+    )  # FK
     created_on = models.DateTimeField(auto_now_add=True)
     deadline_official = models.DateTimeField(auto_now_add=True)
     status_syllabus = models.IntegerField(choices=STATUS, default=0)
@@ -17,7 +19,9 @@ class Syllabus(models.Model):
 
 class Module(models.Model):
     module_id = models.IntegerField(unique=True, null=True)  # PK
-    syllabus_id = models.ForeignKey(Syllabus, on_delete=models.CASCADE, related_name="syllabus_module")  # FK
+    syllabus_id = models.ForeignKey(
+        Syllabus, on_delete=models.CASCADE, related_name="syllabus_module"
+    )  # FK
     module_title = models.CharField(max_length=200, unique=True)
     module_slug = models.SlugField(max_length=200, unique=True)
     author = models.CharField(max_length=200)
@@ -30,7 +34,9 @@ class Module(models.Model):
 
 class Unit(models.Model):
     unit_id = models.IntegerField(unique=True, null=True)  # PK
-    module_id = models.ForeignKey(Module, on_delete=models.CASCADE, related_name="module_unit")  # FK
+    module_id = models.ForeignKey(
+        Module, on_delete=models.CASCADE, related_name="module_unit"
+    )  # FK
     unit_title = models.CharField(max_length=200, unique=True)
     unit_slug = models.SlugField(max_length=200, unique=True)
     category = models.CharField(max_length=200)
@@ -45,8 +51,12 @@ class Unit(models.Model):
 
 
 class UserProgress (models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_user_progress", null=True)  # PK, FK
-    unit_id = models.ForeignKey(Unit, on_delete=models.CASCADE, related_name="unit_user_progress")  # FK
+    user_id = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="user_user_progress", null=True
+    )  # PK, FK
+    unit_id = models.ForeignKey(
+        Unit, on_delete=models.CASCADE, related_name="unit_user_progress"
+    )  # FK
     deadline_set = models.DateTimeField(auto_now_add=True)
     pace_set = models.DateTimeField(auto_now_add=True)
     pace_you = models.DateTimeField(auto_now_add=True)

@@ -850,7 +850,7 @@ Automated Testing
 
 Python linting was carried out with https://pep8ci.herokuapp.com/.
 
-There were no warnings left in the production code apart from the ‘line too long’ errors on the boilerplate Django code in ‘settings.py’.
+There were no warnings left in the production code apart from ‘E501 line too long’ errors on views.py and ‘settings.py’. I choose to not fix these ""too long rows since I feelt that it would make code less clear.
 
 **JavaScript Linting**
 

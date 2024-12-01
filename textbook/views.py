@@ -15,20 +15,20 @@ class UnitListView(generic.ListView):
 
 def unit_detail(request, unit_slug):
     unit = get_object_or_404(Unit.objects.filter(status_unit=1), unit_slug=unit_slug)
-    
+
     # Initialize the "visited" variable
     visited = False
 
     if request.user.is_authenticated:
         # Check if the user has already visited the unit
         user_progress = UserProgress.objects.filter(user_id=request.user, unit_id=unit).first()
-        
+
         if user_progress:
             visited = True  # The user has visited before
         else:
             # If no visit exists, create a new UserProgress record
             UserProgress.objects.create(user_id=request.user, unit_id=unit)
-        
+
         # If logged in, display only the user's own notes
         notes = unit.unit_note.filter(user_id=request.user).order_by("-created_on")
     else:
@@ -105,11 +105,14 @@ def profile(request):
 def custom_403(request, exception):
     return render(request, '403.html', status=403)
 
+
 def custom_404(request, exception=None):
     return render(request, '404.html', status=404)
 
+
 def custom_405(request, exception):
     return render(request, '405.html', status=405)
+
 
 def custom_500(request):
     return render(request, '500.html.html', status=500)

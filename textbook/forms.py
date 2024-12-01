@@ -10,5 +10,5 @@ class NoteForm(forms.ModelForm):
             'body': '',  # This removes the label for the 'body' field
         }
         widgets = {
-            'body': forms.Textarea(attrs={'placeholder': 'Enter your note content here'}),  # Optional: Add a placeholder
+            'body': forms.Textarea(attrs={'placeholder': 'Enter your note content here'}),
         }
