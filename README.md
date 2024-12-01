@@ -427,7 +427,7 @@ Future User Stories
 
 ### THEME: Students and Features > EPIC: Syllabus and Navigation  
 
-USER STORY: 10. As a **user**, I can **view and navigate all Modules and Units in a Syllabus** to easily be able to **see where I currently am at in the Curriculum/course content.**
+USER STORY: 11. As a **user**, I can **view and navigate all Modules and Units in a Syllabus** to easily be able to **see where I currently am at in the Curriculum/course content.**
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -441,7 +441,7 @@ USER STORY: 10. As a **user**, I can **view and navigate all Modules and Units i
 
 ### THEME: Students and Features > EPIC: Multi-tab Navigation
 
-USER STORY: 11. As a **user**, I can **have different units open in the same browser (but in different tabs) from the same course as well as separate courses** so that **I do not need to close one course before opening the next.**
+USER STORY: 12. As a **user**, I can **have different units open in the same browser (but in different tabs) from the same course as well as separate courses** so that **I do not need to close one course before opening the next.**
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
@@ -450,7 +450,7 @@ USER STORY: 11. As a **user**, I can **have different units open in the same bro
 
 ### THEME: Students and Features > EPIC: Text Search for Modules/Units
 
-USER STORY: 12. As a **user**, I can **carry out a normal text search of the Module/Unit names and unit contents** so that **I am able to find myself back to earlier course content that I need to revisit.**
+USER STORY: 13. As a **user**, I can **carry out a normal text search of the Module/Unit names and unit contents** so that **I am able to find myself back to earlier course content that I need to revisit.**
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -461,7 +461,7 @@ USER STORY: 12. As a **user**, I can **carry out a normal text search of the Mod
 
 ### THEME: Students and Features > EPIC: Pace Control
 
-USER STORY: 13. As a **user**, I can **set my own deadline and view my pace according to this and the number of "Understood" and "Read" units (See: Situational Awareness), one "Read" count as half of one "understood"** so that **I can see if I am on pace, ahead or behind and by how much based on both the official and user selected deadline.**
+USER STORY: 14. As a **user**, I can **set my own deadline and view my pace according to this and the number of "Understood" and "Read" units (See: Situational Awareness), one "Read" count as half of one "understood"** so that **I can see if I am on pace, ahead or behind and by how much based on both the official and user selected deadline.**
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -477,7 +477,7 @@ USER STORY: 13. As a **user**, I can **set my own deadline and view my pace acco
 
 ### THEME: Students and Features > EPIC: Average Time and Pace Information
 
-USER STORY: 14. As a **user**, I can **view my average time as well as that of the average student, on each individual unit before a checkmark in the "read" and "understood" checkbox are clicked respectively and see my pace and expected finished date (relative to the deadline)** so that **I can receive some extra pace information in addition to (and independent of) the other pace control.**
+USER STORY: 15. As a **user**, I can **view my average time as well as that of the average student, on each individual unit before a checkmark in the "read" and "understood" checkbox are clicked respectively and see my pace and expected finished date (relative to the deadline)** so that **I can receive some extra pace information in addition to (and independent of) the other pace control.**
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -490,7 +490,7 @@ USER STORY: 14. As a **user**, I can **view my average time as well as that of t
 
 ### THEME: Students and Features > EPIC: Expansion/Collapse Text
 
-USER STORY: 15. As a **user**, I can **click on a plus sign to expand collapsed text (two levels deep)** so that **I can access more in-depth text after having understood the fundamental text first**.
+USER STORY: 16. As a **user**, I can **click on a plus sign to expand collapsed text (two levels deep)** so that **I can access more in-depth text after having understood the fundamental text first**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -503,7 +503,7 @@ USER STORY: 15. As a **user**, I can **click on a plus sign to expand collapsed 
 
 ### THEME: Students and Features > EPIC: Situational Awareness
 
-USER STORY: 16. As a **user**, I can **check a "read"- and an "understood"-checkbox (if the "read"-checkbox is unchecked as the "understood" checkbox gets checked it automatically gets checked)**, which I also can view in the curriculum and on the unit I am currently on, to **keep an improved sense of situational awareness in regards to what units I still need to return to**.
+USER STORY: 17. As a **user**, I can **check a "read"- and an "understood"-checkbox (if the "read"-checkbox is unchecked as the "understood" checkbox gets checked it automatically gets checked)**, which I also can view in the curriculum and on the unit I am currently on, to **keep an improved sense of situational awareness in regards to what units I still need to return to**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -515,7 +515,7 @@ USER STORY: 16. As a **user**, I can **check a "read"- and an "understood"-check
 
 <br>
 
-USER STORY: 17. As a **user**, I can **see how many percent of the units (graphically as a gradually filled bar and as a number) that has had its "understood"-checkbox checked! (and the same for the "been here"- and "read"-checkboxes)** so that I can **see how many units remain to be "read" and "understood" independently of the chronological pace**.
+USER STORY: 18. As a **user**, I can **see how many percent of the units (graphically as a gradually filled bar and as a number) that has had its "understood"-checkbox checked! (and the same for the "been here"- and "read"-checkboxes)** so that I can **see how many units remain to be "read" and "understood" independently of the chronological pace**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -526,7 +526,7 @@ USER STORY: 17. As a **user**, I can **see how many percent of the units (graphi
 
 ### THEME: Students and Features > EPIC: Bookmarking Units
 
-USER STORY: 18. As a **user**, I can **bookmark a unit and view a mark on bookmarked units**, to **keep a record of extra important units that I might want to return to later**.
+USER STORY: 19. As a **user**, I can **bookmark a unit and view a mark on bookmarked units**, to **keep a record of extra important units that I might want to return to later**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -539,7 +539,7 @@ USER STORY: 18. As a **user**, I can **bookmark a unit and view a mark on bookma
 
 <br>
 
-USER STORY: 19. As a **user**, I can **mark text, images etc. in the units and have it stay marked also when I come back to a page after having left it or having logged out and logged in again, as well as having the marked text appear on the clipboard**, to **have an improved note-taking experience**.
+USER STORY: 20. As a **user**, I can **mark text, images etc. in the units and have it stay marked also when I come back to a page after having left it or having logged out and logged in again, as well as having the marked text appear on the clipboard**, to **have an improved note-taking experience**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -551,7 +551,7 @@ USER STORY: 19. As a **user**, I can **mark text, images etc. in the units and h
 
 ### THEME: Students and Features > EPIC: Feedback
 
-USER STORY: 20. As a **user**, I can **give user feedback on each unit by clicking a thumbs up or down icon as well as leave a comment in a text field**, to easily **allow a quality improving feedback loop to the content creators**.
+USER STORY: 21. As a **user**, I can **give user feedback on each unit by clicking a thumbs up or down icon as well as leave a comment in a text field**, to easily **allow a quality improving feedback loop to the content creators**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -562,7 +562,7 @@ USER STORY: 20. As a **user**, I can **give user feedback on each unit by clicki
 
 ### THEME: Release > EPIC: Testing and Error Handling
 
-USER STORY: 21. As a **Site Admin**, I can **create or update the about page content** so that it is available on the site.
+USER STORY: 22. As a **Site Admin**, I can **create or update the about page content** so that it is available on the site.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -825,7 +825,7 @@ Technologies used
 - [GitPod](https://www.gitpod.io/) - IDE for creating code.
 - [GitHub](https://github.com/) - for storing the project.
 - [PostgreSQL from Code Institute](https://dbs.ci-dbs.net/) - PostgreSQL as a service.
-- [Heroku](https://www.heroku.com/) - to deploy the application.
+- [Heroku](https://www.heroku.com/) - for deployment of the application.
 - [Summernote](https://summernote.org/) - to provide a simple WYSIWYG bootstrap-based editor for the Django admin page.
 - [Cloudinary](https://cloudinary.com/) - to host the static files.
 - [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) - to test responsiveness, edit CSS code, debug JavaScript and generate Lighthouse reports.
@@ -868,7 +868,7 @@ All JavaScript files were tested with [JSHint](https://jshint.com/) No errors ar
 
 **CSS Validation**
 
-The CSS file was validated with [W3C CSS Validator](images-for-readme/jigsaw-css-validation.jpg). No errors are present in the production code. There was x (!) warnings of the type:  
+The CSS file was validated with [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). No errors are present in the production code. There was x (!) warnings of the type:  
 - "Due to their dynamic nature, CSS variables are currently not statically checked"  
 - "...is a vendor extension"  
 - "Same color for background-color and border-color"  
@@ -1157,7 +1157,7 @@ USER STORY: 10. As a **developer**, I can **deploy to a hosting service**, so th
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
-| AC1 | Functioning deployment to Heroku. | The site should be successfully deployed to Heroku and accessible to the public. | <span style="color:#4CAF50;">PASS</span> |
+| AC1 | Functioning deployment to Heroku. | The site should be successfully deployed to [Heroku](https://sheldon-textbook-3b3e2a751d30.herokuapp.com/) and accessible to the public. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
 <img src="images-for-readme/deploy-heroku-annotated.png">
