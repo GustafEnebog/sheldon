@@ -124,6 +124,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'https://sheldon-textbook-3b3e2a751d30.herokuapp.com/static/'
+MEDIA_URL = 'https://sheldon-textbook-3b3e2a751d30.herokuapp.com/media/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

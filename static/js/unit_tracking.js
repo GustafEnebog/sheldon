@@ -1,22 +1,25 @@
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', function () {
     const unitContainer = document.getElementById('unit-container');
-    if (!unitContainer) {
-        console.error('unit-container element is missing!');
-        return;
-    }
-    
-    const unitId = unitContainer.getAttribute('data-unit-id');
     const unitMessage = document.getElementById('unit-message');
-    
-    if (!unitMessage) {
-        console.error('unit-message element is missing!');
+
+    // Check if the necessary elements exist
+    if (!unitContainer || !unitMessage) {
+        console.error('Required elements are missing!');
         return;
     }
 
+    // Retrieve unitId from the container
+    const unitId = unitContainer.getAttribute('data-unit-id');
+    if (!unitId) {
+        console.error('data-unit-id is missing on unit-container!');
+        return;
+    }
+
+    // Show or hide the message based on visit status
     if (localStorage.getItem(`visited-${unitId}`)) {
         unitMessage.style.display = 'block';
     } else {
         unitMessage.style.display = 'none';
         localStorage.setItem(`visited-${unitId}`, 'true');
     }
-};
+});

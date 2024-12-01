@@ -893,6 +893,10 @@ Unit page (f-102 Delta Dagger):
 
 ![lighthouse-unit-page](images-for-readme/lighthouse-unit.png)
 
+The low score on "Best Practices" is in part due to (see Bug-section):
+
+![Error logged to Chrome Dev-tools console](images-for-readme/dev_tool_error.png)
+
 Login-Page:
 
 ![lighthouse-login-page](images-for-readme/lighthouse-login.png)
@@ -1200,6 +1204,8 @@ Unfixed Bugs
 </details>
 <br>
 
+| Bug | Comment |
+| --- | --- |
 | "The font element is obsolete" | The error thrown for some of the "units" does not come from my own code but most likely crispy forms. (disconnection of Summernote have not silenst this error) |
 
 <details><summary></summary>
@@ -1207,13 +1213,33 @@ Unfixed Bugs
 </details>
 <br>
 
-| "The aria-describedby attribute must point to an element in the same document" | The error thrown for the "signup" (in both the W3 validator and the Wave-web accessibility evaluation tool) does not come from my own code but most likely crispy forms. (disconnection of Summernote have not silenst the error)|
+| Bug | Comment |
+| --- | --- |
+| "The aria-describedby attribute must point to an element in the same document" | The error thrown for the "signup" (in both the W3 validator and the Wave-web accessibility evaluation tool) does not come from my own code but most likely crispy forms. (disconnection of Summernote have not silenst the error) |
 
 <details><summary></summary>
 <img src="images-for-readme/w3-error-unit-f-102-signup.png">
 <img src="images-for-readme/wave-sign-up-one-error-explenation.png">
 </details>
 <br>
+
+| Bug | Comment |
+| --- | --- |
+| Error logged to Chrome Dev-tools console: "The error Uncaught TypeError: Cannot read properties of null (reading 'getAttribute')" at window.onload must be due to that the code is trying to access the getAttribute method on unitContainer when unitContainer is null. | The error likely stems from that the element with the ID unit-container does not exist at the time the window.onload event is triggered. Despite wrapping the get request in an if-statement and placing script call at the end (so that the DOM is loaded before the script runs) the error still persist.
+
+<details><summary></summary>
+<img src="images-for-readme/dev_tool_error.png">
+</details>
+<br>
+
+
+
+
+
+
+
+
+
 
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
