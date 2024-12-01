@@ -1049,9 +1049,21 @@ USER STORY: 5. As a **user**, I can **view an automatically updated "been here"-
 <br>
 
 
+USER STORY: 6. As a **user**, I can **view a recognisable favicon on the browser tab**, so that I can quickly and easily **find myself back to the Sheldon-tab when I have many tabs open**.
+
+| **Acceptance Criteria** | **User Story** | **Expected Result** |
+|-------------------------|--------------------------------------|---------------------|
+| AC1 | A favicon is created and added to the app | Users should alwasy be able to see a "Sheldon"-favicon. |
+
+<details><summary></summary>
+<img src="images-for-readme/tabs.png">
+</details>
+<br>
+
+
 ### THEME: Students and Features > EPIC: NOTES
 
-USER STORY: 6. As a **user**, I can **write, display, edit and delete text on a Note**, to **take notes relating to the individual units**.
+USER STORY: 7. As a **user**, I can **write, display, edit and delete text on a Note**, to **take notes relating to the individual units**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
@@ -1085,7 +1097,7 @@ USER STORY: 6. As a **user**, I can **write, display, edit and delete text on a 
 ### THEME: Students and Features > EPIC: USER FEEDBACK
 
 
-USER STORY: 7. As a **user**, I can **view confirmation messages after actions that I have taken**, in order to ""know that my action has successfully taken place**.
+USER STORY: 8. As a **user**, I can **view confirmation messages after actions that I have taken**, in order to ""know that my action has successfully taken place**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
@@ -1114,7 +1126,7 @@ USER STORY: 7. As a **user**, I can **view confirmation messages after actions t
 <br>
 ### THEME: Release > EPIC: Testing and Error Handling
 
-USER STORY: 8. As a **user**, I will **see a humorous 403, 404, 405 and 500 error page in the case of a "not found" or "server error" respectively**, so as to somewhat cut the edge of my frustration and lighten my mood to continue using the app.
+USER STORY: 9. As a **user**, I will **see a humorous 403, 404, 405 and 500 error page in the case of a "not found" or "server error" respectively**, so as to somewhat cut the edge of my frustration and lighten my mood to continue using the app.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
@@ -1141,7 +1153,7 @@ USER STORY: 8. As a **user**, I will **see a humorous 403, 404, 405 and 500 erro
 
 ### THEME: Release > EPIC: Deployment
 
-USER STORY: 9. As a **developer**, I can **deploy to a hosting service**, so that **the site is available to the public**.
+USER STORY: 10. As a **developer**, I can **deploy to a hosting service**, so that **the site is available to the public**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
