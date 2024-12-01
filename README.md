@@ -53,9 +53,9 @@ THEME: ADMINISTRATION > EPIC: USER ACCOUNT
 
 THEME: ADMINISTRATION > EPIC: ADMIN
 
-THEME: STUDENT AID FEATURES > EPIC: Multitab Navigation
+THEME: Students and Features > EPIC: USER FEEDBACK
 
-THEME: STUDENT AID FEATURES > EPIC: Notes
+THEME: STUDENT AID FEATURES > EPIC: NOTES
 
 THEME: RELEASE > EPIC: TESTING and ERROR HANDLING
 
@@ -178,7 +178,7 @@ The database models are implemented according to the below Entity Relationship D
 ![ERD Sheldon](images-for-readme/sheldon-erd.png)
 
 <span style="color:#1591ea;font-weight:700;font-size:20px">
-Landing page.
+Landing page (Syllabus-page).
 </span>
 
 This is the first page that meets the user. This page allows the user to select a unit in the Syllabus (grey backgropund.)  
@@ -427,7 +427,7 @@ Future User Stories
 
 ### THEME: Students and Features > EPIC: Syllabus and Navigation  
 
-USER STORY: 7. As a **user**, I can **view and navigate all Modules and Units in a Syllabus** to easily be able to **see where I currently am at in the Curriculum/course content.**
+USER STORY: 10. As a **user**, I can **view and navigate all Modules and Units in a Syllabus** to easily be able to **see where I currently am at in the Curriculum/course content.**
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -439,9 +439,18 @@ USER STORY: 7. As a **user**, I can **view and navigate all Modules and Units in
 
 <br>
 
+### THEME: Students and Features > EPIC: Multi-tab Navigation
+
+USER STORY: 11. As a **user**, I can **have different units open in the same browser (but in different tabs) from the same course as well as separate courses** so that **I do not need to close one course before opening the next.**
+
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | I can right-click a unit and select "open link in new tab" or "open link in new window" | User should be able to right-click a unit and open it in a new tab or window. | <span style="color:#4CAF50;">PASS</span> |
+
+
 ### THEME: Students and Features > EPIC: Text Search for Modules/Units
 
-USER STORY: 9. As a **user**, I can **carry out a normal text search of the Module/Unit names and unit contents** so that **I am able to find myself back to earlier course content that I need to revisit.**
+USER STORY: 12. As a **user**, I can **carry out a normal text search of the Module/Unit names and unit contents** so that **I am able to find myself back to earlier course content that I need to revisit.**
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -452,7 +461,7 @@ USER STORY: 9. As a **user**, I can **carry out a normal text search of the Modu
 
 ### THEME: Students and Features > EPIC: Pace Control
 
-USER STORY: 10. As a **user**, I can **set my own deadline and view my pace according to this and the number of "Understood" and "Read" units (See: Situational Awareness), one "Read" count as half of one "understood"** so that **I can see if I am on pace, ahead or behind and by how much based on both the official and user selected deadline.**
+USER STORY: 13. As a **user**, I can **set my own deadline and view my pace according to this and the number of "Understood" and "Read" units (See: Situational Awareness), one "Read" count as half of one "understood"** so that **I can see if I am on pace, ahead or behind and by how much based on both the official and user selected deadline.**
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -468,7 +477,7 @@ USER STORY: 10. As a **user**, I can **set my own deadline and view my pace acco
 
 ### THEME: Students and Features > EPIC: Average Time and Pace Information
 
-USER STORY: 11. As a **user**, I can **view my average time as well as that of the average student, on each individual unit before a checkmark in the "read" and "understood" checkbox are clicked respectively and see my pace and expected finished date (relative to the deadline)** so that **I can receive some extra pace information in addition to (and independent of) the other pace control.**
+USER STORY: 14. As a **user**, I can **view my average time as well as that of the average student, on each individual unit before a checkmark in the "read" and "understood" checkbox are clicked respectively and see my pace and expected finished date (relative to the deadline)** so that **I can receive some extra pace information in addition to (and independent of) the other pace control.**
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -481,7 +490,7 @@ USER STORY: 11. As a **user**, I can **view my average time as well as that of t
 
 ### THEME: Students and Features > EPIC: Expansion/Collapse Text
 
-USER STORY: 12. As a **user**, I can **click on a plus sign to expand collapsed text (two levels deep)** so that **I can access more in-depth text after having understood the fundamental text first**.
+USER STORY: 15. As a **user**, I can **click on a plus sign to expand collapsed text (two levels deep)** so that **I can access more in-depth text after having understood the fundamental text first**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -494,7 +503,7 @@ USER STORY: 12. As a **user**, I can **click on a plus sign to expand collapsed 
 
 ### THEME: Students and Features > EPIC: Situational Awareness
 
-USER STORY: 14. As a **user**, I can **check a "read"- and an "understood"-checkbox (if the "read"-checkbox is unchecked as the "understood" checkbox gets checked it automatically gets checked)**, which I also can view in the curriculum and on the unit I am currently on, to **keep an improved sense of situational awareness in regards to what units I still need to return to**.
+USER STORY: 16. As a **user**, I can **check a "read"- and an "understood"-checkbox (if the "read"-checkbox is unchecked as the "understood" checkbox gets checked it automatically gets checked)**, which I also can view in the curriculum and on the unit I am currently on, to **keep an improved sense of situational awareness in regards to what units I still need to return to**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -506,7 +515,7 @@ USER STORY: 14. As a **user**, I can **check a "read"- and an "understood"-check
 
 <br>
 
-USER STORY: 15. As a **user**, I can **see how many percent of the units (graphically as a gradually filled bar and as a number) that has had its "understood"-checkbox checked! (and the same for the "been here"- and "read"-checkboxes)** so that I can **see how many units remain to be "read" and "understood" independently of the chronological pace**.
+USER STORY: 17. As a **user**, I can **see how many percent of the units (graphically as a gradually filled bar and as a number) that has had its "understood"-checkbox checked! (and the same for the "been here"- and "read"-checkboxes)** so that I can **see how many units remain to be "read" and "understood" independently of the chronological pace**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -517,7 +526,7 @@ USER STORY: 15. As a **user**, I can **see how many percent of the units (graphi
 
 ### THEME: Students and Features > EPIC: Bookmarking Units
 
-USER STORY: 16. As a **user**, I can **bookmark a unit and view a mark on bookmarked units**, to **keep a record of extra important units that I might want to return to later**.
+USER STORY: 18. As a **user**, I can **bookmark a unit and view a mark on bookmarked units**, to **keep a record of extra important units that I might want to return to later**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -530,7 +539,7 @@ USER STORY: 16. As a **user**, I can **bookmark a unit and view a mark on bookma
 
 <br>
 
-USER STORY: 18. As a **user**, I can **mark text, images etc. in the units and have it stay marked also when I come back to a page after having left it or having logged out and logged in again, as well as having the marked text appear on the clipboard**, to **have an improved note-taking experience**.
+USER STORY: 19. As a **user**, I can **mark text, images etc. in the units and have it stay marked also when I come back to a page after having left it or having logged out and logged in again, as well as having the marked text appear on the clipboard**, to **have an improved note-taking experience**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -542,7 +551,7 @@ USER STORY: 18. As a **user**, I can **mark text, images etc. in the units and h
 
 ### THEME: Students and Features > EPIC: Feedback
 
-USER STORY: 19. As a **user**, I can **give user feedback on each unit by clicking a thumbs up or down icon as well as leave a comment in a text field**, to easily **allow a quality improving feedback loop to the content creators**.
+USER STORY: 20. As a **user**, I can **give user feedback on each unit by clicking a thumbs up or down icon as well as leave a comment in a text field**, to easily **allow a quality improving feedback loop to the content creators**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -553,7 +562,7 @@ USER STORY: 19. As a **user**, I can **give user feedback on each unit by clicki
 
 ### THEME: Release > EPIC: Testing and Error Handling
 
-USER STORY: 20. As a **Site Admin**, I can **create or update the about page content** so that it is available on the site.
+USER STORY: 21. As a **Site Admin**, I can **create or update the about page content** so that it is available on the site.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -948,7 +957,7 @@ USER STORY: 1. As a **user**, I can **sign up and log in** to the site to **View
 
 ### THEME: Administration > EPIC: Admin
 
-USER STORY: 2. As an **admin**, I can **create, read, update and delete (CRUD) Modules/Units**, to **create the content for a course**.
+USER STORY: 2. As an **admin**, I can **create, read, update and delete (CRUD) Units**, to **create the content for a course**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
@@ -1010,150 +1019,24 @@ USER STORY: 3. As an **admin**, I can **check a "Draft"-check box**, to **prohib
 </details>
 <br>
 
-<br>
 
-USER STORY: 4. As an app **admin**, I can **put together a course by selecting a number of units and stringing them together in a certain order within Modules (like chapters in a book)**, so that I can **create a course curriculum**.
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
-|-------------------------|--------------------------------------|---------------------|-----------------|
-| AC1 | Given a logged-in user, they can save a draft noted | Admin should be able to save a draft of the course content. | <span style="color:#4CAF50;">PASS</span> |
-
-<details><summary></summary>
-<img src="">
-</details>
-<br>
+USER STORY: 4. As an app **admin**, I can **save units intermediatly**, so that I always can **come back and improve the course content**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
-| AC2 | Then they can finish the content at a later time | Admin should be able to return and complete the course content at a later time. | <span style="color:#4CAF50;">PASS</span> |
+| AC1 | Admin can finish the content at a later time | Admin should be able to return and complete the course content at a later time. | <span style="color:#4CAF50;">PASS</span> |
 
 <details><summary></summary>
-<img src="">
+<img src="images-for-readme/admin-units-continous-improv.png">
 </details>
 <br>
 
 <br>
 
-USER STORY: 5. As an app **admin**, I can **view a list of all Modules/Units and be able to create a course content by choosing a number of modules, order them and populate them with a number of units and ordering these units**, so I can **create a course curriculum**.
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
-|-------------------------|--------------------------------------|---------------------|-----------------|
-| AC1 | Given a logged-in admin, they can view a list of all *modules* | Admin should be able to view a list of all modules. | <span style="color:#4CAF50;">PASS</span> |
-
-<details><summary></summary>
-<img src="">
-</details>
-<br>
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
-|-------------------------|--------------------------------------|---------------------|-----------------|
-| AC2 | Given a logged-in admin, they can view a list of all *units* | Admin should be able to view a list of all units. | <span style="color:#4CAF50;">PASS</span> |
-
-<details><summary></summary>
-<img src="">
-</details>
-<br>
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
-|-------------------------|--------------------------------------|---------------------|-----------------|
-| AC3 | Given a logged-in admin, they can choose a number of units for a course | Admin should be able to select multiple units for a course. | <span style="color:#4CAF50;">PASS</span> |
-
-<details><summary></summary>
-<img src="">
-</details>
-<br>
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
-|-------------------------|--------------------------------------|---------------------|-----------------|
-| AC4 | Given a logged-in admin, they can choose a number of modules for a course | Admin should be able to select multiple modules for a course. | <span style="color:#4CAF50;">PASS</span> |
-
-<details><summary></summary>
-<img src="">
-</details>
-<br>
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
-|-------------------------|--------------------------------------|---------------------|-----------------|
-| AC5 | Given a logged-in admin, they can "populate" the selected modules with selected number of units for a course | Admin should be able to populate modules with selected units for a course. | <span style="color:#4CAF50;">PASS</span> |
-
-<details><summary></summary>
-<img src="">
-</details>
-<br>
-
-<br>
-
-USER STORY: 6. As an app **admin**, I can **view a list of all Modules/Units and be able to create a course content by choosing a number of modules, order them and populate them with a number of units and ordering these units**, so I can **create a course curriculum**.
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
-|-------------------------|--------------------------------------|---------------------|-----------------|
-| AC1 | Given a logged-in admin, they can view a list of all *modules* | Admin should be able to view a list of all modules. | <span style="color:#4CAF50;">PASS</span> |
-
-<details><summary></summary>
-<img src="">
-</details>
-<br>
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
-|-------------------------|--------------------------------------|---------------------|-----------------|
-| AC2 | Given a logged-in admin, they can view a list of all *units* | Admin should be able to view a list of all units. | <span style="color:#4CAF50;">PASS</span> |
-
-<details><summary></summary>
-<img src="">
-</details>
-<br>
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
-|-------------------------|--------------------------------------|---------------------|-----------------|
-| AC3 | Given a logged-in admin, they can choose a number of units for a course | Admin should be able to select multiple units for a course. | <span style="color:#4CAF50;">PASS</span> |
-
-<details><summary></summary>
-<img src="">
-</details>
-<br>
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
-|-------------------------|--------------------------------------|---------------------|-----------------|
-| AC4 | Given a logged-in admin, they can choose a number of modules for a course | Admin should be able to select multiple modules for a course. | <span style="color:#4CAF50;">PASS</span> |
-
-<details><summary></summary>
-<img src="">
-</details>
-<br>
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
-|-------------------------|--------------------------------------|---------------------|-----------------|
-| AC5 | Given a logged-in admin, they can "populate" the selected modules with selected number of units for a course | Admin should be able to populate modules with selected units for a course. | <span style="color:#4CAF50;">PASS</span> |
-
-<details><summary></summary>
-<img src="">
-</details>
-<br>
-
-<br>
-
-<span style="color: orange;">**Please see chapter "Future User Stories" for planned User stories 7**</span>
-
-### THEME: Students and Features > EPIC: Multi-tab Navigation
-
-USER STORY: 8. As a **user**, I can **have different units open in the same browser (but in different tabs) from the same course as well as separate courses** so that **I do not need to close one course before opening the next.**
-
-| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
-|-------------------------|--------------------------------------|---------------------|-----------------|
-| AC1 | I can right-click a unit and select "open link in new tab" or "open link in new window" | User should be able to right-click a unit and open it in a new tab or window. | <span style="color:#4CAF50;">PASS</span> |
-
-<details><summary></summary>
-<img src="">
-</details>
-<br>
-
-<br>
-
-<span style="color: orange;">**Please see chapter "Future User Stories" for planned User stories 9 - 18**</span>
 
 ### THEME: Students and Features > EPIC: Situational Awareness
 
-USER STORY: 13. As a **user**, I can **view an automatically updated "been here"-text on the unit that I am currently visiting**, to easily **see what units I have visited earlier at some point in time**.
+USER STORY: 5. As a **user**, I can **view an automatically updated "been here"-text on the unit that I am currently visiting**, to easily **see what units I have visited earlier at some point in time**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** |
 |-------------------------|--------------------------------------|---------------------|
@@ -1165,9 +1048,10 @@ USER STORY: 13. As a **user**, I can **view an automatically updated "been here"
 </details>
 <br>
 
-### THEME: Students and Features > EPIC: Notes
 
-USER STORY: 17. As a **user**, I can **write, display, edit and delete text on a Note**, to **take notes relating to the individual units**.
+### THEME: Students and Features > EPIC: NOTES
+
+USER STORY: 6. As a **user**, I can **write, display, edit and delete text on a Note**, to **take notes relating to the individual units**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
@@ -1197,13 +1081,40 @@ USER STORY: 17. As a **user**, I can **write, display, edit and delete text on a
 </details>
 <br>
 
+
+### THEME: Students and Features > EPIC: USER FEEDBACK
+
+
+USER STORY: 7. As a **user**, I can **view confirmation messages after actions that I have taken**, in order to ""know that my action has successfully taken place**.
+
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC1 | Confirmation messages can be used to confirm a user actions on Notes. | The user should receive a confirmation message when carrying out a all letters in CRUD in regards to notes. | <span style="color:#4CAF50;">PASS</span> |
+
+<details><summary></summary>
+<img src="images-for-readme/sign-up-confirmation-message.png">
+<img src="images-for-readme/sign-up-confirmation-message.png">
+<img src="images-for-readme/success-signed-in.png">
+<img src="images-for-readme/success-signed-out.png">
+<img src="images-for-readme/note-successfully-saved.png">
+<img src="images-for-readme/note-succesfully-uppdated.png">
+<img src="images-for-readme/note-deleted.png">
+</details>
 <br>
 
-<span style="color: orange;">**Please see chapter "Future User Stories" for planned User stories 20 - 22**</span>
+| **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
+|-------------------------|--------------------------------------|---------------------|-----------------|
+| AC2 | Confirmation messages can be used to confirm a user actions in the Admin panel. | The user should receive a confirmation message on user actions in the admin panel. | <span style="color:#4CAF50;">PASS</span> |
 
+<details><summary></summary>
+<img src="images-for-readme/admin-conf-message.png">
+</details>
+<br>
+
+<br>
 ### THEME: Release > EPIC: Testing and Error Handling
 
-USER STORY: 21. As a **user**, I will **see a humorous 403, 404, 405 and 500 error page in the case of a "not found" or "server error" respectively**, so as to somewhat cut the edge of my frustration and lighten my mood to continue using the app.
+USER STORY: 8. As a **user**, I will **see a humorous 403, 404, 405 and 500 error page in the case of a "not found" or "server error" respectively**, so as to somewhat cut the edge of my frustration and lighten my mood to continue using the app.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
@@ -1230,7 +1141,7 @@ USER STORY: 21. As a **user**, I will **see a humorous 403, 404, 405 and 500 err
 
 ### THEME: Release > EPIC: Deployment
 
-USER STORY: 22. As a **developer**, I can **deploy to a hosting service**, so that **the site is available to the public**.
+USER STORY: 9. As a **developer**, I can **deploy to a hosting service**, so that **the site is available to the public**.
 
 | **Acceptance Criteria** | **User Story** | **Expected Result** | **Test Status** |
 |-------------------------|--------------------------------------|---------------------|-----------------|
@@ -1393,6 +1304,12 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/GustafEnebog/sheldon)
 2. At the top right of the Repository, just below the GitHub navbar, click on the "Fork" Button.
+
+<details><summary></summary>
+<img src="images-for-readme/repo-fork.png">
+</details>
+<br>
+
 3. You should now have a copy of the original repository in your GitHub account.
 
 ## Making a Local Clone
@@ -1447,8 +1364,20 @@ Deploy to Heroku
 
 1. Create a [Heroku](https://www.heroku.com/) account.
 2. In the dashboard, click on ‘Create new app’ from the ‘New’ dropdown menu in the top right.
+
+<details><summary></summary>
+<img src="images-for-readme/heroku-1-create-new-app.png">
+</details>
+<br>
+
 3. Name the app and choose a region.
 4. In the ‘Settings’ tab, click on 'Reveal Config Vars’.
+
+<details><summary></summary>
+<img src="images-for-readme/heroku-2-settings.png">
+</details>
+<br>
+
 5. Enter the details for these Variables [you will also need these variables in your ‘env.py’ file for local use]:
     1. CLOUDINARY_URL (from Cloudinary dash board)
     2. DATABASE_URL (from Code Institute PostgreSQL)
@@ -1457,6 +1386,12 @@ Deploy to Heroku
 6. In the 'Buildpacks' section click 'Add buildpack'.
 7. Select ‘Python’, and click 'save changes'.
 8. In the 'Deploy' tab, select GitHub as the deployment method, and click 'Connect to GitHub'.
+
+<details><summary></summary>
+<img src="images-for-readme/heroku-3-deploy.png">
+</details>
+<br>
+
 9. In the 'App Connected to GitHub' section, search for the GitHub repository name, select it then click 'connect'.
 10. Finally, either click ‘Enable Automatic Deploys’, or ‘Deploy Branch’ in the ‘Manual deploy’ section.
 
